@@ -2,4 +2,4 @@
 
 You can visit the site here - [http://milon.github.io](http://milon.github.io)
 
-Want to contact? [mailto:milon521@gmail.com](email)
+Want to contact? [milon521@gmail.com](email)
