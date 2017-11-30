@@ -1,3 +1,3 @@
-# Portfolio of Nuruzzaman Milon
+# Resume of Nuruzzaman Milon
 
-You can visit the site here - [https://milon.github.io](https://milon.github.io)
+You can visit the site here - <https://milon.github.io>
