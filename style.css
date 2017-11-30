@@ -409,6 +409,10 @@ li{
     font-size: 7.5pt;
 }
 
+.print{
+    display: none;
+}
+
 @media print {
     body{
         -webkit-print-color-adjust:exact;
@@ -420,5 +424,9 @@ li{
 
     #disclaimer a.btn{
         display: none;
+    }
+
+    .print{
+        display: inherit;
     }
 }
