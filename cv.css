@@ -65,7 +65,7 @@ li{
   float: right;
   position: relative; /* for disclaimer */
   width: var(--sidebar-width);
-  height: 100%;
+  height: 200%;
   padding: 0.6in var(--sidebar-horizontal-padding);
   background-color: #f2f2f2;
   font-size: 8.5pt;
@@ -414,6 +414,10 @@ li{
 }
 
 @media print {
+    .page-break{
+        page-break-after: always;
+    }
+
     body{
         -webkit-print-color-adjust:exact;
     }
@@ -429,4 +433,14 @@ li{
     .print{
         display: inherit;
     }
+}
+
+li.project-title{
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+li.project-title > ul li {
+    font-size: 7pt;
+    font-weight: normal;
 }
