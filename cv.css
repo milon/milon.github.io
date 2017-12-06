@@ -409,8 +409,10 @@ li{
     font-size: 7.5pt;
 }
 
-#cert-info li a{
+#cert-info li {
     font-size: 9.0pt;
+    display: block;
+    margin-bottom: 0.08in;
 }
 
 #cert-info li span{
