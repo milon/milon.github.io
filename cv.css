@@ -410,7 +410,7 @@ li{
 }
 
 #cert-info li {
-    font-size: 9.0pt;
+    font-size: 7.4pt;
     display: block;
     margin-bottom: 0.08in;
 }
@@ -444,6 +444,10 @@ li{
 
     .print{
         display: inherit;
+    }
+
+    .page-break-margin{
+        margin-top: 2in;
     }
 }
 
