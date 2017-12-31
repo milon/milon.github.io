@@ -326,7 +326,7 @@ li{
 
 .avatar{
     border-radius: 50%;
-    border: 2pt solid black;
+    border: 3px solid black;
     max-width: 100%;
     display: block;
     vertical-align: middle;
