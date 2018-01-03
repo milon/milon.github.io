@@ -18,7 +18,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #336699;
+  color: #000;
 }
 
 a:visited {
@@ -51,6 +51,11 @@ section#header h2 {
   font-family: 'Cutive Mono', monospace;
   font-size: 0.8em;
   text-align: center;
+}
+
+section#footer {
+    margin: 40px 0;
+    text-align: center;
 }
 
 section.summary {
@@ -90,12 +95,21 @@ section article {
 }
 
 section#paginator {
-  margin: 0 0 140px 0;
+  margin: 0 0 20px 0;
   font-family: 'Lobster', cursive;
+  display: inline-block;
 }
 
-section#paginator #next {
-  float: right;
+section#paginator a, section#paginator span {
+    color: black;
+    float: left;
+    padding: 5px 10px;
+    margin: 0 4px;
+    text-decoration: none;
+}
+
+section#paginator a.selected {
+    color: #C0C0C0;
 }
 
 #post {
@@ -115,4 +129,17 @@ section#paginator #next {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.social-links {
+    font-size: 25px;
+}
+
+.social-links a {
+    margin: 0 5px;
+}
+
+.back-link {
+    margin-top: 1.5em;
+    font-family: 'Lobster', cursive;
 }

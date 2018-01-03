@@ -6,14 +6,14 @@ pagination:
 
 @extends('_layouts.master')
 
-@section('content')
+@section('body')
     <ul>
         @foreach ($pagination->items as $post)
             <section class="summary">
                 <h2>
                     <a href="{{ $post->getUrl() }}">{{ $post->title }}</a>
                 </h2>
-                <time>{{ $post->date }}</time>
+                <time>{{ $post->formatedDate($post->date) }}</time>
                 <article>
                     <p></p>
                 </article>
@@ -22,7 +22,11 @@ pagination:
 
         <section id="paginator">
             @if ($previous = $pagination->previous)
-                <a id="previous" href="{{ $page->baseUrl }}{{ $previous }}">&lt;</a>
+                <a href="{{ $page->baseUrl }}{{ $pagination->first }}">❮❮</a>
+                <a href="{{ $page->baseUrl }}{{ $previous }}">❮</a>
+            @else
+                <span>❮❮</span>
+                <span>❮</span>
             @endif
 
             @foreach ($pagination->pages as $pageNumber => $path)
@@ -33,7 +37,11 @@ pagination:
             @endforeach
 
             @if ($next = $pagination->next)
-                <a id="next" href="{{ $page->baseUrl }}{{ $next }}">Next Page</a>
+                <a href="{{ $page->baseUrl }}{{ $next }}">❯</a>
+                <a href="{{ $page->baseUrl }}{{ $pagination->last }}">❯❯</a>
+            @else
+                <span>❯</span>
+                <span>❯❯</span>
             @endif
         </section>
     </ul>

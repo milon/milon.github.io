@@ -1,10 +1,12 @@
 @extends('_layouts.master')
 
-@section('content')
-    <h1>{{ $page->title }}</h1>
-    <p>{{ $page->date }}</p>
+@section('body')
+    <h2>{{ $page->title }}</h2>
+    <p>{{ $page->formatedDate($page->date) }}</p>
 
     @yield('content')
 
-    <a href="{{ $page->baseUrl }}">Go to Home</a>
+    <p class="back-link">
+        <a href="{{ $page->baseUrl }}">Go to Home</a>
+    </p>
 @endsection

@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 title: Laravel Bangladesh Meetup 1.0 Presentation
-date: '2017-11-20'
+date: 20-11-2017
 section: content
 ---
 
