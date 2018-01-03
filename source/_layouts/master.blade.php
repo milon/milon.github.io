@@ -39,5 +39,14 @@
                 <a href="{{ $page->social->stackoverflow }}"><i class="fa fa-stack-overflow"></i></a>
             </div>
         </section>
+
+        <script>
+            // force https redirection
+            var host = 'milon.github.io';
+            if (window.location.host == host && window.location.protocol != 'https:') {
+                window.location.protocol = 'https:';
+            }
+        </script>
+        
     </body>
 </html>
