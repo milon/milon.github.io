@@ -16,7 +16,11 @@
                 <a href="{{ $page->baseUrl }}">Nuruzzaman Milon</a>
             </h1>
             <h2>Programmer, Auther, Tech Enthusiast</h2>
-            
+            <p>
+                <a href="#">About Me</a>
+                <a href="#">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
         </section>
 
         <section>

@@ -40,7 +40,6 @@ section#header {
 }
 
 section#header h1 {
-  font-size: 2em;
   text-align: center;
   font-family: 'Lobster', cursive;
   font-size: 2em;
@@ -49,8 +48,18 @@ section#header h1 {
 
 section#header h2 {
   font-family: 'Cutive Mono', monospace;
-  font-size: 0.8em;
+  font-size: 1em;
   text-align: center;
+}
+
+section#header p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+section#header p a {
+    padding: 5px 10px;
+    font-size: 0.9em;
 }
 
 section#footer {
@@ -141,5 +150,5 @@ section#paginator a.selected {
 
 .back-link {
     margin-top: 1.5em;
-    font-family: 'Lobster', cursive;
+    font-size: 0.8em;
 }
