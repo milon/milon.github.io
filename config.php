@@ -18,7 +18,8 @@ return [
     ],
     'collections' => [
         'posts' => [
-            'path' => 'post/{filename}'
+            'path' => 'post/{filename}',
+            'sort' => '-date',
         ]
     ],
 ];

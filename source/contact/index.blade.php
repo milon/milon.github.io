@@ -12,5 +12,9 @@
         <p>
             <i class="fa fa-phone"></i> Shoot an email instead.
         </p>
+
+        <p class="back-link">
+            <a href="{{ $page->baseUrl }}">Go to Home</a>
+        </p>
     </div>
 @endsection

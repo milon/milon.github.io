@@ -15,7 +15,7 @@ pagination:
                 </h2>
                 <time>{{ $post->formatedDate($post->date) }}</time>
                 <article>
-                    <p></p>
+                    <p>{{ $post->gist }}</p>
                 </article>
             </section>
         @endforeach

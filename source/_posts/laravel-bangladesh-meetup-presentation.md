@@ -2,6 +2,7 @@
 extends: _layouts.post
 title: Laravel Bangladesh Meetup 1.0 Presentation
 date: 20-11-2017
+gist: My presentation slides on 1st ever Laravel meetup of Bangladesh.
 section: content
 ---
 

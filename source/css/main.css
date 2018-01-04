@@ -157,3 +157,7 @@ section#paginator a.selected {
     font-family: 'Quicksand', sans-serif;
     font-size: 0.8em;
 }
+
+img {
+    max-width: 100%;
+}
