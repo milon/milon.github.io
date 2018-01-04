@@ -71,3 +71,7 @@ pip freeze
 You will find a tons of module installed. Thats because the libraries we installed are dependent on those libraries.
 
 Our machine is ready for doing some fun with machine learning. See you in next episode. Happy learning.
+
+@section('script')
+
+@endsection

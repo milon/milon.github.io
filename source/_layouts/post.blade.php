@@ -11,4 +11,6 @@
         <p>Want to reply? Use my twitter (<a href="{{ $page->social->twitter }}">@to_milon</a>) handle.</p>
         <a href="{{ $page->baseUrl }}">Go to Home</a>
     </p>
+
+    @include('_layouts._highlightjs')
 @endsection
