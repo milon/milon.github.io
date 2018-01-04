@@ -7,7 +7,7 @@ pagination:
 @extends('_layouts.master')
 
 @section('body')
-    <ul>
+    <div>
         @foreach ($pagination->items as $post)
             <section class="summary">
                 <h2>
@@ -44,5 +44,5 @@ pagination:
                 <span>❯❯</span>
             @endif
         </section>
-    </ul>
+    </div>
 @endsection
