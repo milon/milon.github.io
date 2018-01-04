@@ -17,8 +17,8 @@
             </h1>
             <h2>Programmer, Auther, Tech Enthusiast</h2>
             <p>
-                <a href="#">About Me</a>
-                <a href="#">Contact</a>
+                <a href="/about-me">About Me</a>
+                <a href="/contact">Contact</a>
                 <a href="/resume">Resume</a>
             </p>
         </section>
@@ -29,24 +29,17 @@
 
         <section id="footer">
             <div class="social-links">
-                <a href="{{ $page->social->github }}"><i class="fa fa-github-alt"></i></a>
-                <a href="{{ $page->social->twitter }}"><i class="fa fa-twitter-square"></i></a>
-                <a href="{{ $page->social->facebook }}"><i class="fa fa-facebook-official"></i></a>
-                <a href="{{ $page->social->linkedin }}"><i class="fa fa-linkedin-square"></i></a>
-                <a href="{{ $page->social->slideshare }}"><i class="fa fa-slideshare"></i></a>
-                <a href="{{ $page->social->speakerdeck }}"><i class="fa fa-link"></i></a>
-                <a href="{{ $page->social->instagram }}"><i class="fa fa-instagram"></i></a>
-                <a href="{{ $page->social->stackoverflow }}"><i class="fa fa-stack-overflow"></i></a>
+                <a href="{{ $page->social->github }}" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="{{ $page->social->twitter }}" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="{{ $page->social->facebook }}" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="{{ $page->social->linkedin }}" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="{{ $page->social->slideshare }}" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="{{ $page->social->speakerdeck }}" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="{{ $page->social->instagram }}" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="{{ $page->social->stackoverflow }}" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
             </div>
         </section>
 
-        <script>
-            // force https redirection
-            var host = 'milon.github.io';
-            if (window.location.host == host && window.location.protocol != 'https:') {
-                window.location.protocol = 'https:';
-            }
-        </script>
-        
+        <scriptsrc="/js/script.js"></script>
     </body>
 </html>

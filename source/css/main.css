@@ -152,3 +152,8 @@ section#paginator a.selected {
     margin-top: 1.5em;
     font-size: 0.8em;
 }
+
+.contact p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.8em;
+}
