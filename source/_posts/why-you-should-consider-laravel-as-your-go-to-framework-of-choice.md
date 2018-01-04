@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 title: Why you should consider laravel as your go to framework of choice
-date: 04-02-2017
+date: '2017-02-04'
 gist: 'My thoughts on Laravel framework, and it''s usability.'
 section: content
 ---
@@ -26,8 +26,11 @@ Laravel is a very popular web framework, it is the most popular php framework an
 - Great ORM, built-in Queue System, Out of the box Redis support.
 
 - Scaffolding Tools: Spark, Backpack
+
 - Stable Release Cycle and LTS support. A new version of laravel comes every 6 months and a long-term support version comes in every 2 years.
+
 - Great features, like- realtime broadcasting (Echo), Multiple notification channels, Task schedular, Multiple drivers for most of the components(session, cache, queue, mail, events etc.)
+
 - Laravel has some great first party packages
 
   - Payment Gateway: Cashier
@@ -36,8 +39,11 @@ Laravel is a very popular web framework, it is the most popular php framework an
   - Full-text search: Scout
 
 - Laravel is very beginner friendly with very little entry barrier.
+
 - Migration, Template Engine with markdown support.
+
 - Great Command Line Utility: Artisan.
+
 - Tons of community driven packages.
 
 To be honest, Laravel is the best thing that happens to me in last 2-3 years. It prevented me from leaving php. I also wrote a bestseller [book](https://milon.im/laravel) on Laravel in Bengali. If you are interested, you can also look into it.

@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 title: 'Machine Learning Introduction – 1: Set up your workstation'
-date: 23-02-2017
+date: '2017-02-23'
 gist: Setting up your workstation for practicing Machine Learning.
 section: content
 ---
