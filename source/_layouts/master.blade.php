@@ -19,6 +19,7 @@
             <h2>Programmer, Auther, Tech Enthusiast</h2>
             <p>
                 <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
                 <a href="/contact">Contact</a>
                 <a href="/resume">Resume</a>
             </p>

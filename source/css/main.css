@@ -160,6 +160,7 @@ section#paginator a.selected {
 
 img {
     max-width: 100%;
+    border: 1px solid grey;
 }
 
 code {
@@ -194,4 +195,15 @@ ul ul {
 
 iframe {
     width: 100%;
+}
+
+.strong {
+    font-weight: bold !important;
+}
+
+.book {
+    float: left;
+    max-width: 180px;
+    margin: 0 8px 5px 0;
+    border: 1px solid grey;
 }
