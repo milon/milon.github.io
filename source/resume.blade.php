@@ -312,6 +312,9 @@
         </div>
     </aside>
 
+    @if ($page->production)
+        @include('_layouts._analytics')
+    @endif
 </body>
 
 </html>
