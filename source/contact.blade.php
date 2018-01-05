@@ -14,7 +14,7 @@
         </p>
 
         <p class="back-link">
-            <a href="{{ $page->base() }}">Go to Home</a>
+            <a href="{{ $page->baseUrl }}">Go to Home</a>
         </p>
     </div>
 @endsection
