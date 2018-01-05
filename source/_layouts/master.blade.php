@@ -41,5 +41,9 @@
                 <a href="{{ $page->social->stackoverflow }}" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
             </div>
         </section>
+
+        @if ($page->production)
+            @include('_layouts._analytics')
+        @endif
     </body>
 </html>
