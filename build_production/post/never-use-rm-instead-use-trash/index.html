@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Nuruzzaman Milon</title>
+        <link rel="shortcut icon" href="/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="/">Nuruzzaman Milon</a>
+            </h1>
+            <h2>Programmer, Auther, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>Never use rm, instead use trash</h2>
+    <p>19 March, 2016</p>
+
+    <p>Those who use command line heavily, they use a command called <code>rm</code> almost everyday. I myself use command line everyday, and I most often use rm for deleting files and folders. Things getting more worse when you chain <code>-rf</code> command with <code>rm</code>. Last week I was working on a project and I accidently run <code>rm -rf</code> command to my project root directory. Then all my codes were gone and it's not reversible. Thanks to git, I don't loose all my codes, but the latest uncommited changes.</p>
+<p>After that incident, I tried to find some solution. Then I find an awesome tool called <a href="https://github.com/sindresorhus/trash">trash</a>. It's a simple node module and you can use it to your project. But I installed it globally so that I can use it anywhere on my machine. It deletes your files and folders just like <code>rm</code> but it put then to trash. So, you can undo the process.</p>
+<p><img src="/images/posts/trash.png" alt="Trash Logo" /></p>
+<p>The installing process is very strait forward. I assume your machine has already node and npm installed. If not, then install them. After that run this command on your terminal-</p>
+<pre><code>npm install -g trash-cli</code></pre>
+<p>If it shows an error, try with <code>sudo</code>. Then you are good to go.</p>
+<p>Using trash is very easy. If you are familiar with <code>rm</code> then you are already known to <code>trash</code>. It uses similar commands. Here is an example-</p>
+<pre><code>trash file.txt</code></pre>
+<p>You can do some complicated operation also.</p>
+<pre><code>trash '*.png' '!welcome.png'</code></pre>
+<p>This command will delete all your png files except welcome.png.</p>
+<p>Hope you will like it, and never use <code>rm</code> from now on. Peace.</p>
+    <hr>
+    <p class="back-link">
+        Want to reply? Use my twitter (<a href="https://twitter.com/to_milon">@to_milon</a>) handle. <br>
+        <a href="/">Go to Home</a>
+    </p>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+        </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://web.facebook.com/milon521" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+    </body>
+</html>
