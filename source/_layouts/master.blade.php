@@ -14,7 +14,7 @@
     <body>
         <section id="header">
             <h1>
-                <a href="{{ $page->baseUrl }}">Nuruzzaman Milon</a>
+                <a href="{{ $page->base() }}">Nuruzzaman Milon</a>
             </h1>
             <h2>Programmer, Auther, Tech Enthusiast</h2>
             <p>

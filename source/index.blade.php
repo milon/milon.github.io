@@ -20,29 +20,6 @@ pagination:
             </section>
         @endforeach
 
-        <section id="paginator">
-            @if ($previous = $pagination->previous)
-                <a href="{{ $page->baseUrl }}{{ $pagination->first }}">❮❮</a>
-                <a href="{{ $page->baseUrl }}{{ $previous }}">❮</a>
-            @else
-                <span>❮❮</span>
-                <span>❮</span>
-            @endif
-
-            @foreach ($pagination->pages as $pageNumber => $path)
-                <a href="{{ $page->baseUrl }}{{ $path }}"
-                class="{{ $pagination->currentPage == $pageNumber ? 'selected' : '' }}">
-                    {{ $pageNumber }}
-                </a>
-            @endforeach
-
-            @if ($next = $pagination->next)
-                <a href="{{ $page->baseUrl }}{{ $next }}">❯</a>
-                <a href="{{ $page->baseUrl }}{{ $pagination->last }}">❯❯</a>
-            @else
-                <span>❯</span>
-                <span>❯❯</span>
-            @endif
-        </section>
+        @include('_layouts._pagination')
     </div>
 @endsection

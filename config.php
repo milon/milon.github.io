@@ -1,8 +1,14 @@
 <?php
 
 return [
-    'baseUrl' => '/',
+    'baseUrl' => '/',   // make sure to add a trailing `/` here
     'production' => false,
+
+    // functions
+    'base' => function($page) {
+        if($page->production) return 'https://milon.github.io/';
+        return '/';
+    },
     'formatedDate' => function($page, $date) {
         return date('d F, Y', strtotime($date));
     },

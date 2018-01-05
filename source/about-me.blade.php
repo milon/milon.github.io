@@ -11,6 +11,6 @@
     <p>I am a proud <a href="https://en.wikipedia.org/wiki/Bangladesh">Bangladeshi</a>.</p>
 
     <p class="back-link">
-        <a href="{{ $page->baseUrl }}">Go to Home</a>
+        <a href="{{ $page->base() }}">Go to Home</a>
     </p>
 @endsection
