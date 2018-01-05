@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Nuruzzaman Milon</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="/">Nuruzzaman Milon</a>
+            </h1>
+            <h2>Programmer, Auther, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>লারাভেল হোমস্টিড ইনস্টলেশন</h2>
+    <p>10 February, 2016</p>
+
+    <p>লারাভেল একটি চমৎকার পিএইচপি ফ্রেমওয়ার্ক। যারা লারাভেল শিখতে চায় তারা প্রথমেই যে সমস্যাটার কথা বলেন, সেটি হচ্ছে এর ডেভেলপমেন্ট এনভায়রনমেন্ট সেটআপ করা। লারাভেলের অনেকগুলি ডিপেন্ডেন্সি আছে। যেমন লারাভেল ৫.২ এর সার্ভার রিকোয়ারমেন্ট হচ্ছে-</p>
+<ul>
+<li>PHP &gt;= 5.5.9</li>
+<li>OpenSSL PHP Extension</li>
+<li>PDO PHP Extension</li>
+<li>Mbstring PHP Extension</li>
+<li>Tokenizer PHP Extension</li>
+</ul>
+<p>এছাড়া পুরনো ভার্সনের লারাভেলে পিএইচপির <code>mcrypt</code> এক্সটেনশন ব্যবহার করা হতো। এগুলি সেটআপ করা ঝামেলার এবং সময়সাপেক্ষ। এছাড়াও ওয়েব সার্ভার যেমন- এনজিনেক্স, ডেটাবেজ সার্ভার, রেডিস সার্ভার, মেমক্যাশ সার্ভার, কিউ সার্ভার যেমন- বিনস্টকড ইনস্টল এবং কনফিগার করা অত্যন্ত ঝামেলার। এছাড়া কিছু টুল যেমন- বিনস্টকড উইন্ডোজ মেশিনে ইনস্টলও করা যায় না।</p>
+<p>লারাভেল এ ঝামেলা থেকে বাঁচানোর জন্য খুব সহজ একটি উপায় তৈরি করে রেখেছে। এটি হচ্ছে লারাভেলের ডেভেলপমেন্ট এনভায়রনমেন্ট যা হোমস্টিড নামে পরিচিত।</p>
+<p><img src="/images/posts/laravel-vagrant.png" alt="Laravel loves Vagrant" /></p>
+<p>হোমস্টিড ভ্যাগরেন্ট নামে একটি সার্ভিস ব্যবহার করে তৈরি করা হয়েছে, যা আসলে ভার্চুয়াল মেশিনের একটি এবস্ট্রাকশন। ভার্চুয়াল মেশিন কি আমরা সবাই জানি। এটি হচ্ছে আপনার মেশিনের বা অপারেটিং সিস্টেমের ভেতরে চলমান আরেকটি মেশিন বা অপারেটিং সিস্টেম। বর্তমানে প্রচলিত সবচেয়ে জনপ্রিয় দুটি ভার্চুয়াল মেশিন সফটয়্যারের নাম হচ্ছে ভার্চুয়াল বক্স এবং ভিএমওয়্যার। হোমস্টিড এ দুটি প্রোভাইডারই সাপোর্ট করে, তবে এটির ডিফল্ট প্রোভাইডার হলো ভার্চুয়াল বক্স। এ উদাহরনেও আমরা ভার্চুয়াল বক্সই ব্যবহার করবো। এর প্রধান কারন হচ্ছে ভিএমওয়্যারের ভ্যাগরেন্ট প্রোভাইডার কিনতে হয় যেখানে ভার্চুয়াল বক্সেরটা ফ্রি। ভার্চুয়াল মেশিন সম্পর্কে আরো বিস্তারিত জানতে <a href="https://en.wikipedia.org/wiki/Virtual_machine">এখানে</a> ঢু মারতে পারেন।</p>
+<p>অনেক কথা হলো, এবার চলুন কিভাবে আপনি আপনার পিসিতে হোমস্টিড সেটআপ করবেন তা দেখি। প্রথম ধাপ হচ্ছে ভার্চুয়াল বক্স ডাউনলোড করে ইনস্টল দেয়া। এটি খুবই সহজ। আপনি ভার্চুয়াল বক্সের <a href="https://www.virtualbox.org/wiki/Downloads">অফিশিয়াল ওয়েবসাইট</a> থেকে অপারেটিং সিস্টেমের জন্য প্রয়োজনীয় ইনস্টলারটি ডাউনলোড করে ইনস্টল করে নিবেন। এরপর ভ্যাগরেন্টের <a href="https://www.vagrantup.com/downloads.html">অফিশিয়াল সাইট</a> থেকে ইনস্টলার ডাউনলোড করে সেটিও ইনস্টল করে নেবেন। লক্ষ্য রাখবেন, এ দুটি সফটয়্যারের ইনস্টল লোকেশন যেন আপনার পাথ ভ্যারিয়েবলে থাকে। বাই ডিফল্ট এটি আপনার পাথেই ইনস্টল হবার কথা, তাই এ নিয়ে চিন্তা না করলেও চলবে। এ অবস্থায় আপনি যদি আপনার টার্মিনালে নিচের কমান্ডটি লিখেন, তাহলে দেখবেন-</p>
+<pre><code>vagrant -v
+1.8.1</code></pre>
+<p>এবার আপনি নিচের কমান্ডটির মাধ্যমে হোমস্টিড বক্স এড করুন আপনার মেশিনে-</p>
+<pre><code>vagrant box add laravel/homestead</code></pre>
+<p>এই কমান্ডটি বেশ খানিকটা সময় নেবে, কারন এর মাধ্যমে প্রায় ১ গিগাবাইট ডেটা ডাউনলোড হবে, যার মধ্যে উবুন্টু, সমস্ত সার্ভার, ডেটাবেজ, কনফিগারেশন ফাইল থাকবে।</p>
+<p>এবার আপনি আপনার রুট ডিরেক্টরিতে যান, এবং নিচের গিট কমান্ডটির মাধ্যমে হোমস্টিডের গিট রিপোজিটরিটি ক্লোন করুন। আপনার মেশিনে যদি গিট ইনস্টল করা না থাকে, এখনই করে নিন।</p>
+<pre><code>cd ~
+git clone https://github.com/laravel/homestead.git Homestead</code></pre>
+<p>এরপর আপনি হোমস্টিড ডিরেক্টরিতে প্রবেশ করুন, নিচের কমান্ডটি দিন-</p>
+<pre><code>cd ~/Homestead
+bash init.sh</code></pre>
+<p>এই কমান্ডটির ফলে আপনার রুট ডিরেক্টরিতে <code>.homestead/Homestead.yaml</code> নামে একটি ফাইল তৈরি হবে। এই ফাইলটি আপনার হোমস্টিডের কনফিগারেশন ফাইল। এটি দেখতে অনেকটা এরকম-</p>
+<pre><code>ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/Code
+      to: /home/vagrant/Code
+
+sites:
+    - map: homestead.app
+      to: /home/vagrant/Code/homestead/public
+
+databases:
+    - homestead
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp</code></pre>
+<p>এই ফাইলের প্রথমেই আছে আইপি, মেমরি, সিপিইউ এবং প্রোভাইডার। আইপি হচ্ছে যে আইপি থেকে আপনি আপনার ভ্যাগরেন্ট বক্স এক্সেস করতে পারবেন, মেমরি হচ্ছে ভ্যাগরেন্ট বক্সে আপনি কি পরিমান মেমরি এলোকেট করতে চান, সিপিইউ হচ্ছে ভ্যাগরেন্ট বক্সের সিপিইউ কোরের সংখ্যা। এরপরের অথোরাইজ এবং কি হচ্ছে আপনার এসএসএইচ কি যার মাধ্যমে আপনি ভ্যাগরেন্ট বক্সে ঢুকতে পারবেন। আপনার যদি গিটহাবে কোন একাউন্ট থেকে থাকে তাহলে আপনি খুব সহজেই আপনার পিসিতে এসএসএইচ কি তৈরি করে নিতে পারেন। এটি সম্পর্কে বিস্তারিত জানতে <a href="https://help.github.com/articles/generating-an-ssh-key">এখানে</a> দেখুন।</p>
+<p>এরপরই আছে ফোল্ডার অপশন। এর প্রথমে আছে map কি, যা আপনার পিসির একটি ফোল্ডারকে নির্দেশ করবে, আর to কি আপনার ভ্যাগরেন্ট বক্সের একটি ফোল্ডারকে নির্দেশ করবে। এই দুইটি ফোল্ডার একটি অপরটির সাথে সিনক্রোনাইজেশনে থাকবে। যার ফলে আপনি আপনার লোকাল মেশিনে ফাইল চেঞ্জ করলে আপনার ভার্চুয়াল বক্সেও ফাইলটি চেঞ্জ হয়ে যাবে। আমরা এক্ষেত্রে ডিফল্ট সেটিংসই ব্যবহার করবো। এরপর আমাদের পিসির রুটে Code নামে একটি ফোল্ডার তৈরি করলেই চলবে।</p>
+<p>এরপরই আছে sites অপশন, যেটা আপনার প্রজেক্টকে নির্দেশ করবে। এর ম্যাপ কি আপনার কাস্টম ডোমেইন, এবং টু কি আপনার প্রজেক্টের পাবলিক পাথ নির্দেশ করবে। বাই ডিফল্ট homestead.app নামে একটি ডোমেইন ম্যাপ করা থাকে। এরপর আছে ডেটাবেজেস কি, যেটিতে উল্লেখ করা প্রত্যেকটি কি-এর নামে একটি করে ডেটাবেজ তৈরি অটোমেটিক্যালি তৈরি হবে।</p>
+<p>এর নিচে আছে ব্ল্যাকফায়ার এবং পোর্টস কি, যা ডিফল্টভাবে কমেন্ট আউট করা থাকবে। আপনি যদি ব্ল্যাকফায়ার প্রোফাইলার ব্যবহার করেন তাহলে সেটি আনকমেন্ট করবেন এবং যদি ডিফল্ট পোর্ট ওভাররাই করতে চান তাহলে পোর্টস কি আনকমেন্ট করবেন।</p>
+<p>আমাদের ভ্যাগরেন্ট সেটআপের কাজ শেষ। এবার চলুন ভ্যাগরান্ট চালু করে দেখি। এর জন্য যে ফোল্ডারে আমরা হোমস্টিডের গিট রিপোজিটরি ক্লোন করেছি সেটিতে ঢুকতে হবে। তারপর নিচের কমান্ডটি দিতে হবে-</p>
+<pre><code>cd ~/Homestead
+vagrant up</code></pre>
+<p>এই কমান্ডের মাধ্যমে আপনার ভ্যাগরেন্ট সার্ভার চালু হবে। এবার ভ্যাগরেন্ট মেশিনে লগ-ইন করতে নিচের কমান্ডটি লিখুন-</p>
+<pre><code>vagrant ssh</code></pre>
+<p>এবার আপনি আপনার ভ্যাগরেন্ট মেশিনে আপনার অ্যাপ্লিকেশন ডেভেলপমেন্ট চালিয়ে যেতে পারবেন।</p>
+<p>চলুন, প্রথমেই আমরা নিচের কমান্ডটির মাধ্যমে লারাভেল ইনস্টল দিই-</p>
+<pre><code>composer create-project laravel/laravel homestead --prefer-dist</code></pre>
+<p>এবার আপনার এই টার্মিনাল চালু থাকা অবস্থায় আরেকটি টার্মিনাল উইন্ডোতে আপনার হোস্ট ফাইলটি ওপেন করুন। লিনাক্স বা ম্যাক অপারেটিং সিস্টেমে এটি থাকে <code>/etc/hosts</code> নামক ফাইলে। সেটিতে নিচের লাইনটি যুক্ত করুন-</p>
+<pre><code>192.168.10.10   homestead.app</code></pre>
+<p>এবার আপনার ব্রাউজারে <code>homestead.app</code> ইউআরএলে ঢুকলে আপনি লারাভেলের ডিফল্ট ওয়েলকাম পেজটি দেখতে পাবেন।</p>
+<p>যদি কখনো আপনার আরো কোন প্রজেক্ট যুক্ত করার প্রয়োজন পড়ে, তাহলে আপনি <code>.homestead/Homestead.yaml</code> ফাইলে এডিট করে সাইটস সেকশনে আরেকটি কি-ভ্যালু পেয়ার যুক্ত করুন এবং আপনার হোস্ট ফাইলে ম্যাপিং ইউআরএলটি একই আইপিতে ম্যাপ করুন। এবার আপনার ক্লোন করা হোমস্টিড ফোল্ডারে ঢুকে নিচের কমান্ডটি দিন-</p>
+<pre><code>vagrant provision</code></pre>
+<p>আশা করি আপনার হোমস্টিড সেটআপ করতে কোন সমস্যা হবে না। যদি এরপরও কোন সমস্যায় পড়েন তাহলে <a href="https://laravel.com/docs/5.2/homestead">লারাভেলের ডকুমেন্টেশনে</a> দেখতে পারেন অথবা নিচের কমেন্টে আমাকে জানাতে পারেন।</p>
+    <hr>
+    <p class="back-link">
+        Want to reply? Use my twitter (<a href="https://twitter.com/to_milon">@to_milon</a>) handle. <br>
+        <a href="/">Go to Home</a>
+    </p>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+        </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://web.facebook.com/milon521" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111999767-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111999767-1');
+</script>
+            </body>
+</html>
