@@ -206,3 +206,14 @@ iframe {
     margin: 0 8px 5px 0;
     border: 1px solid grey;
 }
+
+.avatar {
+    float: left;
+    border-radius: 50%;
+    border: 2px solid grey;
+    max-width: 40%;
+    display: block;
+    vertical-align: middle;
+    height: auto;
+    margin: 0 15px 10px 0;
+}
