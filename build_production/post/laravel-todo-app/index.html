@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Nuruzzaman Milon</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="/">Nuruzzaman Milon</a>
+            </h1>
+            <h2>Programmer, Auther, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>লারাভেল সিম্পল টু-ডু লিস্ট</h2>
+    <p>07 June, 2015</p>
+
+    <p>আমার বইটা প্রকাশিত হবার পর থেকেই অনেকের কাছ থেকেই একটা অনুরোধ পেয়েছি। সেটা হচ্ছে আমার বইয়ে একটা ডেমো অ্যাপের দরকার ছিল, কিন্তু সেটা দেয়া হয় নি। তাই সবার অনুরোধ রাখতে আমি একটা সিম্পল টু-ডু অ্যাপ তৈরি করেছি। এই অ্যাপটি তৈরি করতে আমি ব্যবহার করেছি লারাভেল ফ্রেমওয়ার্ক ৫.১ ভার্সন এবং মাইসিক্যুয়েল।</p>
+<p>এই অ্যাপটির কোড পাবেন <a href="https://github.com/milon/laravel-todo">গিটহাবে</a>। এখানে অথেনটিকেশন, সিম্পল CRUD(Create, Read, Update, Delete) অপারেশন, রিসোর্সফুল রাউটিং, ফরম মডেল বাইন্ডিং, ফরম রিকোয়েস্ট, ফ্ল্যাশ ম্যাসেজ, পেজিনেশন সহ কিভাবে আপনি আপনার কোড গুছিয়ে লিখতে পারবেন, সে ব্যাপারে আলোকপাত করা হয়েছে।</p>
+<p><img src="/images/posts/todo-01.png" alt="Todo App - Landing Page" /></p>
+<p><img src="/images/posts/todo-02.png" alt="Todo App - Sign In Page" /></p>
+<p><img src="/images/posts/todo-03.png" alt="Todo App - Registration Page" /></p>
+<p><img src="/images/posts/todo-04.png" alt="Todo App - Todo List Page" /></p>
+<p><img src="/images/posts/todo-05.png" alt="Todo App - Create New Todo Page" /></p>
+<p><img src="/images/posts/todo-06.png" alt="Todo App - User Profile Page" /></p>
+<p>অ্যাপটি আপনার পিসিতে রান করতে হলে প্রথমেই গিটহাবে রিপোজিটরিটি ফর্ক করুন, তারপর ক্লোন করতে নিচের কমান্ডটি দিন-</p>
+<pre><code>git clone https://github.com/milon521/laravel-todo.git</code></pre>
+<p>এরপর ঐ ডিরেক্টরিতে প্রবেশ করুন নিচের কমান্ডটির মাধ্যমে-</p>
+<pre><code>cd laravel-todo</code></pre>
+<p>এরপর .env ফাইলটি তৈরি করুন নিচের কমান্ডটির মাধ্যমে-</p>
+<pre><code>cp .env.example .env</code></pre>
+<p>এবার .env ফাইলে আপনার প্রয়োজনীয় পরিবর্তন করে নিন। শুধুমাত্র DB_USERNAME এবং DB_PASSWORD এই দুইটি ফিল্ড পরিবর্তন করলেই হয়ে যাওয়ার কথা। তারপর আপনি নতুন একটি ডেটাবেজ তৈরি করুন todos নামে।</p>
+<p>এরপর আপনি আপনার প্রয়োজনীয় ডিপেন্ডেন্সি ডাউনলোড করুন নিচের কমান্ডটির মাধ্যমে-</p>
+<pre><code>composer update</code></pre>
+<p>এবার আপনি নিচের কমান্ডটির মাধ্যমে আপনার ডেটাবেজ মাইগ্রেশন করে নিন-</p>
+<pre><code>php artisan migrate</code></pre>
+<p>সবশেষে আপনি storage ফোল্ডারের রাইট পারমিশন দেন এভাবে-</p>
+<pre><code>sudo chmod 777 -R /storage</code></pre>
+<p>ব্যাস হয়ে গেছে। এবার প্রজেক্টটি রান করতে টার্মিনালে লিখুন-</p>
+<pre><code>php artisan serve</code></pre>
+<p>এবার আপনি আপনার ব্রাউজারে <code>‌http://localhost:8000‌</code> ইউআরএলে গেলে প্রজেক্টটি দেখতে পারবেন।</p>
+<p>আপনারা যদি চান তাহলে আমি কিভাবে প্রজেক্টি তৈরি করলাম সেটি স্টেপ বাই স্টেপ লিখবো। সেক্ষেত্রে আমাকে আপনাদের ব্যাপারটি জানাতে হবে।</p>
+    <hr>
+    <p class="back-link">
+        Want to reply? Use my twitter (<a href="https://twitter.com/to_milon">@to_milon</a>) handle. <br>
+        <a href="/">Go to Home</a>
+    </p>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+        </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://web.facebook.com/milon521" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111999767-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111999767-1');
+</script>
+            </body>
+</html>
