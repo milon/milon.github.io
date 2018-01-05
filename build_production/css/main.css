@@ -35,6 +35,10 @@ p {
   margin: 0.5em 0 0.8em 0;
 }
 
+p strong {
+    font-weight: bold;
+}
+
 section#header {
   margin: 40px 0;
 }
