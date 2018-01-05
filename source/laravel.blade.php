@@ -6,10 +6,10 @@
     <div>
         <p></p>
         <p>
-            I heard a question very often, "Brother, I have learned PHP, but writing PHP inside HTML is not the pleasant thing to me." Or, "Which PHP framework should I learn?" In these type of scnerio, my general answer is Laravel. Now, the question is why Laravel? You can answer it in many ways, even I have a <a href="/post/why-you-should-consider-laravel-as-your-go-to-framework-of-choice">blogspot</a> on that. But the short answer is Laravel uses the cutting age techniques and best practices of PHP. Though these bit of information is true for some other PHP frameworks as well, but my personal preference is Laravel, specially for it's beautiful syntax.
+            I heard a question very often, "Brother, I have learned PHP, but writing PHP inside HTML is not the pleasant thing to me." Or, "Which PHP framework should I learn?" In these type of scenario, my general answer is Laravel. Now, the question is why Laravel? You can answer it in many ways, even I have a <a href="/post/why-you-should-consider-laravel-as-your-go-to-framework-of-choice">blogpost</a> on that. But the short answer is Laravel uses the cutting age techniques and best practices of PHP. Though this bit of information is true for some other PHP frameworks as well, my personal preference is Laravel, especially for its beautiful syntax.
         </p>
         <p>
-            Now the question is why I decided to writing a book? I heard a complain so many times, that I am really sick of it. And it is, we don't have good resource on Bengali for Laravel. All the resources are in English. I have taken a lots of help from the Bangladeshi community, but didn't return them anything significant. This actually encourages me to write a book on Laravel.
+            Now the question is why I decided to write a book? I heard a complain so many times, that I am really sick of it. And it is, we don't have a good resource on Bengali for Laravel. All the resources are in English. I have taken a lot of help from the Bangladeshi community but didn't return them anything significant. This actually encourages me to write a book on Laravel.
         </p>
         <hr>
         <p>
