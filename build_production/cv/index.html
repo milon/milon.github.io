@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Nuruzzaman_Milon_cv</title>
-    <link rel="shortcut icon" href="/favicon.png"/>
+    <link rel="shortcut icon" href="/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/css/Font-Awesome/css/font-awesome.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
