@@ -112,7 +112,7 @@ section#paginator {
 section#paginator a, section#paginator span {
     color: black;
     float: left;
-    padding: 5px 10px;
+    padding: 5px;
     margin: 0 4px;
     text-decoration: none;
 }
