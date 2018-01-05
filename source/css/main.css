@@ -216,3 +216,9 @@ iframe {
     height: auto;
     margin: 0 15px 10px 0;
 }
+
+blockquote {
+    font-style: italic;
+    margin: 0 1em;
+    font-size: 0.8em;
+}
