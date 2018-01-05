@@ -91,6 +91,7 @@ section.summary article {
 section h2 {
   font-size: 1.3em;
   font-family: 'Lobster', cursive;
+  font-weight: bold;
 }
 
 section h2 a {
