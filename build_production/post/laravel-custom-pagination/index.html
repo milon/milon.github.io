@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Nuruzzaman Milon</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="/">Nuruzzaman Milon</a>
+            </h1>
+            <h2>Programmer, Auther, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>লারাভেল ৫.১-এ কাস্টম পেজিনেশন</h2>
+    <p>05 July, 2015</p>
+
+    <p>লারাভেলের ইলোকোয়েন্ট বা কোয়েরি বিল্ডার ব্যবহার করে আপনি খুব সহজেই পেজিনেশন তৈরি করতে পারেন। নিচে উদাহরন দেখুন-</p>
+<pre><code>public function show()
+{
+    $people = People::paginate(5);
+    return view('poeple.list', compact('people'));
+}</code></pre>
+<p>আর পেজিনেশন লিঙ্কগুলো ভিউ পেজে শো করতে হয় এভাবে-</p>
+<pre><code>{!! $people-&gt;render() !!}</code></pre>
+<p>কিন্তু আমরা সবসময় ইলোকোয়েন্ট বা কোয়েরি বিল্ডার ব্যবহার নাও করতে পারি। সেক্ষেত্রে পেজিনেশনের দরকার হলে সেটি করতে হবে এভাবে-</p>
+<pre><code>public function index()
+{
+    $people = collect([
+        [
+            'name'    =&gt; 'Milon',
+            'website' =&gt; 'http://milon.im'
+        ],
+        [
+            'name'    =&gt; 'Sadek',
+            'website' =&gt; 'http://sadek.im'
+        ],
+        //many other items...
+        [
+            'name'    =&gt; 'Ashik',
+            'website' =&gt; 'http://ashik.im'
+        ]
+    ]);
+
+    $perPage     = 5;
+    $currentPage = \Input::get('page') ?: 1;
+    $pagedData   = $people-&gt;slice($currentPage * $perPage, $perPage)-&gt;all();
+    $people  = new \Illuminate\Pagination\LengthAwarePaginator($pagedData, count($people), $perPage, $currentPage);
+
+    return view('people.list', compact('people'));
+}</code></pre>
+<p>এখানে প্রথমে একটা বড় এ্যারে কে ‌‌collect() হেল্পার মেথডের সাহায্যে লারাভেলের কালেকশন ক্লাসের অবজেক্টে পরিনত করা হয়েছে। এরপর $perPage এ ঠিক করা হয়েছে প্রতি পেজে কয়টা ডেটা শো করবে। এরপর কারেন্ট পেজ কোনটা সেটা নির্ধারন করা হয়েছে ইউআরএলের GET প্যারামিটার থেকে। যদি কোন গেট প্যারামিটার না থাকে তবে আমরা ডিফল্টভাবে $currentPage = 1 ধরে নেই।</p>
+<p>এরপর ডেটাকে স্লাইস করে নিতে হয়। এই স্লাইস মেথড কিভাবে কাজ করে সেটা লারাভেলের <a href="http://laravel.com/docs/5.1/collections#method-slice">কালেকশনের ডকুমেন্টেশন</a> দেখে নিতে পারেন। পরবর্তীতে এই ডেটাকে LengthAwarePaginator ক্লাসের ইন্সট্যান্স বানাতে হয়। LengthAwarePaginator ব্যবহার না করে আপনি চাইলে Paginator ক্লাসও ব্যবহার করতে পারেন। এ দুটির মধ্যে পার্থক্য হচ্ছে LengthAwarePaginator ক্লাসটিতে আপনার কালেকশনে মোট কয়টি ডেটা আছে সেটা পাঠাতে হয় কিন্তু Paginator এ সেটা পাঠাতে হয় না।</p>
+<p>বাকি ভিউ আপনি নিচের মত করে রেন্ডার করতে পারেন-</p>
+<pre><code>&lt;div class="container"&gt;
+    &lt;table class="table table-bordered"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Website&lt;/th&gt;
+        &lt;/tr&gt;
+
+        @foreach($collection as $data)
+            &lt;tr&gt;
+                &lt;td&gt;{{ $data['name'] }}&lt;/td&gt;
+                &lt;td&gt;{{ $data['website'] }}&lt;/td&gt;
+            &lt;/tr&gt;
+        @endforeach
+    &lt;/table&gt;
+
+    {!! $collection-&gt;render() !!}
+&lt;/div&gt;</code></pre>
+<p>হ্যাপি কোডিং...</p>
+    <hr>
+    <p class="back-link">
+        Want to reply? Use my twitter (<a href="https://twitter.com/to_milon">@to_milon</a>) handle. <br>
+        <a href="/">Go to Home</a>
+    </p>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+        </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://web.facebook.com/milon521" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111999767-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111999767-1');
+</script>
+            </body>
+</html>
