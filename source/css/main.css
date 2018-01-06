@@ -1,4 +1,6 @@
-@import 'https://fonts.googleapis.com/css?family=Lobster|Quicksand|Cutive+Mono';
+@import 'https://fonts.googleapis.com/css?family=Lobster|Quicksand';
+@import 'https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css';
+
 
 body {
   width: 600px;
@@ -51,9 +53,10 @@ section#header h1 {
 }
 
 section#header h2 {
-  font-family: 'Cutive Mono', monospace;
+  font-family: 'Fira Code', monospace;
   font-size: 1em;
   text-align: center;
+  font-weight: normal;
 }
 
 section#header p {
@@ -167,7 +170,7 @@ img {
 }
 
 code {
-    font-family: 'Cutive Mono', monospace;
+    font-family: 'Fira Code', monospace;
 }
 
 ul {
