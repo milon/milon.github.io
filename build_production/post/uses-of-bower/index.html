@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Nuruzzaman Milon</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="/">Nuruzzaman Milon</a>
+            </h1>
+            <h2>Programmer, Auther, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>bower এর ব্যবহার</h2>
+    <p>11 May, 2015</p>
+
+    <p>প্রথমেই একটা অভিজ্ঞতা শেয়ার করি। কিছুদিন আগে একটা প্রজেক্টে কাজ করার সময় দেখলাম আমি জেকুয়েরি ডেটাটেবিল প্লাগিনের যে ভার্সন ব্যবহার করেছিলাম তার একটা আপডেট ভার্সন রিলিজ পেয়েছে, যেখানে সর্টিং সুবিধা যুক্ত হয়েছে। আপডেট করার সময় মনে হলো যদি ক্লায়েন্ট সাইড ডিপেন্ডেন্সি ম্যানেজ করার জন্য কম্পোজারের মত কোন টুল থাকতো? সার্চ করতেই খোজ পেলাম বাওয়ারের।</p>
+<p>বাওয়ার টুইটারের তৈরি করা ক্লায়েন্ট সাইট ডিপেন্ডেন্সি ম্যানেজমেন্ট টুল। এটি আসলে একটি নোড প্যাকেজ। সুতরাং বাওয়ার ব্যবহার করতে হলে আপনার পিসিতে অবশ্যই নোডজেএস ইনস্টল থাকা লাগবে। নোড ইনস্টল করলে এর সাথে সাথে এর প্যাকেজ ম্যানেজার <code>npm</code>(নোড প্যাকেজ ম্যানেজার)ও ইনস্টল হয়। বাওয়ার ইনস্টল করার জন্য আপনাকে নিচের কমান্ডটি টার্মিনালে লিখতে হবে-</p>
+<pre><code>npm install -g bower</code></pre>
+<p>ইনস্টল হয়ে গেলে এটি চেক করার জন্য টার্মিনালে লিখুন-</p>
+<pre><code>bower -v</code></pre>
+<p>এবার আপনি বাওয়ার ব্যবহার করতে পারবেন, ঠিক যেভাবে npm বা composer ব্যবহার করেন। ধরুন আপনি জেকুয়েরি ইনস্টল করতে চান। যেমন-</p>
+<pre><code>bower install jquery</code></pre>
+<p>এবার ধরুন আপনি বুটস্ট্র্যাপ ইনস্টল করতে চান। এরজন্য আপনাকে লিখতে হবে-</p>
+<pre><code>bower install bootstrap</code></pre>
+<p>এখন বুটস্ট্র্যাপ যেহেতু জেকুয়েরির উপর নির্ভরশীল, তাই বুটস্ট্র্যাপ ইনস্টল করলে এর যত ডিপেন্ডেন্সি আছে সেগুলিও ইনস্টল হয়ে যাবে।</p>
+<p>এখন ধরুন আপনি যে প্যাকেজগুলি ইনস্টল করেছেন, সেগুলির লিস্ট একটা ফাইলে সেভ করে রাখতে চান। এটা আপনি করতে পারবেন <code>bower.json</code> নামের ফাইলে। এই ফাইলটি তৈরি করতে লিখুন-</p>
+<pre><code>bower init</code></pre>
+<p>এখন আপনি যে প্যাকেজটি ইনস্টল করেছেন, সেটি যদি বাওয়ার ফাইলো সেভ করে রাখতে চান, তাহলে লিখুন-</p>
+<pre><code>bower install jquery --save</code></pre>
+<p>এই --save এর মাধ্যমে আপনি ডিপেন্ডেন্সি হিসেবে যোগ করতে পারবেন। আপনি চাইলে ডেভেলপার ডিপেন্ডেন্সিতেও যুক্ত করতে পারবেন এভাবে-</p>
+<pre><code>bower install jquery --save-dev</code></pre>
+<p>বাই ডিফল্ট বাওয়ার তার সমস্ত প্যাকেজ ইনস্টল করে bower_components নামে ফোল্ডারে। আপনি চাইলে এটি পরিবর্তন করতে পারবেন .bowerrc ফাইলের মাধ্যমে। এটি একটি জেসন ফাইল, এটি দেখতে হবে অনেকটা এরকম-</p>
+<pre><code>{
+  "directory": "app/components/",
+  "analytics": false,
+  "timeout": 120000,
+  "registry": {
+    "search": [
+      "http://localhost:8000",
+      "https://bower.herokuapp.com"
+    ]
+  }
+}</code></pre>
+<p>বাওয়ার এপিআই সম্পর্কে বিস্তারিত জানার জন্য আপনি <a href="http://bower.io">http://bower.io</a> সাইটটি ভিজিট করতে পারবেন।</p>
+    <hr>
+    <p class="back-link">
+        Want to reply? Use my twitter (<a href="https://twitter.com/to_milon">@to_milon</a>) handle. <br>
+        <a href="/">Go to Home</a>
+    </p>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+        </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://web.facebook.com/milon521" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111999767-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111999767-1');
+</script>
+            </body>
+</html>

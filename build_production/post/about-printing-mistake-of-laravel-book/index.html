@@ -26,46 +26,36 @@
         </section>
 
         <section>
-                <div>
-                    <section class="summary">
-                <h2>
-                    <a href="/post/story-behind-my-book">Story behind my book</a>
-                </h2>
-                <time>04 June, 2015</time>
-                <article>
-                    <p>The underlying story behind my first ever published book.</p>
-                </article>
-            </section>
-        
-        <section id="paginator">
-            <a href="/">❮❮</a>
-        <a href="/4">❮</a>
-    
-            <a href="/"
-        class="">
-            1
-        </a>
-            <a href="/2"
-        class="">
-            2
-        </a>
-            <a href="/3"
-        class="">
-            3
-        </a>
-            <a href="/4"
-        class="">
-            4
-        </a>
-            <a href="/5"
-        class="selected">
-            5
-        </a>
-    
-            <span>❯</span>
-        <span>❯❯</span>
-    </section>
-    </div>
+                <h2>লারাভেল বইয়ের প্রিন্টিং মিসটেক প্রসঙ্গে</h2>
+    <p>29 May, 2015</p>
+
+    <p>আমার প্রকাশিত প্রথম বই <strong>লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক</strong>-এ অনিচ্ছাসত্ত্বেও একটা প্রিন্টিং মিসটেক হয়ে গেছে। বইয়ের প্রথম অধ্যায়ের &quot;কনস্ট্রাক্টর ইনজেকশন&quot; অংশের(পৃষ্ঠা নাম্বার ১৭) কোডে কয়েকটি লাইন বাদ পড়ে গেছে। পাঠকের যাতে বুঝতে অসুবিধা না হয় সেজন্য সেই অংশটি আমি এখানে দিয়ে দিচ্ছি।</p>
+<pre><code>use Book;
+use BookShelf;
+
+class Library{
+
+    $protected $book;
+    $protected $bookShelf;
+
+    public function __construct(Book $book, BookShelf $bookShelf){
+        $this-&gt;book = $book;
+        $this-&gt;bookShelf = $bookShelf;
+    }
+}</code></pre>
+<p>এ অনাকাঙ্খিত ভুলের জন্য আমি পাঠকের নিকট ক্ষমাপ্রার্থী। পরবর্তী সংস্করণে এ ভুল শুধরে দেয়া হবে।</p>
+    <hr>
+    <p class="back-link">
+        Want to reply? Use my twitter (<a href="https://twitter.com/to_milon">@to_milon</a>) handle. <br>
+        <a href="/">Go to Home</a>
+    </p>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
         </section>
 
         <section id="footer">
