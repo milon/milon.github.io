@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Nuruzzaman Milon</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="/">Nuruzzaman Milon</a>
+            </h1>
+            <h2>Programmer, Auther, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>সহজে পাইথন শেখা-০৪</h2>
+    <p>03 July, 2012</p>
+
+    <p>আজকে আমরা দেখবো পাইথনে কিভাবে হিসাব-নিকাশ করতে হয়। হিসাবের কথা আসলেই প্রথমে আমাদের মনে আসে যোগ-বিয়োগের কথা। পাইথনে যোগ, বিয়োগ, গুন ভাগ করা খুবই সহজ।</p>
+<p>প্রথমেই আসে যোগের কথা। পাইথনে দুইটা সংখ্যা যোগ করতে হলে লিখতে হয়-</p>
+<pre><code>&gt;&gt;&gt;2+8
+10
+&gt;&gt;&gt;5+27
+32</code></pre>
+<p>একইভাবে তিন, চার বা পাঁচটা সংখ্যাও যোগ করা যায়।</p>
+<pre><code>&gt;&gt;&gt;2+9+7
+18</code></pre>
+<p>বিয়োগ গুন বা ভাগও একই ভাবে করা যায়। যেমন-</p>
+<pre><code>&gt;&gt;&gt;5-3
+2
+&gt;&gt;&gt;5*4
+20
+&gt;&gt;&gt;25/5
+5</code></pre>
+<p>পাইথনে যোগ, বিয়োগ, গুন বা ভাগ করার জন্য যেসব নোটেশন ব্যবহার করা হয় তা হল-<br>
+যোগঃ <code>+</code><br>
+বিয়োগঃ <code>–</code><br>
+গুনঃ <code>*</code><br>
+ভাগঃ <code>/</code></p>
+<p>এখানে ভাগ করার সময় একটা জিনিস লক্ষ্য করি-</p>
+<pre><code>&gt;&gt;&gt;10/3
+3
+&gt;&gt;&gt;11/2
+5</code></pre>
+<p>যদিও উপরের দুইটি ক্ষেত্রে আসা উচিৎ ছিল-</p>
+<pre><code>3.33333333
+5.5</code></pre>
+<p>আসলে শুধু পাইথনে না, যে কোন প্রোগ্রামিং ল্যাংগুয়েজেই ভাগ করার সময় এভাবে নিঃশেষে বিভাগ্য অংশটুকু রেখে বাকি অংশটা নিয়ে কাজ করা হয়। আমরা যদি আসল উত্তরটা পেতে চাই তাহলে আমাদের যেটা করতে হবে সেটাকে প্রোগ্রামিং ল্যাংগুয়েজের ভাষায় বলা হয় কাস্টিং। অন্যান্য ল্যাংগুরয়েজের চেয়ে এ জায়গাতেও পাইথন অনেক সহজ। যেমন-</p>
+<pre><code>&gt;&gt;&gt;10.0/2
+3.33333333
+&gt;&gt;&gt;10/3.0
+3.33333333</code></pre>
+<p>যেখানে C, C++ বা Java তে কাস্টিং করার নিয়ম-</p>
+<pre><code>(float)10/3     or
+(double)10/3</code></pre>
+<p>এবার আর একটা মজার জিনিস শিখি। আমাদের যে সবসময় ভাগফলই লাগবে তা কিন্তু না। আমাদের অনেকসময় ভাগশেষও বের করার দরকার পড়তে পারে। এর জন্য আমরা যে অপারেটর ব্যবহার করবো সেটাকে বলে মডুলাস। যেমন-</p>
+<pre><code>&gt;&gt;&gt;10%3
+1
+&gt;&gt;&gt;17%5
+2</code></pre>
+<p>এটা প্রকাশ করা হয় % চিহ্ন দ্বারা।</p>
+<p>এবার আমরা দেখবো, কিভাবে এক্সপোনেনশিয়াল বা ঘাত বের করতে হয়। যেমন ২^৪ মান বের করবো। এর জন্য লিখতে হবে-</p>
+<pre><code>&gt;&gt;&gt;2**3
+8
+&gt;&gt;&gt;4**5
+1024</code></pre>
+<p>এক্সপোনেনশিয়াল বের করার জন্য আমরা ব্যবহার করবো জোড়া এস্টেরিক্স(<code>**</code>)।</p>
+<p>আজকে আমরা যতগুলো অপারেটর দেখলাম তার সবই বাইনারী অপারেটর, অর্থাৎ এগুলো নিয়ে কাজ করতে চাইলে কমপক্ষে দুইটা অপারেন্ড লাগবে। যেমন <code>+</code> বা <code>*</code> অপারেটর ব্যবহার করতে হলে কমপক্ষে দুইটা সংখ্যা লাগবে।</p>
+<p>এবার আসবে অপারেটরের অর্ডার। আমরা ছোট্ট একটা উদাহরন দেখি-</p>
+<pre><code>&gt;&gt;&gt;5+30*20
+605
+&gt;&gt;&gt;(5+30)*20
+700</code></pre>
+<p>অর্থাৎ একই স্টেটমেন্ট শুধুমাত্র ব্র্যাকেটের কারনে দুই ধরনের ফলাফল দিচ্ছে। এর কারন সহজ। প্রত্যেকটা অপারেটরেরই কাজ করার একটা ক্রম থাকে। যেমন আমরা যদি একটা স্টেটমেন্ট লিখি-</p>
+<pre><code>&gt;&gt;&gt;2+5-3*7/4%2**4
+2</code></pre>
+<p>এক্ষেত্রে প্রথমে কাজ করেছে এক্সপোনেনশিয়াল(<code>**</code>), তারপর ভাগ(<code>/</code>), তারপর গুন(<code>*</code>), এরপর মডুলাস(<code>%</code>) এবং শেষে যোগ(<code>+</code>) এরপর সবশেষে বিয়োগ(<code>-</code>)। উপরের ক্রমটাই হচ্ছে অপারেটরগুলোর ওয়ার্কিং অর্ডার। বাই ডিফল্ট অপারেটরগুলো এই ক্রম অনুসারেই কাজ করে। আমরা চাইলে প্রয়োজনমত ব্র্যাকেট ব্যবহার করে আমাদের ইচ্ছামত হিসাব করতে পারি।</p>
+    <hr>
+    <p class="back-link">
+        Want to reply? Use my twitter (<a href="https://twitter.com/to_milon">@to_milon</a>) handle. <br>
+        <a href="/">Go to Home</a>
+    </p>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+        </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://web.facebook.com/milon521" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111999767-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111999767-1');
+</script>
+            </body>
+</html>

@@ -171,6 +171,8 @@ img {
 
 code {
     font-family: 'Fira Code', monospace;
+    line-height: 1.5;
+    font-size: 0.9em;
 }
 
 ul {
@@ -229,4 +231,37 @@ blockquote {
     font-style: italic;
     margin: 0 1em;
     font-size: 0.8em;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    font-size: 0.9em;
+    width: 100%;
+    margin-bottom: 1.1em;
+}
+
+tr, td, th {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1;
+    font-family: inherit;
+    text-align: left;
+}
+
+table tbody > tr:nth-child(odd) > td {
+    background: #f9f9f9;
+}
+
+td, th {
+    padding: 2%;
+    margin: 0;
+    overflow: visible;
+    line-height: 120%;
+    border-bottom: 1px solid #DDD;
 }
