@@ -1,8 +1,8 @@
 ---
 extends: _layouts.post
-title: ডাটা স্ট্রাকচারঃ Directed Graph
-date: '2011-05-24'
-gist: How to implement directed graph.
+title: ডাটা স্ট্রাকচারঃ Undirected Graph
+date: '2011-05-23'
+gist: How to implement undirected graph.
 section: content
 ---
 
