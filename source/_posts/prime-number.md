@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 title: মৌলিক সংখ্যা (Prime number)
-date: '2011-05-24'
+date: '2011-05-25'
 gist: Implement and optimize prime number generation algorithm.
 section: content
 ---
