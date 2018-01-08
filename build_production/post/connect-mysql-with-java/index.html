@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Nuruzzaman Milon</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="/">Nuruzzaman Milon</a>
+            </h1>
+            <h2>Programmer, Auther, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>জাভার সাথে MySQL এর কানেকশন</h2>
+    <p>21 May, 2011</p>
+
+    <p>জাভা বর্তমান পৃথিবীর অত্যন্ত জনপ্রিয় একটা প্রোগ্রামিং ভাষা। যে কোন ধরনের অ্যাপ্লিকেশন ডেভেলপ করতে জাভার কোন জুড়ি নেই। আর বর্তমানের অধিকাংশ সফটয়্যারেই ডাটাবেজ ব্যবহার করা হয়। জাভার সাথে ডাটাবেজের কিভাবে সংযোগ দিতে হয় তা এই পোষ্টের মাধ্যমে দেখান হল।</p>
+<p>ডাটাবেজে বিভিন্ন ধরনের অপারেশন চালানোর জন্য জাভার Statement class(কমেন্টের মধ্যে) এবং অত্যাধুনিক PreparedStatement class ব্যবহার করা হয়েছে।</p>
+<p>জাভাতে ডাটাবেজের কোন পরিবর্তন আনার জন্য executeUpdate() এবং কোন তথ্য অনুসন্ধানের জন্য executeQuery() মেথড ব্যবহার করা হয়।</p>
+<pre><code>//Mysql connection
+//Author: Milon
+
+//import java.sql.*;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class MysqlConnection{
+    private static String driver = "com.mysql.jdbc.Driver";
+    private static String connection = "jdbc:mysql://localhost:3306/milon"; //'milon' is your database name
+    private static String user = "root";                  //'root' is username
+    private static String password = "pass";        //'pass' is password
+
+    private static Connection con = null;
+    private static Statement state = null;
+    private static ResultSet result;
+    private static PreparedStatement pstate;
+
+    public static void main(String args[])/* throws Exception*/{
+        mysqlConnect();
+        insertData("s6s","milon","dgh","ghjgh");
+        deleteData("sd");
+        countRow("dictionary");
+        updateData("ss", "suru");
+        showData("surayea");
+        closeConnection();
+        }
+
+    public static void mysqlConnect(){
+        try{
+            Class.forName(driver);
+            con = DriverManager.getConnection(connection, user, password);
+            System.out.println("Successfully connected to database.");
+            }
+        catch(ClassNotFoundException e){
+            System.err.println("Couldn't load driver.");
+            }
+        catch(SQLException e){
+            System.err.println("Couldn't connect to database.");
+            }
+        }
+
+    public static void closeConnection(){
+        try{
+            if(!con.isClosed()){
+                con.close();
+                System.out.println("Database closed successfully.");
+                }
+            }
+        catch(NullPointerException e){
+            System.err.println("Couldn't load driver.");
+            }
+        catch(SQLException e){
+            System.err.println("Couldn't close database.");
+            }
+        }
+
+    public static void insertData(String word, String meaning, String synonyms, String antonyms){
+        try{
+            //using PreparedStatement
+            pstate = con.prepareStatement("insert into dictionary(word, meaning, synonyms, antonyms)"+
+                                            "values(?,?,?,?)");
+            pstate.setString(1, word);
+            pstate.setString(2, meaning);
+            pstate.setString(3, synonyms);
+            pstate.setString(4, antonyms);
+            int value = pstate.executeUpdate();
+
+            //using Statement
+            //state = con.createStatement();
+            //int value = state.executeUpdate("insert into dictionary(word, meaning, synonyms, antonyms)"+
+            //                      "values('"+word+"', '"+meaning+"', '"+synonyms+"', '"+antonyms+"')");
+
+            System.out.println("Query OK, 1 row insertedted.");
+            }
+        catch(SQLException e){
+            System.err.println("Query error.");
+            }
+        }
+
+    public static void deleteData(String word){
+        try{
+            //using PreparedStatement
+            pstate = con.prepareStatement("delete from dictionary where word = ?");
+            pstate.setString(1,"word");
+            int value = pstate.executeUpdate();
+
+            //using Statement
+            //state = con.createStatement();
+            //int value = state.executeUpdate("delete from dictionary where word='"+word+"'");
+
+            System.out.println("Query OK, 1 row deleted.");
+            }
+        catch(SQLException e){
+            System.err.println("Query error.");
+            }
+        }
+
+    public static void countRow(String table){
+        try{
+            result = state.executeQuery("SELECT COUNT(*) FROM "+table);
+            result.next();
+            int rowcount = result.getInt(1);
+            System.out.println("Number of rows: "+rowcount);
+            }
+        catch(SQLException e){
+            System.err.println("Query error.");
+            }
+        }
+
+    public static void showData(String word){
+        try{
+            state = con.createStatement();
+            result = state.executeQuery("select * from dictionary where word='"+word+"'");
+            while(result.next()){
+                String word1 = result.getString("word");
+                String mean = result.getString("meaning");
+                String syno = result.getString("synonyms");
+                String anto = result.getString("antonyms");
+                System.out.println("Word: "+word1+" Meaning: "+mean+" Synonyms: "+syno+" Antonyms: "+anto);
+                }
+            }
+        catch(SQLException e){
+            System.err.println("Query error.");
+            }
+        catch(NullPointerException e){
+            System.err.println("Element not found.");
+            }
+        }
+
+    public static void updateData(String word, String meaning){
+        try{
+            //using Statement
+            //state = con.createStatement();
+            //int value = state.executeUpdate("update dictionary set meaning='"+meaning+"' where word='"+word+"'");
+
+            //using PreparedStatement
+            pstate = con.prepareStatement("update dictionary set meaning= ? whrere word = ?");
+            pstate.setString(1, meaning);
+            pstate.setString(2, word);
+            pstate.executeUpdate();
+
+            System.out.println("Query OK, 1 row updated.");
+            }
+        catch(SQLException e){
+            System.err.println("Query error."+e.getMessage());
+            }
+        }
+
+    }</code></pre>
+    <hr>
+    <p class="back-link">
+        Want to reply? Use my twitter (<a href="https://twitter.com/to_milon">@to_milon</a>) handle. <br>
+        <a href="/">Go to Home</a>
+    </p>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+        </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://web.facebook.com/milon521" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111999767-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111999767-1');
+</script>
+            </body>
+</html>
