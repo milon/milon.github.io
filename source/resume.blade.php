@@ -222,7 +222,7 @@
                 </div>
                 <div class="details">
                     <header>
-                        <h3>Certified Laravel Developer</h3>
+                        <h3><a href="#">Certified Laravel Developer</a></h3>
                     </header>
                 </div>
             </section>

@@ -347,10 +347,13 @@
             <h1>Certifications</h1>
             <ul>
                 <li>
-                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Professional<sup>®</sup></a> <br>
+                    <a href="#">Certified Laravel Developer</a>
                 </li>
                 <li>
-                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Developer<sup>®</sup></a> <br>
+                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Professional<sup>®</sup></a>
+                </li>
+                <li>
+                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Developer<sup>®</sup></a>
                 </li>
                 <li>
                     <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified ScrumMaster<sup>®</sup></a>
@@ -378,7 +381,7 @@
         </div>
 
         <div class="print">
-            <br><br><br><br><br>
+            <br><br><br>
         </div>
 
         <div class="side-block" id="links">
