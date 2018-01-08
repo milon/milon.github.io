@@ -216,6 +216,18 @@
             </h2>
             <section class="blocks">
                 <div class="date">
+                    <span>2018</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>Certified Laravel Developer</h3>
+                    </header>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
                     <span>2017</span>
                 </div>
                 <div class="decorator">
