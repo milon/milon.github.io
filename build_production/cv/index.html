@@ -396,7 +396,7 @@
         </div>
         <div class="side-block" id="disclaimer">
             <a href="/pdf/Nuruzzaman_Milon_cv.pdf" download class="btn">Download</a>
-            <p>This CV is available online at <br> &mdash; <a href="http://milon.github.io/cv/">http://milon.github.io/cv/</a></p>
+            <p>This CV is available online at <br> &mdash; <a href="https://milon.im/cv/">https://milon.im/cv/</a></p>
         </div>
     </aside>
 
