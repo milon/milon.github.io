@@ -320,7 +320,7 @@
         </div>
         <div class="side-block" id="disclaimer">
             <a href="/pdf/Nuruzzaman_Milon_resume.pdf" download class="btn">Download</a>
-            <p>This resume is available online at <br> &mdash; <a href="https://milon.github.io/resume">https://milon.github.io/resume</a></p>
+            <p>This resume is available online at <br> &mdash; <a href="https://milon.im/resume">https://milon.im/resume</a></p>
         </div>
     </aside>
 
