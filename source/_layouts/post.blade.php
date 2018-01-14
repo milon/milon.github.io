@@ -7,8 +7,12 @@
     @yield('content')
 
     <hr>
+
+    @if($page->production)
+        @include('_layouts._disqus')
+    @endif
+
     <p class="back-link">
-        Want to reply? Use my twitter (<a href="{{ $page->social->twitter }}">@to_milon</a>) handle. <br>
         <a href="{{ $page->baseUrl }}">Go to Home</a>
     </p>
 
