@@ -10,7 +10,8 @@
             <a href="https://milon.im"><i class="fa fa-globe"></i> https://milon.im</a> <br>
         </p>
         <p>
-            <i class="fa fa-phone"></i> Shoot an email instead.
+            <i class="fa fa-phone"></i> Shoot an email instead. <br>
+            <i class="fa fa-twitter"></i> Want a quick response? Tweet me <a href="{{ $page->social->twitter }}">@to_milon</a>!
         </p>
 
         <p class="back-link">
