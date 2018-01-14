@@ -13,7 +13,7 @@
     @endif
 
     <p class="back-link">
-        <a href="{{ $page->baseUrl }}">Go to Home</a>
+        <a href="{{ $page->baseUrl }}">Back to Home</a>
     </p>
 
     @include('_layouts._highlightjs')
