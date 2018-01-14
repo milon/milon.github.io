@@ -85,7 +85,11 @@ section.summary {
     padding: 0 0 0 0;
     border-left: 0px solid black;
   }
+  .avatar {
+      max-width: 100% !important;
+  }
 }
+
 
 section.summary article {
   margin: 15px 0 0 0;
