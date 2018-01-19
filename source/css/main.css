@@ -1,6 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Lobster|Quicksand';
-@import 'https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css';
-
+@import 'https://fonts.googleapis.com/css?family=Lobster|Quicksand|Source+Code+Pro';
 
 body {
   width: 600px;
@@ -53,7 +51,7 @@ section#header h1 {
 }
 
 section#header h2 {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Source Code Pro', monospace;
   font-size: 1em;
   text-align: center;
   font-weight: normal;
@@ -175,7 +173,7 @@ img {
 }
 
 code {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Source Code Pro', monospace;
     line-height: 1.5;
     font-size: 0.9em;
 }
