@@ -30,51 +30,8 @@
     <p>24 May, 2011</p>
 
     <p>যে গ্রাফের প্রত্যেকটা এজের(edge) একটা Weight বা মান দেয়া থাকে তাকে Weighted Graph বলে। Weighted graph তৈরীর কৌশল হল-</p>
-<pre><code>//Weighted graph
-//Author: Milon
-
-#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-using namespace std;
-
-int main(){
-    int n;
-    cout&lt;&lt;"Enter the number of nodes: ";
-    cin&gt;&gt;n;
-    int list[n][n];
-
-    //Initialize
-    for(int i=0;i&lt;n;i++)
-        for(int j=0;j&lt;n;j++)
-            list[i][j]=false;
-    cout&lt;&lt;"Enter an edge(start_node&lt; &gt;end_node&lt; &gt;weight)"&lt;&lt;endl;
-    cout&lt;&lt;"Press (0 0 0) to end:"&lt;&lt;endl;
-
-    //Making graph
-    while(true){
-        int a,b,c;
-        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
-        if(a==0 &amp;&amp; b==0 &amp;&amp; c==0)
-            break;
-        if(a&gt;n || b&gt;n || a&lt;=0 || b&lt;=0)
-            cout&lt;&lt;"Invalid input"&lt;&lt;endl;
-        else{
-            list[a-1][b-1]=c;
-            //list[b-1][a-1]=true;      //for undirected weighted graph
-        }
-    }
-    cout&lt;&lt;endl;
-
-    //Print adjacency matrix
-    cout&lt;&lt;"Adjacency matrix:"&lt;&lt;endl;
-    for(int i=0;i&lt;n;i++) {
-        for(int j=0;j&lt;n;j++)
-            printf("%4d",list[i][j]);
-        cout&lt;&lt;endl;
-    }
-
-    return 0;
-}</code></pre>
+<script src="https://gist.github.com/milon/c71e9c066dca9fb7707525cb2b514cdc.js">
+</script>
     <hr>
 
             <div id="disqus_thread"></div>
