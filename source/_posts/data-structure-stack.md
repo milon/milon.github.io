@@ -17,8 +17,3 @@ Java কোড:
 
 <script src="https://gist.github.com/milon/94f58a02ec0446e6e79c7f91b08d554d.js">
 </script>
-
- 
-
-<script src="https://gist.github.com/milon/652d0f836b79a62582c3bc03a1c88c67.js">
-</script>
