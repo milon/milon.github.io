@@ -214,7 +214,7 @@
                     </header>
                     <div>
                         <ul>
-                            <li>PHP, Node.js, C, C++, Java, Python</li>
+                            <li>PHP, Node.js, C, C++, Python, Go, Java</li>
                             <li>Laravel, CodeIgniter, Symfony, AngularJS, ReactJS, VueJS, Express, Socket.io</li>
                             <li>HTML5, CSS3, JavaScript, XML, JSON, AJAX, WebRTC</li>
                             <li>REST, SOAP, JSON-RPC</li>
