@@ -2,6 +2,7 @@
 
 return [
     'baseUrl' => '/',   // make sure to add a trailing `/` here
+    'siteTitle' => 'milon.im',
     'production' => false,
     'formatedDate' => function($page, $date) {
         return date('d F, Y', strtotime($date));

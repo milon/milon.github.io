@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Nuruzzaman Milon</title>
+        <title>{{ $page->siteTitle }}</title>
         <link rel="shortcut icon" href="/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="stylesheet" href="/css/reset.min.css">
