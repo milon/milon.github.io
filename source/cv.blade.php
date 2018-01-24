@@ -218,8 +218,9 @@
                             <li>Laravel, CodeIgniter, Symfony, AngularJS, ReactJS, VueJS, Express, Socket.io</li>
                             <li>HTML5, CSS3, JavaScript, XML, JSON, AJAX, WebRTC</li>
                             <li>REST, SOAP, JSON-RPC</li>
-                            <li>Agile, Scrum</li>
-                            <li>MySQL, PostgreSQL, SQLite, MongoDB, Redis</li>
+                            <li>Agile, Scrum, Kanban</li>
+                            <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis</li>
+                            <li>Beanstalkd, IronMQ, RabbitMQ</li>
                             <li>PHPUnit, PHPSpec, Codeception, Behat</li>
                             <li>Apache, Nginx, Tomcat</li>
                             <li>Amazon AWS(EC2, S3, RDS), Google APIs, Payment Gateway(Stripe, Paypal, Braintree)</li>
@@ -243,11 +244,10 @@
                         <ul>
                             <li>Got 600+ accepted solutions at <a href="http://uhunt.felix-halim.net/id/60925">UVa Online Judge</a></li>
                             <li>Winner at National Collegiate Software Contest (NCSC), 2011 held at Shahjalal University of Science and Technology (SUST)</li>
-                            <li>Participate of National Collegiate Programming Contest (NCPC), 2010 held at East West University (EWU) (Rank: 16).</li>
-                            <li>Participate of National Collegiate Programming Contest (NCPC), 2010 held at Daffodil International University (DIU) (Rank: 17).</li>
-                            <li>Participate of National Collegiate Programming Contest (NCPC), 2010 held at Islamic University of Technology (IUT) (Rank: 11).</li>
-                            <li>Participate of National Collegiate Programming Contest (NCSC), 2011 held at University of Dhaka (DU).</li>
-                            <li>Participate of National Collegiate Programming Contest (NCSC), 2010 held at Mawlana Bhashani Science University (MBSTU) (Rank: 4)</li>
+                            <li>Participant of National Collegiate Programming Contest (NCPC), 2010 held at Daffodil International University (DIU) (Rank: 17).</li>
+                            <li>Participant of National Collegiate Programming Contest (NCPC), 2010 held at Islamic University of Technology (IUT) (Rank: 11).</li>
+                            <li>Participant of National Collegiate Programming Contest (NCSC), 2010 held at Mawlana Bhashani Science University (MBSTU) (Rank: 4)</li>
+                            <li>Participated in countless other national and online programming contests.</li>
                         </ul>
                     </div>
                 </div>
