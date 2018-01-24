@@ -336,13 +336,6 @@
                 <li>Technology blogger</li>
             </ul>
         </div>
-        <div class="side-block" id="personal-info">
-            <h1>Language</h1>
-            <ul>
-                <li>English</li>
-                <li>Bangla</li>
-            </ul>
-        </div>
         <div class="side-block" id="cert-info">
             <h1>Certifications</h1>
             <ul>
@@ -358,6 +351,13 @@
                 <li>
                     <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified ScrumMaster<sup>®</sup></a>
                 </li>
+            </ul>
+        </div>
+        <div class="side-block" id="personal-info">
+            <h1>Language</h1>
+            <ul>
+                <li>English</li>
+                <li>Bangla</li>
             </ul>
         </div>
         <div class="side-block" id="contact">
@@ -384,6 +384,23 @@
             <br><br><br>
         </div>
 
+        <div class="side-block" id="personal-info">
+            <h1>Extra Curricular</h1>
+            <ul>
+                <li>Managing the largest programming community of the country- <a href="https://web.facebook.com/groups/pxperts">phpXperts</a></li>
+                <li>Organizer of Meetups and Conferences</li>
+                <li>Blood Donor</li>
+            </ul>
+        </div>
+        <div class="side-block" id="personal-info">
+            <h1>Interests</h1>
+            <ul>
+                <li>Reading books and blogs</li>
+                <li>Travelling</li>
+                <li>Watching movies</li>
+                <li>Listening to music and podcasts</li>
+            </ul>
+        </div>
         <div class="side-block" id="links">
             <h1>Links</h1>
             <ul>
