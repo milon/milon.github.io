@@ -21,7 +21,7 @@
                 <a href="/about-me">About Me</a>
                 <a href="/laravel">Book</a>
                 <a href="/contact">Contact</a>
-                <a href="/cv">CV</a>
+                <a href="/resume">Resume</a>
             </p>
         </section>
 
