@@ -12,7 +12,9 @@ Then I moved that to self hosted wordpress and manage it my myself. But it becom
 
 After that decision, I looked into couple of choices. Jekyll and Hugo was in the list, but as I am working fulltime on Laravel, the new static site generator from [tighten](http://tighten.co) called [jigsaw](jigsaw.tighten.co). It uses laravel's blade templating engine. You can obviously use markdown even use both of them together. There are some other nifty features that is very convenient for building a site.
 
-After that I tried to choose a theme. I liked [anybodyhome](https://themes.gohugo.io/anybodyhome/) theme from hugo theme repository, so I ported it to jigsaw and did some tweak to fit my choice. Then I wrote a simple script to port all the posts from wordpress to markdown.
+After that I tried to choose a theme. I liked [anybodyhome](https://themes.gohugo.io/anybodyhome) theme from hugo theme repository, so I ported it to jigsaw and did some tweak to fit my choice. Then I wrote a simple script to port all the posts from wordpress to markdown.
+
+Then it comes to syntax highlighting. I used trusty old [highlight.js](https://highlightjs.org) with github theme. Preety strait forward.
 
 Then I showed to it some of my colleagues. [Samiul Bhai](https://twitter.com/samhq7) asked me to add disqus as a comment engine. I did that too. Thanks to him.
 
