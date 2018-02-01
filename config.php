@@ -21,6 +21,10 @@ return [
         'posts' => [
             'path' => 'post/{filename}',
             'sort' => '-date',
-        ]
+        ],
+        'talks' => [
+            'path' => 'talk/{filename}',
+            'sort' => '-date',
+        ],
     ],
 ];

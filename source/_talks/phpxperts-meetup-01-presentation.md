@@ -1,5 +1,5 @@
 ---
-extends: _layouts.post
+extends: _layouts.talk
 title: phpXperts Meetup-01 Presentation
 date: '2015-06-01'
 gist: My presentation slides of phpXperts meetup held at HubDhaka.

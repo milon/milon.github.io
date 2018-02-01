@@ -1,5 +1,5 @@
 ---
-extends: _layouts.post
+extends: _layouts.talk
 title: Talk.js meet up presentation
 date: '2016-04-17'
 gist: My presentation slides of Talk.js meetup.

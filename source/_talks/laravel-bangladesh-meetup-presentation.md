@@ -1,5 +1,5 @@
 ---
-extends: _layouts.post
+extends: _layouts.talk
 title: Laravel Bangladesh Meetup 1.0 Presentation
 date: '2017-11-20'
 gist: My presentation slides on 1st ever Laravel meetup of Bangladesh.
