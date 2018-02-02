@@ -35,7 +35,7 @@
                         <span class="location">Dhaka, Bangladesh</span>
                     </header>
                     <div>
-                        <p>Manage several micro-services, write and review code for high traffic web services, take the architectural decision, manage a team of 4 developers and 3 interns.</p>
+                        <p>Created a digital healthcare solution that serves affordable health servoces (medications, informations, insurance etc.) to more that 5.5 million people and managed a team of 4 developers, 3 interns, 1 QA and a DevOps people.</p>
                         <ul>
                             <li class="project-title">Tonic SMSC
                                 <ul>
@@ -108,7 +108,7 @@
                     </header>
                     <div>
                         <p>
-                            Requirement analysis, product design, application architecture, coding, testing, code review, manage version control system. <br>
+                            Requirement analysis, product design, application architecture, coding, testing, code review, manage version control system.
                             Manage a team of 6 developers, 2 software quality assurance and, 1 DevOps engineer, play the role as interim Cheif Technology Officer for about a month.
                         </p>
                         <ul>
