@@ -36,7 +36,7 @@
                     </header>
                     <div>
                         <ul>
-                            <li>Manage several micro-services, write and review code for high traffic web services, take architectural decisions.</li>
+                            <li>Created a digital healthcare solution that serves affordable health servoces (medications, informations, insurance etc.) to more that 5.5 million people.</li>
                         </ul>
                     </div>
                 </div>
