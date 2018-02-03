@@ -35,7 +35,11 @@
                         <span class="location">Dhaka, Bangladesh</span>
                     </header>
                     <div>
-                        <p>Created a digital healthcare solution that serves affordable health servoces (medications, informations, insurance etc.) to more that 5.5 million people and managed a team of 4 developers, 3 interns, 1 QA and a DevOps people.</p>
+                        <p>
+                            Created a digital healthcare solution that serves affordable health servoces
+                            (medications, informations, insurance etc.) to more that 5.5 million people
+                            and managed a team of 4 developers, 3 interns, 1 QA and a DevOps people.
+                        </p>
                         <ul>
                             <li class="project-title">Tonic SMSC
                                 <ul>
@@ -108,8 +112,10 @@
                     </header>
                     <div>
                         <p>
-                            Requirement analysis, product design, application architecture, coding, testing, code review, manage version control system.
-                            Manage a team of 6 developers, 2 software quality assurance and, 1 DevOps engineer, play the role as interim Cheif Technology Officer for about a month.
+                            Requirement analysis, product design, application architecture, coding, testing, code
+                            review, manage version control system. Manage a team of 6 developers, 2 software
+                            quality assurance and, 1 DevOps engineer, play the role as interim Cheif Technology
+                            Officer for about a month.
                         </p>
                         <ul>
                             <li class="project-title">Rx71.co
