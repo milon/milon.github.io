@@ -16,5 +16,7 @@
         <a href="{{ $page->baseUrl }}">Back to Home</a>
     </p>
 
-    @include('_layouts._highlightjs')
+    @if($page->syntaxHighlight)
+        @include('_layouts._highlightjs')
+    @endif
 @endsection

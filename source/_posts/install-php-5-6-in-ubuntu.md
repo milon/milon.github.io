@@ -4,6 +4,7 @@ title: উবুন্টু ১৪.০৪ ভার্সনে পিএইচ
 date: '2015-06-14'
 gist: উবুন্টু ১৪.০৪ এ পিএইচপি ভার্সন ৫.৬ ইনস্টল এবং কনফিগার করার পদ্ধতি
 section: content
+syntaxHighlight: true
 ---
 
 ![Ubuntu loves PHP](/images/posts/ubuntu-php.jpg)

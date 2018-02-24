@@ -4,6 +4,7 @@ title: Naming a variable
 date: '2018-02-04'
 gist: My two cents on naming a variable while programming.
 section: content
+syntaxHighlight: false
 ---
 
 There is a saying that-

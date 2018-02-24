@@ -4,6 +4,7 @@ title: বিজয় দিবসের শুভেচ্ছা
 date: '2011-12-16'
 gist: সবাইকে বিজয় দিবসের শুভেচ্ছা।
 section: content
+syntaxHighlight: false
 ---
 
 ![বিজয় দিবসের শুভেচ্ছা](/images/posts/victory-day.jpg)

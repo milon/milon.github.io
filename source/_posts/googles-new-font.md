@@ -4,6 +4,7 @@ title: গুগলের নতুন ফন্ট
 date: '2014-07-17'
 gist: My thoughts about google's new font.
 section: content
+syntaxHighlight: false
 ---
 
 গুগল গতকাল নতুন একটি ফন্ট রিলিজ দিয়েছে। গুগল এই ফন্ট ফ্যামিলির নাম দিয়েছে Noto. এর আগে এই ফন্টটি আমি প্রথম দেখি এন্ড্রয়েড ৪.৪ কিটক্যাটে। চমৎকার রেন্ডারিং করে।

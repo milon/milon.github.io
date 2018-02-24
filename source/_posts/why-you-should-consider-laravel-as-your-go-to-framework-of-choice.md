@@ -4,6 +4,7 @@ title: Why you should consider laravel as your go to framework of choice
 date: '2017-02-04'
 gist: 'My thoughts on Laravel framework, and it''s usability.'
 section: content
+syntaxHighlight: false
 ---
 
 Recently I was in a debate with 3 other very great software professional at Basis Software Expo, 2017 about Laravel vs Django. I know, comparing between these two is like comparison between orange and apple. Actually, our main target was to present the feature set that these two frameworks offer but in a form of debate so that, people especially the newcomers get a good grasp on these frameworks. We had a very limited time to debate, so we could not focus on all the parts. So, I think why not write a blog post about the topic and thus comes this blog post.

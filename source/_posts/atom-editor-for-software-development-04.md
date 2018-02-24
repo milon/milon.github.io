@@ -6,6 +6,7 @@ gist: >-
   This is the forth part of my setting up development environment in Atom editor
   by Github.
 section: content
+syntaxHighlight: false
 ---
 
 Today I am going to talk about a very important topic, and that is Lint. In computer programming, lint is a Unix utility that flags some suspicious and non-portable constructs (likely to be bugs) in C language source code; generically, lint or a linter is any tool that flags suspicious usage in software written in any computer language.

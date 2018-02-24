@@ -4,6 +4,7 @@ title: 'Never use rm, instead use trash'
 date: '2016-03-19'
 gist: I thoughts on why everyone should use `trash` command instead of using `rm`.
 section: content
+syntaxHighlight: true
 ---
 
 Those who use command line heavily, they use a command called `rm` almost everyday. I myself use command line everyday, and I most often use rm for deleting files and folders. Things getting more worse when you chain `-rf` command with `rm`. Last week I was working on a project and I accidently run `rm -rf` command to my project root directory. Then all my codes were gone and it's not reversible. Thanks to git, I don't loose all my codes, but the latest uncommited changes.

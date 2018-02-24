@@ -4,6 +4,7 @@ title: Story behind my new blog
 date: '2018-01-23'
 gist: The behind story of my statically generated github pages powered blog.
 section: content
+syntaxHighlight: false
 ---
 
 I recently redesigned my website. Previously it was powered by wordpress and hosted in wordpress.com. But most of the internet provider of Bangladesh blocks that site because of some atheist online activist use that platform to host their blog.

@@ -4,6 +4,7 @@ title: 'সফটয়্যার ইঞ্জিনিয়ারিং: ব্য
 date: '2012-12-04'
 gist: My thoughts on Software Engineering's practical aspects.
 section: content
+syntaxHighlight: false
 ---
 
 **টিম লিডার**

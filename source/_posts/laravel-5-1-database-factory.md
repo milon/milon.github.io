@@ -4,6 +4,7 @@ title: Laravel 5.1 Database Factory
 date: '2015-05-29'
 gist: 'What is database factory, how to use it?'
 section: content
+syntaxHighlight: true
 ---
 
 Earlier versions of laravel comes with a system for seeding dummy data on database. Traditionaly you just create a class extending laravel's DatabaseSeeder class. This would look like this-

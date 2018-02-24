@@ -4,6 +4,7 @@ title: লারাভেল ৫ এ flip/whoops প্যাকেজের ব
 date: '2014-11-03'
 gist: কিভাবে flip/whoops প্যাকেজের ব্যবহার করবেন লারাভেল ৫-এ।
 section: content
+syntaxHighlight: true
 ---
 
 **আপডেট**

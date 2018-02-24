@@ -4,6 +4,7 @@ title: ভালবাসার জন্য
 date: '2011-05-19'
 gist: null
 section: content
+syntaxHighlight: false
 ---
 
 তোমার কি ভালবাসা চাই?<br>

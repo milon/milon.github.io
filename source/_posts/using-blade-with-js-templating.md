@@ -8,6 +8,7 @@ gist: >-
   লারাভেল ব্লেড টেমপ্লেটের সাথে অ্যাঙ্গুলার বা মাসট্যাশের মত জাভাস্ক্রিপ্ট
   টেমপ্লেটিং লাইব্রেরি একত্রে ব্যবহার করার কৌশল।
 section: content
+syntaxHighlight: true
 ---
 
 ![Laravel loves Angular](/images/posts/angular-laravel.jpg)

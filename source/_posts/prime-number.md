@@ -4,6 +4,7 @@ title: মৌলিক সংখ্যা (Prime number)
 date: '2011-05-25'
 gist: Implement and optimize prime number generation algorithm.
 section: content
+syntaxHighlight: false
 ---
 
 Prime number বা মৌলিক সংখ্যা হচ্ছে সে সব সংখ্যা যার ১ এবং ঐ সংখ্যা ছাড়া আর কোন উৎপাদক নেই। অর্থাৎ ঐ সংখ্যাটি ১ এবং ঐ সংখ্যা ছাড়া নিঃশেষে বিভাজ্য নয়।

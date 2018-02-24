@@ -4,6 +4,7 @@ title: 'Machine Learning Introduction – 1: Set up your workstation'
 date: '2017-02-23'
 gist: Setting up your workstation for practicing Machine Learning.
 section: content
+syntaxHighlight: true
 ---
 
 Recently, we are planning to use machine learning in one of our core product in Telenor Health. So, I am seriously looking into machine learning for the last few days. Though I have a computer science degree, to be honest, I didn't have a good grasp on machine learning rather than having some basic knowledge of some algorithm like linear regression, K nearest neighbor algorithm and some familiarity with some machine learning term like neural network, deep learning etc. Many people are doing machine learning without having CS degree. So I thought, why not give it a try?
@@ -71,7 +72,3 @@ pip freeze
 You will find a tons of module installed. Thats because the libraries we installed are dependent on those libraries.
 
 Our machine is ready for doing some fun with machine learning. See you in next episode. Happy learning.
-
-@section('script')
-
-@endsection
