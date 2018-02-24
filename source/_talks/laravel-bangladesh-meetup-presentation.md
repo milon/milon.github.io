@@ -4,6 +4,7 @@ title: Laravel Bangladesh Meetup 1.0 Presentation
 date: '2017-11-20'
 gist: My presentation slides on 1st ever Laravel meetup of Bangladesh.
 section: content
+syntaxHighlight: false
 ---
 
 Recently(18th November, 2017) I have attended the first ever Laravel meetup of Bangladesh. It was held at World University of Bangladesh(WUB) Panthapath Campus. Around 330 people attended the meetup. 4 speaker presented their talk at the meetup. Our venue partner was WUB and sponsor was Techmasters.<br>

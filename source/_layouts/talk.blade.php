@@ -15,4 +15,8 @@
     <p class="back-link">
         <a href="{{ $page->baseUrl.'talks' }}">Back to Talks</a>
     </p>
+
+    @if($page->syntaxHighlight)
+        @include('_layouts._highlightjs')
+    @endif
 @endsection
