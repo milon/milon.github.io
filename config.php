@@ -10,7 +10,7 @@ return [
     'social' => [
         'github' => 'https://github.com/milon',
         'twitter' => 'https://twitter.com/to_milon',
-        'facebook' => 'https://web.facebook.com/milon521',
+        'facebook' => 'https://www.facebook.com/page.milon.im',
         'linkedin' => 'https://www.linkedin.com/in/tomilon',
         'speakerdeck' => 'https://speakerdeck.com/milon',
         'slideshare' => 'http://www.slideshare.net/milon521',
