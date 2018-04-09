@@ -11,7 +11,7 @@ syntaxHighlight: true
 
 In this episode I am going to talk about some basic package of atom. I told you earlier that atom is a text editor and it is not as feature rich as other IDEs like PhpStorm or Netbeans. But you could give it additional functionality with various packages.
 
-First I am talking about a package that will give a nice look to your editor. The package is called [file-icons](https://atom.io/packages/file-icons). A number of icons and colors are provided by default for a range of common file types. If you have file that you would like custom icons for you can easily add this yourself. You can install it with this command- `apm install file-icon` or from settings menu's install tab.
+First I am talking about a package that will give a nice look to your editor. The package is called [file-icons](https://atom.io/packages/file-icons). A number of icons and colors are provided by default for a range of common file types. If you have file that you would like custom icons for you can easily add this yourself. You can install it with this command- `apm install file-icons` or from settings menu's install tab.
 
 ![File Icons](/images/posts/file-icon.png)
 
