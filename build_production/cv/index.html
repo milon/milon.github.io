@@ -36,7 +36,7 @@
                     </header>
                     <div>
                         <p>
-                            Created a digital healthcare solution that serves affordable health servoces
+                            Created a digital healthcare solution that serves affordable health services
                             (medications, informations, insurance etc.) to more that 5.5 million people
                             and managed a team of 4 developers, 3 interns, 1 QA and a DevOps people.
                         </p>
