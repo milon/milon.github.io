@@ -283,9 +283,7 @@
                 <li><i class="fa fa-envelope-o"></i> contact@milon.im</li>
                 <li><i class="fa fa-skype"></i> milon521</li>
                 <li class="print"><i class="fa fa-phone"></i> +491776974274</li>
-                <li><i class="fa fa-home"></i> Berliner Platz 39,<br>
-                    Münster 48143, Germany
-                </li>
+                <li><i class="fa fa-home"></i> Berliner Platz 39, <br>Münster 48143, Germany</li>
             </ul>
         </div>
         <div class="side-block" id="personal-info">
