@@ -289,17 +289,17 @@ li{
 
 /***** fine-tunes on the lists... *****/
 
-#main ul, #personal-info ul{
+#main ul, #personal-info ul, #cert-info ul{
   padding-left: 0.07in;
   margin: 0.08in 0;
 }
 
-#main li, #personal-info li{
+#main li, #personal-info li, #cent-info li{
   margin: 0 0 0.025in 0;
 }
 
 /****** customize list symbol style ******/
-#main li::before, #personal-info li::before{
+#main li::before, #personal-info li::before, #cert-info li::before{
   position: relative;
   margin-left: -4.25pt;
   content: '• ';
@@ -411,11 +411,27 @@ li{
     font-size: 7.5pt;
 }
 
+#cert-info li {
+    font-size: 7.4pt;
+    display: block;
+    margin-bottom: 0.08in;
+}
+
+#cert-info li span{
+    font-size: 7pt;
+    display: block;
+    margin-bottom: 0.12in;
+}
+
 .print{
     display: none;
 }
 
 @media print {
+    .page-break{
+        page-break-after: always;
+    }
+
     body{
         -webkit-print-color-adjust:exact;
     }
@@ -431,4 +447,18 @@ li{
     .print{
         display: inherit;
     }
+
+    .page-break-margin{
+        margin-top: 2in;
+    }
+}
+
+li.project-title{
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+li.project-title > ul li {
+    font-size: 7pt;
+    font-weight: normal;
 }

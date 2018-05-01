@@ -22,9 +22,28 @@
             <h2>
           <i class="fa fa-suitcase"></i> Work Experiences
         </h2>
+          <section class="blocks">
+              <div class="date">
+                  <span>Present</span><span>May, 2018</span>
+              </div>
+              <div class="decorator">
+              </div>
+              <div class="details">
+                  <header>
+                      <h3>Senior Software Engineer</h3>
+                      <span class="place">Check24 Vergleichsportal GmbH (<a href="https://www.check24.de">https://www.check24.de</a>)</span>
+                      <span class="location">Münster, Germany</span>
+                  </header>
+                  <div>
+                      <ul>
+                          <li>Working on the autotile team as a full stack engineer to develop new feature and support the legacy codebase.</li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
             <section class="blocks">
                 <div class="date">
-                    <span>Present</span><span>May, 2016</span>
+                    <span>April, 2018</span><span>May, 2016</span>
                 </div>
                 <div class="decorator">
                 </div>
@@ -114,17 +133,20 @@
                         <h3>Technical Skill</h3>
                     </header>
                     <div>
-                        <ul>
-                            <li>PHP, Node.js, C, C++, Python, Go, Java</li>
-                            <li>Laravel, CodeIgniter, Symfony, AngularJS, ReactJS, VueJS, Express, Socket.io</li>
-                            <li>HTML5, CSS3, JavaScript, XML, JSON, AJAX, WebRTC</li>
-                            <li>REST, SOAP, JSON-RPC</li>
-                            <li>Agile, Scrum</li>
-                            <li>MySQL, PostgreSQL, SQLite, MongoDB, Redis</li>
-                            <li>PHPUnit, PHPSpec, Codeception, Behat</li>
-                            <li>Amazon AWS, Google APIs, Payment Gateway(Stripe, Paypal, Braintree)</li>
-                            <li>Microservices, Docker, Jenkins</li>
-                        </ul>
+                      <ul>
+                          <li>PHP, Node.js, C, C++, Python, Go, Java</li>
+                          <li>Laravel, CodeIgniter, Symfony, AngularJS, ReactJS, VueJS, Express, Socket.io</li>
+                          <li>HTML5, CSS3, JavaScript, XML, JSON, AJAX, WebRTC</li>
+                          <li>REST, SOAP, JSON-RPC</li>
+                          <li>Agile, Scrum, Kanban</li>
+                          <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis</li>
+                          <li>Beanstalkd, IronMQ, RabbitMQ</li>
+                          <li>PHPUnit, PHPSpec, Codeception, Behat</li>
+                          <li>Apache, Nginx, Tomcat</li>
+                          <li>Amazon AWS(EC2, S3, RDS), Google APIs, Payment Gateway(Stripe, Paypal, Braintree)</li>
+                          <li>Git, SVN</li>
+                          <li>Microservices, Docker, Jenkins, Ansible</li>
+                      </ul>
                     </div>
                 </div>
             </section>
@@ -210,60 +232,6 @@
             </section>
         </section>
 
-        <section class="main-block concise">
-            <h2>
-              <i class="fa fa-certificate"></i> Certification
-            </h2>
-            <section class="blocks">
-                <div class="date">
-                    <span>2018</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3><a href="#">Certified Laravel Developer</a></h3>
-                    </header>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2017</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3><a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Professional<sup>®</sup></a></h3>
-                    </header>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2017</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3><a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Developer<sup>®</sup></a></h3>
-                    </header>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2016</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3><a href="https://www.scrumalliance.org/community/profile/nmilon">Certified ScrumMaster<sup>®</sup></a></h3>
-                    </header>
-                </div>
-            </section>
-        </section>
-
     </section>
     <aside id="sidebar">
         <div class="side-block">
@@ -274,13 +242,30 @@
             <ul>
                 <li>Bestseller author</li>
                 <li>Opensource evangelist and contributor</li>
-                <li>Polyglot programmer, experienced working with different technology stack</li>
+                <li>Polyglot programmer</li>
                 <li>Algorithm based problem solver</li>
                 <li>Scrum and agile enthusiast and practitioner</li>
                 <li>Team player, experienced with managing team</li>
                 <li>Conference speaker</li>
                 <li>Technology community leader</li>
                 <li>Technology blogger</li>
+            </ul>
+        </div>
+        <div class="side-block" id="cert-info">
+            <h1>Certifications</h1>
+            <ul>
+                <li>
+                    <a href="#">Certified Laravel Developer</a>
+                </li>
+                <li>
+                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Professional<sup>®</sup></a>
+                </li>
+                <li>
+                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Developer<sup>®</sup></a>
+                </li>
+                <li>
+                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified ScrumMaster<sup>®</sup></a>
+                </li>
             </ul>
         </div>
         <div class="side-block" id="personal-info">
@@ -297,8 +282,10 @@
                 <li><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
                 <li><i class="fa fa-envelope-o"></i> contact@milon.im</li>
                 <li><i class="fa fa-skype"></i> milon521</li>
-                <li class="print"><i class="fa fa-phone"></i> +8801714497564</li>
-                <li><i class="fa fa-home"></i> House #2, Lane #2,<br>Ali Mohammad Khan Road, Adarshobag, Konapara, Jatrabari, Dhaka-1362, Bangladesh.</li>
+                <li class="print"><i class="fa fa-phone"></i> +491776974274</li>
+                <li><i class="fa fa-home"></i> Berliner Platz 39,<br>
+                    Münster 48143, Germany
+                </li>
             </ul>
         </div>
         <div class="side-block" id="personal-info">

@@ -1,11 +1,11 @@
-@import 'https://fonts.googleapis.com/css?family=Lobster|Quicksand|Source+Code+Pro';
+@import 'https://fonts.googleapis.com/css?family=Alice|Cutive+Mono|Signika:300';
 
 body {
   width: 600px;
   margin: 0 auto;
   font-size: 18px;
   font-weight: 400;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Signika', sans-serif;
 }
 
 @media(max-width: 600px) {
@@ -45,16 +45,17 @@ section#header {
 
 section#header h1 {
   text-align: center;
-  font-family: 'Lobster', cursive;
+  font-family: 'Alice', cursive;
   font-size: 2em;
   margin: 0 0 9px 0;
+  font-weight: bold;
 }
 
 section#header h2 {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Signika', sans-serif;
   font-size: 1em;
   text-align: center;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 section#header p {
@@ -95,7 +96,7 @@ section.summary article {
 
 section h2 {
   font-size: 1.3em;
-  font-family: 'Lobster', cursive;
+  font-family: 'Alice', cursive;
   font-weight: bold;
 }
 
@@ -115,7 +116,7 @@ section article {
 
 section#paginator {
   margin: 0 0 20px 0;
-  font-family: 'Lobster', cursive;
+  font-family: 'Alice', cursive;
   display: inline-block;
 }
 
@@ -161,11 +162,11 @@ section#paginator a.selected {
 .back-link * {
     margin-top: 1.5em;
     font-size: 0.8em;
-    font-family: 'Lobster', cursive;
+    font-family: 'Alice', cursive;
 }
 
 .contact p{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Signika', sans-serif;
 }
 
 img {
@@ -173,7 +174,7 @@ img {
 }
 
 code {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Cutive Mono', monospace;
     line-height: 1.5;
     font-size: 0.9em;
 }
