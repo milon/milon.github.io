@@ -20,11 +20,35 @@
         </header>
         <section class="main-block">
             <h2>
-          <i class="fa fa-suitcase"></i> Work Experiences
-        </h2>
+              <i class="fa fa-suitcase"></i> Work Experiences
+            </h2>
             <section class="blocks">
                 <div class="date">
-                    <span>Present</span><span>May, 2016</span>
+                    <span>Present</span><span>May, 2018</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>Senior Software Engineer</h3>
+                        <span class="place">Check24 Vergleichsportal GmbH (<a href="https://check24.de">http://check24.de</a>)</span>
+                        <span class="location">Münster, Germany</span>
+                    </header>
+                    <div>
+                        <p>Working on the autotile team as a full stack engineer to develop new feature and support the legacy codebase.</p>
+                        <ul>
+                            <li class="project-title">Autotile
+                                <ul>
+                                    <li>A price comparison site for types and other car parts with billing.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>May, 2016</span><span>April, 2018</span>
                 </div>
                 <div class="decorator">
                 </div>
@@ -65,26 +89,16 @@
                                     <li>Used Laravel as application framework, PostgreSQL as database, Redis for storing cache and sessions.</li>
                                 </ul>
                             </li>
-                            <li class="project-title">Tonic Core
-                                <ul>
-                                    <li>This project is the heart of all Tonic services. Provides all necessary logic and business insights through API in for other internal and external services.</li>
-                                    <li>Used NodeJS express as application framework, KnexJS as query builder, BookshelfJS as ORM, PostgreSQL as database.</li>
-                                </ul>
-                            </li>
                             <li class="project-title">Castro
                                 <ul>
                                     <li>Castro is a campaign management tool for SMS, email and push-notification campaign for Tonic.</li>
                                     <li>Used Laravel as application framework, MariaDB as database server, Redis as queue server, VueJS as frontend framework, Supervisor as monitoring tool.</li>
                                 </ul>
                             </li>
-                            <li class="project-title">Tonic Admin
-                                <ul>
-                                    <li>This is a BI and reporting tool for generating the various report, manage subscribers etc.</li>
-                                    <li>Used Laravel as application framework, PostgreSQL as database server, Redis as queue server, VueJS as frontend framework, Supervisor as monitoring tool.</li>
-                                </ul>
-                            </li>
                             <li class="project-title">Other Projects
                                 <ul>
+                                    <li>Tonic Admin - BI and reporting tool for generating the various report, manage subscribers etc.</li>
+                                    <li>Tonic Core - Provides all necessary logic and business insights through API to all Tonic services.</li>
                                     <li>Tonic Billing - Billing service for Tonic</li>
                                     <li>Tonic Question and Answer - A community engagement platform for doctors and patients</li>
                                     <li>CarrotCake - A clinical information management system</li>
@@ -142,7 +156,7 @@
             </section>
 
             <div class="print">
-                <br><br><br>
+                <br><br>
             </div>
 
             <section class="blocks">
@@ -373,8 +387,8 @@
                 <li><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
                 <li><i class="fa fa-envelope-o"></i> contact@milon.im</li>
                 <li><i class="fa fa-skype"></i> milon521</li>
-                <li class="print"><i class="fa fa-phone"></i> +8801714497564</li>
-                <li><i class="fa fa-home"></i> House #2, Lane #2,<br>Ali Mohammad Khan Road, Adarshobag, Konapara, Jatrabari, Dhaka-1362, Bangladesh.</li>
+                <li class="print"><i class="fa fa-phone"></i> +491776974274</li>
+                <li><i class="fa fa-home"></i> Berliner Platz 39,<br>Münster 48143, Germany.</li>
             </ul>
         </div>
 
@@ -387,7 +401,7 @@
         </div>
 
         <div class="print">
-            <br><br><br>
+            <br><br><br><br><br>
         </div>
 
         <div class="side-block" id="personal-info">
