@@ -37,9 +37,9 @@
                     <div>
                         <p>Working on the autotile team as a full stack engineer to develop new feature and support the legacy codebase.</p>
                         <ul>
-                            <li class="project-title">Autotile
+                            <li class="project-title">Autoteile
                                 <ul>
-                                    <li>A price comparison site for types and other car parts with billing.</li>
+                                    <li>A price comparison site for tires, batteries, suspensions, brakes and other car parts with billing.</li>
                                 </ul>
                             </li>
                         </ul>
