@@ -360,7 +360,7 @@
             <h1>Certifications</h1>
             <ul>
                 <li>
-                    <a href="#">Certified Laravel Developer</a>
+                    <a href="https://exam.laravelcert.com/is/nuruzzaman-milon/certified-since/2018-01-08">Certified Laravel Developer</a>
                 </li>
                 <li>
                     <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Professional<sup>®</sup></a>
