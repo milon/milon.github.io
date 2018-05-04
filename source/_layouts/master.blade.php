@@ -16,7 +16,7 @@
             <h1>
                 <a href="{{ $page->baseUrl }}">Nuruzzaman Milon</a>
             </h1>
-            <h2 class="tagline">Programmer, Auther, Tech Enthusiast</h2>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
             <p>
                 <a href="/about-me">About Me</a>
                 <a href="/laravel">Book</a>
