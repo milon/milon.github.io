@@ -35,7 +35,7 @@
                         <span class="location">Münster, Germany</span>
                     </header>
                     <div>
-                        <p>Working on the autotile team as a full stack engineer to develop new feature and support the legacy codebase.</p>
+                        <p>Working on the autoteile team as a full stack engineer to develop new feature and support the legacy codebase.</p>
                         <ul>
                             <li class="project-title">Autoteile
                                 <ul>
@@ -168,7 +168,7 @@
                 <div class="details">
                     <header>
                         <h3>Software Engineer</h3>
-                        <span class="place">Brotecs Technologies Ltd. (<a href="https://brotecs.com/">https://brotecs.com/</a>)</span>
+                        <span class="place">Brotecs Technologies Ltd. (<a href="https://brotecs.com">https://brotecs.com</a>)</span>
                         <span class="location">Dhaka, Bangladesh</span>
                     </header>
                     <div>
