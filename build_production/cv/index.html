@@ -31,7 +31,7 @@
                 <div class="details">
                     <header>
                         <h3>Senior Software Engineer</h3>
-                        <span class="place">Check24 Vergleichsportal GmbH (<a href="https://check24.de">http://check24.de</a>)</span>
+                        <span class="place">Check24 Vergleichsportal Autoteile GmbH (<a href="https://check24.de">http://check24.de</a>)</span>
                         <span class="location">Münster, Germany</span>
                     </header>
                     <div>
