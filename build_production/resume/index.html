@@ -36,7 +36,7 @@
                   </header>
                   <div>
                       <ul>
-                          <li>Working on the autotile team as a full stack engineer to develop new feature and support the legacy codebase.</li>
+                          <li>Working on the autoteile team as a full stack engineer to develop new feature and support the legacy codebase.</li>
                       </ul>
                   </div>
               </div>
