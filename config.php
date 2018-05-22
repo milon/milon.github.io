@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'baseUrl' => 'http://resume.test/',   // make sure to add a trailing `/` here
+    'baseUrl' => '/',   // make sure to add a trailing `/` here
     'siteTitle' => 'milon.im',
     'production' => false,
     'formatedDate' => function($page, $date) {
