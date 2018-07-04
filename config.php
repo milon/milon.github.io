@@ -7,6 +7,9 @@ return [
     'formatedDate' => function($page, $date) {
         return date('d F, Y', strtotime($date));
     },
+    'allCategories' => function ($page, $posts) {
+        return $posts->pluck('categories')->flatten()->unique();
+    },
     'social' => [
         'github' => 'https://github.com/milon',
         'twitter' => 'https://twitter.com/to_milon',
