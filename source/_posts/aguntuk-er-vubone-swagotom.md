@@ -5,6 +5,7 @@ date: '2010-12-09'
 gist: Welcome to my blog.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 আমার ব্লগটা শেষ পর্যন্ত চালুই করে দিলাম। আপনি আপনার মূল্যবান ব্যান্ডউইথ খরচ করে আমার ব্লগ দেখতে এসেছেন, আপনাকে ধন্যবাদ।

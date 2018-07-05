@@ -5,6 +5,7 @@ date: '2016-04-19'
 gist: My thoughts on single file RDBMS management tool Adminer.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 Most of the web developers specially who used to write code in PHP, including myself using [phpmyadmin](https://www.phpmyadmin.net/) for a very long time for database management. I myself used this tool for last 6 years or so. But recently I was introduced to a great tool called [adminer](https://www.adminer.org/en/) while facing problem to install phpmyadmin on [homestead](https://laravel.com/docs/5.2/homestead) box.

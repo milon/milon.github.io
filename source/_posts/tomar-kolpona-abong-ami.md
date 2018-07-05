@@ -5,6 +5,7 @@ date: '2011-05-17'
 gist: null
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 তোমার কল্পনার মানুষটির মত কখনোই হতে পারব না আমি,<br>

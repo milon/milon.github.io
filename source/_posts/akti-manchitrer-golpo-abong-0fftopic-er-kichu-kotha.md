@@ -5,6 +5,7 @@ date: '2011-05-16'
 gist: null
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 একটা গল্প বলেই শুরু করি।

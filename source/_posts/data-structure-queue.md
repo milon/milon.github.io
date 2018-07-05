@@ -5,6 +5,7 @@ date: '2011-05-22'
 gist: How to implement queue.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 কিউ হচ্ছে First In First Out(FIFO) ডাটা স্ট্রাকচার। অর্থাৎ যে আইটেমটা সবার প্রথমে ইনসার্ট করা হয় সেটাই সবার প্রথমে ডিলিট করা হয়। অ্যারে বা লিঙ্ক লিস্ট ব্যবহার করে কিউ তৈরী করা যায়।

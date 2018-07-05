@@ -7,6 +7,7 @@ gist: >-
   যুক্ত করা হয়েছে।)
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 > আপডেট: লারাভেল ৫.৫-এ এই ফিচারটি যুক্ত করা হয়েছে।

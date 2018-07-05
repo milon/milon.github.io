@@ -5,6 +5,7 @@ date: '2015-06-04'
 gist: The underlying story behind my first ever published book.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 I have been facing a specific question last few days, after publishing my book. The question is how do I publish my book. This post is the answer of that very question.

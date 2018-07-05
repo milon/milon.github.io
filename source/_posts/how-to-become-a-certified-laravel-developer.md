@@ -5,6 +5,7 @@ date: '2018-01-09'
 gist: The steps of becoming a Certified Laravel Developer.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 I just become a **Certified Laravel Developer** yesterday night. I did attend the exam 4-5 days back. After posting the news in facebook, I was overwhelmed with congratulations and question about the procedure. This blog post is the answer of that question.

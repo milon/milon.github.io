@@ -5,6 +5,7 @@ date: '2012-11-27'
 gist: My thoughts on Software Engineering's practical aspects.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 **প্রোডাক্ট রিলিজ**

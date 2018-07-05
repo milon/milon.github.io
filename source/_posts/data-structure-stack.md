@@ -5,6 +5,7 @@ date: '2011-05-22'
 gist: How to implement stack.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 স্ট্যাক হচ্ছে Last In First Out(LIFO) ডাটা স্ট্রাকচার। অর্থাৎ যে আইটেমটা সবার শেষে ইনসার্ট করা হয় সেটাই সবার প্রথমে ডিলিট করা হয়। অ্যারে বা লিঙ্ক লিস্ট ব্যবহার করে স্ট্যাক তৈরী করা যায়।

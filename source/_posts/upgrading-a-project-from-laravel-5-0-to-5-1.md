@@ -5,6 +5,7 @@ date: '2015-06-11'
 gist: Complete guideline to upgrade a Laravel 5.0 project to Laravel 5.1
 section: content
 syntaxHighlight: true
+categories: []
 ---
 
 Laravel just released it's first LTS relase two days back. I was very excited about this release and can't wait to upgrade my existing project to the latest version.

@@ -5,6 +5,7 @@ date: '2011-05-19'
 gist: null
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 তোমার কি ভালবাসা চাই?<br>

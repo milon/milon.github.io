@@ -5,6 +5,7 @@ date: '2012-12-12'
 gist: My thoughts on Software Engineering's practical aspects.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 একটা কথা খুব প্রচলিত টিমওয়ার্কের ক্ষেত্রে-

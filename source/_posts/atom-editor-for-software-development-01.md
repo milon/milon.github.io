@@ -7,6 +7,7 @@ gist: >-
   by Github.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 People who are dealing with writing code for full time job, actually passes 40 hours of more on a week to their text editor or IDE. I am a software developer by profession and I normally code 45-50 hours per week that means I had to stick with my text editor for most of time. So, my text editor should be something that I should comfortable with. In this series of blog posts I will tell you how I prepare my text editor for my work. Let's start.

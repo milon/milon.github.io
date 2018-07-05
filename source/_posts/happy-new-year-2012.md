@@ -5,6 +5,7 @@ date: '2012-01-01'
 gist: New years greetings of 2012.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 ![Happy New Year 2012](/images/posts/happy-new-year-2012.jpg)

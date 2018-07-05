@@ -7,6 +7,7 @@ gist: >-
   by Github.
 section: content
 syntaxHighlight: true
+categories: []
 ---
 
 In this episode I am going to talk about some basic package of atom. I told you earlier that atom is a text editor and it is not as feature rich as other IDEs like PhpStorm or Netbeans. But you could give it additional functionality with various packages.

@@ -5,6 +5,7 @@ date: '2012-11-29'
 gist: My thoughts on Software Engineering's practical aspects.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 > তুমি কখনোই একটা ভাল টিম ছাড়া একটা ভাল সফটয়্যার তৈরী করতে পারবে না এবং দূর্ভাগ্যজনক হলেও সত্য হচ্ছে প্রত্যেকটা টিমই অবুঝ প্রেমিকার মত আচরন করে। -- জন ম্যাকার্থি

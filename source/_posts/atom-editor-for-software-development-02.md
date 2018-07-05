@@ -7,6 +7,7 @@ gist: >-
   editor by Github.
 section: content
 syntaxHighlight: false
+categories: []
 ---
 
 Let's start configuring atom's look and feel. Atom comes with two types of visual themes. One type is UI theme and other is Syntax theme. UI theme defines the look and feel of the editor and syntax theme defines the syntax highlighting.
