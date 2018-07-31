@@ -363,13 +363,13 @@
                     <a href="https://exam.laravelcert.com/is/nuruzzaman-milon/certified-since/2018-01-08">Certified Laravel Developer</a>
                 </li>
                 <li>
-                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Professional<sup>®</sup></a>
+                    <a href="http://bcert.me/swajseym">Certified Scrum Professional<sup>®</sup></a>
                 </li>
                 <li>
-                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified Scrum Developer<sup>®</sup></a>
+                    <a href="http://bcert.me/skctlvko">Certified Scrum Developer<sup>®</sup></a>
                 </li>
                 <li>
-                    <a href="https://www.scrumalliance.org/community/profile/nmilon">Certified ScrumMaster<sup>®</sup></a>
+                    <a href="http://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
                 </li>
             </ul>
         </div>
@@ -388,7 +388,7 @@
                 <li><i class="fa fa-envelope-o"></i> contact@milon.im</li>
                 <li><i class="fa fa-skype"></i> milon521</li>
                 <li class="print"><i class="fa fa-phone"></i> +491776974274</li>
-                <li><i class="fa fa-home"></i> Berliner Platz 39,<br>Münster 48143, Germany.</li>
+                <li><i class="fa fa-home"></i> Nerzweg 26,<br>Münster 48157, Germany.</li>
             </ul>
         </div>
 
