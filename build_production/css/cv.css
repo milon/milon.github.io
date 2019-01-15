@@ -83,6 +83,17 @@ li{
   left: 0.55in;
   margin-bottom: 0.2in;
   line-height: 1.2;
+  display: flex;
+  width: calc(100% - 0.55in);
+}
+
+#title .text {
+    flex: 1;
+}
+
+#title .qr-code img {
+    max-width: 58px;
+    max-height: 58px;
 }
 
 #title h1{
