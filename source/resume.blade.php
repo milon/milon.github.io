@@ -15,8 +15,13 @@
 <body lang="en">
     <section id="main">
         <header id="title">
-            <h1>Nuruzzaman Milon</h1>
-            <span class="subtitle">Programmer, Author and Tech Enthusiast</span>
+            <div class="text">
+                <h1>Nuruzzaman Milon</h1>
+                <span class="subtitle">Programmer, Author and Tech Enthusiast</span>
+            </div>
+            <div class="qr-code">
+                <img src="/images/qr-code.png" alt="qr-code">
+            </div>
         </header>
         <section class="main-block">
             <h2>
