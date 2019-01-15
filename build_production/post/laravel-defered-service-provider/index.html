@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="https://milon.im/">Nuruzzaman Milon</a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/talks">Talks</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার</h2>
+    <p>08 June, 2015</p>
+
+    <p>আমরা অনেক সময়ই লারাভেল অ্যাপ্লিকেশন তৈরির সময় সার্ভিস প্রোভাইডার তৈরি করে থাকি। এই সার্ভিস প্রোভাইডারগুলি লারাভেল সার্ভিস কনটেইনারে রেজিস্টার করা থাকে। লারাভেল যখন কোন রিকোয়েস্ট গ্রহণ করে তখন এই সার্ভিস কনটেইনার ইনিশিয়ালাইজ হয়, এবং রিকোয়েস্টকে প্রসেস করতে যদি সার্ভিসের প্রয়োজন পড়ে সেটা কাজ করে রিকোয়েস্টকে প্রসেস করে রেসপন্স তৈরি করতে সাহায্য করে।</p>
+<p>সহজ একটা উদাহরন দেখুন। ধরুন আপনি একটি টু-ডু অ্যাপের একজন রেজিস্টার ইউজার, এবং আপনি আপনার টু-ডু লিস্ট দেখতে চাইছেন। এক্ষেত্রে লারাভেলের কাছে রিকোয়েস্ট করার পর লারাভেল সার্ভিস কনটেইনারের কাছে রিকোয়েস্টটা পাঠায় এবং সেটি তখন দেখে যে আপনার রিকোয়েস্টটিকে প্রসেস করতে ইলোকোয়েন্ট সার্ভিসটির প্রয়োজন। তখন ইলোকোয়েন্ট আপনার রিকোয়েস্টটি প্রসেস করবে। এরপর ধরুন আপনাকে একটি নোটিফিকেশন দেয়া প্রয়োজন। সেক্ষেত্রে সার্ভিস কনটেইনার সেসন সার্ভিস প্রোভাইডারের সাহায্য নেবে।</p>
+<p>এক্ষেত্রে দেখা যাচ্ছে একটা রিকোয়েস্ট প্রসেস করতে সবগুলো সার্ভিস প্রোভাইডারের দরকার নেই। হয়ত ২-৩টা প্রোভাইডারের প্রয়োজন। সেক্ষেত্রে আপনি চাইলে ডিফার্ড সার্ভিস প্রোভাইডার ব্যবহার করতে পারবেন। নাম দেখেই নিশ্চয়ই বুঝতে পারছেন, এই ডিফার্ড সার্ভিস প্রোভাইডার শুধুমাত্র যখন প্রয়োজন তখনই লোড হবে। অন্যান্য রিকোয়েস্টে এটি লোড হবে না। এটি আপনার অ্যাপ্লিকেশন পারফরমেন্স বহুগুনে বাড়িয়ে দিতে পারে।</p>
+<p>এখন কথা হচ্ছে কিভাবে এই ডিফার্ড সার্ভিস প্রোভাইডার তৈরি করবেন? সেটিও খুব সহজ। সাধারন সার্ভিস প্রোভাইডারের মতই একটি আর্টিসান কমান্ডের মাধ্যমে আপনি এটি তৈরি করতে পারবেন। এর জন্য টার্মিনালে নিচের কমান্ডটি লিখুন-</p>
+<pre><code>php artisan make:provider TestServiceProvider</code></pre>
+<p>এর ফলে আপনার অ্যাপ্লিকেশনের <code>app/Providers</code> ফোল্ডারের মধ্যে একটি নতুন ফাইল তৈরি হবে <code>TestServiceProvider.php</code> নামে। এটি দেখতে হবে এরকম-</p>
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class TestServiceProvider extends ServiceProvider {
+
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+}</code></pre>
+<p>এই ক্লাসে আপনি যদি একটি প্রটেক্টেড প্রপার্টি তৈরি করেন $defer নামে এবং সেটির ভ্যালু ট্রুু করে দেন, তাহলে সেটিই ডিফার্ড সার্ভিস প্রোভাইডার হিসেবে কাজ করবে।</p>
+<pre><code>protected $defer = true;</code></pre>
+<p>এছাড়া এই সার্ভিস প্রভাইডের বাকি কোড সাধারন সার্ভিস প্রোভাইডারের মত করেই লিখতে হবে।</p>
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/laravel-defered-service-provider';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'laravel-defered-service-provider'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+        <a href="https://milon.im/">Back to Home</a>
+    </p>
+
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/page.milon.im" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

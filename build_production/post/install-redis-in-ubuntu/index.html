@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="https://milon.im/">Nuruzzaman Milon</a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/talks">Talks</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>উবুন্টুতে রেডিস ইনস্টল</h2>
+    <p>06 July, 2015</p>
+
+    <p>রেডিস একটি চমৎকার ইন-মেমরি, ওপেন সোর্স কি-ভ্যালু স্টোর। রেডিসকে আপনি বিভিন্ন কাজে ব্যবহার করতে পারেন। আপনার ক্যাশ ড্রাইভার, সেশন ড্রাইভার হিসেবে যেমন ব্যবহার করতে পারেন, তেমনি ডেটা স্টোরেজ হিসেবেও ব্যবহার করতে পারেন। রেডিস অনেকটা মেমক্যাশের মত, মানে এটি ইন-মেমরি ডেটা স্টোরেজ, ফলে এটি অত্যন্ত ফাস্ট কাজ করতে পারে, তবে এতে বিল্ট ইন পারসিসটেন্স ম্যাকানিজম আছে। ফলে মেমক্যাশের মত সার্ভার রিস্টার্ট দিলে ডেটা হারিয়ে যায় না।</p>
+<p><img src="/images/posts/redis.png" alt="Redis" /></p>
+<p>রেডিসের আছে ৭ ধরনের ডেটা স্টোর করার সুবিধা। এগুলো হচ্ছে, স্ট্রিং, সেট, সর্টেড সেট, লিস্ট, হ্যাশ, বিটম্যাপ এবং হাইপারলগলগ। এর আছে অত্যন্ত চমৎকার ডকুমেন্টেশন এবং বিশাল হেল্পফুল কমিউনিটি।</p>
+<p>আপনি প্রায় সব প্রোগ্রামিং ভাষার জন্য রেডিসের ড্রাইভার পাবেন। ফলে আপনার যদি বিভিন্ন প্রোগ্রামিং ভাষার মধ্যে ডেটা আদান-প্রদানের প্রয়োজন পড়ে, সেক্ষেত্রে রেডিস হতে পারে চমৎকার একটি সল্যুশন। এছাড়াও রেডিসের রয়েছে বিল্টইন পাব-সাব ম্যাকানিজম। ধরুন, মাইসিক্যুয়েলে আপনি এইমাত্র একটি কোয়েরি করে একটা টেবিল থেকে ডেটা নিয়ে এসেছেন। আপনি কোয়েরি করার পর পরই সে টেবিলে অন্য কেই নতুন একটি রো ইনসার্ট করলো। সেক্ষেত্রে আরেকটি কোয়েরি করার আগ পর্যন্ত আপনি সেই নতুন রো টি সম্পর্কে জানতে পারবেন। কিন্তু আপনি যদি রেডিস ব্যবহার করে থাকেন এবং সেই কি-তে সাবস্ক্রাইব করে রাখেন, তবে আপনি একটা নতুন ডেটা ইনসার্ট হওয়ার সাথে সাথেই পেয়েই যাবেন।</p>
+<p>এবার চলুন দেখি রেডিস কিভাবে ইনস্টল করবেন। প্রথমেই বলে নেই, আমি উইন্ডোজ ব্যবহার করি না অনেকদিন হলো। তাই উইন্ডোজে এটা কিভাবে ইনস্টল করবেন সে ব্যাপারে ধারনা দিতে পারছি না। তবে আপনি গুগল সার্চ করলেই পেয়ে যাবেন। আমি আপনাদেরকে দেখাবে লিনাক্সে কিভাবে রেডিস ইনস্টল করবেন। আমি উবুন্টু ব্যবহার করছি। আপনি অন্য যে কোন লিনাক্স ডিস্ট্রিবিউশনে বা ম্যাক অপারেটিং সিস্টেমেও একই কমান্ডের মাধ্যমে রেডিস ইনস্টল করতে পারবেন।</p>
+<p>প্রথমেই রেডিস কম্পাইল করার জন্য আপনার পিসিতে কিছু ডিপেন্ডেন্সি লাগবে। সেগুলি ইনস্টল করতে পারবেন নিচের কমান্ডের মাধ্যমে-</p>
+<pre><code>sudo apt-get install build-essential
+sudo apt-get install tcl8.5</code></pre>
+<p>এরপর আমরা রেডিসের <a href="http://redis.io">অফিশিয়াল সাইট</a> থেকে রেডিসের লেটেস্ট ভার্সনের সোর্স কোড ডাউনলোড করবো। আপনি চাইলে নিচের কমান্ডের সাহায্যেও ডাউনলোড করতে পারেন-</p>
+<pre><code>wget http://download.redis.io/releases/redis-3.0.2.tar.gz</code></pre>
+<p>এবার ডাউনলোড করা ফাইলটি আনটার করে নিন-</p>
+<pre><code>tar xzf redis-3.0.2.tar.gz</code></pre>
+<p>এবার রেডিসকে কম্পাইল এবং ইনস্টল করার জন্য নিচের কমান্ডগুলো দিন-</p>
+<pre><code>make
+make test
+sudo make install</code></pre>
+<p>রেডিসকে যদি আপনার সিস্টেমে গ্লোবালি ইনস্টল করতে চান তাহলে টার্মিনালে নিচের কমান্ড দুইটি লিখুন-</p>
+<pre><code>cd utils
+sudo ./install_server.sh</code></pre>
+<p>আপনি যদি রেডিসকে একটি সার্ভিস হিসেবে ইনস্টল করতে চান, অর্থাৎ আপনার পিসি স্টার্ট হবার সাথে সাথেই রেডিস সার্ভারকে চালু করতে চান তাহলে নিচের কমান্ডটি টার্মিনালে লিখুন-</p>
+<pre><code>sudo update-rc.d redis_6379 defaults</code></pre>
+<p>ব্যাস, আপনার পিসিতে রেডিস ইনস্টল করা হয়ে গেছে। টেস্ট করার জন্য টার্মিনালে লিখুন-</p>
+<pre><code>redis-cli</code></pre>
+<p>আপনি আউটপুট হিসেবে রেডিস কনসোল দেখতে পারবেন-</p>
+<pre><code>127.0.0.1:6379&gt;</code></pre>
+<p>তো শুরু করে দিন রেডিস ব্যবহার করা। হ্যাপি কোডিং...</p>
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/install-redis-in-ubuntu';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'install-redis-in-ubuntu'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+        <a href="https://milon.im/">Back to Home</a>
+    </p>
+
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/page.milon.im" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="https://milon.im/">Nuruzzaman Milon</a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/talks">Talks</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>লারাভেল ৫: ইলোকোয়েন্ট এট্রিবিউট কাস্টিং</h2>
+    <p>24 March, 2015</p>
+
+    <p>আমরা জানি লারাভেলের ইলোকোয়েন্ট ওআরএম এ কোন কোয়েরি চালালে যে ভ্যালু রিটার্ন করে সেটা সবসময়ই স্ট্রিং হিসেবে থাকে। এতে করে একটা সমস্যা প্রায়ই দেখা যায়। যেমন ধরুন, আমরা নিচের কোয়েরিটা চালালাম User নামের মডেলে-</p>
+<pre><code>$user = User::find($id);</code></pre>
+<p>ধরি আমাদের ইউজার টেবিলে শুধুমাত্র নাম এবং এক্টিভেটেড ফ্লাগ কলাম আছে। সেক্ষেত্রে এই ইউজারকে যদি আমরা ডাম্প করি তাহলে নিচের মত আউটপুট দেখতে পাবো-</p>
+<pre><code>{
+    "id" =&gt; "1",
+    "name" =&gt; "John Doe",
+    "activated" =&gt; "0"
+}</code></pre>
+<p>এক্ষেত্রে একটি সাধারন সমস্যা হচ্ছে ইউজার এক্টিভেটেড কিনা সেটি যদি আমরা চেক করি তাহলে সেক্ষেত্রে দেখা যাবে-</p>
+<pre><code>echo ($user.activated)? "Yes" : "No";
+//output: Yes</code></pre>
+<p>এক্ষেত্রে আউটপুট আসবে Yes যদিও No আউটপুট আসা উচিৎ ছিল। এর কারন এক্টিভেটেড ফ্লাগটি স্ট্রিং হিসেবে আছে। ফ্লাগটি যদি বুলিয়ান ভ্যালু হিসেবে থাকতো তাহলে আর এই সমস্যাটা হতো না।</p>
+<p>লারাভেল ৪.* এ আমরা এক্সেসর এবং মিউটেটর ব্যবহার করে এই সমস্যার সমাধান করতে পারতাম। মডেল ক্লাসে নিচের মেথডটি যুক্ত করে আমরা ভ্যালুটিকে বুলিয়ানে কাস্টিং করতে পারতাম-</p>
+<pre><code>public function getActivatedAttribute($value){
+    return (boolean) $value;
+}</code></pre>
+<p>লারাভেল ৫ এ আপনি একইভাবে এট্রিবিউট কাস্টিং করতে পারবেন। এছাড়া আরো একটি সহজ উপায় যুক্ত হয়েছে লারাভেল ৫ এ। সেটি হচ্ছে মডেলে $casts নামে একটি এসোসিয়েটিভ এরে যোগ করে সেটিতে ডেটাটাইপ ডিক্লেয়ার করে দেয়া। যেমন উপরের উদাহরনটিকে যদি নতুন পদ্ধতিতে কাস্টিং করতে চাই সেক্ষেত্রে লিখতে হবে-</p>
+<pre><code>proteced $casts = [
+    'activated' =&gt; 'boolean'
+];</code></pre>
+<p>শুধুমাত্র বুলিয়ানেই কাস্টিং করতে পারবেন তা না। boolean ছাড়াও আপনি integer, real, float, double, string, boolean, object এবং array তে কাস্ট করতে পারবেন।</p>
+<p>এক্ষেত্রে বলে রাখা ভালো এরে কাস্টিং শুধুমাত্র ব্যবহৃত হয় যখন কোন কলামে জেসন সিরিয়ালাইজড ডেটা সেভ করা হয়। যেমন ধরুন আমাদের উদাহরনের ইউজার টেবিলে যদি অপশন নামে একটি কলাম থাকতো, এবং সেটিতে যদি সিরিয়ালাইজ ডেটা সেভ করা হতো তাহলে সেটি করা হতো এভাবে-</p>
+<pre><code>$user = User::find($id);
+
+$user-&gt;options = [
+    'email' =&gt; 'john@example.com',
+    'age' =&gt; 20
+];
+$user-&gt;save();</code></pre>
+<p>এক্ষেত্রে ইউজারকে ডাম্প করলে আমরা অপশনের জায়গায় একটি সিরিয়ালাইড জেসন ডেটা পেতাম। কিন্তু আমরা যদি $casts এরেতে অপশন হিসেবে এরে সিলেক্ট করি সেক্ষেত্রে মডেল ডেটা রিটার্ন করার সময় অটোমেটিক আউটপুটকে ডিসিরিয়ালাইজ করবে।</p>
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/laravel-5-eloquent-attribute-casting';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'laravel-5-eloquent-attribute-casting'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+        <a href="https://milon.im/">Back to Home</a>
+    </p>
+
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/page.milon.im" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

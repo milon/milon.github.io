@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="https://milon.im/">Nuruzzaman Milon</a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/talks">Talks</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>লারাভেল ৫ এ flip/whoops প্যাকেজের ব্যবহার</h2>
+    <p>03 November, 2014</p>
+
+    <p><strong>আপডেট</strong></p>
+<blockquote>
+<p>এই ব্লগটি প্রথমে যখন লেখা হয়েছিল, তখন লারাভেল ৫ রিলিজ হয় নি। রিলিজের পর দেখা গেল বেটা ভার্সনে লারাভেল যেভাবে এরর হ্যান্ডেল করতো তা পরিবর্তিত হয়েছে। এখানে নতুন উপায়ে কিভাবে হুপস প্যাকেজ ব্যবহার করতে পারবেন তা দেখানো হয়েছে।</p>
+</blockquote>
+<p>প্রথমেই টার্মিনালে লিখুন-</p>
+<pre><code>composer require filp/whoops:~1.0</code></pre>
+<p>এরপর কম্পোজার আপডেট কমান্ড দিন।</p>
+<p>এবার <code>app/Exceptions/Handler.php</code> ফাইলে যান এবং এই ক্লাসের <code>render()</code> মেথডটিকে নিচের মত করে এডিট করুন-</p>
+<pre><code>/**
+ * Render an exception into an HTTP response.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  \Exception  $e
+ * @return \Illuminate\Http\Response
+ */
+public function render($request, Exception $e)
+{
+    if ($this-&gt;isHttpException($e))
+    {
+        return $this-&gt;renderHttpException($e);
+    }
+
+    if (config('app.debug'))
+    {
+        $whoops = new \Whoops\Run;
+        $whoops-&gt;pushHandler(new \Whoops\Handler\PrettyPageHandler());
+
+        return new \Illuminate\Http\Response(
+            $whoops-&gt;handleException($e),
+            $e-&gt;getStatusCode(),
+            $e-&gt;getHeaders()
+        );
+    }
+
+    return parent::render($request, $e);
+}</code></pre>
+<p>ব্যাস আপনার কাজ হয়ে গেছে। এবার আপনি আপনার এরর স্ক্রীনে হুপস দেখতে পারবেন।</p>
+<p><strong>পুরনো পদ্ধতি</strong></p>
+<p>আপনারা নিশ্চয়ই প্যাকেজিস্ট এর <code>flip/whoops</code> প্যাকেজের সাথে পরিচিত। এই প্যাকেজটিকে লারাভেল ৪.* এ ডিফল্ট এরর পেজ হিসেবে ব্যবহার করা হতো। কিন্তু লারাভেল ৫ এ এই প্যাকেজটিকে রিমুভ করা হয়েছে। যদিও আমি নিজে মনে করি এটি এখন পর্যন্ত পিএইচপির জন্য বেস্ট এরর দেখানোর প্যাকেজ। এটি আপনি চাইলে খুব সহজেই লারাভেল ৫ এ ফিরিয়ে আনতে পারেন।</p>
+<p>আপনাকে প্রথমেই <code>composer.json</code> ফাইলটি আপডেট করতে হবে। আপনি এর <code>require-dev</code> অপশনে নিচের লাইনটি যুক্ত করুন-</p>
+<pre><code>"filp/whoops": "~1.0"</code></pre>
+<p>এবার আপনি টার্মিনালে লিখুন-</p>
+<pre><code>composer update</code></pre>
+<p>আপনি whoops প্যাকেজটি ডাউনলোড হওয়ার পর টার্মিনালে লিখুন-</p>
+<pre><code>php artisan make:provider ErrorServiceProvider</code></pre>
+<p>এই কমান্ডটি আপনার <code>app/Providers</code> ফোল্ডারে এরর সার্ভিস প্রোভাইডার নামে একটি ফাইল তৈরি করবে। আপনি সেই ফাইলটিকে নিচের মত করে এডিট করুন-</p>
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run;
+
+class ErrorServiceProvider extends ServiceProvider {
+
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $whoops = new Run;
+        $whoops-&gt;pushHandler(new PrettyPageHandler);
+        $whoops-&gt;register();
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+}</code></pre>
+<p>আপনার এরর সার্ভিস প্রোভাইডার তৈরি হয়ে গেছে। এবার একে রেজিস্টার করুন। এর জন্য <code>config/app.php</code> ফাইলের প্রোভাইডার এরেতে নিচের লাইনটি যুক্ত করুন-</p>
+<pre><code>'providers' =&gt; [
+    ...,
+    'App\Providers\ErrorServiceProvider',
+],</code></pre>
+<p>ব্যাস, আপনি whoops প্যাকেজ লারাভেল ৫ এ ইন্টিগ্রেট করে ফেলেছেন। টেস্ট করার জন্য রাউট ফাইলে নিচের কোডটি লিখুন-</p>
+<pre><code>$router-&gt;get('/', function(){
+    throw new \Exception('Whoops Test...');
+});</code></pre>
+<p>এবার আপনি যদি আপনার রুট রাউট ভিজিট করেন তাহলে নিচের মত আউটপুট দেখতে পাবেন।</p>
+<p><img src="/images/posts/whoops.jpg" alt="Whoops" /></p>
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/uses-of-flips-whoops-in-laravel-5';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'uses-of-flips-whoops-in-laravel-5'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+        <a href="https://milon.im/">Back to Home</a>
+    </p>
+
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/page.milon.im" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

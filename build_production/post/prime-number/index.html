@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="https://milon.im/">Nuruzzaman Milon</a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/talks">Talks</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>মৌলিক সংখ্যা (Prime number)</h2>
+    <p>25 May, 2011</p>
+
+    <p>Prime number বা মৌলিক সংখ্যা হচ্ছে সে সব সংখ্যা যার ১ এবং ঐ সংখ্যা ছাড়া আর কোন উৎপাদক নেই। অর্থাৎ ঐ সংখ্যাটি ১ এবং ঐ সংখ্যা ছাড়া নিঃশেষে বিভাজ্য নয়।</p>
+<p>প্রোগ্রামারদের কাছে মৌলিক সংখ্যা খুব পছন্দের একটা বিষয়। যে কোন ধরনেন প্রোগ্রামিং প্রতিযোগিতায় সাধারনত অন্তত একটা সমস্যা থাকে প্রাইম নাম্বার থেকে। প্রাইম নাম্বার বের করার প্রোগ্রামটি খুব সহজেই লিখে ফেলা যায়।</p>
+<script src="https://gist.github.com/milon/d1fa137915c89966e5a1f5ffa9bbda5c.js">
+</script>
+<p>উপরের প্রোগ্রামটিতে সব গুলো সংখ্যা দিয়ে num কে ভাগ করা হয়েছে, যার আসলে কোন প্রয়োজন নেই। কারন কোন জোড় সংখ্যা কখনো প্রাইম নাম্বার হতে পারে না। সেক্ষেত্রে প্রোগ্রামটি হবে-</p>
+<script src="https://gist.github.com/milon/b17655f42647717a79c0cc26334400f7.js">
+</script>
+<p>এখানেও শেষ পর্যন্ত চেক করা হয়েছে। যার আসলে দরকার নেই। কারন ঐ সংখ্যাটি মৌলিক কিনা তা চেক করার জন্য ঐ সংখ্যার অর্ধেক পর্যন্ত চেক করলেই চলে। সেক্ষেত্রে প্রোগ্রামটি হবে-</p>
+<script src="https://gist.github.com/milon/39fc5ec3aa1bd1b32384f8d39864ca5e.js">
+</script>
+<p>অর্ধেক পর্যন্ত চেক করার প্রয়োজনও আসলে নাই। ঐ সংখ্যার বর্গমূল পর্যন্ত চেক করলেই চলে-</p>
+<script src="https://gist.github.com/milon/a4c66e9b4ee58b14e7e0cc6fa09cf6b1.js">
+</script>
+<p>প্রাইম নাম্বার বের করার সবচেয়ে ভাল পদ্ধতি হচ্ছে Sieve of Eratosthenes. গ্রীক গণিতবিদ Eratosthenes এই পদ্ধতিটি আবিস্কার করেন। এই পদ্ধতিটিতে প্রথমে যে সংখ্যাগুলোর মধ্য থেকে প্রাইম নাম্বার বের করা হবে সেগুলিকে একটা অ্যারের মধ্যে রাখা হয়। মনে করি আমরা ১ থেকে ৫০ পর্যন্ত সংখ্যার মধ্যে প্রাইম নাম্বার বের করব। তাহলে prime নামের অ্যারের মধ্যে আমরা সংখ্যাগুলোকে রাখব। আমরা ধরে নিলাম এর সবগুলোই প্রাইম নাম্বার। প্রথমে ০ এবং ১ প্রাইম নাম্বার না। তাই এ দুটোকে বাদ দিলাম। ২ প্রাইম সংখ্যা, কিন্তু এর গুনিতক একটাও প্রাইম নাম্বার না। তাই ৪, ৬, ৮, ১০, ১২ এগুলোকে বাদ দিলাম। এরপরের প্রাইম নাম্বার ৩। ৩ এর সব গুনিতক বাদ। এরপর ৪, কিন্তু ৪ আগেই বাদ পড়েছে। এরপর ৫ প্রাইম নাম্বার, ৫ এর সব গুনিতক বাদ। এভাবে চলতে চলতে ৫০ এর বর্গমূল পর্যন্ত চেক করলেই আমরা সব প্রাইম নাম্বার পেয়ে যাব।</p>
+<script src="https://gist.github.com/milon/aecaa8aa7b99c621131e0262c10bed82.js">
+</script>
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/prime-number';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'prime-number'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+        <a href="https://milon.im/">Back to Home</a>
+    </p>
+
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/page.milon.im" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

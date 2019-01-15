@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/reset.min.css">
+        <link rel="stylesheet" href="/css/default.min.css">
+        <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <section id="header">
+            <h1>
+                <a href="https://milon.im/">Nuruzzaman Milon</a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a href="/about-me">About Me</a>
+                <a href="/laravel">Book</a>
+                <a href="/talks">Talks</a>
+                <a href="/contact">Contact</a>
+                <a href="/resume">Resume</a>
+            </p>
+        </section>
+
+        <section>
+                <h2>সহজে পাইথন শেখা-০২</h2>
+    <p>05 June, 2012</p>
+
+    <p>আগের পর্বে আমি পাইথন নিয়ে প্রাথমিক কিছু আলোচনা করেছিলাম। এই পর্বে আমরা দেখবো কিভাবে আমরা আমাদের পিসিকে পাইথনে কোড করার উপযোগী করতে পারি।</p>
+<p>প্রথমেই পাইথনের ওয়েব সাইট (<a href="http://www.python.org">http://www.python.org</a>) থেকে পাইথন ডাউনলোড করতে হবে। সেথানে পাইথনের দুইটা ভার্সনের নাম দেয়া আছে। একটা ২.৭.৩ অন্যটা ৩.২.৩। এর মধ্য থেকে আমরা ২.৭.৩ ব্যবহার করব। প্রশ্ন উঠতে পারে, কেন আমরা নতুন ভার্সন থাকতে পুরাতন ভার্সন ব্যবহার করব। এর উত্তর হচ্ছে পাইথনের কোডিং স্টাইলে ভার্সন ৩ থেকে বেশ কিছু পরিবর্তন এসেছে যা আগের ভার্সনের সাথে কনফ্লিক্ট করে। আর পাইথনের যে সকল ফ্রেমওয়ার্ক আছে, তার অধিকাংশই এখন পর্যন্ত পাইথন ৩ সাপোর্ট করে না। তাই আমরা পাইথন ২.৭ ই শিখবো। একবার শিখে ফেললে ভবিষ্যতে প্রয়োজনবোধে নিজেদেরকে পাইথনের নতুন ভার্সনে আপডেট করে নিতে মনে হয় না আমাদের খুব একটা কষ্ট হবে।</p>
+<p>এখন কথা হচ্ছে আমরা কোন অপারেটিং সিস্টেমে পাইথনের কোড করবো। আমার জানামতে উইন্ডোজই পৃথিবীর একমাত্র ওএস যেখানে বিল্ট ইন পাইথন সাপোর্ট নেই। যাই হোক আমি যদি উইন্ডোজ ব্যবহারকারী হই তাহলে প্রথমেই আমি পাইথনের ওয়েব সাইট থেকে পাইথনের ২.৭.৩ ভার্সনের এক্সিকিউটেবল ফাইল ডাউনলোড করে নিব। এই এক্সিকিউটেবল ইনস্টল করলে দেখবো আইডিএলই নামে একটা এডিটর সেটআপ হয়েছে। এই আইডিএলই ব্যবহার করেই আমরা কোড করবো। এছাড়া কেউ চাইলে নোটপ্যাড++ ব্যবহার করতে পারেন।</p>
+<p>আপনি লিনাক্স মিন্ট বা উবুন্টু ব্যবহারকারী হয়ে থাকলে আপনার টার্মিনাল ওপেন করে লিখুন-</p>
+<pre><code>python</code></pre>
+<p>তাহলেই আপনি কোড লিখতে পারবেন। আইডিএলই ইনস্টল দিতে লিখুন-</p>
+<pre><code>sudo apt-get install idle</code></pre>
+<p>এবার আপনার পিসিতে পাইথন ঠিকভাবে ইনস্টল হয়েছে কিনা দেখতে চাইলে টার্মিনাল ওপেন করে লিখুন python তারপর এন্টার দিন। যদি দেখেন টার্মিনালে নিচের লেখাটুকু এসেছে তাহলে বুঝবেন আপনার পাইথন সেটআপ করা ঠিক আছে।</p>
+<pre><code>Python 2.7.3 (r266:84292, Sep 15 2010, 15:52:39)
+[GCC 4.4.5] on linux2
+Type "help", "copyright", "credits" or "license" for more information.</code></pre>
+<p>বিভিন্ন পিসিতে এই লেখাটুকু ভিন্ন রকম হতে পারে।</p>
+<p>ব্যস আপনার পিসি এখন পাইথনে কোড করার উপযোগী।</p>
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/learn-python-easily-02';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'learn-python-easily-02'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+        <a href="https://milon.im/">Back to Home</a>
+    </p>
+
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="https://github.com/milon" title="Github"><i class="fa fa-github-alt"></i></a>
+                <a href="https://twitter.com/to_milon" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/page.milon.im" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.linkedin.com/in/tomilon" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.slideshare.net/milon521" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                <a href="https://speakerdeck.com/milon" title="Speakerdeck"><i class="fa fa-link"></i></a>
+                <a href="https://www.instagram.com/to_milon" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/3905595/nuruzzaman-milon" title="StackOverflow"><i class="fa fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>
