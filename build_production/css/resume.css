@@ -73,11 +73,6 @@ li{
 
 /* main */
 
-/** big title **/
-#title, h1, h2{
-  /*text-transform: uppercase;*/
-}
-
 #title{
   position: relative;
   left: 0.55in;
@@ -88,7 +83,7 @@ li{
 }
 
 #title .text {
-    flex: 1;
+    margin-right: auto;
 }
 
 #title .qr-code img {
