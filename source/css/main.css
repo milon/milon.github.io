@@ -68,6 +68,10 @@ section#header p a {
     font-size: 0.9em;
 }
 
+section#header p a.selected {
+    font-style: italic;
+}
+
 section#footer {
     margin: 40px 0;
     text-align: center;

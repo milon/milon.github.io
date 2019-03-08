@@ -19,10 +19,10 @@
             </h1>
             <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
             <p>
-                <a href="/about-me">About Me</a>
-                <a href="/laravel">Book</a>
-                <a href="/talks">Talks</a>
-                <a href="/contact">Contact</a>
+                <a class="{{ $page->selected('/about-me') }}" href="/about-me">About Me</a>
+                <a class="{{ $page->selected('/laravel') }}" href="/laravel">Book</a>
+                <a class="{{ $page->selected('/talks') }}" href="/talks">Talks</a>
+                <a class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
                 <a href="/resume">Resume</a>
             </p>
         </section>

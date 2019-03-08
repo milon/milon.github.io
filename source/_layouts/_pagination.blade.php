@@ -1,10 +1,10 @@
 <section id="paginator">
     @if ($previous = $pagination->previous)
-        <a href="{{ $pagination->first }}">❮❮</a>
-        <a href="{{ $previous }}">❮</a>
+        <a href="{{ $pagination->first }}">↞</a>
+        <a href="{{ $previous }}">←</a>
     @else
-        <span>❮❮</span>
-        <span>❮</span>
+        <span>↞</span>
+        <span>←</span>
     @endif
 
     @foreach ($pagination->pages as $pageNumber => $path)
@@ -15,10 +15,10 @@
     @endforeach
 
     @if ($next = $pagination->next)
-        <a href="{{ $next }}">❯</a>
-        <a href="{{ $pagination->last }}">❯❯</a>
+        <a href="{{ $next }}">→</a>
+        <a href="{{ $pagination->last }}">↠</a>
     @else
-        <span>❯</span>
-        <span>❯❯</span>
+        <span>→</span>
+        <span>↠</span>
     @endif
 </section>

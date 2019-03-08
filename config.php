@@ -10,6 +10,9 @@ return [
     'allCategories' => function ($page, $posts) {
         return $posts->pluck('categories')->flatten()->unique();
     },
+    'selected' => function($page, $section) {
+        return ($page->getPath() === $section) ? 'selected' : '';
+    },
     'social' => [
         'github' => 'https://github.com/milon',
         'twitter' => 'https://twitter.com/to_milon',
