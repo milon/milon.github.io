@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/cv.css" />
+
+    <meta property="og:url" content="/cv" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im" />
+    <meta property="og:description" content="Nuruzzaman Milon's CV" />
+    <meta property="og:image" content="/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
 </head>
 
 <body lang="en">
