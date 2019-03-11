@@ -1,5 +1,9 @@
 @extends('_layouts.master')
 
+@section('meta')
+    @include('_layouts._facebook_meta')
+@endsection
+
 @section('body')
     <h2>{{ $page->title }}</h2>
     <p>{{ $page->formatedDate($page->date) }}</p>

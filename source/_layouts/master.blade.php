@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/default.min.css">
         <link rel="stylesheet" href="/css/Font-Awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/main.css">
+
+        @yield('meta')
     </head>
     <body>
         <section id="header">
