@@ -1,6 +1,6 @@
 ---
 extends: _layouts.post
-title: Why you should know analyzing space time complexity as a software engineer?
+title: Why you should know analyzing space-time complexity as a software engineer?
 date: '2019-03-11'
 gist: Importance of space time complexity analysis in software engineering field.
 section: content
