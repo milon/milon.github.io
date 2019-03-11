@@ -7,12 +7,14 @@ pagination:
 @extends('_layouts.master')
 
 @section('meta')
-    <meta property="og:url" content="{{ $page->getUrl() }}" />
-    <meta property="og:type" content="Article" />
-    <meta property="og:title" content="milon.im" />
-    <meta property="og:description" content="Conference talks of Nuruzzaman Milon" />
-    <meta property="og:image" content="{{ $page->baseUrl.'images/qr-code.png' }}" />
-    <meta property="fb:app_id" content="264496574269710" />
+    @if ($page->production)
+        <meta property="og:url" content="{{ $page->getUrl() }}" />
+        <meta property="og:type" content="Article" />
+        <meta property="og:title" content="milon.im" />
+        <meta property="og:description" content="Conference talks of Nuruzzaman Milon" />
+        <meta property="og:image" content="{{ $page->baseUrl.'images/qr-code.png' }}" />
+        <meta property="fb:app_id" content="264496574269710" />
+    @endif
 @endsection
 
 @section('body')
