@@ -1,5 +1,14 @@
 @extends('_layouts.master')
 
+@section('meta')
+    <meta property="og:url" content="{{ $page->getUrl() }}" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im" />
+    <meta property="og:description" content="Contact with Nuruzzaman Milon" />
+    <meta property="og:image" content="{{ $page->baseUrl.'images/qr-code.png' }}" />
+    <meta property="fb:app_id" content="264496574269710" />
+@endsection
+
 @section('body')
     <h2>Contact Me</h2>
 
