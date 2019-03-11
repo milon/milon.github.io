@@ -15,7 +15,7 @@
     <meta property="og:type" content="Article" />
     <meta property="og:title" content="milon.im" />
     <meta property="og:description" content="Nuruzzaman Milon's CV" />
-    <meta property="og:image" content="/images/qr-code.png" />
+    <meta property="og:image" content="{{ $page->baseUrl.'images/qr-code.png' }}" />
     <meta property="fb:app_id" content="264496574269710" />
 </head>
 
