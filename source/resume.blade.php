@@ -305,6 +305,7 @@
             <ul>
                 <li>Nationality: Bangladeshi</li>
                 <li>Marital Status: Married</li>
+                <li>DoB: August 1st, 1991</li>
             </ul>
         </div>
         <div class="side-block" id="links">
