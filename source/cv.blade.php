@@ -38,7 +38,24 @@
             </h2>
             <section class="blocks">
                 <div class="date">
-                    <span>Present</span><span>May, 2018</span>
+                    <span>Present</span><span>July, 2019</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>Senior Software Engineer</h3>
+                        <span class="place">Urban Sports Club (<a href="https://urbansportsclub.com">https://urbansportsclub.com</a>)</span>
+                        <span class="location">Berlin, Germany</span>
+                    </header>
+                    <div>
+                        <p>Working as a senior backend engineer.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>June, 2019</span><span>May, 2018</span>
                 </div>
                 <div class="decorator">
                 </div>
@@ -49,16 +66,12 @@
                         <span class="location">Münster, Germany</span>
                     </header>
                     <div>
-                        <p>Working on the autoteile team as a full stack engineer to develop new feature and support the legacy codebase.</p>
+                        <p>Working on the autoteile team as a full stack engineer to develop new feature, help with deployments and support the legacy codebase.</p>
                         <ul>
-                            <li class="project-title">Autoteile
+                            <li class="project-title">Projects
                                 <ul>
-                                    <li>A price comparison site for batteries, suspensions, brakes and other car parts with billing.</li>
-                                </ul>
-                            </li>
-                            <li class="project-title">Reifen
-                                <ul>
-                                    <li>A price comparison site for various types for car tires.</li>
+                                    <li>Autoteile - A price comparison site for all types of car parts with billing.</li>
+                                    <li>Reifen - A price comparison site for various types for car tires.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -74,7 +87,7 @@
                 <div class="details">
                     <header>
                         <h3>Senior Software Engineer</h3>
-                        <span class="place">Telenor Health A\S (<a href="https://telenorhealth.com">https://telenorhealth.com</a>)</span>
+                        <span class="place">Telenor Health (<a href="https://telenorhealth.com">https://telenorhealth.com</a>)</span>
                         <span class="location">Dhaka, Bangladesh</span>
                     </header>
                     <div>
@@ -102,14 +115,9 @@
                                     <li>Used Laravel as application framework, PostgreSQL as database, VueJS as frontend framework.</li>
                                 </ul>
                             </li>
-                            <li class="project-title">Tonic Doctor Appointment Booking
-                                <ul>
-                                    <li>This project provides API for managing Doctor Appointment for Tonic.</li>
-                                    <li>Used Laravel as application framework, PostgreSQL as database, Redis for storing cache and sessions.</li>
-                                </ul>
-                            </li>
                             <li class="project-title">Other Projects
                                 <ul>
+                                    <li>Tonic Doctor Appointment - Provides API for a doctor appointment booking system.</li>
                                     <li>Castro - A campaign management tool for SMS, email and push-notification campaign.</li>
                                     <li>Tonic Admin - BI and reporting tool for generating the various report, manage subscribers etc.</li>
                                     <li>Tonic Core - Provides all necessary logic and business insights through API to all Tonic services.</li>
@@ -170,7 +178,7 @@
             </section>
 
             <div class="print">
-                <br><br>
+                <br/><br/><br/>
             </div>
 
             <section class="blocks">
