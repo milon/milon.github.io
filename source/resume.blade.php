@@ -34,27 +34,46 @@
         </header>
         <section class="main-block">
             <h2>
-          <i class="fa fa-suitcase"></i> Work Experiences
-        </h2>
-          <section class="blocks">
-              <div class="date">
-                  <span>Present</span><span>May, 2018</span>
-              </div>
-              <div class="decorator">
-              </div>
-              <div class="details">
-                  <header>
-                      <h3>Senior Software Engineer</h3>
-                      <span class="place">Check24 Vergleichsportal Autoteile GmbH (<a href="https://www.check24.de">https://www.check24.de</a>)</span>
-                      <span class="location">Münster, Germany</span>
-                  </header>
-                  <div>
-                      <ul>
-                          <li>Working on the autoteile team as a full stack engineer to develop new feature and support the legacy codebase.</li>
-                      </ul>
-                  </div>
-              </div>
-          </section>
+              <i class="fa fa-suitcase"></i> Work Experiences
+            </h2>
+            <section class="blocks">
+                <div class="date">
+                    <span>Present</span><span>July, 2019</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>Senior Software Engineer</h3>
+                        <span class="place">Urban Sports Club (<a href="https://urbansportsclub.com">https://urbansportsclub.com</a>)</span>
+                        <span class="location">Berlin, Germany</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Working as a senior backend engineer.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>June, 2019</span><span>May, 2018</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>Senior Software Engineer</h3>
+                        <span class="place">Check24 Vergleichsportal Autoteile GmbH (<a href="https://www.check24.de">https://www.check24.de</a>)</span>
+                        <span class="location">Münster, Germany</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Working as a full stack engineer to develop new feature and support the legacy codebase.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
             <section class="blocks">
                 <div class="date">
                     <span>April, 2018</span><span>May, 2016</span>
@@ -107,7 +126,7 @@
                     </header>
                     <div>
                         <ul>
-                            <li>Works on web technologies both in frontend and backend web development. Also works as business intelligence for creating various reports.</li>
+                            <li>Works on web technologies on frontend and backend and business intelligence.</li>
                         </ul>
                     </div>
                 </div>
@@ -156,10 +175,9 @@
                           <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis</li>
                           <li>Beanstalkd, IronMQ, RabbitMQ</li>
                           <li>PHPUnit, PHPSpec, Codeception, Behat</li>
-                          <li>Apache, Nginx, Tomcat</li>
                           <li>Amazon AWS(EC2, S3, RDS), Google APIs, Payment Gateway(Stripe, Paypal, Braintree)</li>
                           <li>Git, SVN</li>
-                          <li>Microservices, Docker, Jenkins, Ansible</li>
+                          <li>Apache, Nginx, Microservices, Docker, Jenkins, Ansible</li>
                       </ul>
                     </div>
                 </div>
