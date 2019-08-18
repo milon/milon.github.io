@@ -49,7 +49,7 @@
                         <span class="location">Berlin, Germany</span>
                     </header>
                     <div>
-                        <p>Working as a senior backend engineer.</p>
+                        <p>Working as a senior backend engineer to manage and manintain existing codebase as well as build new features. Taking care of financing, payment and GDPR compliance as well.</p>
                     </div>
                 </div>
             </section>
@@ -410,7 +410,7 @@
                 <li><i class="fa fa-envelope-o"></i> contact@milon.im</li>
                 <li><i class="fa fa-skype"></i> milon521</li>
                 <li class="print"><i class="fa fa-phone"></i> +491776974274</li>
-                <li><i class="fa fa-home"></i> Lückstraße 22, <br>Berlin 10317, Germany</li>
+                <li><i class="fa fa-home"></i> Schalkauer Straße 24, <br>13055 Berlin, Germany.</li>
             </ul>
         </div>
 
