@@ -24,8 +24,4 @@
     <p>Currently, I am working for a German <a href="https://urbansportsclub.com">company</a> as Senior Software Engineer and living in Berlin, Germany. I am also an admin of <a href="https://www.facebook.com/groups/pxperts">phpXperts</a>, the largest developer community of Bangladesh.</p>
     <p>Recently I become a father of a beautiful prince.</p>
     <p>I am a proud <a href="https://en.wikipedia.org/wiki/Bangladesh">Bangladeshi</a>.</p>
-
-    <p class="back-link">
-        <a href="{{ $page->baseUrl }}">Back to Home</a>
-    </p>
 @endsection
