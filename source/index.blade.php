@@ -12,9 +12,7 @@
 @endsection
 
 @section('body')
-    <h2>About Me</h2>
     <p></p>
-
     <p>
         <img src="/images/about.jpg" alt="Avatar" class="avatar">
         Birth, childhood everything is in Dhaka, Bangladesh. Got education from Shamsul Haque Khan High School and Dhaka College. Then went to Mawlana Bhashani Science and Technology University to study Information and Communication Technology.
