@@ -46,7 +46,7 @@
                     <header>
                         <h3>Senior Software Engineer</h3>
                         <span class="place">Urban Sports Club (<a href="https://urbansportsclub.com">https://urbansportsclub.com</a>)</span>
-                        <span class="location">Berlin, Germany</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</span>
                     </header>
                     <div>
                         <ul>
@@ -65,7 +65,7 @@
                     <header>
                         <h3>Senior Software Engineer</h3>
                         <span class="place">Check24 Vergleichsportal Autoteile GmbH (<a href="https://www.check24.de">https://www.check24.de</a>)</span>
-                        <span class="location">Münster, Germany</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Münster, Germany</span>
                     </header>
                     <div>
                         <ul>
@@ -84,7 +84,7 @@
                     <header>
                         <h3>Senior Software Engineer</h3>
                         <span class="place">Telenor Health A\S (<a href="https://telenorhealth.com">https://telenorhealth.com</a>)</span>
-                        <span class="location">Dhaka, Bangladesh</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
                     <div>
                         <ul>
@@ -103,7 +103,7 @@
                     <header>
                         <h3>Software Engineer</h3>
                         <span class="place">WeDevs Ltd. (<a href="https://wedevs.com">https://wedevs.com</a>)</span>
-                        <span class="location">Dhaka, Bangladesh</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
                     <div>
                         <ul>
@@ -122,7 +122,7 @@
                     <header>
                         <h3>Software Engineer</h3>
                         <span class="place">Brotecs Technologies Ltd. (<a href="https://brotecs.com/">https://brotecs.com/</a>)</span>
-                        <span class="location">Dhaka, Bangladesh</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
                     <div>
                         <ul>
@@ -141,7 +141,7 @@
                     <header>
                         <h3>Programmer and System Analyst</h3>
                         <span class="place">ITMedicus Bangladesh Ltd. (<a href="http://itmedicus.com">http://itmedicus.com</a>)</span>
-                        <span class="location">Dhaka, Bangladesh</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
                     <div>
                         <ul>
@@ -215,7 +215,7 @@
                     <header>
                         <h3>B.Sc Engineering in Information and Communication Technology</h3>
                         <span class="place">Mawlana Bhashani Science and Technology University</span>
-                        <span class="location">Tangail, Bangladesh</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Tangail, Bangladesh</span>
                     </header>
                     <div>
                         <ul>
