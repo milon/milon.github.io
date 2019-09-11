@@ -6,7 +6,7 @@
     <title>Nuruzzaman_Milon_cv</title>
     <link rel="shortcut icon" href="/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/css/Font-Awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/cv.css" />
@@ -34,7 +34,7 @@
         </header>
         <section class="main-block">
             <h2>
-              <i class="fa fa-suitcase"></i> Work Experiences
+              <i class="fas fa-briefcase"></i> Work Experiences
             </h2>
             <section class="blocks">
                 <div class="date">
@@ -243,7 +243,7 @@
 
         <section class="main-block">
             <h2>
-          <i class="fa fa-folder-open"></i> Skills
+          <i class="far fa-folder-open"></i> Skills
         </h2>
             <section class="blocks">
                 <div class="date">
@@ -298,7 +298,7 @@
 
         <section class="main-block concise">
             <h2>
-              <i class="fa fa-graduation-cap"></i> Education
+              <i class="fas fa-graduation-cap"></i> Education
             </h2>
             <section class="blocks">
                 <div class="date">
@@ -323,7 +323,7 @@
         </section>
         <section class="main-block concise">
             <h2>
-              <i class="fa fa-book"></i> Books and Publication
+              <i class="fas fa-book"></i> Books and Publication
             </h2>
             <section class="blocks">
                 <div class="date">
@@ -405,12 +405,12 @@
         <div class="side-block" id="contact">
             <h1>Contact Info</h1>
             <ul>
-                <li><i class="fa fa-globe"></i> <a href="https://milon.im">https://milon.im</a></li>
-                <li><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
-                <li><i class="fa fa-envelope-o"></i> contact@milon.im</li>
-                <li><i class="fa fa-skype"></i> milon521</li>
-                <li class="print"><i class="fa fa-phone"></i> +491776974274</li>
-                <li><i class="fa fa-home"></i> Schalkauer Straße 24, <br>13055 Berlin, Germany.</li>
+                <li><i class="fas fa-globe-americas"></i> <a href="https://milon.im">https://milon.im</a></li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
+                <li><i class="far fa-envelope"></i> contact@milon.im</li>
+                <li><i class="fab fa-skype"></i> milon521</li>
+                <li class="print"><i class="fas fa-phone"></i> +491776974274</li>
+                <li><i class="fas fa-home"></i> Schalkauer Straße 24, <br>13055 Berlin, Germany.</li>
             </ul>
         </div>
 
@@ -447,15 +447,15 @@
         <div class="side-block" id="links">
             <h1>Links</h1>
             <ul>
-                <li><i class="fa fa-twitter"></i> <a href="https://twitter.com/to_milon">@to_milon</a></li>
-                <li><i class="fa fa-github"></i> <a href="https://github.com/milon">github.com/milon</a></li>
-                <li><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
-                <li><i class="fa fa-link"></i> <a href="https://speakerdeck.com/milon">speakerdeck.com/milon</a></li>
-                <li><i class="fa fa-slideshare"></i> <a href="http://www.slideshare.net/milon521">slideshare.net/milon521</a></li>
+                <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/to_milon">@to_milon</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/milon">github.com/milon</a></li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
+                <li><i class="fab fa-speaker-deck"></i> <a href="https://speakerdeck.com/milon">speakerdeck.com/milon</a></li>
+                <li><i class="fab fa-slideshare"></i> <a href="http://www.slideshare.net/milon521">slideshare.net/milon521</a></li>
             </ul>
         </div>
         <div class="side-block" id="disclaimer">
-            <a href="/pdf/Nuruzzaman_Milon_cv.pdf" download class="btn">Download</a>
+            <a href="/pdf/Nuruzzaman_Milon_cv.pdf" download class="btn"><i class="fas fa-download"></i> Download</a>
             <p>This CV is available online at <br> &mdash; <a href="https://milon.im/cv/">https://milon.im/cv/</a></p>
         </div>
     </aside>
