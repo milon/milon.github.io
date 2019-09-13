@@ -40,8 +40,8 @@ p strong {
 }
 
 section#header {
-    position: relative;
     margin: 30px 0;
+    position: relative;
 }
 
 section#header h1 {
