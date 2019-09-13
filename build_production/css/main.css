@@ -40,7 +40,8 @@ p strong {
 }
 
 section#header {
-  margin: 40px 0;
+    position: relative;
+    margin: 30px 0;
 }
 
 section#header h1 {
@@ -49,6 +50,7 @@ section#header h1 {
   font-size: 2em;
   margin: 0 0 9px 0;
   font-weight: bold;
+  text-shadow: 1px 3px 3px #C0C0C0;
 }
 
 section#header h2 {
@@ -272,4 +274,24 @@ td, th {
     overflow: visible;
     line-height: 120%;
     border-bottom: 1px solid #DDD;
+}
+
+.category-tags {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 1.5em;
+}
+
+.category-tags span {
+    margin-right: 0.5em;
+}
+
+.category-tags span:hover {
+    color: #C0C0C0;
+}
+
+.rss-feed {
+    position: absolute;
+    font-size: 1.25em;
+    right: 0;
 }

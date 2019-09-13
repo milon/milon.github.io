@@ -21,6 +21,7 @@
     </head>
     <body>
         <section id="header">
+            <a data-tooltip="RSS Feed" class="rss-feed" href="/rss"><i class="fas fa-rss"></i></a>
             <h1>
                 <a href="https://milon.im/">Nuruzzaman Milon</a>
             </h1>
@@ -68,6 +69,7 @@ $user-&gt;options = [
 ];
 $user-&gt;save();</code></pre>
 <p>এক্ষেত্রে ইউজারকে ডাম্প করলে আমরা অপশনের জায়গায় একটি সিরিয়ালাইড জেসন ডেটা পেতাম। কিন্তু আমরা যদি $casts এরেতে অপশন হিসেবে এরে সিলেক্ট করি সেক্ষেত্রে মডেল ডেটা রিটার্ন করার সময় অটোমেটিক আউটপুটকে ডিসিরিয়ালাইজ করবে।</p>
+    
     <hr>
 
             <div id="disqus_thread"></div>
