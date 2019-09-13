@@ -16,6 +16,7 @@
     </head>
     <body>
         <section id="header">
+            <a data-tooltip="RSS Feed" class="rss-feed" href="/rss"><i class="fas fa-rss"></i></a>
             <h1>
                 <a href="{{ $page->baseUrl }}">Nuruzzaman Milon</a>
             </h1>
