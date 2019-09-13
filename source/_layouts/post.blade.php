@@ -10,6 +10,8 @@
 
     @yield('content')
 
+    @include('_layouts._category_tags')
+
     <hr>
 
     @if($page->production)

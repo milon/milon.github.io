@@ -7,8 +7,8 @@ return [
     'formatedDate' => function($page, $date) {
         return date('d F, Y', strtotime($date));
     },
-    'allCategories' => function ($page, $posts) {
-        return $posts->pluck('categories')->flatten()->unique();
+    'getCategories' => function ($page) {
+        return $page->categories ?? [];
     },
     'selected' => function($page, $section) {
         return ($page->getPath() === $section) ? 'selected' : '';

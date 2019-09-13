@@ -273,3 +273,17 @@ td, th {
     line-height: 120%;
     border-bottom: 1px solid #DDD;
 }
+
+.category-tags {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 1.5em;
+}
+
+.category-tags span {
+    margin-right: 0.5em;
+}
+
+.category-tags span:hover {
+    color: #C0C0C0;
+}

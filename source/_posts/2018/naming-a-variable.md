@@ -5,7 +5,7 @@ date: '2018-02-04'
 gist: My two cents on naming a variable while programming.
 section: content
 syntaxHighlight: false
-categories: [clean code, programming]
+categories: [clean-code, programming]
 ---
 
 There is a saying that-

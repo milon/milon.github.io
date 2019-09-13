@@ -11,7 +11,7 @@ class GenerateIndex
         $posts = collect($jigsaw->getCollection('posts')->map(function ($page) use ($jigsaw) {
             return [
                 'title'      => $page->title,
-                'categories' => $page->categories ?? [],
+                'categories' => $page->getCategories(),
                 'link'       => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
                 'gist'       => $page->gist,
             ];
@@ -20,7 +20,7 @@ class GenerateIndex
         $talks = collect($jigsaw->getCollection('talks')->map(function ($page) use ($jigsaw) {
             return [
                 'title'      => $page->title,
-                'categories' => $page->categories ?? [],
+                'categories' => $page->getCategories(),
                 'link'       => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
                 'gist'       => $page->gist,
             ];
