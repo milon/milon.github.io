@@ -7,25 +7,37 @@ use samdark\sitemap\Sitemap;
 
 class GenerateSitemap
 {
+    protected $exclude = [
+        '/css/*',
+        '/pdf/*',
+        '/images/*',
+        '/CNAME',
+        '*/favicon.ico',
+        '*/404*',
+    ];
+
     public function handle(Jigsaw $jigsaw)
     {
         $baseUrl = 'https://milon.im';
+
+        if (! $baseUrl) {
+            echo("\nTo generate a sitemap.xml file, please specify a 'baseUrl' in config.php.\n\n");
+            return;
+        }
+
         $sitemap = new Sitemap($jigsaw->getDestinationPath() . '/sitemap.xml');
 
-        collect($jigsaw->getOutputPaths())->each(function ($path) use ($baseUrl, $sitemap) {
-            if (! $this->isAsset($path)) {
+        collect($jigsaw->getOutputPaths())->reject(function ($path) {
+                return $this->isExcluded($path);
+            })->each(function ($path) use ($baseUrl, $sitemap) {
                 $sitemap->addItem($baseUrl . $path, time(), Sitemap::DAILY);
-            }
-        });
+            });
 
         $sitemap->write();
     }
 
-    public function isAsset($path)
+    public function isExcluded($path)
     {
-        return starts_with($path, '/assets')
-            || starts_with($path, '/css')
-            || starts_with($path, '/pdf') 
-            || starts_with($path, '/images');
+        return str_is($this->exclude, $path);
     }
 }
