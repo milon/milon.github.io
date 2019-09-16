@@ -21,7 +21,9 @@
         </head>
     <body>
         <section id="header">
-            <a data-tooltip="RSS Feed" class="rss-feed" href="/rss"><i class="fas fa-rss"></i></a>
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
             <h1>
                 <a href="https://milon.im/">Nuruzzaman Milon</a>
             </h1>
@@ -46,8 +48,20 @@
         </p>
         <p>
             <i class="fas fa-phone"></i> Shoot an email instead. <br>
-            <i class="fab fa-twitter"></i> Want a quick response? Tweet me <a href="https://twitter.com/to_milon">@to_milon</a>!
+            <i class="fab fa-twitter"></i> Want a quick response? Tweet me <a href="https://twitter.com/to_milon">@to_milon</a>! <br>
+            <i class="fas fa-envelope-open-text"></i> Want to know about my thoughs and what going on? Subscribe to the newsletter below, no spam guaranteed.
         </p>
+
+        <div class="newsletter">
+    <h2>Newsletter</h2>
+    <form action="https://tinyletter.com/to_milon" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/to_milon', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+        <p>
+            <input class="email" type="text" name="email" id="tlemail" placeholder="Enter your email address" />
+            <input type="hidden" value="1" name="embed"/>
+            <input type="submit" class="submit-btn" value="Subscribe">
+        </p>
+    </form>
+</div>
 
         <p class="back-link">
             <a href="https://milon.im/">Back to Home</a>
