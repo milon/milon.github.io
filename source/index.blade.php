@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('meta')
-    @include('_layouts._index_meta', [
+    @include('_layouts._partials._index_meta', [
         'title' => 'milon.im | About Me',
         'description' => "About Nuruzzaman Milon",
     ])

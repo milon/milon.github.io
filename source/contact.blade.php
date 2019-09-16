@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('meta')
-    @include('_layouts._index_meta', [
+    @include('_layouts._partials._index_meta', [
         'title' => 'milon.im | Contact',
         'description' => "Contact with Nuruzzaman Milon",
     ])
@@ -22,7 +22,7 @@
             <i class="fas fa-envelope-open-text"></i> Want to know about my thoughs and what going on? Subscribe to the newsletter below, no spam guaranteed.
         </p>
 
-        @include('_layouts._newsletter')
+        @include('_layouts._partials._newsletter')
 
         <p class="back-link">
             <a href="{{ $page->baseUrl }}">Back to Home</a>

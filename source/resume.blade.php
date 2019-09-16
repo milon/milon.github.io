@@ -343,7 +343,7 @@
     </aside>
 
     @if ($page->production)
-        @include('_layouts._analytics')
+        @include('_layouts._partials._analytics')
     @endif
 </body>
 

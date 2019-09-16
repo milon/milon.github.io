@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('meta')
-    @include('_layouts._article_meta')
+    @include('_layouts._partials._article_meta')
 @endsection
 
 @section('body')
@@ -10,12 +10,12 @@
 
     @yield('content')
 
-    @include('_layouts._category_tags')
+    @include('_layouts._partials._category_tags')
 
     <hr>
 
     @if($page->production)
-        @include('_layouts._disqus')
+        @include('_layouts._partials._disqus')
     @endif
 
     <p class="back-link">
@@ -23,6 +23,6 @@
     </p>
 
     @if($page->syntaxHighlight)
-        @include('_layouts._highlightjs')
+        @include('_layouts._partials._highlightjs')
     @endif
 @endsection

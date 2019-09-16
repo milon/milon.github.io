@@ -7,7 +7,7 @@ pagination:
 @extends('_layouts.master')
 
 @section('meta')
-    @include('_layouts._index_meta', [
+    @include('_layouts._partials._index_meta', [
         'title' => 'milon.im | Blogs',
         'description' => "Personal website of Nuruzzaman Milon",
     ])
@@ -27,6 +27,6 @@ pagination:
             </section>
         @endforeach
 
-        @include('_layouts._pagination')
+        @include('_layouts._partials._pagination')
     </div>
 @endsection

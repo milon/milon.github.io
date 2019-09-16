@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('meta')
-    @include('_layouts._index_meta', [
+    @include('_layouts._partials._index_meta', [
         'title' => 'Laravel PHP Web Framework',
         'description' => "Nuruzzaman Milon's first book on Laravel PHP Web Framework.",
     ])
