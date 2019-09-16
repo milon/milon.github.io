@@ -290,8 +290,26 @@ td, th {
     color: #C0C0C0;
 }
 
-.rss-feed {
+.header-icons {
     position: absolute;
     font-size: 0.9em;
     right: 0;
+}
+
+.newsletter {
+    margin: 1.8em 0;
+}
+
+.newsletter .email {
+    width: 300px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #C0C0C0;
+}
+
+.newsletter .submit-btn {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #C0C0C0;
+    cursor: pointer;
 }

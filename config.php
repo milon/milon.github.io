@@ -5,6 +5,7 @@ return [
     'siteTitle' => 'milon.im',
     'siteAuthor' => 'Nuruzzaman Milon',
     'production' => false,
+    'newsletterUrl' => 'https://tinyletter.com/to_milon',
     'formatedDate' => function($page, $date) {
         return date('d F, Y', strtotime($date));
     },
