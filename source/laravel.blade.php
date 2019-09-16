@@ -1,14 +1,10 @@
 @extends('_layouts.master')
 
 @section('meta')
-    @if ($page->production)
-        <meta property="og:url" content="{{ $page->getUrl() }}" />
-        <meta property="og:type" content="Article" />
-        <meta property="og:title" content="Laravel PHP Web Framework" />
-        <meta property="og:description" content="Nuruzzaman Milon's first book on Laravel PHP Web Framework." />
-        <meta property="og:image" content="{{ $page->baseUrl.'images/qr-code.png' }}" />
-        <meta property="fb:app_id" content="264496574269710" />
-    @endif
+    @include('_layouts._index_meta', [
+        'title' => 'Laravel PHP Web Framework',
+        'description' => "Nuruzzaman Milon's first book on Laravel PHP Web Framework.",
+    ])
 @endsection
 
 @section('body')

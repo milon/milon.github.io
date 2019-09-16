@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('meta')
-    @include('_layouts._facebook_meta')
+    @include('_layouts._article_meta')
 @endsection
 
 @section('body')
