@@ -8,14 +8,16 @@
     <meta property="fb:app_id" content="264496574269710" />
 
     {{-- twitter --}}
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ $title ?? $page->siteTitle }}">
-    <meta name="twitter:description" content="{{ $description ?? "" }}">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="{{ $title ?? $page->siteTitle }}" />
+    <meta name="twitter:description" content="{{ $description ?? "" }}" />
+    <meta name="twitter:image" content="{{ $page->baseUrl.'images/qr-code.png' }}" />
 
     {{-- search engine --}}
-    <meta name="description" content="{{ $description ?? "" }}">
+    <meta name="description" content="{{ $description ?? "" }}" />
 
     {{-- google --}}
-    <meta itemprop="name" content="{{ $title ?? $page->siteTitle }}">
-    <meta itemprop="description" content="{{ $description ?? "" }}">
+    <meta itemprop="name" content="{{ $title ?? $page->siteTitle }}" />
+    <meta itemprop="description" content="{{ $description ?? "" }}" />
 @endif
