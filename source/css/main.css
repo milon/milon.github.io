@@ -1,6 +1,16 @@
 @import 'https://fonts.googleapis.com/css?family=Alice|Cutive+Mono|Signika:300';
 
+:root {
+    --primary-color: #303841;
+    --hover-color: #3a4750;
+    --highlight-color: #00adb5;
+
+    --table-border: #DDDDDD;
+    --table-background: #f9f9f9;
+}
+
 body {
+  color: var(--primary-color);
   width: 600px;
   margin: 0 auto;
   font-size: 18px;
@@ -18,15 +28,15 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--primary-color);
 }
 
 a:visited {
-  color: #000;
+  color: var(--primary-color);
 }
 
 a:hover {
-  color: #C0C0C0;
+  color: var(--hover-color);
 }
 
 p {
@@ -50,7 +60,7 @@ section#header h1 {
   font-size: 2em;
   margin: 0 0 9px 0;
   font-weight: bold;
-  text-shadow: 1px 3px 3px #C0C0C0;
+  text-shadow: 1px 3px 3px var(--hover-color);
 }
 
 section#header h2 {
@@ -107,7 +117,7 @@ section h2 {
 }
 
 section h2 a {
-  color: #000;
+  color: var(--primary-color);
 }
 
 section time {
@@ -135,7 +145,7 @@ section#paginator a, section#paginator span {
 }
 
 section#paginator a.selected {
-    color: #C0C0C0;
+    color: var(--hover-color);
 }
 
 #post {
@@ -229,7 +239,7 @@ iframe {
 .avatar {
     float: left;
     border-radius: 50%;
-    border: 2px solid grey;
+    border: 2px solid var(--primary-color);
     max-width: 40%;
     display: block;
     vertical-align: middle;
@@ -265,7 +275,7 @@ tr, td, th {
 }
 
 table tbody > tr:nth-child(odd) > td {
-    background: #f9f9f9;
+    background: var(--table-background);
 }
 
 td, th {
@@ -273,7 +283,7 @@ td, th {
     margin: 0;
     overflow: visible;
     line-height: 120%;
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid var(--table-border);
 }
 
 .category-tags {
@@ -287,7 +297,7 @@ td, th {
 }
 
 .category-tags span:hover {
-    color: #C0C0C0;
+    color: var(--hover-color);
 }
 
 .header-icons {
@@ -304,12 +314,12 @@ td, th {
     width: 300px;
     padding: 10px;
     font-size: 1em;
-    border: 1px solid #C0C0C0;
+    border: 1px solid var(--hover-color);
 }
 
 .newsletter .submit-btn {
     padding: 10px;
     font-size: 1em;
-    border: 1px solid #C0C0C0;
+    border: 1px solid var(--hover-color);
     cursor: pointer;
 }
