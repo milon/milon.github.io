@@ -316,6 +316,7 @@ td, th {
     padding: 10px;
     font-size: 1em;
     border: 1px solid var(--hover-color);
+    font-family: 'Signika', sans-serif;
 }
 
 .newsletter .submit-btn {
@@ -323,4 +324,9 @@ td, th {
     font-size: 1em;
     border: 1px solid var(--hover-color);
     cursor: pointer;
+    font-family: 'Signika', sans-serif;
+}
+
+.newsletter .submit-btn:hover {
+    color: var(--hover-color);
 }
