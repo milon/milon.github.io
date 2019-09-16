@@ -1,8 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Alice|Cutive+Mono|Signika:300';
 
 :root {
-    --primary-color: #303841;
-    --hover-color: #3a4750;
+    --primary-color: #050506;
+    --hover-color: #546172;
     --highlight-color: #00adb5;
 
     --table-border: #DDDDDD;
@@ -68,6 +68,7 @@ section#header h2 {
   font-size: 1em;
   text-align: center;
   font-weight: bold;
+  color: var(--primary-color)
 }
 
 section#header p {
