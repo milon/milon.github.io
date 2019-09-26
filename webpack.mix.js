@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
 let build = require('./tasks/build.js');
 
-mix.disableSuccessNotifications();
+mix.disableNotifications();
 mix.setPublicPath('source/assets/build');
 
 mix.sass('source/_assets/sass/main.scss', 'css/main.css')

@@ -21,7 +21,9 @@
     <section id="main">
         <header id="title">
             <div class="text">
-                <h1>Nuruzzaman Milon</h1>
+                <h1>
+                    <a href="{{ $page->baseUrl }}">Nuruzzaman Milon</a>
+                </h1>
                 <span class="subtitle">Programmer, Author and Tech Enthusiast</span>
             </div>
             <div class="qr-code">
