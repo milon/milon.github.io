@@ -5,11 +5,7 @@
     <meta charset="utf-8" />
     <title>Nuruzzaman_Milon_resume</title>
     <link rel="shortcut icon" href="/images/favicon.png"/>
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/resume.css" />
+    <link rel="stylesheet" href="{{ mix('css/resume.css', 'assets/build') }}">
 
     @if ($page->production)
         <meta property="og:url" content="{{ $page->getUrl() }}" />

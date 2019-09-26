@@ -1,3 +1,7 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import "normalize";
+
 @page{
   size: A4 portrait;
   margin: 0;
@@ -65,7 +69,7 @@ li{
   float: right;
   position: relative; /* for disclaimer */
   width: var(--sidebar-width);
-  height: 100%;
+  height: 200%;
   padding: 0.6in var(--sidebar-horizontal-padding);
   background-color: #f2f2f2;
   font-size: 8.5pt;
@@ -76,7 +80,7 @@ li{
 #title{
   position: relative;
   left: 0.55in;
-  margin-bottom: 0.3in;
+  margin-bottom: 0.2in;
   line-height: 1.2;
   display: flex;
   width: calc(100% - 0.55in);
@@ -335,7 +339,7 @@ li{
 }
 
 .side-block{
-  margin-top: 0.2in;
+  margin-top: 0.4in;
 }
 
 #contact ul, #links ul{

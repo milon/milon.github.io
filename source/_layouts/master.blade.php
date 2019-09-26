@@ -7,10 +7,7 @@
         <title>{{ $page->siteTitle }}</title>
         <link rel="shortcut icon" href="/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/css/reset.min.css">
-        <link rel="stylesheet" href="/css/default.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
 
         @yield('meta')
     </head>
