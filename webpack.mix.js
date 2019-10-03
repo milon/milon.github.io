@@ -4,6 +4,8 @@ let build = require('./tasks/build.js');
 mix.disableNotifications();
 mix.setPublicPath('source/assets/build');
 
+mix.copyDirectory( './node_modules/@fortawesome/fontawesome-free/webfonts', 'source/assets/build/fonts/font-awesome' )
+
 mix.sass('source/_assets/sass/main.scss', 'css/main.css')
     .sourceMaps()
     .sass('source/_assets/sass/cv.scss', 'css/cv.css')
