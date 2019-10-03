@@ -1,14 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Alice|Cutive+Mono|Signika:300';
-
-$fa-font-path: '/assets/build/fonts/font-awesome' !default;
-
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
-
-@import "reset.min";
-@import "default.min";
+@import "_font_awesome";
+@import "_reset.min";
+@import "_default.min";
 
 :root {
     --primary-color: #050506;
