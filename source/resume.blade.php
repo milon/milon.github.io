@@ -7,14 +7,10 @@
     <link rel="shortcut icon" href="/assets/images/favicon.png"/>
     <link rel="stylesheet" href="{{ mix('css/resume.css', 'assets/build') }}">
 
-    @if ($page->production)
-        <meta property="og:url" content="{{ $page->getUrl() }}" />
-        <meta property="og:type" content="Article" />
-        <meta property="og:title" content="milon.im" />
-        <meta property="og:description" content="Nuruzzaman Milon's resume" />
-        <meta property="og:image" content="{{ $page->baseUrl.'images/qr-code.png' }}" />
-        <meta property="fb:app_id" content="264496574269710" />
-    @endif
+    @include('_layouts._partials._cv_meta', [
+            'title' => 'milon.im | Resume',
+            'description' => "Resume of Nuruzzaman Milon",
+    ])
 </head>
 
 <body lang="en">
