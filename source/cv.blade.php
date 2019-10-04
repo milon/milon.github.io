@@ -376,15 +376,19 @@
             <h1>Certifications</h1>
             <ul>
                 <li>
+                    <i class="fab fa-laravel"></i>
                     <a href="https://exam.laravelcert.com/is/nuruzzaman-milon/certified-since/2018-01-08">Certified Laravel Developer</a>
                 </li>
                 <li>
+                    <i class="icon-scrum"></i>
                     <a href="http://bcert.me/swajseym">Certified Scrum Professional<sup>®</sup></a>
                 </li>
                 <li>
+                    <i class="icon-scrum"></i>
                     <a href="http://bcert.me/skctlvko">Certified Scrum Developer<sup>®</sup></a>
                 </li>
                 <li>
+                    <i class="icon-scrum"></i>
                     <a href="http://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
                 </li>
             </ul>
