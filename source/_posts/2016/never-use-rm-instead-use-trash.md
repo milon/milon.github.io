@@ -12,7 +12,7 @@ Those who use command line heavily, they use a command called `rm` almost everyd
 
 After that incident, I tried to find some solution. Then I find an awesome tool called [trash](https://github.com/sindresorhus/trash). It's a simple node module and you can use it to your project. But I installed it globally so that I can use it anywhere on my machine. It deletes your files and folders just like `rm` but it put then to trash. So, you can undo the process.
 
-![Trash Logo](/images/posts/trash.png)
+![Trash Logo](/assets/images/posts/trash.png)
 
 The installing process is very strait forward. I assume your machine has already node and npm installed. If not, then install them. After that run this command on your terminal-
 

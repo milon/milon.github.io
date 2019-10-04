@@ -10,7 +10,7 @@ categories: []
 
 I just become a **Certified Laravel Developer** yesterday night. I did attend the exam 4-5 days back. After posting the news in facebook, I was overwhelmed with congratulations and question about the procedure. This blog post is the answer of that question.
 
-![Certified Laravel Developer](/images/posts/laravel-certified-developer.png)
+![Certified Laravel Developer](/assets/images/posts/laravel-certified-developer.png)
 
 First you need to apply for the certification exam. Unfortunately it's not free and it's not cheap. It's €199 for personal certification. And you you apply for your team with more than 5 developer, you will get 15% discount. More will be found on [certification site](https://laravel.com/certification) including [preparation guideline](https://laravel.com/certification/prepare), and [frequently asked question](http://support.laravelcert.com/support/solutions/folders/30000052876).
 

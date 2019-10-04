@@ -135,4 +135,4 @@ $router->get('/', function(){
 
 এবার আপনি যদি আপনার রুট রাউট ভিজিট করেন তাহলে নিচের মত আউটপুট দেখতে পাবেন।
 
-![Whoops](/images/posts/whoops.jpg)
+![Whoops](/assets/images/posts/whoops.jpg)

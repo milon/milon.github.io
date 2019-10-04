@@ -10,7 +10,7 @@ categories: []
 
 Recently, we are planning to use machine learning in one of our core product in Telenor Health. So, I am seriously looking into machine learning for the last few days. Though I have a computer science degree, to be honest, I didn't have a good grasp on machine learning rather than having some basic knowledge of some algorithm like linear regression, K nearest neighbor algorithm and some familiarity with some machine learning term like neural network, deep learning etc. Many people are doing machine learning without having CS degree. So I thought, why not give it a try?
 
-![Machine Learning](/images/posts/machine_learning-1024x724.jpg)
+![Machine Learning](/assets/images/posts/machine_learning-1024x724.jpg)
 
 I am writing this series in English, though I English is not very good. One reason is this will improve my English writing skill and other thing is my foreign friends could understand what I learn. So, pardon me for my writing.
 

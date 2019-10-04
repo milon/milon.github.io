@@ -12,17 +12,17 @@ categories: []
 
 এই অ্যাপটির কোড পাবেন [গিটহাবে](https://github.com/milon/laravel-todo)। এখানে অথেনটিকেশন, সিম্পল CRUD(Create, Read, Update, Delete) অপারেশন, রিসোর্সফুল রাউটিং, ফরম মডেল বাইন্ডিং, ফরম রিকোয়েস্ট, ফ্ল্যাশ ম্যাসেজ, পেজিনেশন সহ কিভাবে আপনি আপনার কোড গুছিয়ে লিখতে পারবেন, সে ব্যাপারে আলোকপাত করা হয়েছে।
 
-![Todo App - Landing Page](/images/posts/todo-01.png)
+![Todo App - Landing Page](/assets/images/posts/todo-01.png)
 
-![Todo App - Sign In Page](/images/posts/todo-02.png)
+![Todo App - Sign In Page](/assets/images/posts/todo-02.png)
 
-![Todo App - Registration Page](/images/posts/todo-03.png)
+![Todo App - Registration Page](/assets/images/posts/todo-03.png)
 
-![Todo App - Todo List Page](/images/posts/todo-04.png)
+![Todo App - Todo List Page](/assets/images/posts/todo-04.png)
 
-![Todo App - Create New Todo Page](/images/posts/todo-05.png)
+![Todo App - Create New Todo Page](/assets/images/posts/todo-05.png)
 
-![Todo App - User Profile Page](/images/posts/todo-06.png)
+![Todo App - User Profile Page](/assets/images/posts/todo-06.png)
 
 অ্যাপটি আপনার পিসিতে রান করতে হলে প্রথমেই গিটহাবে রিপোজিটরিটি ফর্ক করুন, তারপর ক্লোন করতে নিচের কমান্ডটি দিন-
 

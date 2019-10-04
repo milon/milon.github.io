@@ -14,11 +14,11 @@ In this episode I am going to talk about some basic package of atom. I told you 
 
 First I am talking about a package that will give a nice look to your editor. The package is called [file-icons](https://atom.io/packages/file-icons). A number of icons and colors are provided by default for a range of common file types. If you have file that you would like custom icons for you can easily add this yourself. You can install it with this command- `apm install file-icons` or from settings menu's install tab.
 
-![File Icons](/images/posts/file-icon.png)
+![File Icons](/assets/images/posts/file-icon.png)
 
 The next package is inspired by Sublime Text's minimap feature. Actually I am a very big fan of [minimap](https://atom.io/packages/minimap) and I use this feature in every editor I use. Install it through `apm install minimap` or via settings menu. From settings menu you can change the position either in left or right and enable or disable colors. You can also scroll via clicking on minimap and also automatic hide minimap pane.
 
-![Minimap](/images/posts/minimap.png)
+![Minimap](/assets/images/posts/minimap.png)
 
 Now I am talking about a very famous package that you might already familiar with. It is none other emmet, which was used to known as zen coding. It will boost up your development speed a lot. You can find the documentation and installation instruction on their official website [emmet.io](http://emmet.io)
 

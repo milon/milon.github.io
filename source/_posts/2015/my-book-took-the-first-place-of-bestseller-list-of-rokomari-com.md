@@ -10,7 +10,7 @@ categories: []
 
 My book **Laravel PHP Web Framework** was released on 26th May, 2015\. This is my first book, and I am very happy to see my book on [www.rokomari.com](http://www.rokomari.com)'s bestseller list.
 
-![Bestseller List](/images/posts/bestseller-list.jpg)
+![Bestseller List](/assets/images/posts/bestseller-list.jpg)
 
 I want to thank you all who made this done. Specially Subeen Bhai and Rafi Bhai.
 

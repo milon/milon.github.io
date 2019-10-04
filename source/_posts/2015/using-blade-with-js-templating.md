@@ -12,7 +12,7 @@ syntaxHighlight: true
 categories: []
 ---
 
-![Laravel loves Angular](/images/posts/angular-laravel.jpg)
+![Laravel loves Angular](/assets/images/posts/angular-laravel.jpg)
 
 আপনারা ইতোমধ্যে জানেন লারাভেলের টেমপ্লেটিং ইঞ্জিনের নাম ব্লেড আর এতে যে কোন ভ্যালু প্রিন্ট করার জন্য ডাবল কার্লি ব্রাকেট ব্যবহার করা হয়। যেমন-
 

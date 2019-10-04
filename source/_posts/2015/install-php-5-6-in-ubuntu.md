@@ -8,7 +8,7 @@ syntaxHighlight: true
 categories: []
 ---
 
-![Ubuntu loves PHP](/images/posts/ubuntu-php.jpg)
+![Ubuntu loves PHP](/assets/images/posts/ubuntu-php.jpg)
 
 উবুন্টুর সর্বশেষ এলটিএস রিলিজ হচ্ছে উবুন্টু ১৪.০৪। কিন্তু এর অফিশিয়াল রিপোজিটরিতে পিএইচপি ৫.৫.৯ ভার্সন দেয়া আছে। আপনি যদি উবুন্টুতে পিএইচপি ৫.৬ ভার্সন ইনস্টল করতে চান তাহলে সেটা অফিশিয়াল রিপোজিটরি থেকে করতে পারবেন না।
 

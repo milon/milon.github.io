@@ -12,7 +12,7 @@ categories: []
 
 People who are dealing with writing code for full time job, actually passes 40 hours of more on a week to their text editor or IDE. I am a software developer by profession and I normally code 45-50 hours per week that means I had to stick with my text editor for most of time. So, my text editor should be something that I should comfortable with. In this series of blog posts I will tell you how I prepare my text editor for my work. Let's start.
 
-![Atom Editor](/images/posts/atom-editor.png)
+![Atom Editor](/assets/images/posts/atom-editor.png)
 
 Let's begin with some history. I would love to tell you about this. I started computer programming back in 2009 with C. In my university my teachers used a compiler called turbo c with comes with a text editor. I started my coding with that. Then a few days later I got introduced with CodeBlocks. It is a wonderful editor, and I still love that. I do almost all my competitive programming with this editor. Then at the end of second semester, I started writing code in Java. That time my roommate Sohag Bhai introduced me with jEdit. This had some nifty keyboard shortcuts to compile and run Java. Then when I do my university project in Java, I used a very famous IDE called Netbeans. Besides that for other programming language like assembly, prolog, lisp and matlab code I used notepad++ on windows and an open source text editor called geany in linux. Actually I liked notepad++ more than any other text editor but it was available on linux on that time. I don't know whether it is available on other platform right now, hope it is as we can run C# code other platform.
 

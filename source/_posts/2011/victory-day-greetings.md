@@ -8,7 +8,7 @@ syntaxHighlight: false
 categories: []
 ---
 
-![বিজয় দিবসের শুভেচ্ছা](/images/posts/victory-day.jpg)
+![বিজয় দিবসের শুভেচ্ছা](/assets/images/posts/victory-day.jpg)
 
 আজ আমাদের দেশের স্বাধীনতার চল্লিশ বছর পূর্তি হয়েছে।
 

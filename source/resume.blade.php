@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Nuruzzaman_Milon_resume</title>
-    <link rel="shortcut icon" href="/images/favicon.png"/>
+    <link rel="shortcut icon" href="/assets/images/favicon.png"/>
     <link rel="stylesheet" href="{{ mix('css/resume.css', 'assets/build') }}">
 
     @if ($page->production)
@@ -27,7 +27,7 @@
                 <span class="subtitle">Programmer, Author and Tech Enthusiast</span>
             </div>
             <div class="qr-code">
-                <img src="/images/qr-code.png" alt="qr-code">
+                <img src="/assets/images/qr-code.png" alt="qr-code">
             </div>
         </header>
         <section class="main-block">
@@ -265,7 +265,7 @@
     </section>
     <aside id="sidebar">
         <div class="side-block">
-            <img src="/images/avatar.jpg" alt="avatar" class="avatar">
+            <img src="/assets/images/avatar.jpg" alt="avatar" class="avatar">
         </div>
         <div class="side-block" id="personal-info">
             <h1>About Me</h1>
@@ -335,7 +335,7 @@
             </ul>
         </div>
         <div class="side-block" id="disclaimer">
-            <a href="/pdf/Nuruzzaman_Milon_resume.pdf" download class="btn"><i class="fas fa-download"></i> Download</a>
+            <a href="/assets/pdf/Nuruzzaman_Milon_resume.pdf" download class="btn"><i class="fas fa-download"></i> Download</a>
             <p>This resume is available online at <br> &mdash; <a href="https://milon.im/resume">https://milon.im/resume</a></p>
         </div>
     </aside>

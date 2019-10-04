@@ -10,7 +10,7 @@ categories: []
 
 Most of the web developers specially who used to write code in PHP, including myself using [phpmyadmin](https://www.phpmyadmin.net/) for a very long time for database management. I myself used this tool for last 6 years or so. But recently I was introduced to a great tool called [adminer](https://www.adminer.org/en/) while facing problem to install phpmyadmin on [homestead](https://laravel.com/docs/5.2/homestead) box.
 
-![Adminer Logo](/images/posts/adminer-logo.png)
+![Adminer Logo](/assets/images/posts/adminer-logo.png)
 
 Long story short, it is a single php file which has almost all the functionality that phpmyadmin has with a bunch of other useful features. Also it supports mySQL, SQLite 2 & 3, PostgreSQL, Oracle, MS SQL, Firebird, SimpleDB, MongoDB and ElasticSearch where phpmyadmin only supports mysql. It is also extremely lightweight and portable as it is only one file. The compressed file is only 231 kB and if you use the English version without 36 other language's translation it turns into 167 kB only. If you use mySQL only, then you reduce the size to 155 kB for translated version and 94 kB for english only version. That's insane.
 

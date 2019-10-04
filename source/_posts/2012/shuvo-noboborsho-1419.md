@@ -8,7 +8,7 @@ syntaxHighlight: false
 categories: []
 ---
 
-![শুভ নববর্ষ](/images/posts/shuvo-noboborsho.jpg)
+![শুভ নববর্ষ](/assets/images/posts/shuvo-noboborsho.jpg)
 
 শুভ নববর্ষ, ১৪১৯ বঙ্গাব্দ।
 
