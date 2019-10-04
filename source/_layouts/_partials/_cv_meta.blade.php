@@ -4,7 +4,7 @@
     <meta property="og:type" content="Article" />
     <meta property="og:title" content="{{ $title ?? $page->siteTitle }}" />
     <meta property="og:description" content="{{ $description ?? "" }}" />
-    <meta property="og:image" content="/assets/images/qr-code.png" />
+    <meta property="og:image" content="{{ $page->baseUrl . 'assets/images/qr-code.png' }}" />
     <meta property="fb:app_id" content="264496574269710" />
 
     {{-- twitter --}}
@@ -12,7 +12,7 @@
     <meta name="twitter:site" content="@to_milon" />
     <meta name="twitter:title" content="{{ $title ?? $page->siteTitle }}" />
     <meta name="twitter:description" content="{{ $description ?? "" }}" />
-    <meta name="twitter:image" content="/assets/images/qr-code.png" />
+    <meta name="twitter:image" content="{{ $page->baseUrl . 'assets/images/qr-code.png' }}" />
 
     {{-- search engine --}}
     <meta name="description" content="{{ $description ?? "" }}" />
