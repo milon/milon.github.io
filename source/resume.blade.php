@@ -293,7 +293,7 @@
                     <a href="http://bcert.me/skctlvko">Certified Scrum Developer<sup>®</sup></a>
                 </li>
                 <li>
-                    <i class="icon-scrum"></i> 
+                    <i class="icon-scrum"></i>
                     <a href="http://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
                 </li>
             </ul>
@@ -313,7 +313,7 @@
                 <li><i class="far fa-envelope"></i> contact@milon.im</li>
                 <li><i class="fab fa-skype"></i> milon521</li>
                 <li class="print"><i class="fas fa-phone"></i> +491776974274</li>
-                <li><i class="fas fa-home"></i> Schalkauer Straße 22, <br>13055 Berlin, Germany</li>
+                <li class="print"><i class="fas fa-home"></i> Schalkauer Straße 24, <br>13055 Berlin, Germany</li>
             </ul>
         </div>
         <div class="side-block" id="personal-info">
