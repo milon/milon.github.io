@@ -104,7 +104,7 @@ section.summary {
     padding: 0 0 0 0;
     border-left: 0px solid black;
   }
-  .avatar {
+  .profile-img {
       max-width: 100% !important;
   }
 }
@@ -240,7 +240,7 @@ iframe {
     border: 1px solid grey;
 }
 
-.avatar {
+.profile-img {
     float: left;
     border-radius: 50%;
     border: 2px solid var(--primary-color);
@@ -332,4 +332,9 @@ td, th {
 
 .newsletter .submit-btn:hover {
     color: var(--hover-color);
+}
+
+.turbolinks-progress-bar {
+  height: 3px;
+  background-color: var(--hover-color);
 }

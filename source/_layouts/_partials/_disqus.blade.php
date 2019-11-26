@@ -1,6 +1,6 @@
 <div id="disqus_thread"></div>
 
-<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script id="dsq-count-scr" src="//{{ $page->dusqusShortName }}.disqus.com/count.js" async></script>
 <script>
     /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -13,7 +13,7 @@
 
     (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
-        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.src = 'https://{{ $page->dusqusShortName }}.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
