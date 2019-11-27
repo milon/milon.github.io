@@ -8,7 +8,6 @@
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-        <script src="{{ mix('js/turbolinks.js', 'assets/build') }}"></script>
 
         @yield('meta')
     </head>
@@ -26,7 +25,7 @@
                 <a class="{{ $page->selected('/laravel') }}" href="/laravel">Book</a>
                 <a class="{{ $page->selected('/talks') }}" href="/talks">Talks</a>
                 <a class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
-                <a data-turbolinks="false" href="/resume">Resume</a>
+                <a href="/resume">Resume</a>
             </p>
         </section>
 

@@ -10,7 +10,5 @@ mix.sass('source/_assets/sass/main.scss', 'css/main.css')
     .sourceMaps()
     .sass('source/_assets/sass/resume.scss', 'css/resume.css')
     .sourceMaps()
-    .js('source/_assets/js/turbolinks.js', 'js')
-    .sourceMaps()
     .copyDirectory('./node_modules/@fortawesome/fontawesome-free/webfonts', 'source/assets/build/fonts/font-awesome')
     .version();
