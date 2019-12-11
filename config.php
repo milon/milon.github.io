@@ -17,14 +17,15 @@ return [
         return ($page->getPath() === $section) ? 'selected' : '';
     },
     'social' => [
-        'github' => 'https://github.com/milon',
-        'twitter' => 'https://twitter.com/to_milon',
-        'facebook' => 'https://www.facebook.com/page.milon.im',
-        'linkedin' => 'https://www.linkedin.com/in/tomilon',
-        'speakerdeck' => 'https://speakerdeck.com/milon',
-        'slideshare' => 'http://www.slideshare.net/milon521',
-        'instagram' => 'https://www.instagram.com/to_milon',
+        'github'        => 'https://github.com/milon',
+        'twitter'       => 'https://twitter.com/to_milon',
+        'facebook'      => 'https://www.facebook.com/page.milon.im',
+        'linkedin'      => 'https://www.linkedin.com/in/tomilon',
+        'speakerdeck'   => 'https://speakerdeck.com/milon',
+        'slideshare'    => 'http://www.slideshare.net/milon521',
+        'instagram'     => 'https://www.instagram.com/to_milon',
         'stackoverflow' => 'https://stackoverflow.com/users/3905595/nuruzzaman-milon',
+        'xing'          => 'https://www.xing.com/profile/Nuruzzaman_Milon/cv'
     ],
     'collections' => [
         'posts' => [
