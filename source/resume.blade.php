@@ -32,7 +32,26 @@
             </h2>
             <section class="blocks">
                 <div class="date">
-                    <span>Present</span><span>July, 2019</span>
+                    <span>Present</span><span>January, 2020</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>Senior Full-Stack Software Engineer</h3>
+                        <span class="place">Flixbus (<a href="https://global.flixbus.com">https://global.flixbus.com</a>)</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Working as a full-stack engineer on Flix McDriver app team.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>December, 2019</span><span>July, 2019</span>
                 </div>
                 <div class="decorator">
                 </div>
@@ -164,14 +183,12 @@
                           <li>PHP, Node.js, Python</li>
                           <li>Laravel, CodeIgniter, Symfony, AngularJS, ReactJS, VueJS, Express, Socket.io</li>
                           <li>HTML5, CSS3, JavaScript, XML, JSON, AJAX, WebRTC</li>
-                          <li>REST, SOAP, JSON-RPC</li>
+                          <li>Apache, Nginx, Microservices, REST, Docker, Jenkins, Ansible</li>
                           <li>Agile, Scrum, Kanban</li>
                           <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis</li>
                           <li>Beanstalkd, IronMQ, RabbitMQ</li>
-                          <li>PHPUnit, PHPSpec, Codeception, Behat</li>
-                          <li>Amazon AWS(EC2, S3, RDS), Google APIs, Payment Gateway(Stripe, Paypal, Braintree)</li>
+                          <li>Amazon AWS(EC2, S3, RDS), Unit Testing</li>
                           <li>Git, SVN</li>
-                          <li>Apache, Nginx, Microservices, Docker, Jenkins, Ansible</li>
                       </ul>
                     </div>
                 </div>
@@ -237,22 +254,6 @@
                             Dimik Publication <br>
                             ISBN: 978-984-33-9190-2
                         </span>
-                    </header>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2012</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>
-                            <a href="http://www.medetel.eu/index.php?rub=educational_program&page=program_2%20012#Mobile">
-                                Roadmap Dermato-ICT Model and Possible Opportunity to Explore in the Field to Establish
-                            </a>
-                        </h3>
                     </header>
                 </div>
             </section>
