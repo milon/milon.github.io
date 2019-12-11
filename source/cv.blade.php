@@ -321,7 +321,8 @@
                     </header>
                     <div>
                         <ul>
-                            <li>President, Society of ICT (Chief Organizer of 1st MBSTU ICT Fest)</li>
+                            <li>President, Society of ICT</li>
+                            <li>Chief Organizer of 1st MBSTU ICT Fest</li>
                             <li>Member, Rotary Club of MBSTU</li>
                         </ul>
                     </div>
