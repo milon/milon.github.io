@@ -32,7 +32,26 @@
             </h2>
             <section class="blocks">
                 <div class="date">
-                    <span>Present</span><span>July, 2019</span>
+                    <span>Present</span><span>January, 2020</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>Senior Full-Stack Software Engineer</h3>
+                        <span class="place">Flixbus (<a href="https://global.flixbus.com">https://global.flixbus.com</a>)</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Working as a full-stack engineer on Flix McDriver app team.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>December, 2019</span><span>July, 2019</span>
                 </div>
                 <div class="decorator">
                 </div>
@@ -103,14 +122,9 @@
                                     <li>Used Laravel as application framework, PostgreSQL as database server, AngularJS as frontend framework.</li>
                                 </ul>
                             </li>
-                            <li class="project-title">Tonic App Backend
-                                <ul>
-                                    <li>This application supports Tonic Mobile App (Android and iOS) with all the services, like authentication, invitation, content management, push notification and proxy for other internal services.</li>
-                                    <li>Used Laravel as application framework, PostgreSQL as database, VueJS as frontend framework.</li>
-                                </ul>
-                            </li>
                             <li class="project-title">Other Projects
                                 <ul>
+                                    <li>Tonic App Backend - Supports Tonic Mobile App (Android and iOS) with all the external and internal services as a proxy gateway.</li>
                                     <li>Tonic Doctor Appointment - Provides API for a doctor appointment booking system.</li>
                                     <li>Castro - A campaign management tool for SMS, email and push-notification campaign.</li>
                                     <li>Tonic Admin - BI and reporting tool for generating the various report, manage subscribers etc.</li>
@@ -156,8 +170,7 @@
                             </li>
                             <li class="project-title">Rx71 Hospital Management System
                                 <ul>
-                                    <li>A cloud-based hospital management Software as a Service (SAAS).</li>
-                                    <li>Used Laravel as application framework, MySQL as database server.</li>
+                                    <li>A cloud-based hospital management Software as a Service (SAAS) built with Laravel.</li>
                                 </ul>
                             </li>
                             <li class="project-title">Rx71 Mobile App
@@ -308,7 +321,8 @@
                     </header>
                     <div>
                         <ul>
-                            <li>President, Society of ICT (Chief Organizer of 1st MBSTU ICT Fest)</li>
+                            <li>President, Society of ICT</li>
+                            <li>Chief Organizer of 1st MBSTU ICT Fest</li>
                             <li>Member, Rotary Club of MBSTU</li>
                         </ul>
                     </div>
