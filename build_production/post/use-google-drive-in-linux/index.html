@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/use-google-drive-in-linux" />
     <meta property="og:type" content="Article" />
@@ -53,18 +53,34 @@
     <p>25 April, 2012</p>
 
     <p>সকাল বেলাই মেজাজ খারাপ হয়ে গেল। গুগোল এন্ড্রয়েড(লিনাক্সের জন্য উইএসবি ড্রাইভার নাই), পিকাসার(সাপোর্ট বন্ধ) পর এবার তাদের নতুন সার্ভিস গুগোল ড্রাইভেও লিনাক্স ব্যবহারকারীদের জন্য কিছুই রাখে নি। আমরা যারা ২৪/৭ লিনাক্স ব্যবহার করি তারা কি আঙ্গুল চুষবো?</p>
+
 <p>যাইহোক, ফেবুতে <a href="https://www.facebook.com/anjan011">অঞ্জন দা</a>'র দেয়া একটা লিঙ্কে দেখলাম লিনাক্সেও নাকি গুগোল ড্রাইভের সেবা ব্যবহার করা যাবে। ঝটপট ট্রাই দিলাম। কাজও হল। কি কি করা লাগবে আসুন জেনে নেই। প্রথমেই আপনাকে নতুন রিপো এড করতে হবে। টার্মিনালে লিখুন-</p>
-<pre><code>sudo add-apt-repository ppa:invernizzi/google-docs-fs</code></pre>
+
+<pre><code>sudo add-apt-repository ppa:invernizzi/google-docs-fs
+</code></pre>
+
 <p>এরপর আপডেট করতে লিখুন-</p>
-<pre><code>sudo apt-get update</code></pre>
+
+<pre><code>sudo apt-get update
+</code></pre>
+
 <p>এবার ইনস্টল করুন-</p>
-<pre><code>sudo apt-get install google-docs-fs</code></pre>
+
+<pre><code>sudo apt-get install google-docs-fs
+</code></pre>
+
 <p>এবার হোম ফোল্ডারে Drive নামের একটা ফোল্ডার তৈরী করুন। এবার একে একে নিচের কোডগুলো টার্মিনালে লিখুন-</p>
+
 <pre><code>cd Drive
-gmount Drive username@gmail.com</code></pre>
+gmount Drive username@gmail.com
+</code></pre>
+
 <p>username এর জায়গায় আপনার ইউজারনেম লিখুন, তারপর পাসওয়ার্ড দিন।</p>
+
 <p>ব্যস এই ড্রাইভ ফোল্ডারে আপনার গুগোল ড্রাইভ মাউন্টেড হবে।</p>
+
 <p><a href="http://www.omgubuntu.co.uk">সূত্র</a></p>
+
     
     <hr>
 

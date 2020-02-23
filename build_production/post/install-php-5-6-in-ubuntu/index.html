@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/install-php-5-6-in-ubuntu" />
     <meta property="og:type" content="Article" />
@@ -53,18 +53,33 @@
     <p>14 June, 2015</p>
 
     <p><img src="/assets/images/posts/ubuntu-php.jpg" alt="Ubuntu loves PHP" /></p>
+
 <p>উবুন্টুর সর্বশেষ এলটিএস রিলিজ হচ্ছে উবুন্টু ১৪.০৪। কিন্তু এর অফিশিয়াল রিপোজিটরিতে পিএইচপি ৫.৫.৯ ভার্সন দেয়া আছে। আপনি যদি উবুন্টুতে পিএইচপি ৫.৬ ভার্সন ইনস্টল করতে চান তাহলে সেটা অফিশিয়াল রিপোজিটরি থেকে করতে পারবেন না।</p>
+
 <p>চিন্তার কিছু নেই। আপনি খুব সহজেই <a href="https://launchpad.net/~ondrej/+archive/ubuntu/php5-5.6">আদ্রেজ সুরি</a>র তৈরি করা পিপিএ যোগ করে, একটা কমান্ডের মাধ্যমেই পিএইচপি ৫.৬ ইনস্টল দিতে পারবেন। এর জন্য প্রথমে আপনাকে রিপোজিটরি যুক্ত করতে হবে নিচের কমান্ডের মাধ্যমে-</p>
+
 <pre><code>sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:ondrej/php5-5.6</code></pre>
+sudo add-apt-repository ppa:ondrej/php5-5.6
+</code></pre>
+
 <p>এবার রিপোজিটরি লিস্টিং আপডেট করুন, এবং কোন প্যাকেজ আপগ্রেড করার থাকলে সেটিও করুন। এই আপগ্রেড অবশ্য অপশনাল। আপনি চাইলে না করলেও পারেন।</p>
+
 <pre><code>sudo apt-get update
-sudo apt-get upgrade</code></pre>
+sudo apt-get upgrade
+</code></pre>
+
 <p>এবার নিচের কমান্ডের মাধ্যমে পিএইচপি ৫.৬ ইনস্টল করুন। তবে আপনার পিসিতে যদি আগে থেকেই পিএইচপি ইনস্টল করা থাকে তাহলে আপগ্রেড কমান্ডের মাধ্যমে অলরেডি পিএইচপি ৫.৬ ইনস্টল হয়ে যাওয়ার কথা।</p>
-<pre><code>sudo apt-get install php5</code></pre>
+
+<pre><code>sudo apt-get install php5
+</code></pre>
+
 <p>এবার চেক করতে টার্মিনালে লিখুন-</p>
-<pre><code>php -v</code></pre>
+
+<pre><code>php -v
+</code></pre>
+
 <p>তবে এ ধরনের থার্ড পার্টি পোর্টগুলোতে বাগ থাকতে পারে। তাই আমার পরামর্শ প্রোডাকশনে পিএইচপির এই ভার্সন ব্যবহার করার দরকার নেই। তবে আপনি আপনার ডেভেলপমেন্ট মেশিনে এটি ইনস্টল করতে পারেন। প্রোডাকশনে আপগ্রেড করার জন্য উবুন্টু অফিশিয়াল রিলিজের জন্য অপেক্ষা করুন।</p>
+
     
     <hr>
 

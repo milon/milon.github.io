@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/install-older-software-in-ubuntu-and-linux-mint" />
     <meta property="og:type" content="Article" />
@@ -53,19 +53,37 @@
     <p>07 September, 2011</p>
 
     <p>আপনি এত কস্ট করে উবুন্টু/মিন্টে বিভিন্ন সফটওয়্যার ইনস্টল করেছেন কিন্তু নতুন করে আবার উবুন্টু/মিন্ট ইনস্টল করলেই সবই শেষ। আবার অন্য পিসিতে উবুন্টু/মিন্ট সেট আপ করলেন কিন্তু প্রোয়জনীয় সফটওয়্যার ইন্টারনেট সংযোগ ছাড়া দিতে পারছেন না। এই সমস্যা সমাধানের জন্য আপনাকে শুধু ছোট একটা কাজ করতে হবে।</p>
+
 <p>আমরা যে সকল সফটওয়্যার ইনস্টল করি তা সাধারনত জমা থাকে এখানে-</p>
-<pre><code>file system/var/cache/apt/archieves</code></pre>
+
+<pre><code>file system/var/cache/apt/archieves
+</code></pre>
+
 <p>এটাকে বলা হয় উবুন্টু/ মিন্টের লোকাল রিপোজিটরি।</p>
+
 <p>প্রথমে আমাদের করণীয় হচ্ছে যা তাহলো আমাদের ডাউনলোডকৃত সফটওয়্যার সমূহ archieves ফাইল থেকে হার্ড ডিস্কের যে-কোন নিরাপদ জায়গাতে রাখি। যদি নরমালি কপি করা যায় না তখন রুট পারমিশন নিয়ে করতে হতে পারে। সেজন্যে-</p>
+
 <p><code>alt+f2</code> চেপে application launcher এ গিয়ে <code>gksu nautilus</code> লিখে এন্টার দিতে হবে। অথবা টার্মিনালে গিয়ে লিখুন-</p>
-<pre><code>gksudo nautilus</code></pre>
+
+<pre><code>gksudo nautilus
+</code></pre>
+
 <p>অত:পর ফাইল গুলো কপি করে রাখুন।</p>
+
 <p>এখন নতুন পিসি বা যে পিসিতে সফটওয়্যার সমূহ ইনস্টল করতে চান তার ডেস্কটপে ফাইলটা কপি করে রাখুন এখন টার্মিনালে লিখুন-</p>
-<pre><code>cd Desktop/folder-name</code></pre>
+
+<pre><code>cd Desktop/folder-name
+</code></pre>
+
 <p>[যদি আপনার ফোল্ডারটির নাম archieves হয় তবে archieves লিখুন]</p>
+
 <p>এরপর লিখুন-</p>
-<pre><code>sudo dpkg -i *.deb</code></pre>
+
+<pre><code>sudo dpkg -i *.deb
+</code></pre>
+
 <p>ব্যস এখন থেকে আপনি নতুন করে উবুন্টু/মিন্টে আপনার পুরনো সব সফটয়্যার ইনস্টলেশন করে ব্যবহার করতে পারবেন।</p>
+
     
     <hr>
 

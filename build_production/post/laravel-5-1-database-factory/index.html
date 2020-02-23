@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/laravel-5-1-database-factory" />
     <meta property="og:type" content="Article" />
@@ -53,6 +53,7 @@
     <p>29 May, 2015</p>
 
     <p>Earlier versions of laravel comes with a system for seeding dummy data on database. Traditionaly you just create a class extending laravel's DatabaseSeeder class. This would look like this-</p>
+
 <pre><code>&lt;?php
 
 use DB;
@@ -74,18 +75,27 @@ class UserTableSeeder extends Seeder
             'password' =&gt; bcrypt('secret'),
         ]);
     }
-}</code></pre>
+}
+</code></pre>
+
 <p>Then you can run this command for seed in database-</p>
-<pre><code>php artisan db:seed</code></pre>
+
+<pre><code>php artisan db:seed
+</code></pre>
+
 <p>Instead of using creating query builder, you could also called eloquent. In that case, run method will look like this-</p>
+
 <pre><code>public function run(){
     \App\User::create([
         'name' =&gt; str_random(10);
         'email' =&gt; str_random(10).'@gmail.com',
         'password' =&gt; bcrypt('secret'),
     ]);
-}</code></pre>
+}
+</code></pre>
+
 <p>You could also use a package called faker with it. Faker will generate bunch of different things automatically for you like- name, email, phone number, paragraph, sentence, date and much more. In that case UserTableSeeder class will look like this-</p>
+
 <pre><code>&lt;?php
 
 use Illuminate\Database\Seeder;
@@ -109,18 +119,26 @@ class UserTableSeeder extends Seeder
             'password' =&gt; bcrypt('secret'),
         ]);
     }
-}</code></pre>
+}
+</code></pre>
+
 <p>For more entry you could use loop and each time faker would create different entry for you.</p>
+
 <p>But using laravel's new feature model factory, this could be much more simpler. Take a look-</p>
+
 <pre><code>class UserTableSeeder extends Seeder
 {
     public function run()
     {
         factory('App\User', 50)-&gt;create();
     }
-}</code></pre>
+}
+</code></pre>
+
 <p>Couldn't be much simpler than that, right? You could also use make method that will create users, but won't persist them in database. This method is very helpful for testing. Let talk them another day, as it is out of scope of today's topic.</p>
+
 <p>Now you could wonder, how laravel knows that we should create 50 users, and how it also know the database schema and what to seed? I think if you already noticed that laravel 5.1 comes with a new folder called factory in database folder and by default there is a file called ModelFactory. Let's look at this file-</p>
+
 <pre><code>$factory-&gt;define('App\User', function ($faker) {
     return [
         'name' =&gt; $faker-&gt;name,
@@ -128,11 +146,18 @@ class UserTableSeeder extends Seeder
         'password' =&gt; str_random(10),
         'remember_token' =&gt; str_random(10),
     ];
-});</code></pre>
+});
+</code></pre>
+
 <p>Here we see, laravel creates a factory defination for App\User model and it passes a faker object, that we use earlier. We could also create other defination and also create another file in this directory. But if you create new file, you should run this command-</p>
-<pre><code>composer dump-autoload</code></pre>
+
+<pre><code>composer dump-autoload
+</code></pre>
+
 <p>This needed to be done because in version 5.1 laravel autoload database folder with classmap. You could take a look composer.json file.</p>
+
 <p>Happy coding...</p>
+
     
     <hr>
 

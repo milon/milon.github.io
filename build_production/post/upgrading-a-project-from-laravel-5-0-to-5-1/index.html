@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/upgrading-a-project-from-laravel-5-0-to-5-1" />
     <meta property="og:type" content="Article" />
@@ -53,21 +53,40 @@
     <p>11 June, 2015</p>
 
     <p>Laravel just released it's first LTS relase two days back. I was very excited about this release and can't wait to upgrade my existing project to the latest version.</p>
-<p>I have just updated a laravel 5.0 project to laravel 5.1. It was quiet a big project around 10 thousand line and 6 people working it. It was on latest iteration on laravel 5.0 branch which is 5.0.33. It's a fairly simple task and took around 50 minutes. Let's get started.</p>
+
+<p>I have just updated a laravel 5.0 project to laravel 5.1&#46; It was quiet a big project around 10 thousand line and 6 people working it. It was on latest iteration on laravel 5.0 branch which is 5.0.33&#46; It's a fairly simple task and took around 50 minutes. Let's get started.</p>
+
 <p><strong>Take Backup</strong></p>
+
 <p>At first take a backup of your existing project so that if anything goes wrong you could restore. If you are using git you could make a different brunch of your update-</p>
-<pre><code>git checkout -b update</code></pre>
+
+<pre><code>git checkout -b update
+</code></pre>
+
 <p><strong>Update bootstrap/autoload.php file</strong></p>
+
 <p>Previouslycompiled file was in <code>/storage/framework</code> directory but in 5.1 it is in <code>/bootstrap/autoload</code> directory. So, change the <code>$compiledPath</code> variable to this-</p>
-<pre><code>$compiledPath = __DIR__.'/cache/compiled.php';</code></pre>
+
+<pre><code>$compiledPath = __DIR__.'/cache/compiled.php';
+</code></pre>
+
 <p><strong>Create bootstrap/cache directory</strong></p>
+
 <p>Then create <code>bootstrap/cache</code> directory and give write permission to it, becasue laravel will put it's <code>compiled.php</code>, <code>routes.php</code>, <code>config.php</code>, and <code>services.json</code> file in it. To do this run below command to console-</p>
-<pre><code>sudo chmod 755 -R bootstrap/cache</code></pre>
+
+<pre><code>sudo chmod 755 -R bootstrap/cache
+</code></pre>
+
 <p>Then create a .gitignore file in this directory and put following content in it-</p>
+
 <pre><code>*
-!.gitignore</code></pre>
+!.gitignore
+</code></pre>
+
 <p><strong>Authentication</strong></p>
+
 <p>If you are not using laravel's default authentication scaffold then leave this section. If you are using then at first go to <code>app/Http/Controllers/Auth/AuthController.php</code> file. At first remove two dependencies from the controller. Then go to <code>app/Services/Registrar.php</code> file and copy validator and create method from it and paste it to <code>AuthController</code>. Then also import <code>App\User</code> and <code>Illuminate\Support\Facade\Validator</code> at the top of this class. After that delete <code>Registrar</code> class entirely. After doing all those things <code>AuthController</code> will be look like this-</p>
+
 <pre><code>&lt;?php
 
 namespace App\Http\Controllers\Auth;
@@ -91,6 +110,7 @@ class AuthController extends Controller {
     */
 
     use AuthenticatesAndRegistersUsers;
+
 
     protected $redirectTo = '/';
 
@@ -134,18 +154,29 @@ class AuthController extends Controller {
         ]);
     }
 
-}</code></pre>
+}
+</code></pre>
+
 <p>Also remove the dependency from PasswordController's constructor method. Those are no longer needed.</p>
+
 <p><strong>Validation</strong></p>
+
 <p>If you don't override any of the default validator method then you are good to go to the next section. If you do override <code>formatValidationErrors</code> method on your <code>BaseController</code> class then typehint <code>Illuminate\Contracts\Validation\Validator</code> class to the instead of create an instance of <code>Illuminate\Validation\Validator</code> class.</p>
+
 <p>Do the same thing for <code>formatErrors</code> method also. Typehint <code>Illuminate\Contracts\Validation\Validator</code> class instead of create an instance of <code>Illuminate\Validation\Validator</code> class.</p>
+
 <p><strong>Eloquent</strong></p>
+
 <p>Eloquent's create method now can applied with no parameter. So, If you are overriding this class, make sure you pass an empty array as a default parameter to this method. This will be look like this-</p>
+
 <pre><code>public static function create(array $attributes = [])
 {
     // Your custom implementation
-}</code></pre>
+}
+</code></pre>
+
 <p>If you are overriding the find method in your own models and calling parent::find() within your custom method, you should now change it to call the find method on the Eloquent query builder. This will look like this-</p>
+
 <pre><code>public static function find($id, $columns = ['*'])
 {
     $model = static::query()-&gt;find($id, $columns);
@@ -153,31 +184,59 @@ class AuthController extends Controller {
     // ...
 
     return $model;
-}</code></pre>
+}
+</code></pre>
+
 <p><strong>Date Formatting</strong></p>
+
 <p>In 5.0 you could change the format of storage of date field by override <code>getDateFormat</code> method. This is still applicble but you could also use the more cleaner way to do this. Simply specify a <code>$dateFormat</code> property to the model declaring the fields you want in date format and you are good to go.</p>
+
 <p>This is also applied for serializing model to array or JSON. You can override <code>serializeDate(DateTime $date)</code> method to do this.</p>
+
 <p><strong>The Collection Class</strong></p>
+
 <p>I use the collection class a lot, I think you also do, as eloquent and query builder returns collection.</p>
+
 <p>Previously the sort method modify the existing collection. But from 5.1 it will return a completely new instance of collection. Take a look-</p>
-<pre><code>$collection = $collection-&gt;sortBy('name');</code></pre>
+
+<pre><code>$collection = $collection-&gt;sortBy('name');
+</code></pre>
+
 <p>The groupBy method now returns an instance of collection for each of it's item. You could map over the collection for getting previous format-</p>
+
 <pre><code>$collection-&gt;groupBy('type')-&gt;map(function($item)
 {
     return $item-&gt;all();
-});</code></pre>
+});
+</code></pre>
+
 <p><code>lists</code> method now return collection instead of array. To get array form that-</p>
-<pre><code>$collection-&gt;lists('id')-&gt;all();</code></pre>
+
+<pre><code>$collection-&gt;lists('id')-&gt;all();
+</code></pre>
+
 <p><strong>Commands &amp; Handlers</strong></p>
+
 <p><code>Commands</code> are now renamed to <code>Jobs</code> and <code>Handlers</code> are now renamed to <code>Listeners</code>. But This change is backward compatible. So, you are good to go without modifying it, but my suggesstion is rename the files and fix namespaces for your commands and events classes.</p>
+
 <p><strong>Tests</strong></p>
+
 <p>Just add a protected <code>$baseUrl</code> property to <code>App\TestCase</code> class and you are good to go.</p>
-<pre><code>protected $baseUrl = 'http://localhost:8000';</code></pre>
+
+<pre><code>protected $baseUrl = 'http://localhost:8000';
+</code></pre>
+
 <p><strong>Amazon Web Services SDK</strong></p>
+
 <p>If you are using amazon web service then update you sdk by defining the version to <code>composer.json</code> file and do a <code>composer update</code>.</p>
-<pre><code>"league/flysystem-aws-s3-v3": "~1.0"</code></pre>
+
+<pre><code>"league/flysystem-aws-s3-v3": "~1.0"
+</code></pre>
+
 <p><strong>Update</strong></p>
+
 <p>After doing all these things go to <code>composer.json</code> file and change the require object like this-</p>
+
 <pre><code>"require": {
     "php": "&gt;=5.5.9",
     "laravel/framework": "5.1.*"
@@ -187,13 +246,21 @@ class AuthController extends Controller {
     "mockery/mockery": "0.9.*",
     "phpunit/phpunit": "~4.0",
     "phpspec/phpspec": "~2.1"
-},</code></pre>
+},
+</code></pre>
+
 <p>Then run following two command to the console-</p>
+
 <pre><code>composer update
-composer dump-autoload -o</code></pre>
+composer dump-autoload -o
+</code></pre>
+
 <p><strong>Depredations</strong></p>
-<p>There are also some depredations with the release of 5.1. You should take a look at release guide section at the documentation and fix it gradually. This will be removed on Laravel 5.2 which will be released on December, 2015.</p>
+
+<p>There are also some depredations with the release of 5.1&#46; You should take a look at release guide section at the documentation and fix it gradually. This will be removed on Laravel 5.2 which will be released on December, 2015.</p>
+
 <p>Happy Coding...</p>
+
     
     <hr>
 

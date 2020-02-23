@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/atom-editor-for-software-development-04" />
     <meta property="og:type" content="Article" />
@@ -53,23 +53,39 @@
     <p>07 March, 2016</p>
 
     <p>Today I am going to talk about a very important topic, and that is Lint. In computer programming, lint is a Unix utility that flags some suspicious and non-portable constructs (likely to be bugs) in C language source code; generically, lint or a linter is any tool that flags suspicious usage in software written in any computer language.</p>
+
 <p>According to <a href="https://en.wikipedia.org/wiki/Lint_(software)">wikipedia</a>-</p>
+
 <blockquote>
-<p>In computer programming, lint is a Unix utility that flags some suspicious and non-portable constructs (likely to be bugs) in C language source code; generically, lint or a linter is any tool that flags suspicious usage in software written in any computer language.</p>
+  <p>In computer programming, lint is a Unix utility that flags some suspicious and non-portable constructs (likely to be bugs) in C language source code; generically, lint or a linter is any tool that flags suspicious usage in software written in any computer language.</p>
 </blockquote>
+
 <p>Thats bookish knowledge, lets make is a little bit easier to understand. Linter will help to prevent various typo and organize your code in various coding standards.</p>
+
 <p>I am a web application developer and I use php and javascript almost everyday. So, in this episode I am going to show you how to use linter in these languages. First of all you have to install the base package for atom linter. It will give you the base functionality and it's a bridge for using specific linter package for various language. You can install linter by typing <code>apm install linter</code> or from settings' package installer.</p>
+
 <p>This <a href="https://atom.io/packages/linter">linter</a> package supports a lot of different languages. All the supported packages and ducumentation can be found on <a href="http://atomlinter.github.io">http://atomlinter.github.io</a></p>
+
 <p>I use only some packages that I use for my day to day job. Let me introduce those one by one.</p>
+
 <p>At first lets talk about HTML linter. I use <a href="https://atom.io/packages/linter-htmlhint">linter-htmlhint</a> package for this. This package is just a bridge between atom and famous htmlhint package. You can install it via <code>apm install linter-htmlhint</code>. It assume you pc has already htmlhint installed. If not then you could install it through <code>npm install htmlhint -g</code> and then give it's path to htmlhint package settings. I assume your machinealre If you don't find the path, then type <code>which htmlhint</code> on your terminal and paste the path to the settings.</p>
+
 <p>After that I am going to talk about <a href="https://atom.io/packages/linter-csslint">csslint</a>. It's almost the same process, just install it form terminal with <code>apm install linter-csslint</code> and configure it same as previous package.</p>
+
 <p>You can install <a href="https://atom.io/packages/linter-jsonlint">jsonlint</a> and <a href="https://atom.io/packages/linter-bootlint">bootlint</a> for linting json and bootstrap code. Install it by typing <code>apm install linter-jsonlint</code> and <code>apm install linter-bootlint</code>. Configuring process is exactly the same.</p>
+
 <p><img src="/assets/images/posts/linter.png" alt="Linter" /></p>
+
 <p>There are two popular linter for javascript. One is <a href="http://jshint.com">jshint</a> and other is <a href="http://www.jslint.com">jslint</a>. They are not better from one another, they are just different. I personally use jshint. Install it from terminal by typing <code>apm install linter-jshint</code> and then give it's path in settings just like the previous one.</p>
+
 <p><img src="/assets/images/posts/linter-js.gif" alt="Linter" /></p>
+
 <p>I use php a lot and php has some popular linter package. But I think <a href="https://packagist.org/packages/squizlabs/php_codesniffer">PHP code sniffer</a> is the most popular and one of the best package for php. You can install the package form terminal by typing <code>apm install linter-phpcs</code>. It assume youe machine already has phpcs installed. If not you could install it in a number of ways. One of the popular way is to install it through pear. Just type <code>pear install PHP_CodeSniffer</code> and you are good to go. But I prefer another way, and it's through composer. If you are a php guy, I assume you have familiarity with both pear and composer. You can install it from terminal with <code>composer global require "squizlabs/php_codesniffer=*"</code> command. Then just give the path of phpcs to the settings of the package.</p>
+
 <p>Thats it. From now on if you do something wrong while typing, atom linter will show errors.</p>
+
 <p>Thats all for today. Peace.</p>
+
     
     <hr>
 

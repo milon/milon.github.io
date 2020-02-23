@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/calling-artisan-command-from-your-application" />
     <meta property="og:type" content="Article" />
@@ -53,13 +53,20 @@
     <p>28 December, 2014</p>
 
     <p>আমরা যারা লারাভেলের সাথে পরিচিত, তারা প্রায় সবাই জানি লারাভেল আর্টিসান নামের একটি কমান্ড লাইন ইউটিলিটি সহ এসেছে যেটা সিম্ফোনীর কনসোল কম্পোনেন্টের উপর ভিত্তি করে তৈরি করা। আমরা সবাই এটা ব্যবহার করি টার্মিনাল বা কনসোল থেকে। অনেকেই জানি না যে লারাভেল অ্যাপ্লিকেশন থেকেও এই আর্টিসান কমান্ড কল করা যায়। চলুন দেখি কিভাবে এটা করে।</p>
+
 <p>ধরি আমরা নিচের কমান্ডটি অ্যাপ্লিকেশন থেকে কল করতে চাই-</p>
-<pre><code>artisan migrate --env=test --path=app/database/migrations/test</code></pre>
+
+<pre><code>artisan migrate --env=test --path=app/database/migrations/test
+</code></pre>
+
 <p>এটা আমরা অ্যাপ্লিকেশনের কোন মেথড থেকে এভাবে কল করতে পারি-</p>
+
 <pre><code>Artisan::call('migrate', [
     '--env' =&gt; 'test',
     '--path' =&gt; 'app/database/migrations/test'
-]);</code></pre>
+]);
+</code></pre>
+
     
     <hr>
 

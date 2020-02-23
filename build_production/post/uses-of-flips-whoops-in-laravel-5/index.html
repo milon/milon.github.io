@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/uses-of-flips-whoops-in-laravel-5" />
     <meta property="og:type" content="Article" />
@@ -53,13 +53,20 @@
     <p>03 November, 2014</p>
 
     <p><strong>আপডেট</strong></p>
+
 <blockquote>
-<p>এই ব্লগটি প্রথমে যখন লেখা হয়েছিল, তখন লারাভেল ৫ রিলিজ হয় নি। রিলিজের পর দেখা গেল বেটা ভার্সনে লারাভেল যেভাবে এরর হ্যান্ডেল করতো তা পরিবর্তিত হয়েছে। এখানে নতুন উপায়ে কিভাবে হুপস প্যাকেজ ব্যবহার করতে পারবেন তা দেখানো হয়েছে।</p>
+  <p>এই ব্লগটি প্রথমে যখন লেখা হয়েছিল, তখন লারাভেল ৫ রিলিজ হয় নি। রিলিজের পর দেখা গেল বেটা ভার্সনে লারাভেল যেভাবে এরর হ্যান্ডেল করতো তা পরিবর্তিত হয়েছে। এখানে নতুন উপায়ে কিভাবে হুপস প্যাকেজ ব্যবহার করতে পারবেন তা দেখানো হয়েছে।</p>
 </blockquote>
+
 <p>প্রথমেই টার্মিনালে লিখুন-</p>
-<pre><code>composer require filp/whoops:~1.0</code></pre>
+
+<pre><code>composer require filp/whoops:~1.0
+</code></pre>
+
 <p>এরপর কম্পোজার আপডেট কমান্ড দিন।</p>
+
 <p>এবার <code>app/Exceptions/Handler.php</code> ফাইলে যান এবং এই ক্লাসের <code>render()</code> মেথডটিকে নিচের মত করে এডিট করুন-</p>
+
 <pre><code>/**
  * Render an exception into an HTTP response.
  *
@@ -74,6 +81,7 @@ public function render($request, Exception $e)
         return $this-&gt;renderHttpException($e);
     }
 
+
     if (config('app.debug'))
     {
         $whoops = new \Whoops\Run;
@@ -87,17 +95,32 @@ public function render($request, Exception $e)
     }
 
     return parent::render($request, $e);
-}</code></pre>
+}
+</code></pre>
+
 <p>ব্যাস আপনার কাজ হয়ে গেছে। এবার আপনি আপনার এরর স্ক্রীনে হুপস দেখতে পারবেন।</p>
+
 <p><strong>পুরনো পদ্ধতি</strong></p>
+
 <p>আপনারা নিশ্চয়ই প্যাকেজিস্ট এর <code>flip/whoops</code> প্যাকেজের সাথে পরিচিত। এই প্যাকেজটিকে লারাভেল ৪.* এ ডিফল্ট এরর পেজ হিসেবে ব্যবহার করা হতো। কিন্তু লারাভেল ৫ এ এই প্যাকেজটিকে রিমুভ করা হয়েছে। যদিও আমি নিজে মনে করি এটি এখন পর্যন্ত পিএইচপির জন্য বেস্ট এরর দেখানোর প্যাকেজ। এটি আপনি চাইলে খুব সহজেই লারাভেল ৫ এ ফিরিয়ে আনতে পারেন।</p>
+
 <p>আপনাকে প্রথমেই <code>composer.json</code> ফাইলটি আপডেট করতে হবে। আপনি এর <code>require-dev</code> অপশনে নিচের লাইনটি যুক্ত করুন-</p>
-<pre><code>"filp/whoops": "~1.0"</code></pre>
+
+<pre><code>"filp/whoops": "~1.0"
+</code></pre>
+
 <p>এবার আপনি টার্মিনালে লিখুন-</p>
-<pre><code>composer update</code></pre>
+
+<pre><code>composer update
+</code></pre>
+
 <p>আপনি whoops প্যাকেজটি ডাউনলোড হওয়ার পর টার্মিনালে লিখুন-</p>
-<pre><code>php artisan make:provider ErrorServiceProvider</code></pre>
+
+<pre><code>php artisan make:provider ErrorServiceProvider
+</code></pre>
+
 <p>এই কমান্ডটি আপনার <code>app/Providers</code> ফোল্ডারে এরর সার্ভিস প্রোভাইডার নামে একটি ফাইল তৈরি করবে। আপনি সেই ফাইলটিকে নিচের মত করে এডিট করুন-</p>
+
 <pre><code>&lt;?php
 
 namespace App\Providers;
@@ -130,18 +153,28 @@ class ErrorServiceProvider extends ServiceProvider {
         //
     }
 
-}</code></pre>
+}
+</code></pre>
+
 <p>আপনার এরর সার্ভিস প্রোভাইডার তৈরি হয়ে গেছে। এবার একে রেজিস্টার করুন। এর জন্য <code>config/app.php</code> ফাইলের প্রোভাইডার এরেতে নিচের লাইনটি যুক্ত করুন-</p>
+
 <pre><code>'providers' =&gt; [
     ...,
     'App\Providers\ErrorServiceProvider',
-],</code></pre>
+],
+</code></pre>
+
 <p>ব্যাস, আপনি whoops প্যাকেজ লারাভেল ৫ এ ইন্টিগ্রেট করে ফেলেছেন। টেস্ট করার জন্য রাউট ফাইলে নিচের কোডটি লিখুন-</p>
+
 <pre><code>$router-&gt;get('/', function(){
     throw new \Exception('Whoops Test...');
-});</code></pre>
+});
+</code></pre>
+
 <p>এবার আপনি যদি আপনার রুট রাউট ভিজিট করেন তাহলে নিচের মত আউটপুট দেখতে পাবেন।</p>
+
 <p><img src="/assets/images/posts/whoops.jpg" alt="Whoops" /></p>
+
     
     <hr>
 

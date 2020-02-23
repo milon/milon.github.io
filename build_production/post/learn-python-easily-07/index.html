@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/learn-python-easily-07" />
     <meta property="og:type" content="Article" />
@@ -53,21 +53,29 @@
     <p>06 July, 2012</p>
 
     <p>আমরা এতদিন শুধুমাত্র আমাদের দেয়া ভ্যালু নিয়েই কাজ করেছি। কিন্তু কম্পিউটার প্রোগ্রামে দেখা যায় আমরা ইউজারের কাছ থেকে বিভিন্ন তথ্য সংগ্রহ করে থাকি। যেমন- আমরা হয়ত ইউজারের কাছ থেকে তার নাম, বয়স ইত্যাদি জানতে চাইতে পারি। এটা পাইথনে করা খুবই সহজ। ছোট্ট একটা উদাহরন দেখি-</p>
+
 <pre><code>&gt;&gt;&gt;print “What is your name?”
 &gt;&gt;&gt;name=raw_input()
 &gt;&gt;&gt;print “Hoe old are you?”
 &gt;&gt;&gt;age=raw_input()
-&gt;&gt;&gt;print “Hello %s, you are %s years old.” % (name, age)</code></pre>
+&gt;&gt;&gt;print “Hello %s, you are %s years old.” % (name, age)
+</code></pre>
+
 <p>উপরের প্রোগ্রামটি ইউজারের কাছ থেকে তার নাম এবং বয়স জানতে চাইবে এবং সবশেষে সে তার নাম এবং বয়স প্রদর্শন করবে। এক্ষেত্রে একেক ব্যবহারকারী একেক ধরনের ইনপুট দেবে, কিন্তু আমাদের প্রোগ্রাম সে সকল ধরনের ইনপুট নিয়েই কাজ করতে পারবে।</p>
+
 <p>আর একটা বিষয়, আমরা অনেক বড় বড় প্রোগ্রাম করার সময় চাইলে প্রোগ্রাম কোডে বিভিন্ন কমেন্ট লিখে রাখতে পারি। যা পরবর্তীতে আমাদেরকে ঐ প্রোগ্রাম দেখা মাত্রই বুঝতে সাহায্য করবে। এছাড়া বড় বড় প্রজেক্টে দেখা যায় অনেকে মিলে একটা প্রোগ্রাম তৈরী করে। সেক্ষেত্রে একজনের কোড অন্যজনের বুঝতে অসুবিধা হতে পারে। তাই কমেন্ট ব্যবহার করলে এক্ষেত্রে সুবিধা পাওয়া যাবে। উপরের উদাহরনটিই আমরা কমেন্ট ব্যবহার করার পরের অবস্থা দেখি-</p>
+
 <pre><code>&gt;&gt;&gt;#This is a sample program
 &gt;&gt;&gt;print “What is your name?”   #ask name
 &gt;&gt;&gt;name=raw_input()             #take input as name
 &gt;&gt;&gt;print “Hoe old are you?”     #ask age
 &gt;&gt;&gt;age=raw_input()              #take input as age
 &gt;&gt;&gt;#Next line will print the values
-&gt;&gt;&gt;print “Hello %s, you are %s years old.” % (name, age)</code></pre>
+&gt;&gt;&gt;print “Hello %s, you are %s years old.” % (name, age)
+</code></pre>
+
 <p>কমেন্ট ব্যবহার করার পর যে কেউ প্রোগ্রামটি দেখলেই বুঝতে পারবে এটা দিয়ে কি কাজ করা হচ্ছে। পাইথনে কমেন্ট করার জন্য হ্যাশ(#) ব্যবহার করা হয়। হ্যাশ চিহ্ন পাওয়ার পর পাইথন ইন্টারপ্রিটার ঐ লাইনের আর কোন কোডকে কম্পাইল করে না।</p>
+
     
     <hr>
 

@@ -7,7 +7,7 @@
         <title>milon.im</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=fb93d102c86d56803a3f">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=c428522e006110cbaac5">
 
             <meta property="og:url" content="https://milon.im/post/laravel-custom-pagination" />
     <meta property="og:type" content="Article" />
@@ -53,14 +53,21 @@
     <p>05 July, 2015</p>
 
     <p>লারাভেলের ইলোকোয়েন্ট বা কোয়েরি বিল্ডার ব্যবহার করে আপনি খুব সহজেই পেজিনেশন তৈরি করতে পারেন। নিচে উদাহরন দেখুন-</p>
+
 <pre><code>public function show()
 {
     $people = People::paginate(5);
     return view('poeple.list', compact('people'));
-}</code></pre>
+}
+</code></pre>
+
 <p>আর পেজিনেশন লিঙ্কগুলো ভিউ পেজে শো করতে হয় এভাবে-</p>
-<pre><code>{!! $people-&gt;render() !!}</code></pre>
+
+<pre><code>{!! $people-&gt;render() !!}
+</code></pre>
+
 <p>কিন্তু আমরা সবসময় ইলোকোয়েন্ট বা কোয়েরি বিল্ডার ব্যবহার নাও করতে পারি। সেক্ষেত্রে পেজিনেশনের দরকার হলে সেটি করতে হবে এভাবে-</p>
+
 <pre><code>public function index()
 {
     $people = collect([
@@ -85,10 +92,15 @@
     $people  = new \Illuminate\Pagination\LengthAwarePaginator($pagedData, count($people), $perPage, $currentPage);
 
     return view('people.list', compact('people'));
-}</code></pre>
+}
+</code></pre>
+
 <p>এখানে প্রথমে একটা বড় এ্যারে কে ‌‌collect() হেল্পার মেথডের সাহায্যে লারাভেলের কালেকশন ক্লাসের অবজেক্টে পরিনত করা হয়েছে। এরপর $perPage এ ঠিক করা হয়েছে প্রতি পেজে কয়টা ডেটা শো করবে। এরপর কারেন্ট পেজ কোনটা সেটা নির্ধারন করা হয়েছে ইউআরএলের GET প্যারামিটার থেকে। যদি কোন গেট প্যারামিটার না থাকে তবে আমরা ডিফল্টভাবে $currentPage = 1 ধরে নেই।</p>
+
 <p>এরপর ডেটাকে স্লাইস করে নিতে হয়। এই স্লাইস মেথড কিভাবে কাজ করে সেটা লারাভেলের <a href="http://laravel.com/docs/5.1/collections#method-slice">কালেকশনের ডকুমেন্টেশন</a> দেখে নিতে পারেন। পরবর্তীতে এই ডেটাকে LengthAwarePaginator ক্লাসের ইন্সট্যান্স বানাতে হয়। LengthAwarePaginator ব্যবহার না করে আপনি চাইলে Paginator ক্লাসও ব্যবহার করতে পারেন। এ দুটির মধ্যে পার্থক্য হচ্ছে LengthAwarePaginator ক্লাসটিতে আপনার কালেকশনে মোট কয়টি ডেটা আছে সেটা পাঠাতে হয় কিন্তু Paginator এ সেটা পাঠাতে হয় না।</p>
+
 <p>বাকি ভিউ আপনি নিচের মত করে রেন্ডার করতে পারেন-</p>
+
 <pre><code>&lt;div class="container"&gt;
     &lt;table class="table table-bordered"&gt;
         &lt;tr&gt;
@@ -105,8 +117,11 @@
     &lt;/table&gt;
 
     {!! $collection-&gt;render() !!}
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
+
 <p>হ্যাপি কোডিং...</p>
+
     
     <hr>
 
