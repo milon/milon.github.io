@@ -265,7 +265,10 @@
             <img src="/assets/images/avatar.jpg" alt="avatar" class="avatar">
         </div>
         <div class="side-block" id="personal-info">
-            <h1>About Me</h1>
+            <h1>
+                <i class="far fa-user-circle"></i>
+                About Me
+            </h1>
             <ul>
                 <li>Bestseller author</li>
                 <li>Opensource evangelist and contributor</li>
@@ -279,7 +282,10 @@
             </ul>
         </div>
         <div class="side-block" id="cert-info">
-            <h1>Certifications</h1>
+            <h1>
+                <i class="fas fa-certificate"></i>
+                Certifications
+            </h1>
             <ul>
                 <li>
                     <i class="fab fa-laravel"></i>
@@ -300,14 +306,20 @@
             </ul>
         </div>
         <div class="side-block" id="personal-info">
-            <h1>Language</h1>
+            <h1>
+                <i class="fas fa-language"></i>
+                Language
+            </h1>
             <ul>
                 <li>English</li>
                 <li>Bangla</li>
             </ul>
         </div>
         <div class="side-block" id="contact">
-            <h1>Contact Info</h1>
+            <h1>
+                <i class="far fa-address-card"></i>
+                Contact Info
+            </h1>
             <ul>
                 <li><i class="fas fa-globe-americas"></i> <a href="https://milon.im">https://milon.im</a></li>
                 <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
@@ -318,7 +330,10 @@
             </ul>
         </div>
         <div class="side-block" id="personal-info">
-            <h1>Personal Info</h1>
+            <h1>
+                <i class="far fa-user"></i>
+                Personal Info
+            </h1>
             <ul>
                 <li>Nationality: Bangladeshi</li>
                 <li>Marital Status: Married</li>
@@ -326,7 +341,10 @@
             </ul>
         </div>
         <div class="side-block" id="links">
-            <h1>Links</h1>
+            <h1>
+                <i class="fas fa-link"></i>
+                Links
+            </h1>
             <ul>
                 <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/to_milon">@to_milon</a></li>
                 <li><i class="fab fa-github"></i> <a href="https://github.com/milon">github.com/milon</a></li>
