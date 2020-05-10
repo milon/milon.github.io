@@ -145,7 +145,8 @@ section article {
 section#paginator {
   margin: 0 0 20px 0;
   font-family: 'Alice', cursive;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 section#paginator a, section#paginator span {
