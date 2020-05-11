@@ -7,6 +7,7 @@ return [
     'production' => false,
     'dusqusShortName' => 'milon-im',
     'newsletterUrl' => 'https://tinyletter.com/to_milon',
+    'paginatationLinkNumber' => 5,
     'formatedDate' => function($page, $date) {
         return date('d F, Y', strtotime($date));
     },
