@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Alice|Cutive+Mono|Signika:300);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Alice|Courier+Prime|Signika:300);@charset "UTF-8";
 
 /*!
  * Font Awesome Free 5.13.0 by @fontawesome - https://fontawesome.com
@@ -6276,6 +6276,9 @@ table {
   --highlight-color: #00adb5;
   --table-border: #DDDDDD;
   --table-background: #f9f9f9;
+  --header-font: "Alice", cursive;
+  --body-font: "Signika", sans-serif;
+  --code-font: "Courier Prime", monospace;
 }
 
 body {
@@ -6284,7 +6287,7 @@ body {
   margin: 0 auto;
   font-size: 18px;
   font-weight: 400;
-  font-family: "Signika", sans-serif;
+  font-family: var(--body-font);
 }
 
 @media (max-width: 600px) {
@@ -6331,7 +6334,7 @@ section#header {
 
 section#header h1 {
   text-align: center;
-  font-family: "Alice", cursive;
+  font-family: var(--header-font);
   font-size: 2em;
   margin: 0 0 9px 0;
   font-weight: bold;
@@ -6339,7 +6342,7 @@ section#header h1 {
 }
 
 section#header h2 {
-  font-family: "Signika", sans-serif;
+  font-family: var(--body-font);
   font-size: 1em;
   text-align: center;
   font-weight: bold;
@@ -6388,7 +6391,7 @@ section.summary article {
 
 section h2 {
   font-size: 1.3em;
-  font-family: "Alice", cursive;
+  font-family: var(--header-font);
   font-weight: bold;
 }
 
@@ -6408,7 +6411,7 @@ section article {
 
 section#paginator {
   margin: 0 0 20px 0;
-  font-family: "Alice", cursive;
+  font-family: var(--header-font);
   display: flex;
   justify-content: center;
 }
@@ -6458,11 +6461,11 @@ section#paginator a.selected {
 .back-link * {
   margin-top: 1.5em;
   font-size: 0.8em;
-  font-family: "Alice", cursive;
+  font-family: var(--header-font);
 }
 
 .contact p {
-  font-family: "Signika", sans-serif;
+  font-family: var(--body-font);
 }
 
 img {
@@ -6470,7 +6473,7 @@ img {
 }
 
 code {
-  font-family: "Cutive Mono", monospace;
+  font-family: var(--code-font);
   line-height: 1.5;
   font-size: 0.9em;
 }
@@ -6598,7 +6601,7 @@ th {
   padding: 10px;
   font-size: 1em;
   border: 1px solid var(--hover-color);
-  font-family: "Signika", sans-serif;
+  font-family: var(--body-font);
 }
 
 .newsletter .submit-btn {
@@ -6606,7 +6609,7 @@ th {
   font-size: 1em;
   border: 1px solid var(--hover-color);
   cursor: pointer;
-  font-family: "Signika", sans-serif;
+  font-family: var(--body-font);
 }
 
 .newsletter .submit-btn:hover {
