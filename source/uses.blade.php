@@ -20,6 +20,7 @@
     <ul>
         <li>Macbook Pro 13" - late 2017 model</li>
         <li>Apple iPad Pro 2020 - 11" version</li>
+        <li>Apple Pencil 2nd generation</li>
         <li>Apple iPhone X</li>
         <li>Apple AirPod Pro</li>
         <li>Google Home Mini</li>
