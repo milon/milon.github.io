@@ -6361,6 +6361,7 @@ section#header p a {
 
 section#header p a.selected {
   font-style: italic;
+  font-weight: bold;
 }
 
 section#footer {
