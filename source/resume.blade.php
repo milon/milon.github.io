@@ -180,14 +180,14 @@
                     </header>
                     <div>
                       <ul>
-                          <li>PHP, Node.js, Python</li>
-                          <li>Laravel, CodeIgniter, Symfony, AngularJS, ReactJS, VueJS, Express, Socket.io</li>
-                          <li>HTML5, CSS3, JavaScript, XML, JSON, AJAX, WebRTC</li>
-                          <li>Apache, Nginx, Microservices, REST, Docker, Jenkins, Ansible</li>
+                          <li>PHP, Node.js, Kotlin, Python</li>
+                          <li>Laravel, Symfony, ReactJS, VueJS, ReactNative, Ktor</li>
+                          <li>HTML5, CSS3, JavaScript, Typescript</li>
+                          <li>Apache, Nginx, Microservices, REST, Docker, Kubernetes, Jenkins, Ansible</li>
                           <li>Agile, Scrum, Kanban</li>
                           <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis</li>
-                          <li>Beanstalkd, IronMQ, RabbitMQ</li>
-                          <li>Amazon AWS(EC2, S3, RDS), Unit Testing</li>
+                          <li>Beanstalkd, IronMQ, RabbitMQ, Kafka</li>
+                          <li>Amazon AWS(EC2, S3, RDS)</li>
                           <li>Git, SVN</li>
                       </ul>
                     </div>

@@ -263,18 +263,18 @@
                     </header>
                     <div>
                         <ul>
-                            <li>PHP, Node.js, Python</li>
-                            <li>Laravel, CodeIgniter, Symfony, AngularJS, ReactJS, VueJS, Express, Socket.io</li>
-                            <li>HTML5, CSS3, JavaScript, XML, JSON, AJAX, WebRTC</li>
-                            <li>REST, SOAP, JSON-RPC</li>
+                            <li>PHP, Node.js, Kotlin, Python</li>
+                            <li>Laravel, Symfony, ReactJS, VueJS, ReactNative, Ktor</li>
+                            <li>HTML5, CSS3, JavaScript, Typescript</li>
+                            <li>Microservices, REST, SOAP, JSON-RPC</li>
                             <li>Agile, Scrum, Kanban</li>
                             <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis</li>
-                            <li>Beanstalkd, IronMQ, RabbitMQ</li>
+                            <li>Beanstalkd, IronMQ, RabbitMQ, Kafka</li>
                             <li>PHPUnit, PHPSpec, Codeception, Behat</li>
-                            <li>Apache, Nginx, Tomcat</li>
+                            <li>Apache, Nginx</li>
                             <li>Amazon AWS(EC2, S3, RDS), Google APIs, Payment Gateway(Stripe, Paypal, Braintree)</li>
                             <li>Git, SVN</li>
-                            <li>Microservices, Docker, Jenkins, Ansible</li>
+                            <li>Docker, Kubernetes, Jenkins, Ansible</li>
                             <li>Configuring VPS with LAMP, LEMP, MEAN</li>
                         </ul>
                     </div>
