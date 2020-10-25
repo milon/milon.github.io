@@ -21,10 +21,11 @@
         <li>Macbook Pro 13" - late 2017 model</li>
         <li>Apple iPad Pro 2020 - 11" version</li>
         <li>Apple Pencil 2nd generation</li>
-        <li>Apple iPhone X</li>
+        <li>Apple iPhone 12 Pro</li>
         <li>Apple AirPod Pro</li>
         <li>Google Home Mini</li>
         <li><a href="https://www.amazon.de/dp/B0756CYWWD">Bose QC35 II</a></li>
+        <li><a href="https://www.amazon.de/dp/B07N91BVY5">Jaybird Tarah Pro</a></li>
         <li><a href="https://www.amazon.de/dp/B084122GJ9">Amazon Kindle Paperwhite</a></li>
         <li><a href="https://www.amazon.de/gp/product/B075GJ1BN8">HP Color Laserjet Pro Multifunction Colour Laser Printer</a></li>
         <li><a href="https://www.amazon.de/gp/product/B07JGSPQV2">Dell UltraSharp U2719D 27" monitor</a></li>
