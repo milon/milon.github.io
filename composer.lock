@@ -204,7 +204,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v7.29.3",
+            "version": "v7.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -255,7 +255,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.29.3",
+            "version": "v7.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -303,7 +303,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v7.29.3",
+            "version": "v7.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -352,7 +352,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.29.3",
+            "version": "v7.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -411,16 +411,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v7.29.3",
+            "version": "v7.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "d67eafa7fdba279266e797eda035633e3ca029d0"
+                "reference": "f6daba7b74d849f854100ade05b952176e9cdf63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/d67eafa7fdba279266e797eda035633e3ca029d0",
-                "reference": "d67eafa7fdba279266e797eda035633e3ca029d0",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/f6daba7b74d849f854100ade05b952176e9cdf63",
+                "reference": "f6daba7b74d849f854100ade05b952176e9cdf63",
                 "shasum": ""
             },
             "require": {
@@ -473,11 +473,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-10-29T15:16:59+00:00"
+            "time": "2020-11-18T14:37:23+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v7.29.3",
+            "version": "v7.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
