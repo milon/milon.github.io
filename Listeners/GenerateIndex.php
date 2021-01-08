@@ -14,6 +14,7 @@ class GenerateIndex
                 'categories' => $page->getCategories(),
                 'link'       => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
                 'gist'       => $page->gist,
+                'type'       => 'post',
             ];
         }));
 
@@ -23,6 +24,7 @@ class GenerateIndex
                 'categories' => $page->getCategories(),
                 'link'       => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
                 'gist'       => $page->gist,
+                'type'       => 'talk',
             ];
         })->values());
 
