@@ -1,5 +1,4 @@
 let mix = require('laravel-mix');
-//let build = require('./tasks/build.js');
 
 mix.disableNotifications();
 mix.setPublicPath('source/assets/build');
