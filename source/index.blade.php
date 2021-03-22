@@ -20,5 +20,5 @@
     <p>Recently, I have a new hobby for cooking. I am sharing my recipes <a href="https://easy-recipes.netlify.app/">here</a>.</p>
     <p>I am the father of a beautiful prince.</p>
     <p>I am a proud <a href="https://en.wikipedia.org/wiki/Bangladesh">Bangladeshi 🇧🇩</a>.</p>
-    <p class="text-small">Everything of this site is published under <a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><i class="fab fa-creative-commons"></i> Creative Commons Attribution 2.0 Generic License</a>.</p>
+    <p class="license">Everything of this site is published under <a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><i class="fab fa-creative-commons"></i> Creative Commons Attribution 2.0 Generic License</a>.</p>
 @endsection
