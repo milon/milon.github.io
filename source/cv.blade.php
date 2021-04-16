@@ -399,11 +399,15 @@
                 </li>
                 <li>
                     <i class="icon-scrum"></i>
+                    <a href="http://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
+                </li>
+                <li>
+                    <i class="icon-scrum"></i>
                     <a href="http://bcert.me/skctlvko">Certified Scrum Developer<sup>®</sup></a>
                 </li>
                 <li>
                     <i class="icon-scrum"></i>
-                    <a href="http://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
+                    <a href="#">Advanced Certified Scrum Developer<sup>&#8480;</sup></a>
                 </li>
             </ul>
         </div>
@@ -436,7 +440,7 @@
         </div>
 
         <div class="print">
-            <br><br><br><br><br>
+            <br><br><br><br><br><br>
         </div>
 
         <div class="side-block" id="personal-info">
@@ -469,7 +473,7 @@
         </div>
         <div class="side-block" id="disclaimer">
             <a href="/assets/pdf/Nuruzzaman_Milon_cv.pdf" download class="btn"><i class="fas fa-download"></i> Download</a>
-            <p>This CV is available online at <br> &mdash; <a href="https://milon.im/cv/">https://milon.im/cv/</a></p>
+            <p>This CV is available online at <br><br> &mdash; <a href="https://milon.im/cv/">https://milon.im/cv/</a></p>
         </div>
     </aside>
 
