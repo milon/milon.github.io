@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="{{ mix('css/resume.css', 'assets/build') }}">
 
     @include('_layouts._partials._cv_meta', [
-            'title' => 'milon.im | Resume',
-            'description' => "Resume of Nuruzzaman Milon",
+        'title' => 'milon.im | Resume',
+        'description' => "Resume of Nuruzzaman Milon",
     ])
 </head>
 
@@ -297,11 +297,15 @@
                 </li>
                 <li>
                     <i class="icon-scrum"></i>
+                    <a href="http://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
+                </li>
+                <li>
+                    <i class="icon-scrum"></i>
                     <a href="http://bcert.me/skctlvko">Certified Scrum Developer<sup>®</sup></a>
                 </li>
                 <li>
                     <i class="icon-scrum"></i>
-                    <a href="http://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
+                    <a href="#">Advanced Certified Scrum Developer<sup>&#8480;</sup></a>
                 </li>
             </ul>
         </div>
