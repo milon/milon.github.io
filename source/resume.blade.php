@@ -305,7 +305,7 @@
                 </li>
                 <li>
                     <i class="icon-scrum"></i>
-                    <a href="#">Advanced Certified Scrum Developer<sup>&#8480;</sup></a>
+                    <a href="https://bcert.me/segniwpnm">Advanced Certified Scrum Developer<sup>&#8480;</sup></a>
                 </li>
             </ul>
         </div>
