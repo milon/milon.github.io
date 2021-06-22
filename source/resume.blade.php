@@ -44,7 +44,7 @@
                     </header>
                     <div>
                         <ul>
-                            <li>Working as a full-stack engineer on Flix McDriver app team.</li>
+                            <li>Working as a full-stack engineer in Team Deathstar on Network Planning domain.</li>
                         </ul>
                     </div>
                 </div>
