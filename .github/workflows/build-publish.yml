@@ -11,8 +11,10 @@ jobs:
   build-site:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
       with:
+        ref: develop
         fetch-depth: 0
     - name: Install Composer Dependencies
       run: composer install --no-ansi --no-interaction --ignore-platform-reqs --no-scripts --no-suggest --no-progress --prefer-dist
