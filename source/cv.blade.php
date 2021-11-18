@@ -395,19 +395,23 @@
                 </li>
                 <li>
                     <i class="icon-scrum"></i>
-                    <a href="http://bcert.me/swajseym">Certified Scrum Professional<sup>®</sup></a>
+                    <a href="https://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
                 </li>
                 <li>
                     <i class="icon-scrum"></i>
-                    <a href="http://bcert.me/snynrkpl">Certified ScrumMaster<sup>®</sup></a>
-                </li>
-                <li>
-                    <i class="icon-scrum"></i>
-                    <a href="http://bcert.me/skctlvko">Certified Scrum Developer<sup>®</sup></a>
+                    <a href="https://bcert.me/skctlvko">Certified Scrum Developer<sup>®</sup></a>
                 </li>
                 <li>
                     <i class="icon-scrum"></i>
                     <a href="https://bcert.me/segniwpnm">Advanced Certified Scrum Developer<sup>&#8480;</sup></a>
+                </li>
+                <li>
+                    <i class="icon-scrum"></i>
+                    <a href="https://bcert.me/swajseym">Certified Scrum Professional - ScrumMaster<sup>®</sup></a>
+                </li>
+                <li>
+                    <i class="icon-scrum"></i>
+                    <a href="https://bcert.me/swoqnnlks">Certified Scrum Professional - Developer<sup>®</sup></a>
                 </li>
             </ul>
         </div>
@@ -440,7 +444,7 @@
         </div>
 
         <div class="print">
-            <br><br><br><br><br><br>
+            <br><br>
         </div>
 
         <div class="side-block" id="personal-info">

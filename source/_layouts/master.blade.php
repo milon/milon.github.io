@@ -26,7 +26,7 @@
                 <a class="{{ $page->selected('/talks') }}" href="/talks">Talks</a>
                 <a class="{{ $page->selected('/uses') }}" href="/uses">Uses</a>
                 <a class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
-                <a href="/resume">Resume</a>
+                <a href="/cv">CV</a>
             </p>
         </section>
 
