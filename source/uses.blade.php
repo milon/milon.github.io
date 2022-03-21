@@ -67,6 +67,11 @@
         use one, I normally go for pages, numbers and keynote, that comes free with macOS.
     </p>
 
+    <p>
+        You can find the full list along with all the configuration I normally use in the
+        [dotfiles](https://github.com/milon/dotfiles) repository.
+    </p>
+
     <p class="back-link">
         <a href="{{ $page->baseUrl }}">Back to Home</a>
     </p>
