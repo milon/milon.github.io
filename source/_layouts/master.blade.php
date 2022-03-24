@@ -36,15 +36,15 @@
 
         <section id="footer">
             <div class="social-links">
-                <a href="{{ $page->social->github }}" title="Github"><i class="fab fa-github"></i></a>
-                <a href="{{ $page->social->twitter }}" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="{{ $page->social->facebook }}" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-                <a href="{{ $page->social->linkedin }}" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="{{ $page->social->slideshare }}" title="SlideShare"><i class="fab fa-slideshare"></i></a>
-                <a href="{{ $page->social->speakerdeck }}" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
-                <a href="{{ $page->social->instagram }}" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="{{ $page->social->stackoverflow }}" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
-                <a href="{{ $page->social->xing }}" title="Xing"><i class="fab fa-xing"></i></a>
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+                <a href="/xing" title="Xing"><i class="fab fa-xing"></i></a>
             </div>
         </section>
 

@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Alice|Courier+Prime|Signika:300';
 @import "_font_awesome";
-@import "_reset.min";
-@import "_default.min";
+@import "_reset.min";   // browser reset
+@import "_default.min"; // highlight js
 
 :root {
     --primary-color: #050506;
@@ -349,7 +349,7 @@ td, th {
 }
 
 .license {
-    margin-top: 2em; 
+    margin-top: 2em;
     font-size: 0.8em;
     font-style: italic;
 }

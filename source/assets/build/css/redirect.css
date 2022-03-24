@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Alice|Courier+Prime|Signika:300);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --primary-color: #050506;
+  --hover-color: #C0C0C0;
+  --highlight-color: #00adb5;
+  --header-font: "Alice", cursive;
+  --body-font: "Signika", sans-serif;
+  --code-font: "Courier Prime", monospace;
+}
+
+body {
+  color: var(--primary-color);
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--body-font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section#header {
+  margin: 30px 0;
+  position: relative;
+}
+
+section#header h1 {
+  text-align: center;
+  font-family: var(--header-font);
+  font-size: 2em;
+  margin: 0 0 9px 0;
+  font-weight: bold;
+  text-shadow: 1px 3px 3px var(--hover-color);
+}
+
+section#header h2 {
+  font-family: var(--body-font);
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary-color);
+}

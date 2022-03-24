@@ -17,18 +17,48 @@ return [
     'selected' => function($page, $section) {
         return ($page->getPath() === $section) ? 'selected' : '';
     },
-    'social' => [
-        'github'        => 'https://github.com/milon',
-        'twitter'       => 'https://twitter.com/to_milon',
-        'facebook'      => 'https://www.facebook.com/page.milon.im',
-        'linkedin'      => 'https://www.linkedin.com/in/tomilon',
-        'speakerdeck'   => 'https://speakerdeck.com/milon',
-        'slideshare'    => 'http://www.slideshare.net/milon521',
-        'instagram'     => 'https://www.instagram.com/to_milon',
-        'stackoverflow' => 'https://stackoverflow.com/users/3905595/nuruzzaman-milon',
-        'xing'          => 'https://www.xing.com/profile/Nuruzzaman_Milon/cv'
-    ],
     'collections' => [
+        '' => [
+            'extends' => '_layouts.redirect',
+            'items' => [
+                [
+                    'filename' => 'facebook',
+                    'url' => 'https://www.facebook.com/milon521',
+                ],
+                [
+                    'filename' => 'twitter',
+                    'url' => 'https://twitter.com/to_milon',
+                ],
+                [
+                    'filename' => 'github',
+                    'url' => 'https://github.com/milon',
+                ],
+                [
+                    'filename' => 'linkedin',
+                    'url' => 'https://www.linkedin.com/in/tomilon',
+                ],
+                [
+                    'filename' => 'speakerdeck',
+                    'url' => 'https://speakerdeck.com/milon',
+                ],
+                [
+                    'filename' => 'slideshare',
+                    'url' => 'http://www.slideshare.net/milon521',
+                ],
+                [
+                    'filename' => 'instagram',
+                    'url' => 'https://www.instagram.com/to_milon',
+                ],
+                [
+                    'filename' => 'stackoverflow',
+                    'url' => 'https://stackoverflow.com/users/3905595/nuruzzaman-milon',
+                ],
+                [
+                    'filename' => 'xing',
+                    'url' => 'https://www.xing.com/profile/Nuruzzaman_Milon/cv',
+                ],
+            ]
+        ],
         'posts' => [
             'path' => 'post/{filename}',
             'sort' => '-date',
