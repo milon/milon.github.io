@@ -69,7 +69,7 @@
 
     <p>
         You can find the full list along with all the configuration I normally use in the
-        [dotfiles](https://github.com/milon/dotfiles) repository.
+        <a href="https://github.com/milon/dotfiles">dotfiles</a> repository.
     </p>
 
     <p class="back-link">
