@@ -1,3 +1,5 @@
+![Build Status](https://github.com/milon/milon.github.io/actions/workflows/build-publish.yml/badge.svg)
+
 # Personal website of Nuruzzaman Milon
 
 This site generated with [Jigsaw](http://jigsaw.tighten.co/) static site generator.
