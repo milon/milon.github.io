@@ -62,7 +62,7 @@
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</span>
                     </header>
                     <div>
-                        <p>Working as a senior backend engineer to manage and manintain existing codebase as well as build new features. Taking care of financing, payment and GDPR compliance as well.</p>
+                        <p>Working as a senior backend engineer to manage and maintain existing codebase as well as build new features. Taking care of financing, payment and GDPR compliance as well.</p>
                     </div>
                 </div>
             </section>
@@ -84,7 +84,7 @@
                             <li class="project-title">Projects
                                 <ul>
                                     <li>Autoteile - A price comparison site for all types of car parts with billing.</li>
-                                    <li>Reifen - A price comparison site for various types for car tires.</li>
+                                    <li>Reifen - A price comparison site for various types of car tires.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -106,20 +106,20 @@
                     <div>
                         <p>
                             Created a digital healthcare solution that serves affordable health services
-                            (medications, informations, insurance etc.) to more that 5.5 million people
-                            and managed a team of 4 developers, 3 interns, 1 QA and a DevOps people.
+                            (medications, information, insurance, etc.) to more than 5.5 million people
+                            and managed a team of 4 developers, 3 interns, 1 QA and, a DevOps people.
                         </p>
                         <ul>
                             <li class="project-title">Tonic SMSC
                                 <ul>
                                     <li>SMS sending and receiving hub for all Telenor Health SMS.</li>
-                                    <li>Used Lumen as an application framework, PostgreSQL as database server, Redis as queue server, Supervisor as monitoring tool.</li>
+                                    <li>Used Lumen as an application framework, PostgreSQL as a database server, Redis as queue server, and Supervisor as monitoring tool.</li>
                                 </ul>
                             </li>
                             <li class="project-title">Content as a Service (CAAS)
                                 <ul>
-                                    <li>Full fledged CMS for managing all health related article, health tips, mobile application cards for the website, iOS app and Android app.</li>
-                                    <li>Used Laravel as application framework, PostgreSQL as database server, AngularJS as frontend framework.</li>
+                                    <li>Full-fledged CMS for managing all health-related articles, health tips, and mobile application cards for the website, iOS app and Android app.</li>
+                                    <li>Used Laravel as application framework, PostgreSQL as a database server, AngularJS as frontend framework.</li>
                                 </ul>
                             </li>
                             <li class="project-title">Other Projects
@@ -127,7 +127,7 @@
                                     <li>Tonic App Backend - Supports Tonic Mobile App (Android and iOS) with all the external and internal services as a proxy gateway.</li>
                                     <li>Tonic Doctor Appointment - Provides API for a doctor appointment booking system.</li>
                                     <li>Castro - A campaign management tool for SMS, email and push-notification campaign.</li>
-                                    <li>Tonic Admin - BI and reporting tool for generating the various report, manage subscribers etc.</li>
+                                    <li>Tonic Admin - BI and reporting tool for generating the various report, managing subscribers etc.</li>
                                     <li>Tonic Core - Provides all necessary logic and business insights through API to all Tonic services.</li>
                                     <li>Tonic Billing - Billing service for Tonic</li>
                                     <li>Tonic Question and Answer - A community engagement platform for doctors and patients</li>
