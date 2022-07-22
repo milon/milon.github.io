@@ -279,27 +279,6 @@
                     </div>
                 </div>
             </section>
-            <section class="blocks">
-                <div class="date">
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Programming Skill and Awards</h3>
-                    </header>
-                    <div>
-                        <ul>
-                            <li>Got 600+ accepted solutions at <a href="http://uhunt.felix-halim.net/id/60925">UVa Online Judge</a></li>
-                            <li>Winner at National Collegiate Software Contest (NCSC), 2011 held at Shahjalal University of Science and Technology (SUST)</li>
-                            <li>Participant of National Collegiate Programming Contest (NCPC), 2010 held at Daffodil International University (DIU) (Rank: 17).</li>
-                            <li>Participant of National Collegiate Programming Contest (NCPC), 2010 held at Islamic University of Technology (IUT) (Rank: 11).</li>
-                            <li>Participant of National Collegiate Programming Contest (NCSC), 2010 held at Mawlana Bhashani Science University (MBSTU) (Rank: 4)</li>
-                            <li>Participated in countless other national and online programming contests.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
         </section>
 
         <section class="main-block concise">
