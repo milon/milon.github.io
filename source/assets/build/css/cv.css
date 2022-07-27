@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Roboto:wght@300;400;500;700;900);
 @charset "UTF-8"; /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -6575,14 +6575,14 @@ template {
   --decorator-border: 1px solid #ccc;
   --row-blocks-padding-top: 5pt;
   --date-block-width: 1.2in;
-  --main-blocks-title-icon-offset-left: -19pt;
+  --main-blocks-title-icon-offset-left: -21pt;
 }
 
 body {
   width: var(--page-width);
   height: var(--page-height);
   margin: 0 auto;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   line-height: 1.3;
   color: #444;
@@ -6608,7 +6608,7 @@ li {
   float: left;
   width: var(--main-width);
   padding: 0.25in 0.25in 0 0.25in;
-  font-size: 7pt;
+  font-size: 9pt;
 }
 
 #sidebar {
@@ -6641,8 +6641,8 @@ li {
 }
 
 #title h1 {
-  font-weight: bold;
-  font-size: 18pt;
+  font-weight: 900;
+  font-size: 24pt;
   line-height: 1.5;
 }
 
@@ -6652,7 +6652,7 @@ li {
 }
 
 .subtitle {
-  font-size: 8pt;
+  font-size: 10pt;
 }
 
 /*** categorial blocks ***/
@@ -6666,7 +6666,7 @@ li {
   /* XXX: 0.5px for aligning fx printing */
   left: calc(var(--date-block-width) + var(--decorator-horizontal-margin));
   font-weight: 400;
-  font-size: 11pt;
+  font-size: 14pt;
   color: #555;
 }
 
@@ -6722,7 +6722,6 @@ li {
   flex: 0 0 var(--date-block-width);
   padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
   padding-right: var(--decorator-horizontal-margin);
-  font-size: 7pt;
   text-align: right;
   line-height: 1;
 }
@@ -6796,7 +6795,11 @@ li {
 }
 
 .details h3 {
-  font-size: 9pt;
+  font-size: 11pt;
+}
+
+.main-block {
+  margin-bottom: 0.18in;
 }
 
 .main-block:not(.concise) .details div {
@@ -6815,15 +6818,24 @@ li {
 
 .details .place {
   float: left;
-  font-size: 7.5pt;
+  font-size: 9pt;
+}
+
+.details .place .company-name {
+  font-size: 10pt;
 }
 
 .details .location {
   float: right;
+  font-size: 10pt;
 }
 
 .details div {
   clear: both;
+}
+
+.details .content {
+  margin-top: 18pt !important;
 }
 
 /***** fine-tunes on the lists... *****/
@@ -6863,14 +6875,13 @@ li {
   border: 3px solid black;
   max-width: 100%;
   display: block;
-  vertical-align: middle;
   height: auto;
   filter: grayscale(100%);
 }
 
 #sidebar h1 {
   font-weight: 400;
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 .side-block {
@@ -6880,7 +6891,6 @@ li {
 #contact ul, #links ul, #cert-info ul {
   margin-top: 0.05in;
   padding-left: 0;
-  font-family: "Source Sans Pro";
   font-weight: 400;
   line-height: 1.75;
 }
@@ -6939,15 +6949,6 @@ li {
   border-color: #adadad;
 }
 
-#personal-info li {
-  font-size: 7.5pt;
-}
-
-#cert-info li {
-  font-size: 7.4pt;
-  display: block;
-}
-
 .print {
   display: none;
 }
@@ -6971,13 +6972,4 @@ li {
   .page-break-margin {
     margin-top: 2in;
   }
-}
-li.project-title {
-  font-size: 8pt;
-  font-weight: bold;
-}
-
-li.project-title > ul li {
-  font-size: 7pt;
-  font-weight: normal;
 }
