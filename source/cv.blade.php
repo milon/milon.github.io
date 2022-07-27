@@ -442,7 +442,7 @@
                     <header>
                         <h3>German</h3>
                         <span class="place">
-                            A1 level proficient
+                            A2 level proficient
                         </span>
                     </header>
                 </div>
