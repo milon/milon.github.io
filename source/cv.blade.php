@@ -103,7 +103,7 @@
                                 Working on the Autoteile team to develop and maintain tires, car parts, and insurance 
                                 portal for more than 10 million customers.
                             </li>
-                            <li>Used: PHP, Symfony, MySQL, Doctrine, React, etc.</li>
+                            <li>Used: PHP, Symfony, MySQL, Doctrine, React, Elasticsearch, etc.</li>
                         </ul>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                             <li>HTML5, CSS3, JavaScript, Typescript</li>
                             <li>Microservices, REST</li>
                             <li>Agile, Scrum, Kanban</li>
-                            <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis</li>
+                            <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis, Elasticsearch</li>
                             <li>Kafka, Beanstalkd, IronMQ, RabbitMQ</li>
                             <li>PHPUnit, Pest, PHPSpec, Codeception, Behat, Jest</li>
                             <li>Nginx, Apache</li>
