@@ -6959,6 +6959,8 @@ li {
   }
   body {
     -webkit-print-color-adjust: exact;
+       color-adjust: exact;
+            print-color-adjust: exact;
   }
   #disclaimer p {
     display: block;
