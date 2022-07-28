@@ -483,14 +483,9 @@
                 <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/to_milon">@to_milon</a></li>
                 <li><i class="fab fa-github"></i> <a href="https://github.com/milon">github.com/milon</a></li>
                 <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
-                <li><i class="fab fa-speaker-deck"></i> <a href="https://speakerdeck.com/milon">speakerdeck.com/milon</a></li>
-                <li><i class="fab fa-slideshare"></i> <a href="http://www.slideshare.net/milon521">slideshare.net/milon521</a></li>
+                <li><i class="fab fa-speaker-deck"></i> <a href="https://milon.im/speakerdeck">milon.im/speakerdeck</a></li>
+                <li><i class="fab fa-slideshare"></i> <a href="http://milon.im/slideshare">milon.im/slideshare</a></li>
             </ul>
-        </div>
-
-        <div class="side-block" id="personal-info">
-            <h1>Personality</h1>
-            <p><a href="https://www.16personalities.com/profiles/3db6b8e4630d9">ESTJ-A (Assertive Executive)</a></p>
         </div>
         
         <div class="side-block" id="contact">
@@ -514,7 +509,12 @@
         </div>
 
         <div class="print">
-            <br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/>
+        </div>
+
+        <div class="side-block" id="personal-info">
+            <h1>Personality</h1>
+            <p><a href="https://www.16personalities.com/profiles/3db6b8e4630d9">ESTJ-A (Assertive Executive)</a></p>
         </div>
 
         <div class="side-block" id="personal-info">
