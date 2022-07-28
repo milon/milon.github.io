@@ -17,27 +17,22 @@
     <section id="main">
         <header id="title">
             <div class="text">
-                <h1>
-                    <a href="{{ $page->baseUrl }}">Nuruzzaman Milon</a>
-                </h1>
+                <h1><a class="title-name" href="{{ $page->baseUrl }}">Nuruzzaman Milon</a></h1>
                 <span class="subtitle">Programmer, Author and Tech Enthusiast</span>
             </div>
-            <div class="qr-code">
-                <img src="/assets/images/qr-code.png" alt="qr-code">
-            </div>
+            <div class="qr-code"><img src="/assets/images/qr-code.png" alt="qr-code"></div>
         </header>
 
         {{-- Experience --}}
         <section class="main-block">
             <h2>
-              <i class="fas fa-briefcase"></i> Work Experiences
+                <i class="fas fa-briefcase"></i> Work Experiences
             </h2>
             <section class="blocks">
                 <div class="date">
                     <span>Present</span><span>January, 2020</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Senior Full-Stack Software Engineer</h3>
@@ -49,12 +44,15 @@
                     <div class="content">
                         <ul>
                             <li>
-                                Managing network inventory, generating rides, manage vehicle circulations for Flixbus and 
-                                Flixtrain network in 27 countries in 3 continent.
+                                Managing network inventory, generating rides, manage vehicle circulations for Flixbus 
+                                and Flixtrain network in 27 countries in 3 continent.
                             </li>
                             <li>Creating own navigation system for the bus drivers in FlixDriver app.</li>
                             <li>Build lost and found reporting system right in the bus driver app.</li>
-                            <li>Used: PHP, Symfony, Java, React Native, Kafka, SQS, MySQL, Docker, AWS, Kubernetes, Gitlab CI, React, TypeScript etc.</li>
+                            <li>
+                                Used: PHP, Symfony, Java, React Native, Kafka, SQS, MySQL, Docker, AWS, Kubernetes, 
+                                Gitlab CI, React, TypeScript etc.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -63,8 +61,7 @@
                 <div class="date">
                     <span>December, 2019</span><span>July, 2019</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Senior Software Engineer</h3>
@@ -76,7 +73,10 @@
                     </header>
                     <div class="content">
                         <ul>
-                            <li>Create multi-currency payment system to adopt new payment gateway for faster groth in multiple countries.</li>
+                            <li>
+                                Create multi-currency payment system to adopt new payment gateway for faster groth in 
+                                multiple countries.
+                            </li>
                             <li>Leading the team, responsible for financing, payment and GDPR compliance.</li>
                             <li>Used: PHP, Phalcon, MySQL, RabbitMQ, Redis, AWS etc.</li>
                         </ul>
@@ -87,8 +87,7 @@
                 <div class="date">
                     <span>June, 2019</span><span>May, 2018</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Senior Software Engineer</h3>
@@ -100,7 +99,10 @@
                     </header>
                     <div class="content">
                         <ul>
-                            <li>Working on the autoteile team to develop and maintian tyres, carparts and insurance portal for more than 10 million customers.</li>
+                            <li>
+                                Working on the autoteile team to develop and maintian tyres, carparts and insurance 
+                                portal for more than 10 million customers.
+                            </li>
                             <li>Used: PHP, Symfony, MySQL, Doctrine, React etc.</li>
                         </ul>
                     </div>
@@ -110,8 +112,7 @@
                 <div class="date">
                     <span>April, 2018</span><span>May, 2016</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Senior Software Engineer</h3>
@@ -129,7 +130,10 @@
                             </li>
                             <li>Managed a team of 4 developers, 3 interns, 1 QA and, 1 DevOps.</li>
                             <li>Created high traffic system to serve 3000 req/s.</li>
-                            <li>Used: PHP, Laravel, Lumen, Node.js, Express.js, PostgreSQL, Docker, AWS, Ansible, Angular, XMPP etc.</li>
+                            <li>
+                                Used: PHP, Laravel, Lumen, Node.js, Express.js, PostgreSQL, Docker, AWS, Ansible, 
+                                Angular, XMPP etc.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -138,8 +142,7 @@
                 <div class="date">
                     <span>April, 2016</span><span>February, 2015</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Software Engineer</h3>
@@ -151,8 +154,14 @@
                     </header>
                     <div class="content">
                         <ul>
-                            <li>Creating the Rx71 health service, that includes Health article, symptom checker, doctor and hospital directory with booking, diet plan services etc.</li>
-                            <li>Manage a team of 6 developers, 2 SQA and, 1 DevOps, play the role as interim CTO for 3 months.</li>
+                            <li>
+                                Creating the Rx71 health service, that includes Health article, symptom checker, doctor 
+                                and hospital directory with booking, diet plan services etc.
+                            </li>
+                            <li>
+                                Manage a team of 6 developers, 2 SQA and, 1 DevOps, play the role as interim CTO for 
+                                3 months.
+                            </li>
                             <li>Used: PHP, Laravel, Lumen, WordPress, MySQL, Angular, IonicJS, socket.io etc.</li>
                         </ul>
                     </div>
@@ -162,8 +171,7 @@
                 <div class="date">
                     <span>January, 2015</span><span>September, 2013</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Software Engineer</h3>
@@ -177,7 +185,10 @@
                         <ul>
                             <li>Building VoIP calling app for both native Android and iOS operating system.</li>
                             <li>Creating web GUI for maintaining Asterisk PABX server.</li>
-                            <li>Creating airplane entertainment module for SAP-212 hardware device to enable call, email and web browsing.</li>
+                            <li>
+                                Creating airplane entertainment module for SAP-212 hardware device to enable call, 
+                                email and web browsing.
+                            </li>
                             <li>Used: PHP, CodeIgniter, Android SDK, Objective C, Angular, Asterisk etc.</li>
                         </ul>
                     </div>
@@ -187,8 +198,7 @@
                 <div class="date">
                     <span>August, 2013</span><span>February, 2011</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Programmer and System Analyst</h3>
@@ -201,7 +211,10 @@
                     <div class="content">
                         <ul>
                             <li>Write and manage codebase, database and product design, handle clients.</li>
-                            <li>Creating full-fledged telemedicine software, supports custom hardware for provide quality health care in rural areas.</li>
+                            <li>
+                                Creating full-fledged telemedicine software, supports custom hardware for provide 
+                                quality health care in rural areas.
+                            </li>
                             <li>Used: PHP, MySQL, Redis, jQuery, bootstrap etc.</li>
                         </ul>
                     </div>
@@ -221,8 +234,7 @@
             <section class="blocks">
                 <div class="date">
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Technical Skill</h3>
@@ -257,12 +269,13 @@
                 <div class="date">
                     <span>2018</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>
-                            <a href="https://exam.laravelcert.com/is/nuruzzaman-milon/certified-since/2018-01-08">Certified Laravel Developer</a>
+                            <a href="https://exam.laravelcert.com/is/nuruzzaman-milon/certified-since/2018-01-08">
+                                Certified Laravel Developer
+                            </a>
                         </h3>
                     </header>
                 </div>
@@ -271,8 +284,7 @@
                 <div class="date">
                     <span>2017</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>
@@ -285,8 +297,7 @@
                 <div class="date">
                     <span>2017</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>
@@ -299,8 +310,7 @@
                 <div class="date">
                     <span>2017</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>
@@ -313,8 +323,7 @@
                 <div class="date">
                     <span>2017</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>
@@ -327,8 +336,7 @@
                 <div class="date">
                     <span>2016</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>
@@ -348,12 +356,13 @@
                 <div class="date">
                     <span>2013</span><span>2009</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>B.Sc Engineering in Information and Communication Technology</h3>
-                        <span class="place">Mawlana Bhashani Science and Technology University</span>
+                        <span class="place">
+                            <a href="https://mbstu.ac.bd">Mawlana Bhashani Science and Technology University</a>
+                        </span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Tangail, Bangladesh</span>
                     </header>
                     <div>
@@ -376,8 +385,7 @@
                 <div class="date">
                     <span>2015</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3><a href="http://milon.im/laravel">Laravel PHP Web Framework</a></h3>
@@ -392,8 +400,7 @@
                 <div class="date">
                     <span>2012</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>
@@ -513,7 +520,8 @@
         <div class="side-block" id="personal-info">
             <h1>Extra Curricular</h1>
             <ul>
-                <li>Managing the largest programming community of Bangladesh- <a href="https://web.facebook.com/groups/pxperts">phpXperts</a></li>
+                <li>Managing the largest PHP community of Bangladesh- <a href="https://web.facebook.com/groups/pxperts">phpXperts</a></li>
+                <li>Managing the largest JavaScript community of Bangladesh- <a href="https://www.facebook.com/groups/talkjs.net">Talk.js</a></li>
                 <li>Organizer of Meetups and Conferences</li>
                 <li>Blood Donor</li>
             </ul>
@@ -522,14 +530,8 @@
         <div class="side-block" id="personal-info">
             <h1>Interests</h1>
             <ul>
-                <li>
-                    <a href="https://one-problem-a-day.netlify.app/">One problem a day</a>
-                    <span class="print">(https://one-problem-a-day.netlify.app)</span>
-                </li>
-                <li>
-                    <a href="https://easy-recipes.netlify.app">Easy recipes</a>
-                    <span class="print">(https://easy-recipes.netlify.app)</span>
-                </li>
+                <li><a href="https://one-problem-a-day.netlify.app/">One problem a day</a></li>
+                <li><a href="https://easy-recipes.netlify.app">Easy recipes</a></li>
             </ul>
         </div>
         

@@ -6962,6 +6962,14 @@ li {
        color-adjust: exact;
             print-color-adjust: exact;
   }
+  a {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #bbb;
+            text-decoration-color: #bbb;
+  }
+  a.title-name {
+    text-decoration: none;
+  }
   #disclaimer p {
     display: block;
   }
