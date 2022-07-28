@@ -18,7 +18,7 @@
         <header id="title">
             <div class="text">
                 <h1><a class="title-name" href="{{ $page->baseUrl }}">Nuruzzaman Milon</a></h1>
-                <span class="subtitle">Programmer, Author and Tech Enthusiast</span>
+                <span class="subtitle">Programmer, Author, and Tech Enthusiast</span>
             </div>
             <div class="qr-code"><img src="/assets/images/qr-code.png" alt="qr-code"></div>
         </header>
@@ -44,14 +44,14 @@
                     <div class="content">
                         <ul>
                             <li>
-                                Managing network inventory, generating rides, manage vehicle circulations for Flixbus 
-                                and Flixtrain network in 27 countries in 3 continent.
+                                Managing network inventory, generating rides, and managing vehicle circulations for 
+                                Flixbus and Flixtrain network in 27 countries on 3 continents.
                             </li>
-                            <li>Creating own navigation system for the bus drivers in FlixDriver app.</li>
-                            <li>Build lost and found reporting system right in the bus driver app.</li>
+                            <li>Creating own navigation system for the bus drivers in the FlixDriver app.</li>
+                            <li>Build lost and found reporting system right in the FlixDriver app.</li>
                             <li>
                                 Used: PHP, Symfony, Java, React Native, Kafka, SQS, MySQL, Docker, AWS, Kubernetes, 
-                                Gitlab CI, React, TypeScript etc.
+                                Gitlab CI, React, TypeScript, etc.
                             </li>
                         </ul>
                     </div>
@@ -74,11 +74,11 @@
                     <div class="content">
                         <ul>
                             <li>
-                                Create multi-currency payment system to adopt new payment gateway for faster groth in 
-                                multiple countries.
+                                Create a multi-currency payment system to adopt new payment gateways for faster growth 
+                                in multiple countries.
                             </li>
                             <li>Leading the team, responsible for financing, payment and GDPR compliance.</li>
-                            <li>Used: PHP, Phalcon, MySQL, RabbitMQ, Redis, AWS etc.</li>
+                            <li>Used: PHP, Phalcon, MySQL, RabbitMQ, Redis, AWS, etc.</li>
                         </ul>
                     </div>
                 </div>
@@ -100,10 +100,10 @@
                     <div class="content">
                         <ul>
                             <li>
-                                Working on the autoteile team to develop and maintian tyres, carparts and insurance 
+                                Working on the Autoteile team to develop and maintain tires, car parts, and insurance 
                                 portal for more than 10 million customers.
                             </li>
-                            <li>Used: PHP, Symfony, MySQL, Doctrine, React etc.</li>
+                            <li>Used: PHP, Symfony, MySQL, Doctrine, React, etc.</li>
                         </ul>
                     </div>
                 </div>
@@ -128,11 +128,11 @@
                                 Created a digital healthcare solution that serves affordable health services
                                 (medications, information, insurance, etc.) to more than 5.5 million people.
                             </li>
-                            <li>Managed a team of 4 developers, 3 interns, 1 QA and, 1 DevOps.</li>
+                            <li>Managed a team of 4 developers, 3 interns, 1 QA, and 1 DevOps.</li>
                             <li>Created high traffic system to serve 3000 req/s.</li>
                             <li>
                                 Used: PHP, Laravel, Lumen, Node.js, Express.js, PostgreSQL, Docker, AWS, Ansible, 
-                                Angular, XMPP etc.
+                                Angular, XMPP, etc.
                             </li>
                         </ul>
                     </div>
@@ -155,14 +155,14 @@
                     <div class="content">
                         <ul>
                             <li>
-                                Creating the Rx71 health service, that includes Health article, symptom checker, doctor 
-                                and hospital directory with booking, diet plan services etc.
+                                Creating the Rx71 health service, which includes Health articles, symptom checker, 
+                                doctor and hospital directory with booking, diet plan services, etc.
                             </li>
                             <li>
-                                Manage a team of 6 developers, 2 SQA and, 1 DevOps, play the role as interim CTO for 
+                                Manage a team of 6 developers, 2 SQA and, 1 DevOps, play the role of interim CTO for 
                                 3 months.
                             </li>
-                            <li>Used: PHP, Laravel, Lumen, WordPress, MySQL, Angular, IonicJS, socket.io etc.</li>
+                            <li>Used: PHP, Laravel, Lumen, WordPress, MySQL, Angular, IonicJS, socket.io, etc.</li>
                         </ul>
                     </div>
                 </div>
@@ -183,13 +183,13 @@
                     </header>
                     <div class="content">
                         <ul>
-                            <li>Building VoIP calling app for both native Android and iOS operating system.</li>
+                            <li>Building VoIP calling app for both native Android and iOS operating systems.</li>
                             <li>Creating web GUI for maintaining Asterisk PABX server.</li>
                             <li>
                                 Creating airplane entertainment module for SAP-212 hardware device to enable call, 
-                                email and web browsing.
+                                email, and web browsing.
                             </li>
-                            <li>Used: PHP, CodeIgniter, Android SDK, Objective C, Angular, Asterisk etc.</li>
+                            <li>Used: PHP, CodeIgniter, Android SDK, Objective C, Angular, Asterisk, etc.</li>
                         </ul>
                     </div>
                 </div>
@@ -210,12 +210,12 @@
                     </header>
                     <div class="content">
                         <ul>
-                            <li>Write and manage codebase, database and product design, handle clients.</li>
+                            <li>Write and manage codebase, database, product design, and handle clients.</li>
                             <li>
-                                Creating full-fledged telemedicine software, supports custom hardware for provide 
+                                Creating full-fledged telemedicine software for supporting custom hardware to provide 
                                 quality health care in rural areas.
                             </li>
-                            <li>Used: PHP, MySQL, Redis, jQuery, bootstrap etc.</li>
+                            <li>Used: PHP, MySQL, Redis, jQuery, bootstrap, etc.</li>
                         </ul>
                     </div>
                 </div>
@@ -248,7 +248,7 @@
                             <li>Agile, Scrum, Kanban</li>
                             <li>PostgreSQL, MySQL, SQLite, MongoDB, Redis</li>
                             <li>Kafka, Beanstalkd, IronMQ, RabbitMQ</li>
-                            <li>PHPUnit, Jest, PHPSpec, Codeception, Behat, Jest</li>
+                            <li>PHPUnit, Pest, PHPSpec, Codeception, Behat, Jest</li>
                             <li>Nginx, Apache</li>
                             <li>Amazon AWS(EC2, S3, RDS, SQS), Google Cloud Services</li>
                             <li>Git, SVN</li>
@@ -468,7 +468,7 @@
                 <li>Bestseller author</li>
                 <li>Opensource evangelist and contributor</li>
                 <li>Polyglot programmer, experienced working with different technology stack</li>
-                <li>Algorithm based problem solver</li>
+                <li>Algorithm-based problem solver</li>
                 <li>Scrum and agile enthusiast and practitioner</li>
                 <li>Team player, experienced with managing team</li>
                 <li>Conference speaker</li>
