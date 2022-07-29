@@ -492,10 +492,10 @@
             <h1>Contact Info</h1>
             <ul>
                 <li><i class="fas fa-globe-americas"></i> <a href="https://milon.im">https://milon.im</a></li>
-                <li><i class="far fa-envelope"></i> contact@milon.im</li>
+                <li><i class="fa-solid fa-at"></i> contact@milon.im</li>
                 <li><i class="fab fa-skype"></i> milon521</li>
-                <li class="print"><i class="fas fa-phone"></i> +491776974274</li>
-                <li class="print"><i class="fas fa-home"></i> Schalkauer Str. 24, <br>13055 Berlin, Germany.</li>
+                <li class="print"><i class="fa-solid fa-mobile-retro"></i> +491776974274</li>
+                <li class="print"><i class="fa-solid fa-house-chimney"></i> Schalkauer Str. 24, <br>13055 Berlin, Germany.</li>
             </ul>
         </div>
 
