@@ -11200,7 +11200,7 @@ li {
   position: absolute;
   bottom: var(--sidebar-horizontal-padding);
   right: var(--sidebar-horizontal-padding);
-  font-size: 7.5pt;
+  font-size: 8pt;
   font-style: italic;
   line-height: 1.1;
   text-align: right;
@@ -11259,6 +11259,7 @@ li {
   }
   #disclaimer p {
     display: block;
+    line-height: 1.5;
   }
   #disclaimer a.btn {
     display: none;

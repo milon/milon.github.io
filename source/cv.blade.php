@@ -536,8 +536,8 @@
         </div>
         
         <div class="side-block" id="disclaimer">
-            <a href="/assets/pdf/Nuruzzaman_Milon_cv.pdf" download class="btn"><i class="fas fa-download"></i> Download</a>
-            <p>This CV is available online at <br><br> &mdash; <a href="https://milon.im/cv/">https://milon.im/cv/</a></p>
+            <a href="/assets/pdf/Nuruzzaman_Milon_cv.pdf" download class="btn"><i class="fa-solid fa-file-arrow-down"></i> Download</a>
+            <p>This CV is available online at <br/> &mdash; <a href="https://milon.im/cv">https://milon.im/cv</a></p>
         </div>
     </aside>
 
