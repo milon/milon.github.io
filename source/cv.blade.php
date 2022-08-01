@@ -35,17 +35,15 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Senior Full-Stack Software Engineer</h3>
-                        <span class="place">
-                            <span class="company-name">Flixbus</span>
-                            (<a href="https://global.flixbus.com">https://global.flixbus.com</a>)</span>
+                        <h3>Flixbus <span class="company-website">(<a href="https://global.flixbus.com">https://global.flixbus.com</a>)</span></h3>
+                        <span class="job-title">Senior Full-Stack Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</span>
                     </header>
                     <div class="content">
                         <ul>
                             <li>
                                 Managing network inventory, generating rides, and managing vehicle circulations for 
-                                Flixbus and Flixtrain network in 27 countries on 3 continents.
+                                Flixbus and Flixtrain network in 27 countries on 4 continents.
                             </li>
                             <li>Creating own navigation system for the bus drivers in the FlixDriver app.</li>
                             <li>Build lost and found reporting system right in the FlixDriver app.</li>
@@ -64,11 +62,8 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Senior Software Engineer</h3>
-                        <span class="place">
-                            <span class="company-name">Urban Sports Club</span> 
-                            (<a href="https://urbansportsclub.com">https://urbansportsclub.com</a>)
-                        </span>
+                        <h3>Urban Sports Club <span class="company-website">(<a href="https://urbansportsclub.com">https://urbansportsclub.com</a>)</span></h3>
+                        <span class="job-title">Senior Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</span>
                     </header>
                     <div class="content">
@@ -90,11 +85,8 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Senior Software Engineer</h3>
-                        <span class="place">
-                            <span class="company-name">Check24</span>
-                            (<a href="https://check24.de">http://check24.de</a>)
-                        </span>
+                        <h3>Check24 <span class="company-website">(<a href="https://check24.de">http://check24.de</a>)</span></h3>
+                        <span class="job-title">Senior Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Münster, Germany</span>
                     </header>
                     <div class="content">
@@ -115,11 +107,8 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Senior Software Engineer</h3>
-                        <span class="place">
-                            <span class="company-name">Telenor Health</span> 
-                            (<a href="https://telenorhealth.com">https://telenorhealth.com</a>)
-                        </span>
+                        <h3>Telenor Health <span class="company-website">(<a href="https://telenorhealth.com">https://telenorhealth.com</a>)</span></h3>
+                        <span class="job-title">Senior Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
                     <div class="content">
@@ -145,11 +134,8 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Software Engineer</h3>
-                        <span class="place">
-                            <span class="company-name">WeDevs Ltd.</span> 
-                            (<a href="https://wedevs.com">https://wedevs.com</a>)
-                        </span>
+                        <h3>WeDevs Ltd. <span class="company-website">(<a href="https://wedevs.com">https://wedevs.com</a>)</span></h3>
+                        <span class="job-title">Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
                     <div class="content">
@@ -174,11 +160,8 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Software Engineer</h3>
-                        <span class="place">
-                            <span class="company-name">Brotecs Technologies Ltd.</span> 
-                            (<a href="https://brotecs.com">https://brotecs.com</a>)
-                        </span>
+                        <h3>Brotecs Technologies Ltd. <span class="company-website">(<a href="https://brotecs.com">https://brotecs.com</a>)</span></h3>
+                        <span class="job-title">Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
                     <div class="content">
@@ -201,11 +184,8 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Programmer and System Analyst</h3>
-                        <span class="place">
-                            <span class="company-name">ITMedicus Bangladesh Ltd.</span>
-                            (<a href="http://itmedicus.com">http://itmedicus.com</a>)
-                        </span>
+                        <h3>ITMedicus Bangladesh Ltd. <span class="company-website">(<a href="http://itmedicus.com">http://itmedicus.com</a>)</span></h3>
+                        <span class="job-title">Programmer and System Analyst</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
                     <div class="content">
