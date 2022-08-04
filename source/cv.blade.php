@@ -209,7 +209,7 @@
         {{-- Skills --}}
         <section class="main-block">
             <h2>
-          <i class="far fa-folder-open"></i> Skills
+            <i class="fa-solid fa-laptop-code"></i> Skills
         </h2>
             <section class="blocks">
                 <div class="date">
