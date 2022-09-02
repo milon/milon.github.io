@@ -842,16 +842,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.62.0",
+            "version": "2.62.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7507aec3d626797ce2123cf6c6556683be22b5f8"
+                "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7507aec3d626797ce2123cf6c6556683be22b5f8",
-                "reference": "7507aec3d626797ce2123cf6c6556683be22b5f8",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
+                "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
                 "shasum": ""
             },
             "require": {
@@ -940,7 +940,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-28T19:48:05+00:00"
+            "time": "2022-09-02T07:48:13+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -2469,16 +2469,16 @@
         },
         {
             "name": "tightenco/jigsaw",
-            "version": "v1.3.43",
+            "version": "v1.3.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tighten/jigsaw.git",
-                "reference": "6adac0cc0a5407997f5415046e324e796a95ea42"
+                "reference": "71a1dcdb96960202ecd6ade9c46d76bf459255dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tighten/jigsaw/zipball/6adac0cc0a5407997f5415046e324e796a95ea42",
-                "reference": "6adac0cc0a5407997f5415046e324e796a95ea42",
+                "url": "https://api.github.com/repos/tighten/jigsaw/zipball/71a1dcdb96960202ecd6ade9c46d76bf459255dd",
+                "reference": "71a1dcdb96960202ecd6ade9c46d76bf459255dd",
                 "shasum": ""
             },
             "require": {
@@ -2539,9 +2539,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tighten/jigsaw/issues",
-                "source": "https://github.com/tighten/jigsaw/tree/v1.3.43"
+                "source": "https://github.com/tighten/jigsaw/tree/v1.3.44"
             },
-            "time": "2022-08-10T17:01:47+00:00"
+            "time": "2022-09-02T14:50:32+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
