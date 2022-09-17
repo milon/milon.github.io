@@ -20,7 +20,6 @@
                 <h1><a class="title-name" href="{{ $page->baseUrl }}">Nuruzzaman Milon</a></h1>
                 <span class="subtitle">Programmer, Author, and Tech Enthusiast</span>
             </div>
-            <div class="qr-code"><img src="/assets/images/qr-code.png" alt="qr-code"></div>
         </header>
 
         {{-- Experience --}}
@@ -45,8 +44,8 @@
                                 Managing network inventory, generating rides, and managing vehicle circulations for 
                                 Flixbus and Flixtrain network in 27 countries on 4 continents.
                             </li>
-                            <li>Creating own navigation system for the bus drivers in the FlixDriver app.</li>
-                            <li>Build lost and found reporting system right in the FlixDriver app.</li>
+                            <li>Created own navigation system for the bus drivers in the FlixDriver app to serve 500k rides per year.</li>
+                            <li>Built lost and found reporting system right in the FlixDriver app to handle 60k lost baggages per year.</li>
                             <li>
                                 Used: PHP, Symfony, Java, React Native, Kafka, SQS, MySQL, Docker, AWS, Kubernetes, 
                                 Gitlab CI, React, TypeScript, etc.
@@ -69,11 +68,11 @@
                     <div class="content">
                         <ul>
                             <li>
-                                Create a multi-currency payment system to adopt new payment gateways for faster growth 
-                                in multiple countries.
+                                Created a multi-currency payment system from scratch to adopt new payment gateways for 
+                                faster growth in multiple countries.
                             </li>
                             <li>Leading the team, responsible for financing, payment and GDPR compliance.</li>
-                            <li>Used: PHP, Phalcon, MySQL, RabbitMQ, Redis, AWS, etc.</li>
+                            <li>Used: PHP, Phalcon, Symfony, MySQL, RabbitMQ, Redis, AWS, etc.</li>
                         </ul>
                     </div>
                 </div>
@@ -118,7 +117,9 @@
                                 (medications, information, insurance, etc.) to more than 5.5 million people.
                             </li>
                             <li>Managed a team of 4 developers, 3 interns, 1 QA, and 1 DevOps.</li>
-                            <li>Created high traffic system to serve 3000 req/s.</li>
+                            <li>Created high traffic SMS gateway to serve 3000 req/s and enable other apps to communicate through SMS via HTTP.</li>
+                            <li>Created full-fledged content management system for distributing healthcare information towards 10 million people.</li>
+                            <li>Created custom analytics tool for managing queue and generation report.</li>
                             <li>
                                 Used: PHP, Laravel, Lumen, Node.js, Express.js, PostgreSQL, Docker, AWS, Ansible, 
                                 Angular, XMPP, etc.
@@ -177,6 +178,11 @@
                     </div>
                 </div>
             </section>
+
+            <div class="print">
+                <br/><br/><br/><br/>
+            </div>
+
             <section class="blocks">
                 <div class="date">
                     <span>August, 2013</span><span>February, 2011</span>
@@ -202,10 +208,6 @@
             </section>
         </section>
 
-        <div class="print">
-            <br/><br/>
-        </div>
-
         {{-- Skills --}}
         <section class="main-block">
             <h2>
@@ -217,7 +219,7 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Technical Skill</h3>
+                        <h3>Technical Skills</h3>
                     </header>
                     <div>
                         <ul>
@@ -393,55 +395,32 @@
             </section>
         </section>
 
-        {{-- Language --}}
-        <section class="main-block concise">
-            <h2>
-              <i class="fas fa-language"></i> Language
-            </h2>
-            <section class="blocks">
-                <div class="date"></div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>English</h3>
-                        <span class="place">
-                            C1 level proficient
-                        </span>
-                    </header>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date"></div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Bengali</h3>
-                        <span class="place">
-                            Mother tongue
-                        </span>
-                    </header>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date"></div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>German</h3>
-                        <span class="place">
-                            A2 level proficient
-                        </span>
-                    </header>
-                </div>
-            </section>
-        </section>
     </section>
 
     {{-- Sidebar --}}
     <aside id="sidebar">
-        <div class="side-block">
-            <img src="/assets/images/avatar.jpg" alt="avatar" class="avatar">
+        <div class="side-block" id="contact">
+            <h1>Contact Info</h1>
+            <ul>
+                <li><i class="fas fa-globe-americas"></i> <a href="https://milon.im">https://milon.im</a></li>
+                <li><i class="fa-solid fa-at"></i> contact@milon.im</li>
+                <li><i class="fab fa-skype"></i> milon521</li>
+                <li class="print"><i class="fa-solid fa-mobile-retro"></i> +491776974274</li>
+                <li class="print"><i class="fa-solid fa-house-chimney"></i> Schalkauer Str. 24, <br>13055 Berlin, Germany.</li>
+            </ul>
         </div>
+
+        <div class="side-block" id="links">
+            <h1>Links</h1>
+            <ul>
+                <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/to_milon">@to_milon</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/milon">github.com/milon</a></li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
+                <li><i class="fab fa-speaker-deck"></i> <a href="https://milon.im/speakerdeck">milon.im/speakerdeck</a></li>
+                <li><i class="fab fa-slideshare"></i> <a href="http://milon.im/slideshare">milon.im/slideshare</a></li>
+            </ul>
+        </div>
+
         <div class="side-block" id="personal-info">
             <h1>About Me</h1>
             <ul>
@@ -457,44 +436,38 @@
             </ul>
         </div>
 
-        <div class="side-block" id="links">
-            <h1>Links</h1>
-            <ul>
-                <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/to_milon">@to_milon</a></li>
-                <li><i class="fab fa-github"></i> <a href="https://github.com/milon">github.com/milon</a></li>
-                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tomilon">linkedin.com/in/tomilon</a></li>
-                <li><i class="fab fa-speaker-deck"></i> <a href="https://milon.im/speakerdeck">milon.im/speakerdeck</a></li>
-                <li><i class="fab fa-slideshare"></i> <a href="http://milon.im/slideshare">milon.im/slideshare</a></li>
-            </ul>
-        </div>
-        
-        <div class="side-block" id="contact">
-            <h1>Contact Info</h1>
-            <ul>
-                <li><i class="fas fa-globe-americas"></i> <a href="https://milon.im">https://milon.im</a></li>
-                <li><i class="fa-solid fa-at"></i> contact@milon.im</li>
-                <li><i class="fab fa-skype"></i> milon521</li>
-                <li class="print"><i class="fa-solid fa-mobile-retro"></i> +491776974274</li>
-                <li class="print"><i class="fa-solid fa-house-chimney"></i> Schalkauer Str. 24, <br>13055 Berlin, Germany.</li>
-            </ul>
-        </div>
-
         <div class="side-block" id="personal-info">
-            <h1>Personal Info</h1>
+            <h1>Language</h1>
             <ul>
-                <li>Nationality: Bangladeshi</li>
-                <li>Marital Status: Married</li>
-                <li>DoB: August 1st, 1991</li>
+                <li>English (C1 level)</li>
+                <li>Bengali (Mother tongue)</li>
+                <li>German (A2 level)</li>
             </ul>
-        </div>
-
-        <div class="print">
-            <br/><br/><br/><br/><br/><br/><br/>
         </div>
 
         <div class="side-block" id="personal-info">
             <h1>Personality</h1>
             <p><a href="https://www.16personalities.com/profiles/3db6b8e4630d9">ESTJ-A (Assertive Executive)</a></p>
+        </div>
+
+        <div class="side-block" id="personal-info">
+            <h1>Miscellaneous</h1>
+            <ul>
+                <li>Nationality: Bangladeshi</li>
+                <li>Permanent resident: Germany</li>
+            </ul>
+        </div>
+
+        <div class="print">
+            <br/><br/><br/><br/><br/>
+        </div>
+
+        <div class="side-block" id="personal-info">
+            <h1>Interests</h1>
+            <ul>
+                <li><a href="https://one-problem-a-day.netlify.app/">One problem a day</a></li>
+                <li><a href="https://easy-recipes.netlify.app/">Easy recipes</a></li>
+            </ul>
         </div>
 
         <div class="side-block" id="personal-info">
@@ -504,14 +477,6 @@
                 <li>Managing the largest JavaScript community of Bangladesh- <a href="https://www.facebook.com/groups/talkjs.net">Talk.js</a></li>
                 <li>Organizer of Meetups and Conferences</li>
                 <li>Blood Donor</li>
-            </ul>
-        </div>
-
-        <div class="side-block" id="personal-info">
-            <h1>Interests</h1>
-            <ul>
-                <li><a href="https://one-problem-a-day.netlify.app/">One problem a day</a></li>
-                <li><a href="https://easy-recipes.netlify.app">Easy recipes</a></li>
             </ul>
         </div>
         
