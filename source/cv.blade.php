@@ -23,7 +23,7 @@
         </header>
 
         {{-- Experience --}}
-        <section class="main-block">
+        <section class="main-block" id="work-experience">
             <h2>
                 <i class="fas fa-briefcase"></i> Work Experiences
             </h2>
@@ -34,7 +34,7 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Flixbus <span class="company-website">(<a href="https://global.flixbus.com">https://global.flixbus.com</a>)</span></h3>
+                        <h3 class="company-name">Flixbus <span class="company-website">(<a href="https://global.flixbus.com">https://global.flixbus.com</a>)</span></h3>
                         <span class="job-title">Senior Full-Stack Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</span>
                     </header>
@@ -61,7 +61,7 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Urban Sports Club <span class="company-website">(<a href="https://urbansportsclub.com">https://urbansportsclub.com</a>)</span></h3>
+                        <h3 class="company-name">Urban Sports Club <span class="company-website">(<a href="https://urbansportsclub.com">https://urbansportsclub.com</a>)</span></h3>
                         <span class="job-title">Senior Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</span>
                     </header>
@@ -84,7 +84,7 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Check24 <span class="company-website">(<a href="https://check24.de">http://check24.de</a>)</span></h3>
+                        <h3 class="company-name">Check24 <span class="company-website">(<a href="https://check24.de">http://check24.de</a>)</span></h3>
                         <span class="job-title">Senior Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Münster, Germany</span>
                     </header>
@@ -106,7 +106,7 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Telenor Health <span class="company-website">(<a href="https://telenorhealth.com">https://telenorhealth.com</a>)</span></h3>
+                        <h3 class="company-name">Telenor Health <span class="company-website">(<a href="https://telenorhealth.com">https://telenorhealth.com</a>)</span></h3>
                         <span class="job-title">Senior Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
@@ -120,6 +120,7 @@
                             <li>Created high traffic SMS gateway to serve 3000 req/s and enable other apps to communicate through SMS via HTTP.</li>
                             <li>Created full-fledged content management system for distributing healthcare information towards 10 million people.</li>
                             <li>Created custom tool for queue management, monitoring and report generation.</li>
+                            <li>Created fraud detection engine to automatically detect upto 78% fraudulent insurance claims.</li>
                             <li>
                                 Used: PHP, Laravel, Lumen, Node.js, Express.js, PostgreSQL, Docker, AWS, Ansible, 
                                 Angular, XMPP, etc.
@@ -135,7 +136,7 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>WeDevs Ltd. <span class="company-website">(<a href="https://wedevs.com">https://wedevs.com</a>)</span></h3>
+                        <h3 class="company-name">WeDevs Ltd. <span class="company-website">(<a href="https://wedevs.com">https://wedevs.com</a>)</span></h3>
                         <span class="job-title">Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
@@ -161,7 +162,7 @@
                 <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>Brotecs Technologies Ltd. <span class="company-website">(<a href="https://brotecs.com">https://brotecs.com</a>)</span></h3>
+                        <h3 class="company-name">Brotecs Technologies Ltd. <span class="company-website">(<a href="https://brotecs.com">https://brotecs.com</a>)</span></h3>
                         <span class="job-title">Software Engineer</span>
                         <span class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
                     </header>
@@ -180,7 +181,7 @@
             </section>
 
             <div class="print">
-                <br/><br/><br/><br/>
+                <br/><br/><br/>
             </div>
 
             <section class="blocks">
@@ -209,7 +210,7 @@
         </section>
 
         {{-- Skills --}}
-        <section class="main-block">
+        <section class="main-block" id="skills">
             <h2>
             <i class="fa-solid fa-laptop-code"></i> Skills
         </h2>
@@ -243,7 +244,7 @@
         </section>
 
         {{-- Certifications --}}
-        <section class="main-block concise">
+        <section class="main-block concise" id="certifications">
             <h2>
               <i class="fas fa-certificate"></i> Certifications
             </h2>
@@ -330,7 +331,7 @@
         </section>
 
         {{-- Education --}}
-        <section class="main-block concise">
+        <section class="main-block concise" id="education">
             <h2>
               <i class="fas fa-graduation-cap"></i> Education
             </h2>
@@ -359,7 +360,7 @@
         </section>
 
         {{-- Books and Publications --}}
-        <section class="main-block concise">
+        <section class="main-block concise" id="publication">
             <h2>
               <i class="fas fa-book"></i> Books and Publications
             </h2>
