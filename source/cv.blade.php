@@ -119,7 +119,7 @@
                             <li>Managed a team of 4 developers, 3 interns, 1 QA, and 1 DevOps.</li>
                             <li>Created high traffic SMS gateway to serve 3000 req/s and enable other apps to communicate through SMS via HTTP.</li>
                             <li>Created full-fledged content management system for distributing healthcare information towards 10 million people.</li>
-                            <li>Created custom analytics tool for managing queue and generation report.</li>
+                            <li>Created custom tool for queue management, monitoring and report generation.</li>
                             <li>
                                 Used: PHP, Laravel, Lumen, Node.js, Express.js, PostgreSQL, Docker, AWS, Ansible, 
                                 Angular, XMPP, etc.
