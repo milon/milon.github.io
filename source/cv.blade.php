@@ -42,7 +42,7 @@
                         <ul>
                             <li>
                                 Managing network inventory, generating rides, and managing vehicle circulations for 
-                                Flixbus and Flixtrain network in 27 countries on 4 continents.
+                                Flixbus and Flixtrain network in 38 countries on 4 continents.
                             </li>
                             <li>Created own navigation system for the bus drivers in the FlixDriver app to serve 500k rides per year.</li>
                             <li>Built lost and found reporting system right in the FlixDriver app to handle 60k lost baggages per year.</li>
