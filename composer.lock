@@ -211,7 +211,7 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -264,7 +264,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -319,7 +319,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -365,7 +365,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -416,7 +416,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -464,7 +464,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -519,7 +519,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -581,7 +581,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -627,7 +627,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -675,7 +675,7 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
@@ -745,7 +745,7 @@
         },
         {
             "name": "illuminate/view",
-            "version": "v9.40.0",
+            "version": "v9.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
