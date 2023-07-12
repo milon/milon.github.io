@@ -44,7 +44,6 @@
                 <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
                 <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
-                <a href="/xing" title="Xing"><i class="fab fa-xing"></i></a>
             </div>
         </section>
 

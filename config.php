@@ -54,8 +54,8 @@ return [
                     'url' => 'https://stackoverflow.com/users/3905595/nuruzzaman-milon',
                 ],
                 [
-                    'filename' => 'xing',
-                    'url' => 'https://www.xing.com/profile/Nuruzzaman_Milon/cv',
+                    'filename' => 'recipe',
+                    'url' => 'https://easy-recipes.netlify.app',
                 ],
             ]
         ],
