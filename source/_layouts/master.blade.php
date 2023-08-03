@@ -37,7 +37,7 @@
         <section id="footer">
             <div class="social-links">
                 <a href="/github" title="Github"><i class="fab fa-github"></i></a>
-                <a href="/twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="/twitter" title="Twitter"><i class="fab fa-x-twitter"></i></a>
                 <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
                 <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>

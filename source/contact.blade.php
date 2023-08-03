@@ -18,7 +18,7 @@
         </p>
         <p>
             <i class="fa-solid fa-mobile-retro"></i> Shoot an email instead. <br>
-            <i class="fab fa-twitter"></i> Want a quick response? Tweet me <a href="/twitter">@to_milon</a>! <br>
+            <i class="fab fa-x-twitter"></i> Want a quick response? Tweet me <a href="/twitter">@to_milon</a>! <br>
             <i class="fas fa-envelope-open-text"></i> Want to know about my thoughs and what going on? Subscribe to the newsletter below, no spam guaranteed.
         </p>
 
