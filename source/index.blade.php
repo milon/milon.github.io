@@ -13,12 +13,12 @@
         <img src="/assets/images/about.jpg" alt="Avatar" class="profile-img">
         Hello, my name is Milon.
     </p>
-    <p>Birth, childhood everything was in Dhaka, Bangladesh. Got education from Shamsul Haque Khan High School and Dhaka College. Then went to Mawlana Bhashani Science and Technology University to study Information and Communication Technology.</p>
-    <p>I have interest in every single thing on the earth except formal education. Loved to be in touch with computer and technology. Had a weakness on computer programming. Recently very excited with cars.</p>
-    <p>I love to hang out with my buddies. I used to go to <a href="https://www.facebook.com/koratkol">Koratkol University</a> regularly, the best hangout place on earth. Unfortunately, I can't do it any more because I moved out from Bangladesh.</p>
-    <p>Currently, I am working for <a href="https://amazon.com/">Amazon</a> as Software Development Engineer II and living in Toronto, Ontario, Canada. I am also an admin of <a href="https://www.facebook.com/groups/pxperts">phpXperts</a>, the largest developer community of Bangladesh.</p>
-    <p>Recently, I have a new hobby for cooking. I am sharing my recipes <a href="/recipe">here</a>.</p>
-    <p>I am the father of a beautiful prince and a princess.</p>
-    <p>I am a proud <a href="https://en.wikipedia.org/wiki/Bangladesh">Bangladeshi 🇧🇩</a>.</p>
+    <p>I hail from Dhaka, Bangladesh, where I spent my early years, received my education at Shamsul Haque Khan High School and Dhaka College, and later pursued Information and Communication Technology at Mawlana Bhashani Science and Technology University.</p>
+    <p>I have a deep curiosity for a wide range of subjects, although formal education hasn't always been my strong suit. My passion lies in computers and technology, with a particular fondness for computer programming. Lately, I've developed a keen interest in cars.</p>
+    <p>Spending time with my friends is something I cherish. In the past, I used to frequent <a href="https://www.facebook.com/koratkol">Koratkol University</a>, which I considered the ultimate hangout spot. Unfortunately, I can no longer do so since I relocated from Bangladesh.</p>
+    <p>Currently, I'm employed as a Software Development Engineer II at <a href="https://amazon.com">Amazon</a>, residing in Toronto, Ontario, Canada. Additionally, I serve as an administrator for <a href="https://www.facebook.com/groups/pxperts">phpXperts</a>, Bangladesh's largest developer community.</p>
+    <p>Lately, I've developed a newfound passion for cooking, and I'm excited to share my recipes <a href="/recipe">here</a>.</p>
+    <p>I am blessed to be the parent of a handsome prince and a lovely princess, whose presence has brought immense joy into my life.</p>
+    <p>I wear my <a href="https://en.wikipedia.org/wiki/Bangladesh">Bangladeshi 🇧🇩</a> identity with great pride.</p>
     <p class="license">Everything of this site is published under <a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><i class="fab fa-creative-commons"></i> Creative Commons Attribution 2.0 Generic License</a>.</p>
 @endsection
