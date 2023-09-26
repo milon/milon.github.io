@@ -326,6 +326,7 @@ td, th {
 
 .header-logo {
     width: 300px;
+    filter: drop-shadow(2px 4px 4px var(--primary-color));
 }
 
 .newsletter {
