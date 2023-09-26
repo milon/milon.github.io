@@ -326,7 +326,11 @@ td, th {
 
 .header-logo {
     width: 300px;
-    filter: drop-shadow(2px 4px 4px var(--primary-color));
+    filter: drop-shadow(2px 4px 4px #1a1a1a);
+
+    &:hover {
+      filter: invert(0.5) drop-shadow(2px 4px 4px #454242);
+    }
 }
 
 .newsletter {
