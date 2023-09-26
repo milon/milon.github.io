@@ -17,7 +17,9 @@
                 <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
             </div>
             <h1>
-                <a href="{{ $page->baseUrl }}">Nuruzzaman Milon</a>
+                <a href="{{ $page->baseUrl }}">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
             </h1>
             <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
             <p>
