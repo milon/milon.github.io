@@ -57,6 +57,10 @@ return [
                     'filename' => 'recipe',
                     'url' => 'https://easy-recipes.netlify.app',
                 ],
+                [
+                    'filename' => 'one-problem-a-day',
+                    'url' => 'https://one-problem-a-day.netlify.app',
+                ]
             ]
         ],
         'posts' => [
