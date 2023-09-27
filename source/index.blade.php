@@ -11,9 +11,9 @@
     <p></p>
     <p>
         <img src="/assets/images/about.jpg" alt="Avatar" class="profile-img">
-        Hello, my name is Milon.
+        Hello, my name is Nuruzzaman Milon.
     </p>
-    <p>I hail from Dhaka, Bangladesh, where I spent my early years, received my education at Shamsul Haque Khan High School and Dhaka College, and later pursued Information and Communication Technology at Mawlana Bhashani Science and Technology University.</p>
+    <p>I hail from Dhaka, Bangladesh, where I spent my early years, received my education at Shamsul Haque Khan High School and Dhaka College, and later pursued my Bachelor degree in Information and Communication Technology at Mawlana Bhashani Science and Technology University.</p>
     <p>I have a deep curiosity for a wide range of subjects, although formal education hasn't always been my strong suit. My passion lies in computers and technology, with a particular fondness for computer programming. Lately, I've developed a keen interest in cars.</p>
     <p>Spending time with my friends is something I cherish. In the past, I used to frequent <a href="https://www.facebook.com/koratkol">Koratkol University</a>, which I considered the ultimate hangout spot. Unfortunately, I can no longer do so since I relocated from Bangladesh.</p>
     <p>Currently, I'm employed as a Software Development Engineer II at <a href="https://amazon.com">Amazon</a>, residing in Toronto, Ontario, Canada. Additionally, I serve as an administrator for <a href="https://www.facebook.com/groups/pxperts">phpXperts</a>, Bangladesh's largest developer community.</p>
