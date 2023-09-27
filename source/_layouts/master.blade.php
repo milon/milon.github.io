@@ -26,7 +26,6 @@
                 <a class="{{ $page->selected('/blogs') }}" href="/blogs">Blogs</a>
                 <a class="{{ $page->selected('/laravel') }}" href="/laravel">Book</a>
                 <a class="{{ $page->selected('/talks') }}" href="/talks">Talks</a>
-                <a class="{{ $page->selected('/uses') }}" href="/uses">Uses</a>
                 <a class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
                 <a target="_blank" href="/cv">CV</a>
             </p>
