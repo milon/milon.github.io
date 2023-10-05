@@ -12,7 +12,7 @@
         "@fortawesome/fontawesome-free": "^6.4.2",
         "laravel-mix": "^6.0.13",
         "laravel-mix-jigsaw": "^2.1.1",
-        "resolve-url-loader": "^3.1.2",
+        "resolve-url-loader": "^5.0.0",
         "sass": "^1.32.8",
         "sass-loader": "^10.1.1"
     }
