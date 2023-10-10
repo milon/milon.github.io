@@ -20,48 +20,7 @@ return [
     'collections' => [
         '' => [
             'extends' => '_layouts.redirect',
-            'items' => [
-                [
-                    'filename' => 'facebook',
-                    'url' => 'https://www.facebook.com/milon521',
-                ],
-                [
-                    'filename' => 'twitter',
-                    'url' => 'https://twitter.com/to_milon',
-                ],
-                [
-                    'filename' => 'github',
-                    'url' => 'https://github.com/milon',
-                ],
-                [
-                    'filename' => 'linkedin',
-                    'url' => 'https://www.linkedin.com/in/tomilon',
-                ],
-                [
-                    'filename' => 'speakerdeck',
-                    'url' => 'https://speakerdeck.com/milon',
-                ],
-                [
-                    'filename' => 'slideshare',
-                    'url' => 'http://www.slideshare.net/milon521',
-                ],
-                [
-                    'filename' => 'instagram',
-                    'url' => 'https://www.instagram.com/to_milon',
-                ],
-                [
-                    'filename' => 'stackoverflow',
-                    'url' => 'https://stackoverflow.com/users/3905595/nuruzzaman-milon',
-                ],
-                [
-                    'filename' => 'recipe',
-                    'url' => 'https://easy-recipes.netlify.app',
-                ],
-                [
-                    'filename' => 'one-problem-a-day',
-                    'url' => 'https://one-problem-a-day.netlify.app',
-                ]
-            ]
+            'items' => require_once(__DIR__.'/redirects.php'),
         ],
         'posts' => [
             'path' => 'post/{filename}',
