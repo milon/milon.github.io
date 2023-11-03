@@ -16,9 +16,7 @@
         @include('_layouts._partials._disqus')
     @endif
 
-    <p class="back-link">
-        <a href="{{ $page->baseUrl.'talks' }}">Back to Talks</a>
-    </p>
+    @include('_layouts._partials._back_to_home_link')
 
     @if($page->syntaxHighlight)
         @include('_layouts._partials._highlightjs')

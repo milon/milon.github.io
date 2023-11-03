@@ -56,8 +56,6 @@
             ফোন: ১৬২৯৭
         </p>
 
-        <p class="back-link">
-            <a href="{{ $page->baseUrl }}">Back to Home</a>
-        </p>
+        @include('_layouts._partials._back_to_home_link')
     </div>
 @endsection

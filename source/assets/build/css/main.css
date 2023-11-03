@@ -10592,9 +10592,12 @@ section#paginator a.selected {
   margin: 0 5px;
 }
 
-.back-link * {
+.back-link {
   margin-top: 1.5em;
   font-size: 0.8em;
+}
+
+.back-link .msg {
   font-family: var(--header-font);
 }
 
