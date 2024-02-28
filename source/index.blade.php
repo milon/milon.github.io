@@ -10,7 +10,7 @@
 @section('body')
     <p></p>
     <p>
-        <img src="/assets/images/about.jpg" alt="Avatar" class="profile-img">
+        <img src="/assets/images/family.jpg" alt="Avatar" class="profile-img">
         Hello, my name is Nuruzzaman Milon.
     </p>
     <p>I hail from Dhaka, Bangladesh, where I spent my early years, received my education at Shamsul Haque Khan High School and Dhaka College, and later pursued my Bachelor degree in Information and Communication Technology at Mawlana Bhashani Science and Technology University.</p>
