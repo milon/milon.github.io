@@ -31,7 +31,7 @@
             </p>
         </section>
 
-        <section>
+        <section id="body">
             @yield('body')
         </section>
 

@@ -8,7 +8,8 @@
 @endsection
 
 @section('body')
-    <p></p>
+    <div class="landing-page">
+        <p></p>
     <p>
         <img src="/assets/images/family.jpg" alt="Avatar" class="profile-img">
         Hello, my name is Nuruzzaman Milon.
@@ -21,4 +22,5 @@
     <p>I am blessed to be the parent of a handsome prince and a lovely princess, whose presence has brought immense joy into my life.</p>
     <p>I wear my <a href="https://en.wikipedia.org/wiki/Bangladesh">Bangladeshi 🇧🇩</a> identity with great pride.</p>
     <p class="license">Everything of this site is published under <a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><i class="fab fa-creative-commons"></i> Creative Commons Attribution 2.0 Generic License</a>.</p>
+    </div>
 @endsection
