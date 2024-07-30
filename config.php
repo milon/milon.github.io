@@ -8,6 +8,7 @@ return [
     'dusqusShortName' => 'milon-im',
     'newsletterUrl' => 'https://tinyletter.com/to_milon',
     'paginatationLinkNumber' => 5,
+    'redirects' => require_once(__DIR__ . '/redirects.php'),
     'formatedDate' => function($page, $date) {
         return date('d F, Y', strtotime($date));
     },
@@ -18,10 +19,10 @@ return [
         return ($page->getPath() === $section) ? 'selected' : '';
     },
     'collections' => [
-        '' => [
-            'extends' => '_layouts.redirect',
-            'items' => require_once(__DIR__.'/redirects.php'),
-        ],
+        // '' => [
+        //     'extends' => '_layouts.redirect',
+        //     'items' => require_once(__DIR__.'/redirects.php'),
+        // ],
         'posts' => [
             'path' => 'post/{filename}',
             'sort' => '-date',
