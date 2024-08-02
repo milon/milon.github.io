@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f18a19d6bdb6af01a63ad6b39ff822b3",
+    "content-hash": "8c0ff17c69672712d64c1702852e0367",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -1338,6 +1338,46 @@
                 "source": "https://github.com/michelf/php-markdown/tree/2.0.0"
             },
             "time": "2022-09-26T12:21:08+00:00"
+        },
+        {
+            "name": "milon/jigsaw-url-shortener",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milon/jigsaw-url-shortener.git",
+                "reference": "8eb98156e29d605f03a4f5bdf4ff76241c7a127c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milon/jigsaw-url-shortener/zipball/8eb98156e29d605f03a4f5bdf4ff76241c7a127c",
+                "reference": "8eb98156e29d605f03a4f5bdf4ff76241c7a127c",
+                "shasum": ""
+            },
+            "require": {
+                "tightenco/jigsaw": "^1.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Milon\\JigsawUrlShortener\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nuruzzaman Milon",
+                    "email": "contact@milon.im"
+                }
+            ],
+            "description": "A URL Shortener for your Jigsaw powered website",
+            "support": {
+                "issues": "https://github.com/milon/jigsaw-url-shortener/issues",
+                "source": "https://github.com/milon/jigsaw-url-shortener/tree/v1.0.0"
+            },
+            "time": "2024-08-02T19:05:38+00:00"
         },
         {
             "name": "mnapoli/front-yaml",

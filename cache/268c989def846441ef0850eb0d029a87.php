@@ -17,4 +17,4 @@
         </script>
     </body>
 </html>
-<?php /**PATH /Users/nmilon/Code/resume/source/_layouts/redirect_stub.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/milon/Code/resume/vendor/milon/jigsaw-url-shortener/src/stubs/redirect.blade.php ENDPATH**/ ?>
