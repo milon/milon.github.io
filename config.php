@@ -19,10 +19,6 @@ return [
         return ($page->getPath() === $section) ? 'selected' : '';
     },
     'collections' => [
-        // '' => [
-        //     'extends' => '_layouts.redirect',
-        //     'items' => require_once(__DIR__.'/redirects.php'),
-        // ],
         'posts' => [
             'path' => 'post/{filename}',
             'sort' => '-date',
