@@ -8,7 +8,7 @@ return [
     'dusqusShortName' => 'milon-im',
     'newsletterUrl' => 'https://tinyletter.com/to_milon',
     'paginatationLinkNumber' => 5,
-    'redirects' => require_once(__DIR__ . '/redirects.php'),
+    'urlRedirects' => require_once(__DIR__ . '/redirects.php'),
     'formatedDate' => function($page, $date) {
         return date('d F, Y', strtotime($date));
     },
