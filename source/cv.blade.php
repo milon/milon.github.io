@@ -12,7 +12,10 @@
 </head>
 
 <body lang="en">
-    <embed src="/assets/pdf/Nuruzzaman_Milon_cv.pdf" type="application/pdf" style="min-height:100vh;width:100%" />
+    <object data="/assets/pdf/Nuruzzaman_Milon_cv.pdf" type="application/pdf" style="min-height:100vh;width:100%" >
+        <p>Oops! Your browser doesn't support PDFs!</p>
+        <p><a href="/assets/pdf/Nuruzzaman_Milon_cv.pdf" download="">Download Instead</a></p>
+    </object>
 
     @if ($page->production)
         @include('_layouts._partials._analytics')
