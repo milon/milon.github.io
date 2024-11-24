@@ -376,16 +376,16 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
-                "reference": "9b9f7b4aefb4773772a827f9562336805926fe63"
+                "reference": "5e867cbe663dc740fbb998eed5fa6771264c384d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/bus/zipball/9b9f7b4aefb4773772a827f9562336805926fe63",
-                "reference": "9b9f7b4aefb4773772a827f9562336805926fe63",
+                "url": "https://api.github.com/repos/illuminate/bus/zipball/5e867cbe663dc740fbb998eed5fa6771264c384d",
+                "reference": "5e867cbe663dc740fbb998eed5fa6771264c384d",
                 "shasum": ""
             },
             "require": {
@@ -425,11 +425,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-10-31T17:34:51+00:00"
+            "time": "2024-11-18T21:42:02+00:00"
         },
         {
             "name": "illuminate/collections",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -484,7 +484,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -530,16 +530,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "c4c9e69e240601cca841ec327e8e804deb6b965e"
+                "reference": "e0a0dbcddd437a1c5aefdd1fedc5df0759ed0455"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/c4c9e69e240601cca841ec327e8e804deb6b965e",
-                "reference": "c4c9e69e240601cca841ec327e8e804deb6b965e",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/e0a0dbcddd437a1c5aefdd1fedc5df0759ed0455",
+                "reference": "e0a0dbcddd437a1c5aefdd1fedc5df0759ed0455",
                 "shasum": ""
             },
             "require": {
@@ -592,11 +592,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-11-15T15:27:30+00:00"
+            "time": "2024-11-18T21:42:02+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -647,7 +647,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -695,7 +695,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -750,16 +750,16 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "ce7013a350fb06bc65e8a2cf15fd2015f49e476d"
+                "reference": "66f5ea519b326c77dbd7609d061eb62706477606"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/ce7013a350fb06bc65e8a2cf15fd2015f49e476d",
-                "reference": "ce7013a350fb06bc65e8a2cf15fd2015f49e476d",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/66f5ea519b326c77dbd7609d061eb62706477606",
+                "reference": "66f5ea519b326c77dbd7609d061eb62706477606",
                 "shasum": ""
             },
             "require": {
@@ -813,11 +813,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-09-22T15:10:50+00:00"
+            "time": "2024-11-18T21:41:34+00:00"
         },
         {
             "name": "illuminate/macroable",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -863,7 +863,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -911,16 +911,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "213bc04ed2a75dac441e602df4568154c36a3670"
+                "reference": "3e248061e77b67cdf868411e68cf17de524e3d1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/213bc04ed2a75dac441e602df4568154c36a3670",
-                "reference": "213bc04ed2a75dac441e602df4568154c36a3670",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/3e248061e77b67cdf868411e68cf17de524e3d1d",
+                "reference": "3e248061e77b67cdf868411e68cf17de524e3d1d",
                 "shasum": ""
             },
             "require": {
@@ -983,20 +983,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-11-14T16:30:16+00:00"
+            "time": "2024-11-19T19:46:19+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
-                "reference": "b0ca05925b882b7887f9c2591497a1b2835f9144"
+                "reference": "2bf723ac9dbf1ccdb8b9c35d5ebcec43d8342e38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/view/zipball/b0ca05925b882b7887f9c2591497a1b2835f9144",
-                "reference": "b0ca05925b882b7887f9c2591497a1b2835f9144",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/2bf723ac9dbf1ccdb8b9c35d5ebcec43d8342e38",
+                "reference": "2bf723ac9dbf1ccdb8b9c35d5ebcec43d8342e38",
                 "shasum": ""
             },
             "require": {
@@ -1037,7 +1037,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-10-24T14:26:35+00:00"
+            "time": "2024-11-18T21:42:02+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -1772,31 +1772,31 @@
         },
         {
             "name": "nunomaduro/termwind",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "42c84e4e8090766bbd6445d06cd6e57650626ea3"
+                "reference": "52915afe6a1044e8b9cee1bcff836fb63acf9cda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/42c84e4e8090766bbd6445d06cd6e57650626ea3",
-                "reference": "42c84e4e8090766bbd6445d06cd6e57650626ea3",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/52915afe6a1044e8b9cee1bcff836fb63acf9cda",
+                "reference": "52915afe6a1044e8b9cee1bcff836fb63acf9cda",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": "^8.2",
-                "symfony/console": "^7.1.5"
+                "symfony/console": "^7.1.8"
             },
             "require-dev": {
-                "illuminate/console": "^11.28.0",
-                "laravel/pint": "^1.18.1",
+                "illuminate/console": "^11.33.2",
+                "laravel/pint": "^1.18.2",
                 "mockery/mockery": "^1.6.12",
                 "pestphp/pest": "^2.36.0",
-                "phpstan/phpstan": "^1.12.6",
+                "phpstan/phpstan": "^1.12.11",
                 "phpstan/phpstan-strict-rules": "^1.6.1",
-                "symfony/var-dumper": "^7.1.5",
+                "symfony/var-dumper": "^7.1.8",
                 "thecodingmachine/phpstan-strict-rules": "^1.0.0"
             },
             "type": "library",
@@ -1839,7 +1839,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/v2.2.0"
+                "source": "https://github.com/nunomaduro/termwind/tree/v2.3.0"
             },
             "funding": [
                 {
@@ -1855,7 +1855,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-15T16:15:16+00:00"
+            "time": "2024-11-21T10:39:51+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -4441,16 +4441,16 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "2.0.1",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/portable-ascii.git",
-                "reference": "b56450eed252f6801410d810c8e1727224ae0743"
+                "reference": "b1d923f88091c6bf09699efcd7c8a1b1bfd7351d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/b56450eed252f6801410d810c8e1727224ae0743",
-                "reference": "b56450eed252f6801410d810c8e1727224ae0743",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/b1d923f88091c6bf09699efcd7c8a1b1bfd7351d",
+                "reference": "b1d923f88091c6bf09699efcd7c8a1b1bfd7351d",
                 "shasum": ""
             },
             "require": {
@@ -4475,7 +4475,7 @@
             "authors": [
                 {
                     "name": "Lars Moelleken",
-                    "homepage": "http://www.moelleken.org/"
+                    "homepage": "https://www.moelleken.org/"
                 }
             ],
             "description": "Portable ASCII library - performance optimized (ascii) string functions for php.",
@@ -4487,7 +4487,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/portable-ascii/issues",
-                "source": "https://github.com/voku/portable-ascii/tree/2.0.1"
+                "source": "https://github.com/voku/portable-ascii/tree/2.0.3"
             },
             "funding": [
                 {
@@ -4511,7 +4511,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-08T17:03:00+00:00"
+            "time": "2024-11-21T01:49:47+00:00"
         }
     ],
     "packages-dev": [],
