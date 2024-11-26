@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Vertically center */
+    justify-content: center;
+    /* Horizontally center */
+    min-height: 100vh;
+    /* Full viewport height */
+    background-color: #f4f4f4;
+    /* Optional: Nice background for contrast */
+}
+
+#pdf-container {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center canvas horizontally */
+}
+
+.pdf-page {
+    margin-bottom: 10px;
+}
+
+#controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    font-family: 'Alice';
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #C0C0C0;
+    color: #050506;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 2px solid #050506;
+}
