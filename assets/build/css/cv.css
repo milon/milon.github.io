@@ -1,0 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Alice&display=swap);
+body{background-color:#f4f4f4;justify-content:center;margin:0;min-height:100vh;padding:0}#pdf-container,body{align-items:center;display:flex;flex-direction:column}#pdf-container{margin:10px}.pdf-page{margin-bottom:10px}#controls{margin-bottom:20px;text-align:center}button{border:2px solid silver;color:#050506;cursor:pointer;font-family:Alice;font-size:1em;padding:10px}button:hover{border:2px solid #050506}
+
+/*# sourceMappingURL=cv.css.map*/
