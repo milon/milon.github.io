@@ -4280,25 +4280,25 @@
         },
         {
             "name": "tightenco/jigsaw",
-            "version": "v1.7.4",
+            "version": "v1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tighten/jigsaw.git",
-                "reference": "84de81ba7bc00f4e344bc2c6e3911a4a12320648"
+                "reference": "6bdbdb5ac273b8837f0fda8b4f0129fdbb1c4753"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tighten/jigsaw/zipball/84de81ba7bc00f4e344bc2c6e3911a4a12320648",
-                "reference": "84de81ba7bc00f4e344bc2c6e3911a4a12320648",
+                "url": "https://api.github.com/repos/tighten/jigsaw/zipball/6bdbdb5ac273b8837f0fda8b4f0129fdbb1c4753",
+                "reference": "6bdbdb5ac273b8837f0fda8b4f0129fdbb1c4753",
                 "shasum": ""
             },
             "require": {
                 "illuminate/collections": "^11.0",
-                "illuminate/console": "^11.0",
-                "illuminate/container": "^11.0",
-                "illuminate/filesystem": "^11.0",
-                "illuminate/support": "^11.0",
-                "illuminate/view": "^11.0",
+                "illuminate/console": "^11.0 || ^12.0",
+                "illuminate/container": "^11.0 || ^12.0",
+                "illuminate/filesystem": "^11.0 || ^12.0",
+                "illuminate/support": "^11.0 || ^12.0",
+                "illuminate/view": "^11.0 || ^12.0",
                 "league/commonmark": "^2.4",
                 "michelf/php-markdown": "^2.0",
                 "mnapoli/front-yaml": "^2.0",
@@ -4358,9 +4358,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tighten/jigsaw/issues",
-                "source": "https://github.com/tighten/jigsaw/tree/v1.7.4"
+                "source": "https://github.com/tighten/jigsaw/tree/v1.7.5"
             },
-            "time": "2024-06-27T19:18:14+00:00"
+            "time": "2025-03-07T15:26:37+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
