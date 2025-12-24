@@ -9,5 +9,7 @@ mix.jigsaw()
     .sourceMaps()
     .sass('source/_assets/sass/cv.scss', 'css/cv.css')
     .sourceMaps()
+    .js('source/_assets/js/cv.js', 'js/cv.js')
+    .sourceMaps()
     .copyDirectory('./node_modules/@fortawesome/fontawesome-free/webfonts', 'source/assets/build/fonts/font-awesome')
     .version();
