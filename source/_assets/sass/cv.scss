@@ -6,41 +6,134 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Vertically center */
-    justify-content: center;
-    /* Horizontally center */
     min-height: 100vh;
-    /* Full viewport height */
     background-color: #f4f4f4;
-    /* Optional: Nice background for contrast */
 }
 
 #pdf-container {
-    margin: 10px;
+    margin: 20px 10px 0 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center canvas horizontally */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.pdf-page-wrapper {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .pdf-page {
-    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+#loading {
+    padding: 40px;
+    font-family: 'Alice', serif;
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+}
+
+#error {
+    padding: 20px;
+    font-family: 'Alice', serif;
+    font-size: 1em;
+    text-align: center;
 }
 
 #controls {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 button {
-    font-family: 'Alice';
-    padding: 10px;
+    font-family: 'Alice', serif;
+    padding: 12px 24px;
     font-size: 1em;
     border: 2px solid #C0C0C0;
+    background-color: #fff;
     color: #050506;
     cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin: 0;
 }
 
 button:hover {
     border: 2px solid #050506;
+    background-color: #f9f9f9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #pdf-container {
+        margin: 10px 5px;
+        padding: 0;
+    }
+    
+    .pdf-page-wrapper {
+        margin-bottom: 15px;
+    }
+    
+    .pdf-page {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+        padding: 0;
+    }
+    
+    #controls {
+        margin: 15px auto;
+        padding: 0;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    
+    #loading {
+        padding: 30px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #pdf-container {
+        margin: 5px 2px;
+    }
+    
+    .pdf-page-wrapper {
+        margin-bottom: 10px;
+    }
+    
+    button {
+        padding: 8px 16px;
+        font-size: 0.85em;
+        width: 90%;
+        max-width: 300px;
+    }
 }

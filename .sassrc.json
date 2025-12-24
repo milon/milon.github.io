@@ -1,0 +1,4 @@
+{
+  "silenceDeprecations": ["import", "legacy-js-api"]
+}
+

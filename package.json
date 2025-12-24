@@ -1,11 +1,11 @@
 {
     "private": true,
     "scripts": {
-        "development": "mix",
-        "dev": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
+        "development": "node scripts/mix-silent.js",
+        "dev": "node scripts/mix-silent.js",
+        "watch": "node scripts/mix-silent.js watch",
+        "watch-poll": "node scripts/mix-silent.js watch -- --watch-options-poll=1000",
+        "hot": "node scripts/mix-silent.js watch --hot",
         "production": "mix --production"
     },
     "devDependencies": {

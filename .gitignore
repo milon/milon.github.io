@@ -2,4 +2,5 @@
 /build_production/
 /node_modules/
 /vendor/
+/cache/
 .DS_Store
