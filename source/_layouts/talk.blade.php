@@ -5,10 +5,16 @@
 @endsection
 
 @section('body')
-    <h2>{{ $page->title }}</h2>
-    <p>{{ $page->formatedDate($page->date) }}</p>
+    <div class="landing-page">
+        <section class="intro-section">
+            <h2>{{ $page->title }}</h2>
+            <p>{{ $page->formatedDate($page->date) }}</p>
+        </section>
 
-    @yield('content')
+        <section class="about-section">
+            @yield('content')
+        </section>
+    </div>
 
     <hr>
 

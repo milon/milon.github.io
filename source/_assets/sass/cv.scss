@@ -1,17 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alice|Courier+Prime|Signika:300,600');
+
+:root {
+    --primary-color: #2d2d2d;
+    --secondary-color: #6b7280;
+    --background-color: #ffffff;
+    --light-background: #f8f9fa;
+    --border-color: #e2e8f0;
+    --text-muted: #6b7280;
+    --header-font: 'Alice', cursive;
+    --body-font: 'Signika', sans-serif;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-family: var(--body-font);
+    width: 100%;
+    max-width: 700px;
+    font-size: 18px;
+    line-height: 1.7;
 }
 
 #pdf-container {
-    margin: 20px 10px 0 10px;
+    margin: 40px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +51,7 @@ body {
 }
 
 .pdf-page {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
     max-width: 100%;
     width: auto;
     height: auto;
@@ -42,22 +62,23 @@ body {
 
 #loading {
     padding: 40px;
-    font-family: 'Alice', serif;
+    font-family: var(--header-font);
     font-size: 1.2em;
-    color: #666;
+    color: var(--text-muted);
     text-align: center;
 }
 
 #error {
     padding: 20px;
-    font-family: 'Alice', serif;
+    font-family: var(--header-font);
     font-size: 1em;
     text-align: center;
+    color: var(--primary-color);
 }
 
 #controls {
     text-align: center;
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 0;
     width: 100%;
     max-width: 100%;
@@ -65,21 +86,23 @@ body {
 }
 
 button {
-    font-family: 'Alice', serif;
+    font-family: var(--body-font);
     padding: 12px 24px;
     font-size: 1em;
-    border: 2px solid #C0C0C0;
-    background-color: #fff;
-    color: #050506;
+    border: 2px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--primary-color);
     cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+    border-radius: 6px;
+    transition: var(--transition);
     margin: 0;
 }
 
 button:hover {
-    border: 2px solid #050506;
-    background-color: #f9f9f9;
+    border-color: var(--primary-color);
+    background-color: rgba(45, 45, 45, 0.05);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 button:active {
@@ -88,8 +111,13 @@ button:active {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    body {
+        padding: 0 16px;
+        font-size: 16px;
+    }
+    
     #pdf-container {
-        margin: 10px 5px;
+        margin: 30px 0 0 0;
         padding: 0;
     }
     
@@ -98,15 +126,11 @@ button:active {
     }
     
     .pdf-page {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    body {
-        padding: 0;
+        box-shadow: var(--shadow-sm);
     }
     
     #controls {
-        margin: 15px auto;
+        margin: 20px auto;
         padding: 0;
     }
     
@@ -123,7 +147,7 @@ button:active {
 
 @media (max-width: 480px) {
     #pdf-container {
-        margin: 5px 2px;
+        margin: 20px 0 0 0;
     }
     
     .pdf-page-wrapper {

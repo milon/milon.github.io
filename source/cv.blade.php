@@ -54,7 +54,6 @@
                 loadingDiv.style.display = 'none';
                 errorDiv.style.display = 'block';
                 errorDiv.textContent = 'Error: ' + message;
-                errorDiv.style.color = '#d32f2f';
                 errorDiv.style.padding = '20px';
                 errorDiv.style.textAlign = 'center';
             }

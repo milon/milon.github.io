@@ -23,6 +23,7 @@
             </h1>
             <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
             <p>
+                <a class="{{ $page->selected('/') }}" href="/">Home</a>
                 <a class="{{ $page->selected('/blogs') }}" href="/blogs">Blogs</a>
                 <a class="{{ $page->selected('/laravel') }}" href="/laravel">Book</a>
                 <a class="{{ $page->selected('/talks') }}" href="/talks">Talks</a>
