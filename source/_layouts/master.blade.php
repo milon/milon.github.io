@@ -24,11 +24,11 @@
             <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
             <p>
                 <a class="{{ $page->selected('/') }}" href="/">Home</a>
-                <a class="{{ $page->selected('/blogs') }}" href="/blogs">Blogs</a>
+                <a class="{{ ($page->getPath() === '/blogs' || strpos($page->getPath(), '/post/') === 0) ? 'selected' : '' }}" href="/blogs">Blogs</a>
                 <a class="{{ $page->selected('/laravel') }}" href="/laravel">Book</a>
-                <a class="{{ $page->selected('/talks') }}" href="/talks">Talks</a>
+                <a class="{{ ($page->getPath() === '/talks' || strpos($page->getPath(), '/talk/') === 0) ? 'selected' : '' }}" href="/talks">Talks</a>
                 <a class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
-                <a target="_blank" href="/cv">CV</a>
+                <a class="{{ $page->selected('/cv') }}" href="/cv">CV</a>
             </p>
         </section>
 

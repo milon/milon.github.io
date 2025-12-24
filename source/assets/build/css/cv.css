@@ -13,24 +13,9 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body {
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-color: var(--background-color);
-  color: var(--primary-color);
-  font-family: var(--body-font);
-  width: 100%;
-  max-width: 700px;
-  font-size: 18px;
-  line-height: 1.7;
-}
-
+/* CV page specific styles - body is already styled by main.css */
 #pdf-container {
-  margin: 40px 0 0 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +29,7 @@ body {
   margin-bottom: 20px;
   width: 100%;
   max-width: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
   box-sizing: border-box;
 }
@@ -84,6 +69,40 @@ body {
   box-sizing: border-box;
 }
 
+#navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+#page-info {
+  font-family: var(--body-font);
+  font-size: 1em;
+  color: var(--primary-color);
+  min-width: 120px;
+  text-align: center;
+}
+
+#prev-page,
+#next-page {
+  min-width: 100px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  border-color: var(--border-color);
+  background-color: var(--background-color);
+  transform: none;
+  box-shadow: none;
+}
+
 button {
   font-family: var(--body-font);
   padding: 12px 24px;
@@ -110,12 +129,8 @@ button:active {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  body {
-    padding: 0 16px;
-    font-size: 16px;
-  }
   #pdf-container {
-    margin: 30px 0 0 0;
+    margin: 0;
     padding: 0;
   }
   .pdf-page-wrapper {
@@ -128,9 +143,21 @@ button:active {
     margin: 20px auto;
     padding: 0;
   }
+  #navigation {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  #page-info {
+    font-size: 0.9em;
+    min-width: 100px;
+  }
   button {
     padding: 10px 20px;
     font-size: 0.9em;
+  }
+  #prev-page,
+  #next-page {
+    min-width: 80px;
   }
   #loading {
     padding: 30px 20px;
@@ -144,9 +171,25 @@ button:active {
   .pdf-page-wrapper {
     margin-bottom: 10px;
   }
+  #navigation {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  #page-info {
+    font-size: 0.85em;
+    min-width: 80px;
+  }
   button {
     padding: 8px 16px;
     font-size: 0.85em;
+  }
+  #prev-page,
+  #next-page {
+    min-width: 70px;
+    flex: 1;
+    max-width: 120px;
+  }
+  #download-pdf {
     width: 90%;
     max-width: 300px;
   }

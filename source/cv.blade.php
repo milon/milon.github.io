@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html>
+@extends('_layouts.master')
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuruzzaman_Milon_cv</title>
-    
+@section('meta')
     @include('_layouts._partials._cv_meta', [
-            'title' => 'milon.im | CV',
-            'description' => "Curriculum Vitae of Nuruzzaman Milon",
+        'title' => 'milon.im | CV',
+        'description' => "Curriculum Vitae of Nuruzzaman Milon",
     ])
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js"></script>
     <link rel="stylesheet" href="{{ mix('css/cv.css', 'assets/build') }}">
-</head>
+@endsection
 
-<body lang="en">
+@section('body')
+    <h2>Curriculum Vitae</h2>
+    
     <div id="pdf-container">
         <div id="loading">Loading PDF...</div>
         <div id="error" style="display: none;"></div>
     </div>
 
     <div id="controls">
+        <div id="navigation">
+            <button id="prev-page" disabled>Previous</button>
+            <span id="page-info">Page <span id="current-page">1</span> of <span id="total-pages">-</span></span>
+            <button id="next-page">Next</button>
+        </div>
         <button id="download-pdf">Download PDF</button>
     </div>
 
@@ -44,10 +45,16 @@
             const downloadButton = document.getElementById('download-pdf');
             const loadingDiv = document.getElementById('loading');
             const errorDiv = document.getElementById('error');
+            const prevButton = document.getElementById('prev-page');
+            const nextButton = document.getElementById('next-page');
+            const currentPageSpan = document.getElementById('current-page');
+            const totalPagesSpan = document.getElementById('total-pages');
 
-            // Store PDF and pages for responsive re-rendering
+            // Store PDF and current page state
             let pdfDoc = null;
-            let pageData = []; // Store page objects for re-rendering
+            let currentPage = 1;
+            let totalPages = 0;
+            let renderedPages = new Map(); // Cache rendered pages
 
             // Function to show error
             function showError(message) {
@@ -76,72 +83,130 @@
             }
 
             // Render a single page
-            async function renderPage(page, pageNum, scale) {
-                const viewport = page.getViewport({ scale: scale });
-                
-                // Find or create wrapper and canvas for this page
-                let pageWrapper = pdfContainer.querySelector(`.pdf-page-wrapper[data-page="${pageNum}"]`);
-                let canvas;
-                
-                if (!pageWrapper) {
-                    pageWrapper = document.createElement('div');
+            async function renderPage(pageNum, scale) {
+                // Check if page is already rendered and cached
+                if (renderedPages.has(pageNum)) {
+                    const cached = renderedPages.get(pageNum);
+                    // Update scale if needed
+                    if (Math.abs(cached.scale - scale) > 0.01) {
+                        // Remove old wrapper
+                        const oldWrapper = pdfContainer.querySelector(`.pdf-page-wrapper[data-page="${pageNum}"]`);
+                        if (oldWrapper) {
+                            oldWrapper.remove();
+                        }
+                        renderedPages.delete(pageNum);
+                    } else {
+                        // Show the cached page
+                        const existingWrapper = pdfContainer.querySelector(`.pdf-page-wrapper[data-page="${pageNum}"]`);
+                        if (existingWrapper) {
+                            existingWrapper.style.display = 'flex';
+                        }
+                        return;
+                    }
+                }
+
+                try {
+                    const page = await pdfDoc.getPage(pageNum);
+                    const viewport = page.getViewport({ scale: scale });
+                    
+                    // Create wrapper and canvas for this page
+                    const pageWrapper = document.createElement('div');
                     pageWrapper.classList.add('pdf-page-wrapper');
                     pageWrapper.setAttribute('data-page', pageNum);
                     
-                    canvas = document.createElement('canvas');
+                    const canvas = document.createElement('canvas');
                     canvas.classList.add('pdf-page');
                     pageWrapper.appendChild(canvas);
                     pdfContainer.appendChild(pageWrapper);
-                } else {
-                    canvas = pageWrapper.querySelector('canvas');
+                    
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Set canvas dimensions (use device pixel ratio for crisp rendering)
+                    const dpr = window.devicePixelRatio || 1;
+                    const displayWidth = viewport.width;
+                    const displayHeight = viewport.height;
+                    
+                    canvas.width = displayWidth * dpr;
+                    canvas.height = displayHeight * dpr;
+                    canvas.style.width = displayWidth + 'px';
+                    canvas.style.height = displayHeight + 'px';
+                    
+                    // Scale context for high DPI displays
+                    ctx.scale(dpr, dpr);
+                    
+                    // Render the page
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport,
+                    };
+                    
+                    await page.render(renderContext).promise;
+                    
+                    // Cache the rendered page
+                    renderedPages.set(pageNum, { scale: scale, wrapper: pageWrapper });
+                } catch (error) {
+                    console.error(`Error rendering page ${pageNum}:`, error);
+                    showError(`Failed to render page ${pageNum}: ${error.message}`);
                 }
-                
-                const ctx = canvas.getContext('2d');
-                
-                // Set canvas dimensions (use device pixel ratio for crisp rendering)
-                const dpr = window.devicePixelRatio || 1;
-                const displayWidth = viewport.width;
-                const displayHeight = viewport.height;
-                
-                canvas.width = displayWidth * dpr;
-                canvas.height = displayHeight * dpr;
-                canvas.style.width = displayWidth + 'px';
-                canvas.style.height = displayHeight + 'px';
-                
-                // Scale context for high DPI displays
-                ctx.scale(dpr, dpr);
-                
-                // Render the page
-                const renderContext = {
-                    canvasContext: ctx,
-                    viewport: viewport,
-                };
-                
-                await page.render(renderContext).promise;
-                return canvas;
             }
 
-            // Render all pages
-            async function renderAllPages() {
+            // Show only the current page
+            function showCurrentPage() {
+                // Hide all pages
+                const allWrappers = pdfContainer.querySelectorAll('.pdf-page-wrapper');
+                allWrappers.forEach(wrapper => {
+                    wrapper.style.display = 'none';
+                });
+                
+                // Show current page
+                const currentWrapper = pdfContainer.querySelector(`.pdf-page-wrapper[data-page="${currentPage}"]`);
+                if (currentWrapper) {
+                    currentWrapper.style.display = 'flex';
+                }
+                
+                // Update navigation buttons
+                prevButton.disabled = currentPage <= 1;
+                nextButton.disabled = currentPage >= totalPages;
+                
+                // Update page info
+                currentPageSpan.textContent = currentPage;
+            }
+
+            // Render the current page
+            async function renderCurrentPage() {
                 if (!pdfDoc) return;
                 
                 const scale = calculateScale();
                 loadingDiv.style.display = 'none';
                 
-                // Clear existing page wrappers
-                const existingWrappers = pdfContainer.querySelectorAll('.pdf-page-wrapper');
-                existingWrappers.forEach(wrapper => wrapper.remove());
+                // Render current page if not already rendered
+                await renderPage(currentPage, scale);
+                showCurrentPage();
+            }
+
+            // Navigate to a specific page
+            async function goToPage(pageNum) {
+                if (pageNum < 1 || pageNum > totalPages) return;
                 
-                // Render pages sequentially
-                for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
-                    try {
-                        const page = await pdfDoc.getPage(pageNum);
-                        await renderPage(page, pageNum, scale);
-                        console.log(`Page ${pageNum} rendered at scale ${scale.toFixed(2)}`);
-                    } catch (error) {
-                        console.error(`Error rendering page ${pageNum}:`, error);
-                        showError(`Failed to render page ${pageNum}: ${error.message}`);
-                    }
+                currentPage = pageNum;
+                const scale = calculateScale();
+                
+                // Render the page if not already rendered
+                await renderPage(currentPage, scale);
+                showCurrentPage();
+            }
+
+            // Navigate to previous page
+            async function goToPrevPage() {
+                if (currentPage > 1) {
+                    await goToPage(currentPage - 1);
+                }
+            }
+
+            // Navigate to next page
+            async function goToNextPage() {
+                if (currentPage < totalPages) {
+                    await goToPage(currentPage + 1);
                 }
             }
 
@@ -161,7 +226,9 @@
             // Handle window resize and orientation change
             const handleResize = debounce(() => {
                 if (pdfDoc) {
-                    renderAllPages();
+                    // Re-render current page with new scale
+                    renderedPages.clear();
+                    renderCurrentPage();
                 }
             }, 250);
 
@@ -177,13 +244,21 @@
                 // Load the PDF
                 pdfjsLib.getDocument(pdfPath).promise.then(pdf => {
                     pdfDoc = pdf;
-                    console.log('PDF loaded, total pages:', pdf.numPages);
-                    renderAllPages();
+                    totalPages = pdf.numPages;
+                    totalPagesSpan.textContent = totalPages;
+                    console.log('PDF loaded, total pages:', totalPages);
+                    
+                    // Render first page
+                    renderCurrentPage();
                 }).catch(error => {
                     console.error('Error loading PDF:', error);
                     showError('Failed to load PDF. Please check if the file exists. ' + error.message);
                 });
             }
+
+            // Add navigation button event listeners
+            prevButton.addEventListener('click', goToPrevPage);
+            nextButton.addEventListener('click', goToNextPage);
 
             // Add functionality to the download button
             downloadButton.addEventListener('click', () => {
@@ -196,10 +271,4 @@
             });
         }); // End DOMContentLoaded
     </script>
-
-    @if ($page->production)
-        @include('_layouts._partials._analytics')
-    @endif
-</body>
-
-</html>
+@endsection
