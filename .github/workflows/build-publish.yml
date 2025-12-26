@@ -14,7 +14,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        ref: develop
         fetch-depth: 0
     - name: Setup PHP 8.4
       uses: shivammathur/setup-php@v2
@@ -22,13 +21,13 @@ jobs:
         php-version: 8.4
         tools: composer:v2
     - name: Setup Node 23
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 23
     - name: Install Composer Dependencies
-      run: composer install --no-ansi --no-interaction --ignore-platform-reqs --no-scripts --no-suggest --no-progress --prefer-dist
+      run: composer install --no-ansi --no-interaction --no-progress
     - name: Install NPM Dependencies
-      run: npm install
+      run: npm ci
     - name: Build assets
       run: npm run production
     - name: Build Jigsaw site
