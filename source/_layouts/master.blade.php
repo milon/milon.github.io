@@ -7,7 +7,8 @@
         <title>{{ $page->siteTitle }}</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+        @viteRefresh()
+        <link rel="stylesheet" href="{{ vite('source/_assets/sass/main.scss') }}">
 
         @yield('meta')
     </head>

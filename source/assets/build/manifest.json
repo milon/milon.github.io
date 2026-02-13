@@ -1,0 +1,18 @@
+{
+  "source/_assets/js/cv.js": {
+    "file": "assets/cv-Cl1rodrh.js",
+    "name": "cv",
+    "src": "source/_assets/js/cv.js",
+    "isEntry": true
+  },
+  "source/_assets/sass/cv.scss": {
+    "file": "assets/cv-CPcaTa5W.css",
+    "src": "source/_assets/sass/cv.scss",
+    "isEntry": true
+  },
+  "source/_assets/sass/main.scss": {
+    "file": "assets/main-B98jdkcn.css",
+    "src": "source/_assets/sass/main.scss",
+    "isEntry": true
+  }
+}

@@ -6,8 +6,8 @@
         'description' => "Curriculum Vitae of Nuruzzaman Milon",
     ])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js"></script>
-    <link rel="stylesheet" href="{{ mix('css/cv.css', 'assets/build') }}">
-    <script src="{{ mix('js/cv.js', 'assets/build') }}"></script>
+    <link rel="stylesheet" href="{{ vite('source/_assets/sass/cv.scss') }}">
+    <script type="module" src="{{ vite('source/_assets/js/cv.js') }}"></script>
 @endsection
 
 @section('body')

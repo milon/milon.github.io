@@ -29,7 +29,7 @@ jobs:
     - name: Install NPM Dependencies
       run: npm ci
     - name: Build assets
-      run: npm run production
+      run: npm run build
     - name: Build Jigsaw site
       run: ./vendor/bin/jigsaw build production
     - name: Create CNAME File
