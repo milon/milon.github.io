@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/why-you-should-know-analyzing-space-time-complexity-as-a-software-engineer" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | Why you should know analyzing space-time complexity as a software engineer?" />
+    <meta property="og:description" content="Importance of space time complexity analysis in software engineering field." />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Why you should know analyzing space-time complexity as a software engineer?">
+    <meta name="twitter:description" content="Importance of space time complexity analysis in software engineering field.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="Importance of space time complexity analysis in software engineering field.">
+
+    
+    <meta itemprop="name" content="milon.im | Why you should know analyzing space-time complexity as a software engineer?">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>Why you should know analyzing space-time complexity as a software engineer?</h2>
+            <p>11 March, 2019</p>
+        </section>
+
+        <section class="about-section">
+            <p>Like tons of other software engineers, I also thought for a very long time that, knowing this Big O or Big Θ is only for a programming contest, there are very few impacts of these in day to day life in most software projects. Yah yah, I got it, if you are working on google, facebook or this type of tech giant, that may not be 100% right, but how many people you know working there as a software engineer? And what is the percentage of them in your address book? Even, not all of the engineers at those company working for developing a groundbreaking algorithm every day. Then what is the necessity of learning this?</p>
+
+<p>Like most of the computer science student, I learned them too, and when I did programming contest regularly, I used to know the complexity of common data structure and algorithms. I used to tell the difference between <code>O(n log(n))</code> and <code>O(n^2)</code> and why merge sort is better than quicksort. But, I forgot all of those, in the last 6 years after I left college. And to be frank with you, I hardly needed them. One reason, I never need to handle a problem that critical to space-time and today's computing hardware is too capable that I never need to worry about micro optimism. And it's true in a sense. It's much more important to make a code readable that fight over why you should use single quote over a double quote in PHP. So, why I am talking about this now? Well, I faced a problem last week, and that makes me re-think my perspective on this whole thing again.</p>
+
+<p>I was trying to optimize the cache mechanism of one of our product, but the script was failing often because it was too memory hungry. I am not gonna tell what happens, but I can give you a hint. When you are working with a fairly large dataset, and do a bunch of instruction on loop, even reduce a small computation can save you a lot. For example, look at this simple loop-</p>
+
+<pre><code>for($i=0; $i&lt;count($arr); $i++) {
+    // do your thing
+}
+</code></pre>
+
+<p>If you just store the value of <code>count($arr)</code> in a variable and then use that variable in the loop, it will save you <code>N</code> number of instructions assuming the number of elements in the array is <code>N</code>.</p>
+
+<p>The code I was working on was well documented and maintained, but it was failing for this type of problem. Being honest here, it took quite a while for me to figure out the problem. Then, I figure out why that took so long? Because I forgot everything about space-time complexity analysis. So, I invest some time to re-learn this again, and now I feel good.</p>
+
+<p>Don't get me wrong, I am not asking you to give up all the readability or maintainability of your codebase just for the sake of optimization. But You should know this to be a better software engineer. All I am asking to add this to your toolbox, so whenever needed, you can use this tool to get the job done. And another thing, for a very good reason, asking a question about space-time complexity is one of the favorite questions of the interviewers. So, by knowing this, you are one step ahead to land your dream job.</p>
+
+<p>Happy coding!</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/why-you-should-know-analyzing-space-time-complexity-as-a-software-engineer';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'why-you-should-know-analyzing-space-time-complexity-as-a-software-engineer'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

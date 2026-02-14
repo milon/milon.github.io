@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/software-engineering-practical-aspects-03" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৩" />
+    <meta property="og:description" content="My thoughts on Software Engineering&#039;s practical aspects." />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৩">
+    <meta name="twitter:description" content="My thoughts on Software Engineering&#039;s practical aspects.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="My thoughts on Software Engineering&#039;s practical aspects.">
+
+    
+    <meta itemprop="name" content="milon.im | সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৩">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৩</h2>
+            <p>27 November, 2012</p>
+        </section>
+
+        <section class="about-section">
+            <p><strong>প্রোডাক্ট রিলিজ</strong></p>
+
+<p>এ পর্বটি প্রোডাক্ট রিলিজ নিয়ে লেখা হবে। প্রোডাক্ট রিলিজ করার অনেকগুলো মাধ্যম রয়েছে। প্রথমে সিদ্ধান্ত নিতে হবে কিভাবে প্রোডাক্ট রিলিজ করা হবে সে সিদ্ধান্ত নেয়া। প্রোডাক্ট রিলিজের মধ্যে সবচেয়ে জনপ্রিয় মাধ্যমটি হচ্ছে পাবলিকলি রিলিজ করা।</p>
+
+<p><strong>পাবলিক রিলিজ</strong></p>
+
+<p>পাবলিক রিলিজের সবচেয়ে বড় সুবিধা হচ্ছে এর মাধ্যমে আপনি অনেক বেশি ইউজারের কাছে আপনার প্রোডাক্টটি পৌছে দিতে পারবেন। এক্ষেত্রে সবচেয়ে গুরুত্বপূর্ণ বিষয়টি হচ্ছে চেষ্টা করতে হবে যত বেশি সম্ভব পটেনশিয়াল ইউজারের কাছে প্রোডাক্টটি পৌছে দেয়া। অনেকগুলো সাইট আছে যেমন- <a href="http://www.softpedia.com">softpedia.com</a>, <a href="http://www.cnet.com">cnet.com</a>, <a href="http://www.softsea.com">softsea.com</a>, <a href="http://d-h.st">Devhost</a> যারা তাদের সাইটে আপনাদের প্রোডাক্ট ফ্রিতে আপলোড করার সুযোগ দেবে যাতে আপনার প্রোডাক্টের ইউজার তা ডাউনলোড করতে পারে, আপনার সফটয়্যারকে রেটিং দিতে পারে, এমনকি তাদের রিভিউও প্রকাশ করতে পারে। এ ধরনের সাইটগুলোতে আপনার সফটয়্যার হোস্টিংয়ের সবচেয়ে বড় সুবিধা হলো আপনার সফটয়্যার যদি বেশি পরিমান ডাউনলোড হয় তাহলে <a href="http://lifehacker.com">lifehacker.com</a>, <a href="http://www.addictivetips.com">addictivetips.com</a> এ ধরনের সাইটগুলো আপনার সফটয়্যারের রিভিউ ছাপানো শুরু করবে যা আপনার সফটয়্যারের প্রচারের জন্য সবচেয়ে ভাল। সবচেয়ে ভাল হয় যদি আপনার সফটয়্যারের নিজস্ব একটা সাইট থাকে এবং সেটা থাকে নিজস্ব ডোমেইনে। তবে সাধারনত প্রফেশনাল সফটয়্যারের ক্ষেত্রে এমনটা বেশি দেখা যায়। যেমন- <a href="http://www.tallysolutions.com">টালি</a> আমাদের দেশের অত্যন্ত জনপ্রিয় একটি একাউন্টিং সফটয়্যার। এটার নিজ নামে ডোমেইন আছে।</p>
+
+<p>এছাড়া অনেক ফ্রি সাইটও আছে যেখানে আপনি আপনার সফটয়্যারের জন্য নিজস্ব সাইট বিনামূল্যে তৈরী করতে পারবেন। এর মধ্যে উল্লেখযোগ্য হচ্ছে গুগল সাইটস, ওয়ার্ডপ্রেস ইত্যাদি। যেমন- এন্ড্রয়েড মোবাইলের জনপ্রিয় কীবোর্ড <a href="http://mayabisoft.wordpress.com">মায়াবী</a> তাদের প্রোডাক্ট ওয়ার্ডপ্রেসে হোস্টিং করেছে।</p>
+
+<p>এছাড়া ডেডিকেটেড প্রোজেক্ট হোস্টিং এনভায়রনমেন্টও ফ্রি পাওয়া যায় যেমন <a href="http://code.google.com/hosting">গুগল কোড প্রজেক্ট হোস্টিং(GCPH)</a>. এই সাইটেও আপনি আপনার প্রোডাক্টের জন্য ফ্রি ওয়েবসাইট খুলতে পারবেন।</p>
+
+<p>এছাড়াও আরো কয়েকটি উপায় রয়েছে প্রোডাক্টকে পাবলিকলি ইউজারের কাছে পৌছে দেয়ার। যেমন-</p>
+
+<ul>
+<li>ফেসবুকে একটি ফ্যানপেজ তৈরী করা।</li>
+<li>ইমেইল সিগনেচারে সফটয়্যারের লিঙ্ক দেয়া।</li>
+<li>বিভিন্ন ফোরামে সফটয়্যারের রিভিউ পোস্ট করা।</li>
+</ul>
+
+<p><strong>রিলিজ পিরিওড</strong></p>
+
+<p>কখনোই সফটয়্যারটি এর পটেনশিয়াল ইউজারদের সাথে একবারে তুলে দেয়া উচিৎ না। আস্তে আস্তে রিলিজ দিলে সফটয়্যারটির বিভিন্ন বিষয় পরিবর্তন করে সফটয়্যারটি মার্কেটের জন্য আরো বেশি উপযুক্ত হিসেবে তৈরী হবে। যেমন জনপ্রিয় বাংলা টাইপিং সফটয়্যার <a href="http://www.omicronlab.com/avro-keyboard.html">অভ্র</a>র কথাই ধরা যাক। এর ডেভেলপার মেহদী হাসান খান এর প্রত্যেকটা ভার্সনের প্রথমে এর একটা করে আলফা রিলিজ ছাড়েন যা তিনি তার বন্ধু-বান্ধবের মধ্যে ব্যবহার করতে দেন। এখান থেকে বিভিন্ন বাগ ঠিক করে এরপর তিনি ছাড়েন এর প্রাইভেট বেটা, যা তিনি তার পরিচিত গন্ডির মধ্যে ব্যবহার করতে দেন। এখান থেকে ফিডব্যাক নিয়ে তিনি রিলিজ দেন পাবলিক বেটা, যা <a href="http://omicronlab.com">ওমিক্রনল্যাবের</a> ওয়েবসাইটে ডাউনলোডের জন্য রাখা হয়। এখান থেকে বিভিন্ন বাগ ঠিক করার মাধ্যমে রিলিজ দেয়া হয় এর ফাইনাল ভার্সন।</p>
+
+<p>এবার এভাবে রিলিজ দেয়ার আরেকটা অন্যতম কারন হচ্ছে আপনার সফটয়্যার আপনি যত ভাল করেই তৈরী করুন না কেন, আপনার কোর্স টিচার বা সুপারভাইজার এর মধ্যে কাটা-ছেঁড়া করবেনই। তাই গ্রাজুয়ালি রিলিজ করলে অনেক বেশি সুবিধা পাওয়া যায়। এটা ব্যক্তিগত অভিজ্ঞতা থেকে লিখলাম।</p>
+
+<p><strong>মেইনটেইনেন্স</strong></p>
+
+<p>একটা সফটয়্যার তৈরী করে রেখে দিলে এর উপোযোগীতা একসময় ব্যবহারকারীর কাছে আর থাকে না। তাই নিয়মিত নতুন নতুন আপডেট আর বিভিন্ন নতুন ফিচার সফটয়্যারে আনতে হবে। তা না হলে সফটয়্যার এর আবেদন আর ধরে রাখতে পারবে না।</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/software-engineering-practical-aspects-03';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'software-engineering-practical-aspects-03'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>
