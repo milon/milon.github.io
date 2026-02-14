@@ -16,7 +16,7 @@ export default defineConfig({
       targets: [
         {
           src: 'node_modules/@fortawesome/fontawesome-free/webfonts/*',
-          dest: 'fonts/font-awesome',
+          dest: 'webfonts',
         },
       ],
     }),
