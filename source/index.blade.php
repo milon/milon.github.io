@@ -25,7 +25,7 @@
         </section>
 
         <section class="current-section">
-            <p>Currently, I am working as a Senior Software Development Engineer and living in a suburb of Vancouver, British Columbia, Canada. Additionally, I serve as an administrator for <a href="https://www.facebook.com/groups/pxperts">phpXperts</a>, Bangladesh's largest developer community.</p>
+            <p>Currently, I am working as an Engineering Tech Lead and living in a suburb of Vancouver, British Columbia, Canada. Additionally, I serve as an administrator for <a href="https://www.facebook.com/groups/pxperts">phpXperts</a>, Bangladesh's largest developer community.</p>
             <p>Lately, I've developed a newfound passion for cooking, and I'm excited to share my recipes <a href="https://recipes.milon.im">here</a>.</p>
         </section>
 
