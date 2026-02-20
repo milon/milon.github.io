@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/upgrading-a-project-from-laravel-5-0-to-5-1" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | Upgrading a project from Laravel 5.0 to 5.1" />
+    <meta property="og:description" content="Complete guideline to upgrade a Laravel 5.0 project to Laravel 5.1" />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Upgrading a project from Laravel 5.0 to 5.1">
+    <meta name="twitter:description" content="Complete guideline to upgrade a Laravel 5.0 project to Laravel 5.1">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="Complete guideline to upgrade a Laravel 5.0 project to Laravel 5.1">
+
+    
+    <meta itemprop="name" content="milon.im | Upgrading a project from Laravel 5.0 to 5.1">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>Upgrading a project from Laravel 5.0 to 5.1</h2>
+            <p>11 June, 2015</p>
+        </section>
+
+        <section class="about-section">
+            <p>Laravel just released it's first LTS relase two days back. I was very excited about this release and can't wait to upgrade my existing project to the latest version.</p>
+
+<p>I have just updated a laravel 5.0 project to laravel 5.1&#46; It was quiet a big project around 10 thousand line and 6 people working it. It was on latest iteration on laravel 5.0 branch which is 5.0.33&#46; It's a fairly simple task and took around 50 minutes. Let's get started.</p>
+
+<p><strong>Take Backup</strong></p>
+
+<p>At first take a backup of your existing project so that if anything goes wrong you could restore. If you are using git you could make a different brunch of your update-</p>
+
+<pre><code>git checkout -b update
+</code></pre>
+
+<p><strong>Update bootstrap/autoload.php file</strong></p>
+
+<p>Previouslycompiled file was in <code>/storage/framework</code> directory but in 5.1 it is in <code>/bootstrap/autoload</code> directory. So, change the <code>$compiledPath</code> variable to this-</p>
+
+<pre><code>$compiledPath = __DIR__.'/cache/compiled.php';
+</code></pre>
+
+<p><strong>Create bootstrap/cache directory</strong></p>
+
+<p>Then create <code>bootstrap/cache</code> directory and give write permission to it, becasue laravel will put it's <code>compiled.php</code>, <code>routes.php</code>, <code>config.php</code>, and <code>services.json</code> file in it. To do this run below command to console-</p>
+
+<pre><code>sudo chmod 755 -R bootstrap/cache
+</code></pre>
+
+<p>Then create a .gitignore file in this directory and put following content in it-</p>
+
+<pre><code>*
+!.gitignore
+</code></pre>
+
+<p><strong>Authentication</strong></p>
+
+<p>If you are not using laravel's default authentication scaffold then leave this section. If you are using then at first go to <code>app/Http/Controllers/Auth/AuthController.php</code> file. At first remove two dependencies from the controller. Then go to <code>app/Services/Registrar.php</code> file and copy validator and create method from it and paste it to <code>AuthController</code>. Then also import <code>App\User</code> and <code>Illuminate\Support\Facade\Validator</code> at the top of this class. After that delete <code>Registrar</code> class entirely. After doing all those things <code>AuthController</code> will be look like this-</p>
+
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\User;
+use Illuminate\Support\Facades\Validator;
+
+class AuthController extends Controller {
+
+    /*
+    |--------------------------------------------------------------------------
+    | Registration &amp; Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles the registration of new users, as well as the
+    | authentication of existing users. By default, this controller uses
+    | a simple trait to add these behaviors. Why don't you explore it?
+    |
+    */
+
+    use AuthenticatesAndRegistersUsers;
+
+
+    protected $redirectTo = '/';
+
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this-&gt;middleware('guest', ['except' =&gt; 'getLogout']);
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    public function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' =&gt; 'required|max:255',
+            'email' =&gt; 'required|email|max:255|unique:users',
+            'password' =&gt; 'required|confirmed|min:6',
+        ]);
+    }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
+    public function create(array $data)
+    {
+        return User::create([
+            'name' =&gt; $data['name'],
+            'email' =&gt; $data['email'],
+            'password' =&gt; bcrypt($data['password']),
+        ]);
+    }
+
+}
+</code></pre>
+
+<p>Also remove the dependency from PasswordController's constructor method. Those are no longer needed.</p>
+
+<p><strong>Validation</strong></p>
+
+<p>If you don't override any of the default validator method then you are good to go to the next section. If you do override <code>formatValidationErrors</code> method on your <code>BaseController</code> class then typehint <code>Illuminate\Contracts\Validation\Validator</code> class to the instead of create an instance of <code>Illuminate\Validation\Validator</code> class.</p>
+
+<p>Do the same thing for <code>formatErrors</code> method also. Typehint <code>Illuminate\Contracts\Validation\Validator</code> class instead of create an instance of <code>Illuminate\Validation\Validator</code> class.</p>
+
+<p><strong>Eloquent</strong></p>
+
+<p>Eloquent's create method now can applied with no parameter. So, If you are overriding this class, make sure you pass an empty array as a default parameter to this method. This will be look like this-</p>
+
+<pre><code>public static function create(array $attributes = [])
+{
+    // Your custom implementation
+}
+</code></pre>
+
+<p>If you are overriding the find method in your own models and calling parent::find() within your custom method, you should now change it to call the find method on the Eloquent query builder. This will look like this-</p>
+
+<pre><code>public static function find($id, $columns = ['*'])
+{
+    $model = static::query()-&gt;find($id, $columns);
+
+    // ...
+
+    return $model;
+}
+</code></pre>
+
+<p><strong>Date Formatting</strong></p>
+
+<p>In 5.0 you could change the format of storage of date field by override <code>getDateFormat</code> method. This is still applicble but you could also use the more cleaner way to do this. Simply specify a <code>$dateFormat</code> property to the model declaring the fields you want in date format and you are good to go.</p>
+
+<p>This is also applied for serializing model to array or JSON. You can override <code>serializeDate(DateTime $date)</code> method to do this.</p>
+
+<p><strong>The Collection Class</strong></p>
+
+<p>I use the collection class a lot, I think you also do, as eloquent and query builder returns collection.</p>
+
+<p>Previously the sort method modify the existing collection. But from 5.1 it will return a completely new instance of collection. Take a look-</p>
+
+<pre><code>$collection = $collection-&gt;sortBy('name');
+</code></pre>
+
+<p>The groupBy method now returns an instance of collection for each of it's item. You could map over the collection for getting previous format-</p>
+
+<pre><code>$collection-&gt;groupBy('type')-&gt;map(function($item)
+{
+    return $item-&gt;all();
+});
+</code></pre>
+
+<p><code>lists</code> method now return collection instead of array. To get array form that-</p>
+
+<pre><code>$collection-&gt;lists('id')-&gt;all();
+</code></pre>
+
+<p><strong>Commands &amp; Handlers</strong></p>
+
+<p><code>Commands</code> are now renamed to <code>Jobs</code> and <code>Handlers</code> are now renamed to <code>Listeners</code>. But This change is backward compatible. So, you are good to go without modifying it, but my suggesstion is rename the files and fix namespaces for your commands and events classes.</p>
+
+<p><strong>Tests</strong></p>
+
+<p>Just add a protected <code>$baseUrl</code> property to <code>App\TestCase</code> class and you are good to go.</p>
+
+<pre><code>protected $baseUrl = 'http://localhost:8000';
+</code></pre>
+
+<p><strong>Amazon Web Services SDK</strong></p>
+
+<p>If you are using amazon web service then update you sdk by defining the version to <code>composer.json</code> file and do a <code>composer update</code>.</p>
+
+<pre><code>"league/flysystem-aws-s3-v3": "~1.0"
+</code></pre>
+
+<p><strong>Update</strong></p>
+
+<p>After doing all these things go to <code>composer.json</code> file and change the require object like this-</p>
+
+<pre><code>"require": {
+    "php": "&gt;=5.5.9",
+    "laravel/framework": "5.1.*"
+},
+"require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+},
+</code></pre>
+
+<p>Then run following two command to the console-</p>
+
+<pre><code>composer update
+composer dump-autoload -o
+</code></pre>
+
+<p><strong>Depredations</strong></p>
+
+<p>There are also some depredations with the release of 5.1&#46; You should take a look at release guide section at the documentation and fix it gradually. This will be removed on Laravel 5.2 which will be released on December, 2015.</p>
+
+<p>Happy Coding...</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/upgrading-a-project-from-laravel-5-0-to-5-1';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'upgrading-a-project-from-laravel-5-0-to-5-1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>
