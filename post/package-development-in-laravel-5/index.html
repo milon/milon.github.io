@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/package-development-in-laravel-5" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | লারাভেল ৫ এ প্যাকেজ ডেভেলপমেন্ট" />
+    <meta property="og:description" content="কিভাবে লারাভেল ৫ ফ্রেমওয়ার্কের জন্য প্যাকেজ তৈরি করবেন তার বিস্তারিত।" />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | লারাভেল ৫ এ প্যাকেজ ডেভেলপমেন্ট">
+    <meta name="twitter:description" content="কিভাবে লারাভেল ৫ ফ্রেমওয়ার্কের জন্য প্যাকেজ তৈরি করবেন তার বিস্তারিত।">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="কিভাবে লারাভেল ৫ ফ্রেমওয়ার্কের জন্য প্যাকেজ তৈরি করবেন তার বিস্তারিত।">
+
+    
+    <meta itemprop="name" content="milon.im | লারাভেল ৫ এ প্যাকেজ ডেভেলপমেন্ট">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>লারাভেল ৫ এ প্যাকেজ ডেভেলপমেন্ট</h2>
+            <p>23 March, 2015</p>
+        </section>
+
+        <section class="about-section">
+            <p>লারাভেল ৪.* এ <code>"illuminate/workbench"</code> প্যাকেজ ব্যবহার করে খুব সহজেই আমরা লারাভেলের জন্য প্যাকেজ ডেভেলপ করতে পারতাম। কিন্তু লারাভেল ৫ এ সেটিকে লারাভেলের কোর থেকে বাদ দেয়া হয়েছে। আসলে টেইলর অটোয়েল(লারাভেলের জনক) মনে করেন, প্যাকেজগুলো ফ্রেমওয়ার্ক ইন্ডিপেন্ডেন্ট হওয়া জরুরী। তাই তিনি এ প্যাকেজটিকে লারাভেলের কোর থেকে বাদ দিয়েছেন। তবে আমরা চাইলে এ প্যাকেজটি ব্যবহার করে খুব সহজেই লারাভেল ৫ এর জন্য প্যাকেজ তৈরি করতে পারি।</p>
+
+<p>এরজন্য প্রথমেই যা করতে হবে সেটি হচ্ছে লারাভেল ইনস্টলের পর <code>"illuminate/workbench"</code> প্যাকেজের <code>"dev-develop"</code> ব্রাঞ্চটিকে আপনার প্রজেক্টে পুল-ইন করে নিতে হবে। এটি করতে আপনি কম্পোজার ফাইলের রিকোয়ার অংশে নিচের লাইনটি যুক্ত করুন-</p>
+
+<pre><code>"require": {
+    "laravel/framework": "5.0.*",
+    "illuminate/workbench": "dev-master"
+},
+</code></pre>
+
+<p>এরপর টার্মিনালে নিচের কমান্ডটি দিন-</p>
+
+<pre><code>composer update
+</code></pre>
+
+<p>এরপর <code>config/app.php</code> ফাইলের <code>providers</code> এরেতে নিচের লাইনটি যুক্ত করতে হবে-</p>
+
+<pre><code>'providers' =&gt; [
+    ...,
+    'Illuminate\Workbench\WorkbenchServiceProvider',
+]
+</code></pre>
+
+<p>এবার আপনার প্রজেক্টের কনফিগ ডিরেক্টরিতে workbench.php নামে একটি নতুন ফাইল তৈরি করুন এবং সে ফাইলটিতে নিচের অংশটুকু যুক্ত করে দিন-</p>
+
+<pre><code>&lt;?php
+
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Workbench Author Name
+    |--------------------------------------------------------------------------
+    |
+    | When you create new packages via the Artisan "workbench" command your
+    | name is needed to generate the composer.json file for your package.
+    | You may specify it now so it is used for all of your workbenches.
+    |
+    */
+    'name' =&gt; '',
+    /*
+    |--------------------------------------------------------------------------
+    | Workbench Author E-Mail Address
+    |--------------------------------------------------------------------------
+    |
+    | Like the option above, your e-mail address is used when generating new
+    | workbench packages. The e-mail is placed in your composer.json file
+    | automatically after the package is created by the workbench tool.
+    |
+    */
+    'email' =&gt; '',
+];
+</code></pre>
+
+<p>এই ফাইলের নাম এবং পাসওয়ার্ড অংশে প্যাকেজ রাইটারের নাম এবং ইমেইল এড্রেস লিখুন।</p>
+
+<p>এবার আপনার কাজ শেষ। নতুন প্যাকেজ ডেভেলপমেন্ট শুরু করতে টার্মিনালে নিচের কমান্ডটি লিখুন-</p>
+
+<pre><code>php artisan workbench vendor/package
+</code></pre>
+
+<p>এই vendor এবং package এর জায়গায় আপনি আপনার প্যাকেজের ভেন্ডরের নাম এবং প্যাকেজের নাম লিখবেন।</p>
+
+<p>কমান্ডটি দেয়ার পরে দেখবেন আপনার প্রজেক্টের রুট ডিরেক্টরিতে workbench নামে একটি ফোল্ডার তৈরি হয়েছে, এবং এই ফোল্ডারের ভেতরে আপনার প্যাকেজের জন্য একটি ফোল্ডার এবং অন্যান্য স্ক্যা-ফোল্ডিং ফাইল তৈরি হয়ে গেছে। ব্যস, শুরু করে দিন প্যাকেজ ডেভেলপমেন্ট।</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/package-development-in-laravel-5';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'package-development-in-laravel-5'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

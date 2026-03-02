@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/laravel-5-1-database-factory" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | Laravel 5.1 Database Factory" />
+    <meta property="og:description" content="What is database factory, how to use it?" />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Laravel 5.1 Database Factory">
+    <meta name="twitter:description" content="What is database factory, how to use it?">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="What is database factory, how to use it?">
+
+    
+    <meta itemprop="name" content="milon.im | Laravel 5.1 Database Factory">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>Laravel 5.1 Database Factory</h2>
+            <p>29 May, 2015</p>
+        </section>
+
+        <section class="about-section">
+            <p>Earlier versions of laravel comes with a system for seeding dummy data on database. Traditionaly you just create a class extending laravel's DatabaseSeeder class. This would look like this-</p>
+
+<pre><code>&lt;?php
+
+use DB;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
+class UserTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('users')-&gt;insert([
+            'name' =&gt; str_random(10);
+            'email' =&gt; str_random(10).'@gmail.com',
+            'password' =&gt; bcrypt('secret'),
+        ]);
+    }
+}
+</code></pre>
+
+<p>Then you can run this command for seed in database-</p>
+
+<pre><code>php artisan db:seed
+</code></pre>
+
+<p>Instead of using creating query builder, you could also called eloquent. In that case, run method will look like this-</p>
+
+<pre><code>public function run(){
+    \App\User::create([
+        'name' =&gt; str_random(10);
+        'email' =&gt; str_random(10).'@gmail.com',
+        'password' =&gt; bcrypt('secret'),
+    ]);
+}
+</code></pre>
+
+<p>You could also use a package called faker with it. Faker will generate bunch of different things automatically for you like- name, email, phone number, paragraph, sentence, date and much more. In that case UserTableSeeder class will look like this-</p>
+
+<pre><code>&lt;?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use Faker\Factory as Faker;
+
+class UserTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $faker = Faker::create();
+
+        DB::table('users')-&gt;insert([
+            'name' =&gt; $faker-&gt;name;
+            'email' =&gt; $faker-&gt;email,
+            'password' =&gt; bcrypt('secret'),
+        ]);
+    }
+}
+</code></pre>
+
+<p>For more entry you could use loop and each time faker would create different entry for you.</p>
+
+<p>But using laravel's new feature model factory, this could be much more simpler. Take a look-</p>
+
+<pre><code>class UserTableSeeder extends Seeder
+{
+    public function run()
+    {
+        factory('App\User', 50)-&gt;create();
+    }
+}
+</code></pre>
+
+<p>Couldn't be much simpler than that, right? You could also use make method that will create users, but won't persist them in database. This method is very helpful for testing. Let talk them another day, as it is out of scope of today's topic.</p>
+
+<p>Now you could wonder, how laravel knows that we should create 50 users, and how it also know the database schema and what to seed? I think if you already noticed that laravel 5.1 comes with a new folder called factory in database folder and by default there is a file called ModelFactory. Let's look at this file-</p>
+
+<pre><code>$factory-&gt;define('App\User', function ($faker) {
+    return [
+        'name' =&gt; $faker-&gt;name,
+        'email' =&gt; $faker-&gt;email,
+        'password' =&gt; str_random(10),
+        'remember_token' =&gt; str_random(10),
+    ];
+});
+</code></pre>
+
+<p>Here we see, laravel creates a factory defination for App\User model and it passes a faker object, that we use earlier. We could also create other defination and also create another file in this directory. But if you create new file, you should run this command-</p>
+
+<pre><code>composer dump-autoload
+</code></pre>
+
+<p>This needed to be done because in version 5.1 laravel autoload database folder with classmap. You could take a look composer.json file.</p>
+
+<p>Happy coding...</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/laravel-5-1-database-factory';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'laravel-5-1-database-factory'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/adding-multiple-subdomain-with-github-pages" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | Adding multiple subdomain with Github Pages" />
+    <meta property="og:description" content="How to add multiple subdomain with Github Pages?" />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Adding multiple subdomain with Github Pages">
+    <meta name="twitter:description" content="How to add multiple subdomain with Github Pages?">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="How to add multiple subdomain with Github Pages?">
+
+    
+    <meta itemprop="name" content="milon.im | Adding multiple subdomain with Github Pages">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>Adding multiple subdomain with Github Pages</h2>
+            <p>10 October, 2023</p>
+        </section>
+
+        <section class="about-section">
+            <p>I have a domain named <code>milon.im</code>, though I have some other domains, but I use it as my main domain for personal use. I have my personal website hosted in Github Pages. You can have a repository with github and name it like <code>&lt;username&gt;.github.io</code> and the pages enabled from this repository can be found in the same domain. I have a repository named <code>milon.github.io</code> and I have hosted my personal website here using a static site generator named <a href="https://jigsaw.tighten.com/">Jigsaw</a>. You can also assign a custom domain in this repository. I have assigned <code>milon.im</code> as my custom domain. So, my personal website can be found in <a href="https://milon.im">milon.im</a>. For doing that you can go to the repository settings and assign a custom domain. You can also add a <code>CNAME</code> file in the root of your repository and add your custom domain there. I have added a <code>CNAME</code> file in the root of my repository and added <code>milon.im</code> there. You can also do it from the repository settings. Then you have to go to the nameserver settings of your domain and add a A record with the IP address of Github Pages. You can find the IP address from <a href="https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">here</a>. I have added an A record with the IP address of Github Pages in my domain's nameserver settings. Now, I can access my personal website in <a href="https://milon.im">milon.im</a>.</p>
+
+<p>I have some other hobby projects, which is also hosted in Github Pages. If you have an apex domain configured, then all other github pages site can be hosted like this- <code>&lt;username&gt;.github.io/&lt;repository&gt;</code>. During I COVID lockdown, I have spent some time on cooking various dish, and created a website with the recipes of those dishes. I was hosting that site on netlify. Netlify is great, if you are using a static site generator with Javascript. I was using a PHP based static site generator, so I had to face couple of issue. First of all, the default PHP version of netlify is PHP 7.4, and you can't use any version other than 7.4 or 8.0. So I decided to switch that site to github pages. After switching, the site was accessable <code>milon.im/recipes</code> URL.</p>
+
+<p>Then I thought, why not use a subdomain like <code>recipes.milon.im</code> to host this site. Luckly it is very easy to do with github pages. You basically need 3 things to have it-</p>
+
+<ul>
+<li>Enable github pages for the repository. I used gh-pages branch for this. Though you can use any branch as well.</li>
+<li>Add a CNAME file in the root of the repository and add the subdomain there. In my case, I added <code>recipes.milon.im</code> in the CNAME file.</li>
+<li>Add a CNAME record in the nameserver settings of your domain and add the github pages URL there. In my case, I added <code>recipes.milon.im</code> in the CNAME record in my DNS settings and the target was <code>milon.im</code> domain. I am using cloudflare as the DNS provider, which actually comes with bunch of other features. The most useful for me is the SSL certificate. I don't have to worry about SSL certificate for my subdomain. Cloudflare provides it for free.</li>
+</ul>
+
+<p>I the added a github actions to automate the build and deploy process. I have added a <code>build-publish.yml</code> file in <code>.github/workflows</code> folder. You can learn more about how to do that in <a href="https://milon.im/blog/2020/github-action-with-jigsaw">this post</a>. Now, I can access my recipes site in <a href="https://recipes.milon.im">recipes.milon.im</a>.</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/adding-multiple-subdomain-with-github-pages';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'adding-multiple-subdomain-with-github-pages'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

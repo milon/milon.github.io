@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/talk/klassroom-presents-techtalk-scaling-api-with-laravel" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | Klassroom presents the Techtalk: Scaling API with Laravel" />
+    <meta property="og:description" content="I was interviewed by Sumon Molla Selim on his web podcast about APIs and how to create them with Laravel." />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Klassroom presents the Techtalk: Scaling API with Laravel">
+    <meta name="twitter:description" content="I was interviewed by Sumon Molla Selim on his web podcast about APIs and how to create them with Laravel.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="I was interviewed by Sumon Molla Selim on his web podcast about APIs and how to create them with Laravel.">
+
+    
+    <meta itemprop="name" content="milon.im | Klassroom presents the Techtalk: Scaling API with Laravel">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="selected" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>Klassroom presents the Techtalk: Scaling API with Laravel</h2>
+            <p>09 May, 2020</p>
+        </section>
+
+        <section class="about-section">
+            <p>I was invited to talk about Laravel API development and scaling on Muhammad Sumon Molla Selim's weekly web podcast <strong>Klassroom presents the Techtalk</strong>. We talked about a bunch of different things about API development for about 2 hours.</p>
+
+<iframe width="600" height="337.5" src="https://www.youtube.com/embed/5Kr04SkX2Qk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Here are the gist of my talk and various references on how to build and maintain a suntainable API in Laravel.</p>
+
+<h4>STEP 1</h4>
+
+<ul>
+<li>Just returning an array as response will make an API. Laravel's Response class implements Arrayable, Jsonable, ArrayObject and JsonSerializable interface. So, anything that implements these interface will return a json response.</li>
+<li>Laravel Eloquent makes it even easier, just return any Model object or Collection, it will automatically cast it to json. Even it has built in feature to hide any specific column from the entity through <code>$hidden</code> attribute. It also protect us from mass assignment.</li>
+<li>It has built in middlewares to take care of CORS, API throttling and other common issues.</li>
+<li>Laravel has builtin auditing feature like <code>created_at</code>, <code>updated_at</code> timestamp, and it's very easy to add <code>created_by</code>, <code>updated_by</code> to your model.</li>
+<li>Use proper HTTP response code and headers in your response.</li>
+<li>Use proper HTTP verb and stick with one convention for for URL pattern.</li>
+</ul>
+
+<h4>STEP 2</h4>
+
+<ul>
+<li>You should never expose your database schema through API. You could use Laravel's API Resource to transform your Model response. For more control use something like <a href="https://fractal.thephpleague.com/"><code>league/fractal</code></a>, or it's laravel bridge <a href="https://github.com/spatie/laravel-fractal"><code>spatie/laravel-fractal</code></a> for ease of use.</li>
+<li>Don't expose your database IDs. Use generated complex id like <code>uuid</code>. You could use <a href="https://uuid.ramsey.dev/"><code>ramsey/uuid</code></a>.</li>
+<li>Do proper validation. Use laravel's validator, give proper validation error response.</li>
+<li>Use Eloquent as long as it's serving your purpose, but don't hesitate to jump to SQL.</li>
+<li>Consider your database a shared resource, even a single slow endpoint can make the whole API suite slower.</li>
+<li>Use a profiler like <a href="https://blackfire.io/">blackfire.io</a> or at least use <a href="https://github.com/barryvdh/laravel-debugbar"><code>barryvdh/laravel-debugbar</code></a>.</li>
+<li>Don't return the full model object where only a few column needed. Allow user to ask for the data they needed. You could use something like <a href="https://github.com/spatie/laravel-query-builder"><code>spatie/laravel-query-builder</code></a> for that. You could also enable sorting feature by using <a href="https://github.com/spatie/eloquent-sortable"><code>spatie/eloquent-sortable</code></a> package.</li>
+<li>Always return paginated response while returning a Collection. If needed make an option to ask for the number of objects they needed.</li>
+<li>Do not hard delete sensitive data, use soft delete instead.</li>
+<li>Use a proper monitoring tool for your API like <a href="https://newrelic.com/">newrelic</a>.</li>
+</ul>
+
+<h4>STEP 3</h4>
+
+<ul>
+<li>For API authentication you could use simple <a href="https://laravel.com/docs/6.x/api-authentication">token based authentication</a>, <a href="https://jwt-auth.readthedocs.io/en/develop/">JWT</a>, <a href="https://laravel.com/docs/7.x/sanctum#introduction">Sanctum</a> or <a href="https://laravel.com/docs/7.x/passport">Passport</a> based on your need.</li>
+<li>For advanced searching use something like <a href="https://laravel.com/docs/7.x/scout">Laravel Scout</a>.</li>
+<li>Use caching where ever possible, use proper <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag"><code>ETag</code></a> header, and handle <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match"><code>If-None-Match</code></a> header in the request. Laravel also provide a <a href="https://laravel.com/docs/7.x/responses#attaching-headers-to-responses"><code>cache.headers</code></a> middleware out of the box, you can use that to handle api caching too.</li>
+<li>Do not load unused classes, disable them from <code>config/app.php</code> file.</li>
+<li>For localization, you can use <a href="https://github.com/spatie/laravel-translatable"><code>spatie/laravel-translatable</code></a> package.</li>
+</ul>
+
+<h4>STEP 4</h4>
+
+<ul>
+<li>Use <a href="https://en.wikipedia.org/wiki/HATEOAS"><code>HATEOAS</code></a> (Hypermedia as the Engine of Application State).</li>
+<li>Use an API standard like <a href="https://jsonapi.org/"><code>json:api</code></a>, you could use <a href="https://laravel-json-api.readthedocs.io/en/latest/"><code>cloudcreativity/laravel-json-api</code></a>, <a href="https://laravel-json-api.readthedocs.io/en/latest/"><code>cloudcreativity/json-api-testing</code></a> and <a href="https://github.com/spatie/laravel-json-api-paginate"><code>spatie/laravel-json-api-paginate</code></a> to easily achieve that. Column filter and compound documents implies almost the same features as GraphQL.</li>
+<li>Use proper API versioning, maintain backward compatibility.</li>
+<li>Write test, test, test!</li>
+<li>Use custom response code for explaining different situation if your API suite id fairly big like Braintree does for their APIs.</li>
+</ul>
+
+<p>Enjoy!!</p>
+        </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/talk/klassroom-presents-techtalk-scaling-api-with-laravel';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'klassroom-presents-techtalk-scaling-api-with-laravel'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

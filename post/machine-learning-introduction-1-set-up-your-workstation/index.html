@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/machine-learning-introduction-1-set-up-your-workstation" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | Machine Learning Introduction – 1: Set up your workstation" />
+    <meta property="og:description" content="Setting up your workstation for practicing Machine Learning." />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Machine Learning Introduction – 1: Set up your workstation">
+    <meta name="twitter:description" content="Setting up your workstation for practicing Machine Learning.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="Setting up your workstation for practicing Machine Learning.">
+
+    
+    <meta itemprop="name" content="milon.im | Machine Learning Introduction – 1: Set up your workstation">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>Machine Learning Introduction – 1: Set up your workstation</h2>
+            <p>23 February, 2017</p>
+        </section>
+
+        <section class="about-section">
+            <p>Recently, we are planning to use machine learning in one of our core product in Telenor Health. So, I am seriously looking into machine learning for the last few days. Though I have a computer science degree, to be honest, I didn't have a good grasp on machine learning rather than having some basic knowledge of some algorithm like linear regression, K nearest neighbor algorithm and some familiarity with some machine learning term like neural network, deep learning etc. Many people are doing machine learning without having CS degree. So I thought, why not give it a try?</p>
+
+<p><img src="/assets/images/posts/machine_learning-1024x724.jpg" alt="Machine Learning" /></p>
+
+<p>I am writing this series in English, though I English is not very good. One reason is this will improve my English writing skill and other thing is my foreign friends could understand what I learn. So, pardon me for my writing.</p>
+
+<p>I knew in the field of machine learning, two languages are very popular. One is R and another is Python. As I am already very familiar with Python, so I am going for Python. First you need to install python and other machine learning library. I assume you have already installed python in your machine. Rather than windows every operating system comes with python installed. If not, then do a quick google search and I guarantee you will figure it out.</p>
+
+<p>Python has some great library for machine learning. I am going to install them right now. I will be using virtualenv for this cause I don't want my machine filled with these libraries. Python has a very popular distribution called Anaconda. If you are using that, you will have lot of these tools already installed. But I am going for the simpler approach. I will be using pip to install these package. But before that, lets start with virtualenv setup. In your terminal just type-</p>
+
+<pre><code>pip install virtualenv
+</code></pre>
+
+<p>Then, I am going to create a new environment called env.</p>
+
+<pre><code>virtualenv env -p /usr/local/bin/python3
+</code></pre>
+
+<p>I will be using python 3.6 throughout this series. So I pass <code>-p</code> flag for the python3 path. As I am in macOS, that is my path. You could find the path by writing <code>which python3</code> in the terminal. As the environment is created, then you can activate that by typing-</p>
+
+<pre><code>source env/bin/activate
+</code></pre>
+
+<p>Make sure whenever you are working with this setup, you always start is form the terminal. If you close the terminal windows, then the environment will be deactivated. You can also deactivate it by typing-</p>
+
+<pre><code>deactivate
+</code></pre>
+
+<p>As, our environment is ready, then lets start with numpy. This is a very popular look for numerical calculation in python.</p>
+
+<pre><code>pip install numpy
+</code></pre>
+
+<p>Then we will install two other dependencies named pandas and matplotlib. First one is a data analysis tool and second one is for plotting numerical data into beautiful diagram.</p>
+
+<pre><code>pip install pandas matplotlib
+</code></pre>
+
+<p>Then lastly install scikit-learn with pip by following command-</p>
+
+<pre><code>pip install scikit-learn
+</code></pre>
+
+<p>Though pip should install all the dependencies of scikit-learn, but for some weird reason, it didn't install scipy. So, we have to install it manually as well.</p>
+
+<pre><code>pip install scipy
+</code></pre>
+
+<p>Now, as we have setup all our dependencies, we could check it by running-</p>
+
+<pre><code>pip freeze
+</code></pre>
+
+<p>You will find a tons of module installed. Thats because the libraries we installed are dependent on those libraries.</p>
+
+<p>Our machine is ready for doing some fun with machine learning. See you in next episode. Happy learning.</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/machine-learning-introduction-1-set-up-your-workstation';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'machine-learning-introduction-1-set-up-your-workstation'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

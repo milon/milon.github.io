@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/learn-python-easily-03" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | সহজে পাইথন শেখা-০৩" />
+    <meta property="og:description" content="সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)" />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | সহজে পাইথন শেখা-০৩">
+    <meta name="twitter:description" content="সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)">
+
+    
+    <meta itemprop="name" content="milon.im | সহজে পাইথন শেখা-০৩">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>সহজে পাইথন শেখা-০৩</h2>
+            <p>29 June, 2012</p>
+        </section>
+
+        <section class="about-section">
+            <p>আমি এখন পর্যন্ত যতগুলো প্রোগ্রামিং ল্যাংগুয়েজ শিখেছি সবগুলোতেই প্রথম প্রোগ্রাম লিখেছিলাম Hello World এই শব্দদুটি প্রিন্ট করার মাধ্যমে। এটা আসলে একটা ট্রেডিশন হয়ে গেছে। পাইথনেও প্রথম প্রোগ্রাম করবো এই শব্দদুটিই প্রিন্ট করে। আমি আগেও বলেছি প্রোগ্রামিং শুরু করার জন্য পাইথন খুবই উপযোগী একটা প্রোগ্রামিং ল্যাংগুয়েজ। অন্য ল্যাংগুয়েজে এই শব্দদুটি লেখার জন্য যেখানে অনেক কিছু লিখতে হয় পাইথনে মাত্র কয়েকটা শব্দ লিখলেই সে কাজ করা যায়। একটা উদাহরন দেই- Hello World শব্দদুইটা C, C++, Java এবং Python এই চারটা প্রোগ্রামিং ল্যাংগুয়েজে লিখে তুলনা করি-</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+int main(){
+    printf(“Hello World”);
+    return 0;
+}
+</code></pre>
+
+<p>Hello World in C++:</p>
+
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    cout&lt;&lt;”Hello World”;
+    return 0;
+}
+</code></pre>
+
+<p>Hello World in Java:</p>
+
+<pre><code>public static void main(String args[]){
+    System.out.println(“Hello World”);
+}
+</code></pre>
+
+<p>Hello World in Python:</p>
+
+<pre><code>print “Hello World”
+</code></pre>
+
+<p>বোঝাই যাচ্ছে অন্য যে কোন ল্যাংগুয়েজের তুলনায় পাইথনে কোড করা কত সহজ।</p>
+
+<p>আমরা কিন্তু ইতোমধ্যে পাইথনে আমাদের প্রথম কোড করে ফেলেছি। শুধু Hello World না, এই print স্ট্যাটমেন্ট দিয়ে আমরা পাইথন শেলে যে কোন কিছুই প্রিন্ট করতে পারি। যেমন আমি যদি আমার নাম ধাম প্রিন্ট করতে চাই, তাহলে প্রোগ্রামটি হবে-</p>
+
+<pre><code>print “Nuruzzaman Milon”
+print “Student of Information and Communication Technology”
+print “Mawlana Bhashani Science and Technology University”
+</code></pre>
+
+<p>এ তো গেল আমি পাইথন শেলে কিভাবে কোড লিখবো সেটা। পাইথন শেল বন্ধ করে দিলেই তো আমার লেখা সব কোড মুছে যাবে। বার বার এই কোড কি আমি লিখবো? না, বার বার একই কোড লেখার কোন দরকার নেই। আমি আমার কোড খুব সহজেই একটা টেক্সট ফাইলে সংরক্ষন করে রাখতে পারি। তবে এক্ষেত্রে ফাইলের এক্সটেনশন হতে হবে <code>.py</code></p>
+
+<p>যেমন আমি যদি উপরের প্রোগ্রামটি সংরক্ষন করে রাখতে চাই তাহলে আমি সেটিকে, ধরা যাক name নামে সংরক্ষন করবো, সেক্ষেত্রে ফাইলের নাম হবে <code>name.py</code></p>
+
+<p>এবার আমি যদি ফাইলটি আবার চালাতে চাই তাহলে আমাকে পাইথন শেলে লিখতে হবে-</p>
+
+<pre><code>python name.py
+</code></pre>
+
+<p>তাহলেই আমি পাইথন শেলে আমার কাঙ্খিত ফলাফল দেখতে পারবো।</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/learn-python-easily-03';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'learn-python-easily-03'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/software-engineering-practical-aspects-02" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-২" />
+    <meta property="og:description" content="My thoughts on Software Engineering&#039;s practical aspects." />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-২">
+    <meta name="twitter:description" content="My thoughts on Software Engineering&#039;s practical aspects.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="My thoughts on Software Engineering&#039;s practical aspects.">
+
+    
+    <meta itemprop="name" content="milon.im | সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-২">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-২</h2>
+            <p>26 November, 2012</p>
+        </section>
+
+        <section class="about-section">
+            <p>কিছু কোর্স প্রজেক্ট আমাদেরকে বিভিন্ন ধরনের বাধ্যবাধকতা জুড়ে দেয়। যেমন- সি প্রজেক্ট করতে হয় বেশিরভাগ বিশ্ববিদ্যালয়গুলোতে। এছাড়া রয়েছে অবজেক্ট অরিয়েন্টেড প্রোগ্রামিংয়ের প্রজেক্ট যা সাধারনত সবাই জাভা বা সি# ব্যবহার করে করে। অন্যান্য ক্ষেত্রে ছাত্রদের স্বাধীনতা থাকে প্রজেক্ট করার ক্ষেত্রে। এছাড়া আমরা যখন ব্যবহারিক সফটয়্যার তৈরী করবো, তখনো ক্লায়েন্টের কাছ থেকে বিভিন্ন ধরনের চাহিদা বা রিকোয়্যারমেন্ট আসতে পারে। এ ব্যাপারগুলোর দিকে সব সময় খেয়াল রাখতে হবে।</p>
+
+<p><strong>প্রজেক্ট প্রস্তাবনা</strong></p>
+
+<p>প্রজেক্ট প্রস্তাবনা রাখার ক্ষেত্রে কয়েকটি বিষয় খেয়াল রাখা উচিৎ-</p>
+
+<ul>
+<li>এমন বিষয় নির্বাচন করা উচিৎ যেটা নির্দিষ্ট সময়ের মধ্যে দলটি দ্বারা করা সম্ভব হবে। বেশিরভাগ প্রজেক্ট করার জন্য সময় থাকে ছয় মাস বা ক্ষেত্রবিশেষে এক বছর। এমন প্রজেক্ট কখনোই নির্বাচন করা উচিৎ হবে না, যা এই সময়ের মধ্যে করা সম্ভব হবে না।</li>
+<li>প্রজেক্ট নির্বাচনের সময় কোন একজনের সমস্যার সমাধানের চেয়ে বেশি খেয়াল রাখা দরকার এটার ব্যবহারিক প্রয়োগের দিকে। একটা সফটয়্যার প্রজেক্টের টার্গেট পিপল বা ভোক্তা কারা হবে সে বিষয়ে খেয়াল রেখে প্রজেক্ট নির্বাচন করা উচিৎ।</li>
+<li>যে সফটয়্যার বাজারে ইতোমধ্যে আছে সে ধরনের প্রজেক্ট নির্বাচন করা উচিৎ হবে না। আর নির্বাচন করা হলে অবশ্যই নতুন কোন বৈশিষ্ট্য যুক্ত করতে হবে যা বাজারে বিদ্যমান সফটয়্যারটিতে নেই।</li>
+<li>একটা প্রজেক্ট নির্বাচন করার পর সেটিতে আস্থা রাখতে হবে। প্রায়সই দেখা যায় একটা প্রজেক্ট নির্বাচন করার কিছুপর সেটা বদলে অন্য প্রজেক্ট নেয়া হয়। এতে করে সময়ের অপব্যবহার হয় এবং আত্নবিশ্বাসে ফাটল ধরে।</li>
+<li>সত্যিকারের ব্যবহারকারীদের টার্গেট করে সফটয়্যার তৈরী করতে হবে। অনেক সময় দেখা যায়, লাইব্রেরী ম্যানেজমেন্ট সিস্টেম, স্কুল ম্যানেজমেন্ট সিস্টেম বা এই ধরনের প্রজেক্ট নির্বাচন করা হয়, যা হয়তো কখনোই ব্যবহারিক কাজে ব্যবহৃত হবে না। এ ধরনের প্রজেক্ট নির্বাচন করলে যাতে ব্যবহারিক কাজে লাগানো যায় সেদিকে খেয়াল রাখতে হবে।</li>
+<li>প্রজেক্টের একটি সুন্দর এবং অর্থপূর্ণ নাম রাখতে হবে।</li>
+</ul>
+
+<p><strong>প্রজেক্ট ফিচার</strong></p>
+
+<p>প্রজেক্টের ফিচার কি কি হবে সে দিকে সতর্ক দৃষ্টি রাখতে হবে। কোন কোন ফিচারের দিকে খেয়াল রাখলে প্রজেক্টটি অন্যান্য প্রোডাক্টের চেয়ে ভাল হবে সেদিকে হাইলাইট করতে হবে। প্রজেক্টের শুরুতেই প্রোডাক্টের ইউজার ইন্টারফেস কি হবে সেদিকে খেয়াল রাখতে হবে। প্রোডাক্টটি যাতে এর ইউজারের কাছে আকর্ষনীয় হয়, সেদিকে সর্বোচ্চ গুরুত্ব দিতে হবে।</p>
+
+<p><strong>প্রজেক্ট ফিডব্যাক</strong></p>
+
+<p>প্রজেক্ট চলাকালীন সময়ে প্রজেক্ট সুপারভাইজার বা ক্লায়েন্ট(বানিজ্যিক সফটয়্যারের ক্ষেত্রে) এর মতামত নিতে হবে। এ ক্ষেত্রে আমি সর্বদা মডেল-ভিউ-কন্ট্রোলার মডেল অনুসরনের পরামর্শ দেব। প্রত্যেকটা অংশ সম্পূর্ণ হওয়ার সাথে সাথে সুপারভাইজারের পরামর্শ নিতে হবে। তা না হলে প্রজেক্ট কমপ্লিট করার পর এমন কোন ফরমায়েশ আসতে পারে যার কারনে হয়তো পুরো প্রজেক্টটিকে নতুন করে ঢেলে সাজানোর দরকার পড়বে। সেটা একঘেয়েমীপূর্ণ আর বিরক্তিকর হবে।</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/software-engineering-practical-aspects-02';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'software-engineering-practical-aspects-02'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>
