@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/laravel-todo-app" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | লারাভেল সিম্পল টু-ডু লিস্ট" />
+    <meta property="og:description" content="লারাভেলের ৫.১ এবং মাইসিক্যুয়েল ব্যবহার করে তৈরি করা টু-ডু লিস্ট এ্যাপ্লিকেশন" />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | লারাভেল সিম্পল টু-ডু লিস্ট">
+    <meta name="twitter:description" content="লারাভেলের ৫.১ এবং মাইসিক্যুয়েল ব্যবহার করে তৈরি করা টু-ডু লিস্ট এ্যাপ্লিকেশন">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="লারাভেলের ৫.১ এবং মাইসিক্যুয়েল ব্যবহার করে তৈরি করা টু-ডু লিস্ট এ্যাপ্লিকেশন">
+
+    
+    <meta itemprop="name" content="milon.im | লারাভেল সিম্পল টু-ডু লিস্ট">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>লারাভেল সিম্পল টু-ডু লিস্ট</h2>
+            <p>07 June, 2015</p>
+        </section>
+
+        <section class="about-section">
+            <p>আমার বইটা প্রকাশিত হবার পর থেকেই অনেকের কাছ থেকেই একটা অনুরোধ পেয়েছি। সেটা হচ্ছে আমার বইয়ে একটা ডেমো অ্যাপের দরকার ছিল, কিন্তু সেটা দেয়া হয় নি। তাই সবার অনুরোধ রাখতে আমি একটা সিম্পল টু-ডু অ্যাপ তৈরি করেছি। এই অ্যাপটি তৈরি করতে আমি ব্যবহার করেছি লারাভেল ফ্রেমওয়ার্ক ৫.১ ভার্সন এবং মাইসিক্যুয়েল।</p>
+
+<p>এই অ্যাপটির কোড পাবেন <a href="https://github.com/milon/laravel-todo">গিটহাবে</a>। এখানে অথেনটিকেশন, সিম্পল CRUD(Create, Read, Update, Delete) অপারেশন, রিসোর্সফুল রাউটিং, ফরম মডেল বাইন্ডিং, ফরম রিকোয়েস্ট, ফ্ল্যাশ ম্যাসেজ, পেজিনেশন সহ কিভাবে আপনি আপনার কোড গুছিয়ে লিখতে পারবেন, সে ব্যাপারে আলোকপাত করা হয়েছে।</p>
+
+<p><img src="/assets/images/posts/todo-01.png" alt="Todo App - Landing Page" /></p>
+
+<p><img src="/assets/images/posts/todo-02.png" alt="Todo App - Sign In Page" /></p>
+
+<p><img src="/assets/images/posts/todo-03.png" alt="Todo App - Registration Page" /></p>
+
+<p><img src="/assets/images/posts/todo-04.png" alt="Todo App - Todo List Page" /></p>
+
+<p><img src="/assets/images/posts/todo-05.png" alt="Todo App - Create New Todo Page" /></p>
+
+<p><img src="/assets/images/posts/todo-06.png" alt="Todo App - User Profile Page" /></p>
+
+<p>অ্যাপটি আপনার পিসিতে রান করতে হলে প্রথমেই গিটহাবে রিপোজিটরিটি ফর্ক করুন, তারপর ক্লোন করতে নিচের কমান্ডটি দিন-</p>
+
+<pre><code>git clone https://github.com/milon521/laravel-todo.git
+</code></pre>
+
+<p>এরপর ঐ ডিরেক্টরিতে প্রবেশ করুন নিচের কমান্ডটির মাধ্যমে-</p>
+
+<pre><code>cd laravel-todo
+</code></pre>
+
+<p>এরপর .env ফাইলটি তৈরি করুন নিচের কমান্ডটির মাধ্যমে-</p>
+
+<pre><code>cp .env.example .env
+</code></pre>
+
+<p>এবার .env ফাইলে আপনার প্রয়োজনীয় পরিবর্তন করে নিন। শুধুমাত্র DB_USERNAME এবং DB_PASSWORD এই দুইটি ফিল্ড পরিবর্তন করলেই হয়ে যাওয়ার কথা। তারপর আপনি নতুন একটি ডেটাবেজ তৈরি করুন todos নামে।</p>
+
+<p>এরপর আপনি আপনার প্রয়োজনীয় ডিপেন্ডেন্সি ডাউনলোড করুন নিচের কমান্ডটির মাধ্যমে-</p>
+
+<pre><code>composer update
+</code></pre>
+
+<p>এবার আপনি নিচের কমান্ডটির মাধ্যমে আপনার ডেটাবেজ মাইগ্রেশন করে নিন-</p>
+
+<pre><code>php artisan migrate
+</code></pre>
+
+<p>সবশেষে আপনি storage ফোল্ডারের রাইট পারমিশন দেন এভাবে-</p>
+
+<pre><code>sudo chmod 777 -R /storage
+</code></pre>
+
+<p>ব্যাস হয়ে গেছে। এবার প্রজেক্টটি রান করতে টার্মিনালে লিখুন-</p>
+
+<pre><code>php artisan serve
+</code></pre>
+
+<p>এবার আপনি আপনার ব্রাউজারে <code>‌http://localhost:8000‌</code> ইউআরএলে গেলে প্রজেক্টটি দেখতে পারবেন।</p>
+
+<p>আপনারা যদি চান তাহলে আমি কিভাবে প্রজেক্টি তৈরি করলাম সেটি স্টেপ বাই স্টেপ লিখবো। সেক্ষেত্রে আমাকে আপনাদের ব্যাপারটি জানাতে হবে।</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/laravel-todo-app';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'laravel-todo-app'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>

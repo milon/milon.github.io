@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Rx880OWl.css">
+
+            <meta property="og:url" content="https://milon.im/post/laravel-valet-installation" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | লারাভেল ভ্যালে ইনস্টলেশন" />
+    <meta property="og:description" content="কিভাবে লারাভেল ভ্যালে ইনস্টল এবং কনফিগার করবেন আপনার ওয়ার্কস্টেশনে।" />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | লারাভেল ভ্যালে ইনস্টলেশন">
+    <meta name="twitter:description" content="কিভাবে লারাভেল ভ্যালে ইনস্টল এবং কনফিগার করবেন আপনার ওয়ার্কস্টেশনে।">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="কিভাবে লারাভেল ভ্যালে ইনস্টল এবং কনফিগার করবেন আপনার ওয়ার্কস্টেশনে।">
+
+    
+    <meta itemprop="name" content="milon.im | লারাভেল ভ্যালে ইনস্টলেশন">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>লারাভেল ভ্যালে ইনস্টলেশন</h2>
+            <p>09 May, 2016</p>
+        </section>
+
+        <section class="about-section">
+            <p>গত পরশু(৭ মে, ২০১৬) লারাভেলের নতুন ডেভেলপমেন্ট এনভায়রনমেন্ট লারাভেল ভ্যালে(Valet) রিলিজ দেয়া হয়েছে। এটা ম্যাক অপারেটিং সিস্টেমের জন্য একটা সিম্পলিফায়েড ডেভেলপমেন্ট এনভায়রনমেন্ট। এটা ইনস্টল এবং ব্যবহার করা খুবই সহজ। আপনি শুধুমাত্র আপনার পিসিতে একটি প্রজেক্ট ইনস্টল দিবেন এবং প্রজেক্টের ফোল্ডারের নামের সাথে .dev যুক্ত করে ব্রাউজারে সেটি ব্রাউজ করতে পারবেন। ভ্যালে কি, এটা কিভাবে কাজ করে, এটা নিয়ে এডাম ওয়াদান একটি চমৎকার ভিডিও তৈরি করেছেন। সেটি দেখুন।</p>
+
+<iframe width="600" height="315" src="https://www.youtube.com/embed/H3Z4Gk9Wc0s" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen="">
+</iframe>
+
+<p>যারা এর পূর্বে লারাভেলের হোমস্টিড ব্যবহার করতেন, তারা নিশ্চয়ই জানেন সেটা ব্যবহারের জন্য আপনাকে অনেকগুলো ডিপেন্ডেন্সি ইনস্টল করতে হয়। যেমন- ভার্চুয়াল বক্স, ভ্যাগরেন্ট ইত্যাদি। এগুলি ইনস্টল করার পর লারাভেলের হোমস্টিড বক্স ইনস্টল করতে হয়। এই ফাইলগুলি আকারে বেশ বড়, প্রায় কয়েক গিগাবাইট। তাই ইনস্টল করতে প্রচুর সময় লাগে। এরপর প্রত্যেকটা সাইট এড করার সময় হোমস্টিডের yaml ফাইল এডিট করতে হয়। এরপর সেটা প্রভিশনিং করে আপনার মেশিনের hosts ফাইল এডিট করতে হয়। সে তুলনায় ভ্যালে ইনস্টল করা খুবই সহজ এবং এর সাইজও অনেক ছোট। এটা পিএইচপির বিল্ট-ইন সার্ভার ব্যবহার করে, ফলে এটা ব্যবহার করার জন্য আপনাকে এপাচি, এনজিনেক্স বা এ ধরনের ওয়েব সার্ভার ব্যবহার করতে হবে না। শুধুমাত্র পিএইচপি এবং মাইসিক্যুয়েল ইনস্টল করা থাকলেই আপনি ভ্যালে ব্যবহার করতে পারবেন। চলুন দেখি একেবারে নতুন একটি ম্যাক মেশিনে আপনি কিভাবে ভ্যালে ইনস্টল করবেন।</p>
+
+<p>প্রথমেই আপনাকে হোমব্রু ইনস্টল করতে হবে। এটা ম্যাকের জন্য একটি প্যাকেজ ম্যানেজার, যার মাধ্যমে আপনি বিভিন্ন ডেভেলপার টুলস খুব সহজেই ইনস্টল করতে পারবেন। আপনি যেহেতু ম্যাক ইউজার, অবশ্যই এটা আপনার মেশিনে ইনস্টল থাকা উচিৎ। এটা ইনস্টল করা খুবই সহজ। আপনি শুধুমাত্র নিচের কমান্ডটি টার্মিনালে চালালেই হবে।</p>
+
+<pre><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</code></pre>
+
+<p>এরপর এর মাধ্যমে পিএইচপি ইনস্টল করতে হবে। এটা করতে নিচের কমান্ডটি রান করুন-</p>
+
+<pre><code>brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/homebrew-php
+brew install php70
+</code></pre>
+
+<p>যেহেতু আপনি ম্যাক অপারেটিং সিস্টেম ব্যবহার করছেন এটিতে ইতোমধ্যে একটি পিএইচপি ভার্সন ইনস্টল করা থাকে। উপরের কমান্ডের মাধ্যমে আপনি পিএইচপির লেটেস্ট ভার্সন পিএইচপি ৭ ইনস্টল করলাম।</p>
+
+<p>এবার কম্পোজার ইনস্টল করবেন নিচের কমান্ডের মাধ্যমে-</p>
+
+<pre><code>brew install composer
+</code></pre>
+
+<p>এবারে মাইসিক্যুয়েল ইনস্টল করবেন নিচের কমান্ডের মাধ্যমে-</p>
+
+<pre><code>brew install mysql
+</code></pre>
+
+<p>মাইসিক্যুয়েল সার্ভার স্টার্ট করতে নিচের কমান্ডটি দিতে পারেন-</p>
+
+<pre><code>brew services mysql start
+</code></pre>
+
+<p>মাইসিক্যুয়েলের যে ইনস্ট্যান্সটি ইনস্টল হয়েছে সেটার ইউজারনেম root এবং পাসওয়ার্ড হিসেবে আছে একটা এম্পটি স্ট্রিং। আপনি টার্মিনাল থেকে নিচের কমান্ডের মাধ্যমে মাইসিক্যুয়েল এক্সেস করতে পারবেন।</p>
+
+<pre><code>mysql -uroot
+</code></pre>
+
+<p>এবারে লারাভেল ভ্যালে ইনস্টল করার পালা। এর জন্য টার্মিনালে নিচের কমান্ডটি দিন-</p>
+
+<pre><code>composer global require laravel/valet
+</code></pre>
+
+<p>ইনস্টল হয়ে গেলে প্রথমে ভ্যালের বিভিন্ন ডিপেন্ডেন্সি ইনস্টল করুন নিচের কমান্ডের মাধ্যমে-</p>
+
+<pre><code>valet install
+</code></pre>
+
+<p>এই কমান্ডটি আপনার মেশিনের সুডো পাসওয়ার্ড চাইবে কারন এটি <code>dsnmasq</code> নামে একটি ইউটিলিটি আপনার সিস্টেমে ইনস্টল করবে। এটি করা হয়ে গেলে আপনি যে ফোল্ডারে আপনার প্রজেক্টগুলো রাখতে চান, সেটিতে প্রবেশ করুন। তারপর নিচের কমান্ডটি দিন।</p>
+
+<pre><code>cd project-folder
+valet park
+</code></pre>
+
+<p>ব্যস, আপনার সব কাজ শেষ। ধরুন আমরা এখন একটি নতুন প্রজেক্ট তৈরি করবো ব্লগ নামে। তাহলে প্রথমে এই নামে একটি লারাভেল প্রজেক্ট তৈরি করি।</p>
+
+<pre><code>composer create-project laravel/laravel blog --prefer-dist
+</code></pre>
+
+<p>এবার আমরা ব্রাউজারে যদি <code>blog.dev</code> ব্রাউজ করি তাহলেই প্রজেক্টটি দেখতে পাবো।</p>
+
+<p>শুধু তাই নয়, আপনি যদি এখন এই প্রজেক্টটি আপনার কো-ওয়ার্কারদের সাথে শেয়ার করতে চান সেটিও করতে পারবেন খুব সহজে। আপনি ব্লগ প্রজেক্টের ডিরেক্টরিতে প্রবেশ করুন। তারপর নিচের কমান্ডটি দিন।</p>
+
+<pre><code>cd blog
+valet share
+</code></pre>
+
+<p>এই কমান্ডের মাধ্যমে আপনি একটি ইউআরএল আপনার টার্মিনালে দেখতে পারবেন। এছাড়াও সেটি আপনার ক্লিপবোর্ডে কপি করা অবস্থাতেও পাবেন, শুধুমাত্র পেস্ট করলেই চলবে। কি অসাধারন!</p>
+
+<p>ভ্যালে শুধুমাত্র লারাভেলই না আরো অনেক পিএইচপি প্রজেক্টের সাথে আউট অব দ্য বক্স কাজ করে। এছাড়া আপনি চাইলে নিজেও যে কোন প্রজেক্টের জন্য ভ্যালে ড্রাইভার তৈরি করে নিতে পারেন, যা আসলে খুবই সহজ। বিস্তারিত জানতে ভ্যালের <a href="https://laravel.com/docs/5.2/valet">অফিশিয়াল ডকুমেন্টেশন</a> দেখতে পারেন।</p>
+
+<p>আপনি নিশ্চয়ই অবাক হয়েছেন, লারাভেল ভ্যালে কিভাবে এতসব করে? এটার কার্যপদ্ধতি সম্পর্কে বিস্তারিত জানতে <a href="http://themsaid.github.io/magic-behind-laravel-valet-20160506/">এখানে</a> দেখতে পারেন।</p>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/laravel-valet-installation';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'laravel-valet-installation'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+            </section>
+
+        <section id="footer">
+            <div class="social-links">
+                <a href="/github" title="Github"><i class="fab fa-github"></i></a>
+                <a href="/twitter" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="/facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="/slideshare" title="SlideShare"><i class="fab fa-slideshare"></i></a>
+                <a href="/speakerdeck" title="Speakerdeck"><i class="fab fa-speaker-deck"></i></a>
+                <a href="/instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="/stackoverflow" title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+        </section>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+            </body>
+</html>
