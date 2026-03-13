@@ -86,6 +86,7 @@ a {
   color: var(--primary-color);
   transition: var(--transition);
   border-bottom: 1px solid transparent;
+  cursor: pointer;
 }
 
 a:visited {
@@ -209,6 +210,26 @@ section#footer {
 
 .footer-credit a:hover {
     text-decoration: underline;
+}
+
+.blogs-rss {
+    margin: 0 0 24px 0;
+    font-size: 0.95rem;
+}
+
+.blogs-rss a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: none;
+}
+
+.blogs-rss i {
+    color: var(--secondary-color);
+}
+
+.blogs-rss a:hover i {
+    color: inherit;
 }
 
 section.summary {

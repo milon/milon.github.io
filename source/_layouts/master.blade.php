@@ -14,9 +14,6 @@
     </head>
     <body>
         <section id="header">
-            <div class="header-icons">
-                <a title="RSS feed" href="/rss"><i class="fas fa-rss"></i></a>
-            </div>
             <h1>
                 <a href="{{ $page->baseUrl }}">
                     <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">

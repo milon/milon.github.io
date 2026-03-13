@@ -15,6 +15,9 @@ pagination:
 
 @section('body')
     <div>
+        <p class="blogs-rss">
+            <a href="/rss" title="Subscribe to RSS feed"><i class="fas fa-rss" aria-hidden="true"></i> RSS feed</a>
+        </p>
         @foreach ($pagination->items as $post)
             <section class="summary">
                 <h2>
