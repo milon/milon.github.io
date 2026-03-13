@@ -23,8 +23,72 @@
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    
+
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark theme */
+html[data-theme="dark"] {
+    --primary-color: #e6edf3;
+    --secondary-color: #8b949e;
+    --hover-color: #58a6ff;
+    --highlight-color: #3fb950;
+    --background-color: #2d2d2d;
+    --light-background: #383838;
+    --border-color: #4a4a4a;
+    --text-muted: #8b949e;
+
+    --table-border: #4a4a4a;
+    --table-background: #383838;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .header-logo {
+    filter: invert(1) drop-shadow(2px 4px 4px rgba(255, 255, 255, 0.15));
+}
+
+html[data-theme="dark"] .header-logo:hover {
+    filter: invert(1) brightness(1.1) drop-shadow(2px 4px 4px rgba(255, 255, 255, 0.2));
+}
+
+/* Theme toggle in header (same spot as old RSS) */
+.header-icons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.header-icons .theme-toggle {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--secondary-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    transition: var(--transition);
+}
+
+.header-icons .theme-toggle:hover {
+    color: var(--primary-color);
+    background-color: rgba(45, 45, 45, 0.1);
+}
+
+html[data-theme="dark"] .header-icons .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-icons .theme-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 body {
@@ -845,33 +909,6 @@ td, th {
 
 .category-tags span:hover {
     color: var(--primary-color);
-}
-
-.header-icons {
-    position: absolute;
-    font-size: 1.1em;
-    right: 0;
-    top: 0;
-}
-
-.header-icons a {
-    color: var(--secondary-color);
-    padding: 8px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    transition: var(--transition);
-    border-bottom: none;
-}
-
-.header-icons a:hover {
-    color: var(--primary-color);
-    background-color: rgba(45, 45, 45, 0.1);
-    transform: scale(1.1);
-    border-bottom: none;
 }
 
 .header-logo {

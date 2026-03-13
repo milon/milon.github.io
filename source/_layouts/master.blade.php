@@ -14,6 +14,11 @@
     </head>
     <body>
         <section id="header">
+            <div class="header-icons">
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
             <h1>
                 <a href="{{ $page->baseUrl }}">
                     <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
@@ -41,5 +46,35 @@
         @if ($page->production)
             @include('_layouts._partials._analytics')
         @endif
+        <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+                var icon = btn ? btn.querySelector('i') : null;
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    if (icon) {
+                        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+                    }
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                function getTheme() {
+                    try {
+                        var saved = localStorage.getItem(STORAGE_KEY);
+                        if (saved === 'dark' || saved === 'light') return saved;
+                    } catch (e) {}
+                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+
+                setTheme(getTheme());
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
     </body>
 </html>
