@@ -75,13 +75,6 @@ body {
         margin: 0 15px 10px 0;
     }
     
-    section#footer {
-        .social-links {
-            font-size: 24px;
-            gap: 15px;
-        }
-    }
-    
     .social-links a {
         width: 40px;
         height: 40px;
@@ -195,10 +188,27 @@ section#header p a.selected {
     border-bottom: none;
 }
 
+#footer,
 section#footer {
-    margin: 60px 0 40px 0;
+    margin: 48px 0 32px 0;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.footer-credit {
+    margin: 0;
+}
+
+.footer-credit a {
+    color: var(--primary-color);
+    border-bottom: none;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
 }
 
 section.summary {
@@ -403,6 +413,61 @@ section#paginator a.selected {
 
 .contact-page {
     max-width: 100%;
+}
+
+.contact-social {
+    margin-bottom: 40px;
+}
+
+.contact-social h3 {
+    font-family: var(--header-font);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 14px 0;
+    color: var(--primary-color);
+}
+
+.elsewhere-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px 24px;
+}
+
+.elsewhere-list li {
+    margin: 0;
+}
+
+.elsewhere-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 0.95rem;
+    border-bottom: none;
+    color: var(--primary-color);
+}
+
+.elsewhere-list a:hover {
+    color: var(--link-hover, var(--primary-color));
+}
+
+.elsewhere-list i {
+    width: 1.25em;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.elsewhere-list a:hover i {
+    color: inherit;
+}
+
+@media (max-width: 480px) {
+    .elsewhere-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .contact-info {

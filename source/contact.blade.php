@@ -53,6 +53,18 @@
             </div>
         </section>
 
+        <section class="contact-social">
+            <h3>Elsewhere</h3>
+            <ul class="elsewhere-list">
+                <li><a href="/github"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+                <li><a href="/facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+                <li><a href="/slideshare"><i class="fab fa-slideshare" aria-hidden="true"></i> SlideShare</a></li>
+                <li><a href="/speakerdeck"><i class="fab fa-speaker-deck" aria-hidden="true"></i> Speakerdeck</a></li>
+                <li><a href="/instagram"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                <li><a href="/stackoverflow"><i class="fab fa-stack-overflow" aria-hidden="true"></i> Stack Overflow</a></li>
+            </ul>
+        </section>
+
         <section class="contact-newsletter">
             <div class="newsletter-section">
                 <div class="newsletter-icon">
