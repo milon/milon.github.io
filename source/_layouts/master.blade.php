@@ -16,7 +16,7 @@
         <section id="header">
             <div class="header-icons">
                 <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
-                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <i class="far fa-moon" aria-hidden="true"></i>
                 </button>
             </div>
             <h1>
@@ -56,7 +56,7 @@
                 function setTheme(theme) {
                     html.setAttribute('data-theme', theme);
                     if (icon) {
-                        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+                        icon.className = theme === 'dark' ? 'far fa-sun' : 'far fa-moon';
                     }
                     try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
                 }

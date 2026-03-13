@@ -74,21 +74,21 @@ html[data-theme="dark"] .header-logo:hover {
     align-items: center;
     justify-content: center;
     font-size: 1.1em;
-    transition: var(--transition);
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
 
 .header-icons .theme-toggle:hover {
     color: var(--primary-color);
-    background-color: rgba(45, 45, 45, 0.1);
+    background-color: rgba(45, 45, 45, 0.12);
+    transform: scale(1.08);
+}
+
+.header-icons .theme-toggle:active {
+    transform: scale(0.98);
 }
 
 html[data-theme="dark"] .header-icons .theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.header-icons .theme-toggle:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 body {
@@ -233,17 +233,25 @@ section#header p a {
     font-size: 0.95em;
     border-radius: 6px;
     border-bottom: none;
-    transition: var(--transition);
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     color: var(--secondary-color);
     background-color: var(--light-background);
 }
 
 section#header p a:hover {
     color: var(--primary-color);
-    background-color: rgba(45, 45, 45, 0.1);
-    transform: translateY(-1px);
+    background-color: rgba(45, 45, 45, 0.12);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
     border-bottom: none;
+}
+
+html[data-theme="dark"] section#header p a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+section#header p a:active {
+    transform: translateY(0);
 }
 
 section#header p a.selected {
@@ -251,6 +259,10 @@ section#header p a.selected {
     color: var(--primary-color);
     background-color: rgba(45, 45, 45, 0.15);
     border-bottom: none;
+}
+
+html[data-theme="dark"] section#header p a.selected {
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 #footer,
