@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-CqMLUgpT.css">
+
+            <meta property="og:url" content="https://milon.im/post/data-structure-weighted-graph" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | ডাটা স্ট্রাকচারঃ Weighted Graph" />
+    <meta property="og:description" content="How to implement weighted graph." />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | ডাটা স্ট্রাকচারঃ Weighted Graph">
+    <meta name="twitter:description" content="How to implement weighted graph.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="How to implement weighted graph.">
+
+    
+    <meta itemprop="name" content="milon.im | ডাটা স্ট্রাকচারঃ Weighted Graph">
+    <meta itemprop="description" content="">
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <i class="far fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="selected" href="/blogs">Blogs</a>
+                <a class="" href="/laravel">Book</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="landing-page">
+        <section class="intro-section">
+            <h2>ডাটা স্ট্রাকচারঃ Weighted Graph</h2>
+            <p>24 May, 2011</p>
+        </section>
+
+        <section class="about-section">
+            <p>যে গ্রাফের প্রত্যেকটা এজের(edge) একটা Weight বা মান দেয়া থাকে তাকে Weighted Graph বলে। Weighted graph তৈরীর কৌশল হল-</p>
+
+<script src="https://gist.github.com/milon/c71e9c066dca9fb7707525cb2b514cdc.js">
+</script>
+        </section>
+
+        <section class="current-section">
+                    </section>
+    </div>
+
+    <hr>
+
+            <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/data-structure-weighted-graph';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'data-structure-weighted-graph'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>
+            </section>
+
+        <footer id="footer">
+            <p class="footer-credit">© 2026 <a href="https://milon.im/">Nuruzzaman Milon</a></p>
+        </footer>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+                var icon = btn ? btn.querySelector('i') : null;
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    if (icon) {
+                        icon.className = theme === 'dark' ? 'far fa-sun' : 'far fa-moon';
+                    }
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                function getTheme() {
+                    try {
+                        var saved = localStorage.getItem(STORAGE_KEY);
+                        if (saved === 'dark' || saved === 'light') return saved;
+                    } catch (e) {}
+                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+
+                setTheme(getTheme());
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+    </body>
+</html>
