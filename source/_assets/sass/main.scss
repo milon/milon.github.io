@@ -47,11 +47,11 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="dark"] .header-logo {
-    filter: invert(1) drop-shadow(2px 4px 4px rgba(255, 255, 255, 0.15));
+    filter: invert(1) drop-shadow(2px 4px 6px white);
 }
 
 html[data-theme="dark"] .header-logo:hover {
-    filter: invert(1) brightness(1.1) drop-shadow(2px 4px 4px rgba(255, 255, 255, 0.2));
+    filter: invert(1) brightness(1.2) drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
 }
 
 /* Theme toggle in header (same spot as old RSS) */
@@ -930,7 +930,7 @@ td, th {
     transition: var(--transition);
 
     &:hover {
-      filter: invert(0.5) drop-shadow(2px 4px 4px #454242);
+      filter: brightness(1.2) drop-shadow(0 0 12px rgba(0, 0, 0, 0.85));
     }
 }
 
