@@ -10,7 +10,7 @@
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@tighten/jigsaw-vite-plugin": "^1.0.0",
     "sass": "^1.32.8",
-    "vite": "^6.0.0",
+    "vite": "^6.4.2",
     "vite-plugin-static-copy": "^2.0.0"
   }
 }
