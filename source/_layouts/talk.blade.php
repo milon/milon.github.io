@@ -7,7 +7,7 @@
 @section('body')
     <div class="landing-page">
         <section class="intro-section">
-            <h2>{{ $page->title }}</h2>
+            <h2 style="view-transition-name: talk-{{ $page->getFilename() }}">{{ $page->title }}</h2>
             <p>{{ $page->formatedDate($page->date) }}</p>
         </section>
 

@@ -3,6 +3,44 @@
 @import "_reset.min";   // browser reset
 @import "_default.min"; // highlight js
 
+@view-transition {
+    navigation: auto;
+}
+
+@media not (prefers-reduced-motion: reduce) {
+    section#header {
+        view-transition-name: site-header;
+    }
+
+    section#body {
+        view-transition-name: main-content;
+    }
+
+    ::view-transition-old(main-content) {
+        animation: scale-out 0.3s ease both;
+    }
+
+    ::view-transition-new(main-content) {
+        animation: scale-in 0.3s ease both;
+    }
+}
+
+@keyframes scale-out {
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+        filter: blur(2px);
+    }
+}
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(1.03);
+        filter: blur(2px);
+    }
+}
+
 :root {
     --primary-color: #2d2d2d;
     --secondary-color: #6b7280;

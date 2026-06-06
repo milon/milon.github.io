@@ -21,7 +21,7 @@ pagination:
         @foreach ($pagination->items as $post)
             <section class="summary">
                 <h2>
-                    <a href="{{ $post->getUrl() }}">{{ $post->title }}</a>
+                    <a href="{{ $post->getUrl() }}" style="view-transition-name: post-{{ $post->getFilename() }}">{{ $post->title }}</a>
                 </h2>
                 <time>{{ $post->formatedDate($post->date) }}</time>
                 <article>

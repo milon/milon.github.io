@@ -18,7 +18,7 @@ pagination:
         @foreach ($pagination->items as $talk)
             <section class="summary">
                 <h2>
-                    <a href="{{ $talk->getUrl() }}">{{ $talk->title }}</a>
+                    <a href="{{ $talk->getUrl() }}" style="view-transition-name: talk-{{ $talk->getFilename() }}">{{ $talk->title }}</a>
                 </h2>
                 <time>{{ $talk->formatedDate($talk->date) }}</time>
                 <article>
