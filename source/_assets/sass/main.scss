@@ -787,6 +787,24 @@ iframe {
     overflow: hidden;
 }
 
+.book-subtitle {
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.badge-coming-soon {
+    display: inline-block;
+    font-size: 0.6em;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    vertical-align: middle;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
 .book-content h3 {
     font-family: var(--header-font);
     font-size: 1.3em;

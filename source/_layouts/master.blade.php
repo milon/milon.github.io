@@ -28,7 +28,7 @@
             <p>
                 <a class="{{ $page->selected('/') }}" href="/">Home</a>
                 <a class="{{ ($page->getPath() === '/blogs' || strpos($page->getPath(), '/post/') === 0) ? 'selected' : '' }}" href="/blogs">Blogs</a>
-                <a class="{{ $page->selected('/laravel') }}" href="/laravel">Book</a>
+                <a class="{{ ($page->getPath() === '/books' || strpos($page->getPath(), '/books/') === 0) ? 'selected' : '' }}" href="/books">Books</a>
                 <a class="{{ ($page->getPath() === '/talks' || strpos($page->getPath(), '/talk/') === 0) ? 'selected' : '' }}" href="/talks">Talks</a>
                 <a class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
                 <a class="{{ $page->selected('/cv') }}" href="/cv">CV</a>
