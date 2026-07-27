@@ -6,7 +6,6 @@ return [
     'siteAuthor' => 'Nuruzzaman Milon',
     'production' => false,
     'dusqusShortName' => 'milon-im',
-    'newsletterUrl' => 'https://tinyletter.com/to_milon',
     'paginatationLinkNumber' => 5,
     'urlRedirects' => require_once(__DIR__ . '/redirects.php'),
     'formatedDate' => function($page, $date) {
