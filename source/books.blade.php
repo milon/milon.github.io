@@ -13,7 +13,7 @@
 
         <section class="book-editions">
             <div class="book-edition">
-                <img class="book" src="/assets/images/book/laravel-in-production/cover-light.png" alt="Laravel in Production Cover">
+                <img class="book" src="/assets/images/book/laravel-in-production/cover-dark.png" alt="Laravel in Production Cover">
                 <div class="book-content">
                     <h3>Laravel in Production <span class="badge-coming-soon">Coming Soon</span></h3>
                     <p class="book-subtitle">Architecture, Performance, and Operations at Scale</p>
