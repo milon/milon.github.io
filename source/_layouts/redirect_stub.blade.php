@@ -3,8 +3,6 @@
     <head>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
 
-        {{-- tell search engine not to index --}}
-        <meta name="robots" content="noindex">
         {{-- redirect to new url --}}
         <meta http-equiv="Refresh" content="0; url={{ $url }}">
     </head>
