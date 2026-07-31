@@ -13,14 +13,13 @@
 
         <section class="book-editions">
             <div class="book-edition">
-                <img class="book" src="/assets/images/book/laravel-in-production/cover-dark.png" alt="Laravel in Production Cover">
+                <img class="book" src="/assets/images/book/laravel-after-deploy/cover.png" alt="Laravel in Production Cover">
                 <div class="book-content">
-                    <h3>Laravel in Production <span class="badge-coming-soon">Coming Soon</span></h3>
+                    <h3>Laravel After Deploy <span class="badge-coming-soon">Coming Soon</span></h3>
                     <p class="book-subtitle">Architecture, Performance, and Operations at Scale</p>
                     <p>For the mid-to-senior Laravel engineer who already knows how to build an application and is now the one handed the architecture decisions, the performance incident, and the migration that has to happen without a maintenance window.</p>
-                    <p>29 chapters across 8 parts covering system architecture, performance engineering, correctness under load, high availability, observability, deployment, and operations.</p>
                     <p>PDF (light & dark mode) · EPUB</p>
-                    <p><a href="https://laravel-in-production.milon.im/">Learn more & get notified →</a></p>
+                    <p><a href="https://laravel-after-deploy.milon.im/">Learn more & get notified →</a></p>
                 </div>
             </div>
 
