@@ -17,8 +17,7 @@
                 <div class="book-content">
                     <h3>Laravel After Deploy <span class="badge-coming-soon">Coming Soon</span></h3>
                     <p class="book-subtitle">Architecture, Performance, and Operations at Scale</p>
-                    <p>For the mid-to-senior Laravel engineer who already knows how to build an application and is now the one handed the architecture decisions, the performance incident, and the migration that has to happen without a maintenance window.</p>
-                    <p>PDF (light & dark mode) · EPUB</p>
+                    <p>Shipping a Laravel application is the easy part. The hard part starts after deploy: when a flash sale or a viral post turns usual traffic into a spike, when bots hammer your login endpoint, when a dependency you don't control has a bad afternoon, when the same webhook arrives twice, when the on-call phone rings at 3 a.m. and the answer isn't in the framework docs. This book is about that layer - the decisions that keep a real system fast, correct, and operable once it's already in production.</p>
                     <p><a href="https://laravel-after-deploy.milon.im/">Learn more & get notified →</a></p>
                 </div>
             </div>
