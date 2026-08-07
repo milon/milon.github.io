@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Bj08vnl_.css">
+
+            <meta property="og:url" content="https://milon.im/books" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="milon.im | Books" />
+    <meta property="og:description" content="Books by Nuruzzaman Milon" />
+    <meta property="og:image" content="https://milon.im/assets/images/qr-code.png" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Books" />
+    <meta name="twitter:description" content="Books by Nuruzzaman Milon" />
+    <meta name="twitter:image" content="https://milon.im/assets/images/qr-code.png" />
+
+    
+    <meta name="description" content="Books by Nuruzzaman Milon" />
+
+    
+    <meta itemprop="name" content="milon.im | Books" />
+    <meta itemprop="description" content="Books by Nuruzzaman Milon" />
+    </head>
+    <body>
+        <section id="header">
+            <div class="header-icons">
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <i class="far fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+            <h1>
+                <a href="https://milon.im/">
+                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
+                </a>
+            </h1>
+            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
+            <p>
+                <a class="" href="/">Home</a>
+                <a class="" href="/blogs">Blogs</a>
+                <a class="selected" href="/books">Books</a>
+                <a class="" href="/talks">Talks</a>
+                <a class="" href="/contact">Contact</a>
+                <a class="" href="/cv">CV</a>
+            </p>
+        </section>
+
+        <section id="body">
+                <div class="book-page">
+        <h2>Books</h2>
+
+        <section class="book-editions">
+            <div class="book-edition">
+                <img class="book" src="/assets/images/book/laravel-after-deploy/cover.png" alt="Laravel in Production Cover">
+                <div class="book-content">
+                    <h3>Laravel After Deploy <span class="badge-coming-soon">Coming Soon</span></h3>
+                    <p class="book-subtitle">Architecture, Performance, and Operations at Scale</p>
+                    <p>Shipping a Laravel application is the easy part. The hard part starts after deploy: when a flash sale or a viral post turns usual traffic into a spike, when bots hammer your login endpoint, when a dependency you don't control has a bad afternoon, when the same webhook arrives twice, when the on-call phone rings at 3 a.m. and the answer isn't in the framework docs. This book is about that layer - the decisions that keep a real system fast, correct, and operable once it's already in production.</p>
+                    <p><a href="https://laravel-after-deploy.milon.im/">Learn more & get notified →</a></p>
+                </div>
+            </div>
+
+            <div class="book-edition">
+                <img class="book" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition.jpg" alt="Laravel PHP Web Framework Cover">
+                <div class="book-content">
+                    <h3>Laravel PHP Web Framework</h3>
+                    <p class="book-subtitle">লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক</p>
+                    <p>A Bengali language book on the Laravel PHP framework, covering the fundamentals of Laravel for PHP developers looking to adopt modern framework practices.</p>
+                    <p>Published by Dimik Prokashoni. ISBN: 978-984-33-9190-2</p>
+                    <p><a href="/books/laravel">More details →</a></p>
+                </div>
+            </div>
+        </section>
+
+        <p class="back-link">
+    <a href="https://milon.im/">
+        <i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i> &nbsp;
+        <span class="msg">Back to Home</span>
+    </a>
+</p>    </div>
+        </section>
+
+        <footer id="footer">
+            <p class="footer-credit">© 2026 <a href="https://milon.im/">Nuruzzaman Milon</a></p>
+        </footer>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+                var icon = btn ? btn.querySelector('i') : null;
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    if (icon) {
+                        icon.className = theme === 'dark' ? 'far fa-sun' : 'far fa-moon';
+                    }
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                function getTheme() {
+                    try {
+                        var saved = localStorage.getItem(STORAGE_KEY);
+                        if (saved === 'dark' || saved === 'light') return saved;
+                    } catch (e) {}
+                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+
+                setTheme(getTheme());
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+    </body>
+</html>
