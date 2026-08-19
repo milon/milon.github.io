@@ -15,9 +15,9 @@
             <div class="book-edition">
                 <img class="book" src="/assets/images/book/laravel-after-deploy/cover.png" alt="Laravel in Production Cover">
                 <div class="book-content">
-                    <h3>Laravel After Deploy <span class="badge-coming-soon">Coming Soon</span></h3>
+                    <h3>Laravel After Deploy</h3>
                     <p class="book-subtitle">Architecture, Performance, and Operations at Scale</p>
-                    <p>Shipping a Laravel application is the easy part. The hard part starts after deploy: when a flash sale or a viral post turns usual traffic into a spike, when bots hammer your login endpoint, when a dependency you don't control has a bad afternoon, when the same webhook arrives twice, when the on-call phone rings at 3 a.m. and the answer isn't in the framework docs. This book is about that layer - the decisions that keep a real system fast, correct, and operable once it's already in production.</p>
+                    <p>Shipping is the easy part. The hard part starts after deploy: when a flash sale or a viral post turns usual traffic into a spike, when bots hammer your login endpoint, when a dependency you don’t control has a bad afternoon, when the same webhook arrives twice, when the on-call phone rings at 3 a.m. and the answer isn’t in the framework docs. This book is about that layer — the decisions that keep a real system fast, correct, and operable once it’s already in production. The examples are Laravel and PHP by design; the problems are not Laravel-only.</p>
                     <p><a href="https://laravel-after-deploy.milon.im/">Learn more & get notified →</a></p>
                 </div>
             </div>
