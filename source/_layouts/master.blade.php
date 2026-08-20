@@ -13,34 +13,43 @@
         @yield('meta')
     </head>
     <body>
-        <section id="header">
-            <div class="header-icons">
+        <header class="topbar">
+            <a class="wordmark" href="{{ $page->baseUrl }}">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="{{ $page->selected('/') }}" href="/">Root</a>
+                <a data-num="02" class="{{ ($page->getPath() === '/blogs' || strpos($page->getPath(), '/post/') === 0) ? 'selected' : '' }}" href="/blogs">Writing</a>
+                <a data-num="03" class="{{ ($page->getPath() === '/books' || strpos($page->getPath(), '/books/') === 0) ? 'selected' : '' }}" href="/books">Books</a>
+                <a data-num="04" class="{{ ($page->getPath() === '/talks' || strpos($page->getPath(), '/talk/') === 0) ? 'selected' : '' }}" href="/talks">Talks</a>
+                <a data-num="05" class="{{ $page->selected('/cv') }}" href="/cv">CV</a>
+                <a data-num="06" class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
                 <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
-                    <i class="far fa-moon" aria-hidden="true"></i>
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
                 </button>
-            </div>
-            <h1>
-                <a href="{{ $page->baseUrl }}">
-                    <img class="header-logo" src="/assets/images/logo.svg" alt="Nuruzzaman Milon">
-                </a>
-            </h1>
-            <h2 class="tagline">Programmer, Author, Tech Enthusiast</h2>
-            <p>
-                <a class="{{ $page->selected('/') }}" href="/">Home</a>
-                <a class="{{ ($page->getPath() === '/blogs' || strpos($page->getPath(), '/post/') === 0) ? 'selected' : '' }}" href="/blogs">Blogs</a>
-                <a class="{{ ($page->getPath() === '/books' || strpos($page->getPath(), '/books/') === 0) ? 'selected' : '' }}" href="/books">Books</a>
-                <a class="{{ ($page->getPath() === '/talks' || strpos($page->getPath(), '/talk/') === 0) ? 'selected' : '' }}" href="/talks">Talks</a>
-                <a class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
-                <a class="{{ $page->selected('/cv') }}" href="/cv">CV</a>
-            </p>
-        </section>
+            </nav>
+        </header>
 
-        <section id="body">
+        <main id="body">
             @yield('body')
-        </section>
+        </main>
 
         <footer id="footer">
-            <p class="footer-credit">© {{ date('Y') }} <a href="{{ $page->baseUrl }}">Nuruzzaman Milon</a></p>
+            <div class="footer-inner">
+                <span>© {{ date('Y') }} Nuruzzaman Milon</span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
         </footer>
 
         @if ($page->production)
@@ -51,13 +60,9 @@
                 var STORAGE_KEY = 'milon.im-theme';
                 var html = document.documentElement;
                 var btn = document.getElementById('theme-toggle');
-                var icon = btn ? btn.querySelector('i') : null;
 
                 function setTheme(theme) {
                     html.setAttribute('data-theme', theme);
-                    if (icon) {
-                        icon.className = theme === 'dark' ? 'far fa-sun' : 'far fa-moon';
-                    }
                     try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
                 }
 

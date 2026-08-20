@@ -11,19 +11,27 @@
 @endsection
 
 @section('body')
-    <h2>Curriculum Vitae</h2>
-    
-    <div id="pdf-container">
-        <div id="loading">Loading PDF...</div>
-        <div id="error" style="display: none;"></div>
-    </div>
-
-    <div id="controls">
-        <div id="navigation-group">
-            <button id="prev-page" disabled><i class="fas fa-angle-left"></i></button>
-            <span id="page-info"><span id="current-page">1</span>/<span id="total-pages">-</span></span>
-            <button id="next-page"><i class="fas fa-angle-right"></i></button>
+    <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Document</p>
+            <h1>Curriculum Vitae</h1>
+            <p class="sub">Engineering Tech Lead · Vancouver, British Columbia.</p>
         </div>
-        <button id="download-pdf" title="Download PDF"><i class="fas fa-download"></i></button>
+
+        <div class="doc-viewer">
+            <div id="controls" class="doc-toolbar">
+                <div id="navigation-group" class="doc-nav">
+                    <button id="prev-page" class="btn-ghost" disabled aria-label="Previous page">←</button>
+                    <span id="page-info" class="doc-count"><span id="current-page">1</span> / <span id="total-pages">-</span></span>
+                    <button id="next-page" class="btn-ghost" aria-label="Next page">→</button>
+                </div>
+                <button id="download-pdf" class="btn-ghost" title="Download PDF">↓ Download PDF</button>
+            </div>
+
+            <div id="pdf-container" class="doc-stage">
+                <div id="loading">Loading document…</div>
+                <div id="error" style="display: none;"></div>
+            </div>
+        </div>
     </div>
 @endsection

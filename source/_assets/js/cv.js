@@ -46,10 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // For mobile, use full width; for desktop, cap at reasonable size
         const isMobile = window.innerWidth < 768;
         const maxWidth = isMobile ? availableWidth : Math.min(availableWidth, 800);
-        
-        // Calculate scale to fit width, with minimum scale for readability
-        const scale = Math.max(0.8, maxWidth / 612);
-        
+
+        // Phones are narrower than the 0.8 floor allows, so fitting the page
+        // width wins over a minimum scale there.
+        const minScale = isMobile ? 0.1 : 0.8;
+        const scale = Math.max(minScale, maxWidth / 612);
+
         return Math.min(scale, 2.0); // Cap at 2.0 for quality
     }
 
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             canvas.width = displayWidth * dpr;
             canvas.height = displayHeight * dpr;
             canvas.style.width = displayWidth + 'px';
-            canvas.style.height = displayHeight + 'px';
+            // Height is left to CSS so max-width clamping keeps the aspect ratio.
             
             // Scale context for high DPI displays
             ctx.scale(dpr, dpr);

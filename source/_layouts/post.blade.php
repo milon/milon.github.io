@@ -5,28 +5,31 @@
 @endsection
 
 @section('body')
-    <div class="landing-page">
-        <section class="intro-section">
-            <h2 style="view-transition-name: post-{{ $page->getFilename() }}">{{ $page->title }}</h2>
-            <p>{{ $page->formatedDate($page->date) }}</p>
-        </section>
+    <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-{{ $page->getFilename() }}">{{ $page->title }}</h1>
+            <p class="article-meta">
+                <span>{{ $page->formatedDate($page->date) }}</span>
+                @if(count($page->getCategories()))
+                    <span class="sep">/</span>
+                    <span>{{ implode(' · ', $page->getCategories()) }}</span>
+                @endif
+            </p>
+        </div>
 
-        <section class="about-section">
+        <article class="prose">
             @yield('content')
-        </section>
 
-        <section class="current-section">
             @include('_layouts._partials._category_tags')
-        </section>
+        </article>
+
+        @if($page->production)
+            @include('_layouts._partials._disqus')
+        @endif
+
+        @include('_layouts._partials._back_to_home_link')
     </div>
-
-    <hr>
-
-    @if($page->production)
-        @include('_layouts._partials._disqus')
-    @endif
-
-    @include('_layouts._partials._back_to_home_link')
 
     @if($page->syntaxHighlight)
         @include('_layouts._partials._highlightjs')
