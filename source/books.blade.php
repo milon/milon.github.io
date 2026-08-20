@@ -13,7 +13,9 @@
 
         <section class="book-editions">
             <div class="book-edition">
-                <img class="book" src="/assets/images/book/laravel-after-deploy/cover.png" alt="Laravel After Deploy Cover">
+                <a href="https://laravel-after-deploy.milon.im/">
+                    <img class="book" src="/assets/images/book/laravel-after-deploy/cover.png" alt="Laravel After Deploy Cover">
+                </a>
                 <div class="book-content">
                     <h3>Laravel After Deploy</h3>
                     <p class="book-subtitle">Architecture, Performance, and Operations at Scale</p>
@@ -23,7 +25,9 @@
             </div>
 
             <div class="book-edition">
-                <img class="book" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition.jpg" alt="Laravel PHP Web Framework Cover">
+                <a href="/books/laravel">
+                    <img class="book" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition.jpg" alt="Laravel PHP Web Framework Cover">
+                </a>
                 <div class="book-content">
                     <h3>Laravel PHP Web Framework</h3>
                     <p class="book-subtitle">লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক</p>
