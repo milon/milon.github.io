@@ -8,6 +8,7 @@ pagination:
 
 @section('meta')
     @include('_layouts._partials._index_meta', [
+        'image' => 'writing',
         'title' => 'milon.im | Blogs',
         'description' => "Personal website of Nuruzzaman Milon",
     ])

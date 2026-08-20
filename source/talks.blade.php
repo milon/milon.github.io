@@ -8,6 +8,7 @@ pagination:
 
 @section('meta')
     @include('_layouts._partials._index_meta', [
+        'image' => 'talks',
         'title' => 'milon.im | Talks',
         'description' => "Conference talks of Nuruzzaman Milon",
     ])

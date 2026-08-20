@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('meta')
-    @include('_layouts._partials._article_meta')
+    @include('_layouts._partials._article_meta', ['image' => 'writing'])
 @endsection
 
 @section('body')
