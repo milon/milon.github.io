@@ -6,10 +6,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\Listeners\\": "Listeners"
+            "App\\Listeners\\": "Listeners",
+            "App\\Commands\\": "Commands"
         }
     },
     "scripts": {
+        "og": "php bin/og",
         "build": [
             "bun run build",
             "./vendor/bin/jigsaw build"
