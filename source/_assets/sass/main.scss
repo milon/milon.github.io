@@ -1040,6 +1040,27 @@ pre code {
 
 .newsletter .submit-btn:hover { opacity: 0.85; }
 
+.newsletter .submit-btn:disabled {
+    opacity: 0.55;
+    cursor: default;
+}
+
+.newsletter-msg {
+    font-family: var(--mono-font);
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    background-color: var(--paper-2);
+    border-left: 2px solid var(--ink-4);
+    border-radius: 2px;
+    margin: 14px 0 0;
+    padding: 11px 14px;
+}
+
+.newsletter-msg[hidden] { display: none; }
+
+.newsletter-msg[data-state="ok"] { border-left-color: var(--ink); }
+
 /* ─────────────────────────────────────────────────────
    Footer
    ───────────────────────────────────────────────────── */
