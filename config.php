@@ -26,7 +26,16 @@ return [
         return $formatted;
     },
     'getCategories' => function ($page) {
-        return $page->categories ?? [];
+        $categories = $page->categories ?? [];
+
+        if ($categories instanceof \Illuminate\Support\Collection) {
+            return $categories->values()->all();
+        }
+
+        return is_array($categories) ? array_values($categories) : [];
+    },
+    'categoryPath' => function ($page, $category) {
+        return '/posts/category/' . $category;
     },
     'selected' => function($page, $section) {
         return ($page->getPath() === $section) ? 'selected' : '';
@@ -39,6 +48,9 @@ return [
         'talks' => [
             'path' => 'talk/{filename}',
             'sort' => '-date',
+        ],
+        'categories' => [
+            'path' => 'posts/category/{filename}',
         ],
     ],
 ];

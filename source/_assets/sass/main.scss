@@ -469,8 +469,6 @@ html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
     color: var(--ink-4);
 }
 
-.article-meta .sep { color: var(--rule); }
-
 /* ─────────────────────────────────────────────────────
    Prose
    ───────────────────────────────────────────────────── */
@@ -694,15 +692,22 @@ pre code {
     border-top: 1px solid var(--rule);
 }
 
-.category-tags span {
+.category-tags a {
     font-family: var(--mono-font);
     font-size: 11px;
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--ink-3);
+    text-decoration: none;
     border: 1px solid var(--rule);
     border-radius: 2px;
     padding: 5px 10px;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+.category-tags a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
 }
 
 /* ─────────────────────────────────────────────────────

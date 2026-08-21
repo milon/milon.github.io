@@ -11,10 +11,6 @@
             <h1 style="view-transition-name: post-{{ $page->getFilename() }}">{{ $page->title }}</h1>
             <p class="article-meta">
                 <span>{{ $page->formatedDate($page->date) }}</span>
-                @if(count($page->getCategories()))
-                    <span class="sep">/</span>
-                    <span>{{ implode(' · ', $page->getCategories()) }}</span>
-                @endif
             </p>
         </div>
 
