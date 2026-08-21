@@ -515,13 +515,24 @@ html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 
 .prose a:hover { box-shadow: inset 0 -2px 0 var(--ink); }
 
+/* The reset clears list-style globally, so prose has to ask for markers back. */
 .prose ul,
 .prose ol {
     margin: 0 0 24px;
     padding-left: 22px;
 }
 
+.prose ul { list-style: disc outside; }
+.prose ol { list-style: decimal outside; }
+.prose ul ul { list-style: circle outside; }
+
 .prose li { margin-bottom: 8px; }
+
+.prose li > ul,
+.prose li > ol { margin: 8px 0 0; }
+
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
 .prose li::marker { color: var(--ink-4); }
 
 .prose blockquote {
