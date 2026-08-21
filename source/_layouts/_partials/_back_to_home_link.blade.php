@@ -1,3 +1,3 @@
 <p class="back-link">
-    <a href="{{ $page->baseUrl }}">← Back to Home</a>
+    <a href="{{ $href ?? $page->baseUrl }}">← {{ $label ?? 'Back to Home' }}</a>
 </p>

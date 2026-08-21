@@ -88,6 +88,9 @@
             </div>
         </section>
 
-        @include('_layouts._partials._back_to_home_link')
+        @include('_layouts._partials._back_to_home_link', [
+            'href' => '/books',
+            'label' => 'Back to Books',
+        ])
     </div>
 @endsection

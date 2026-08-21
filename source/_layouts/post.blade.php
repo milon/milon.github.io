@@ -28,7 +28,10 @@
             @include('_layouts._partials._disqus')
         @endif
 
-        @include('_layouts._partials._back_to_home_link')
+        @include('_layouts._partials._back_to_home_link', [
+            'href' => '/blogs',
+            'label' => 'Back to Writing',
+        ])
     </div>
 
     @if($page->syntaxHighlight)

@@ -10,7 +10,6 @@
 @section('body')
     <div class="shell">
         <section class="hero">
-            <p class="eyebrow">Vancouver, BC — Engineering Tech Lead</p>
             <h1>Building software that scales <em>to millions of users.</em></h1>
             <p class="lede">Programmer, author, and speaker. I lead the engineering behind production systems that serve millions, and I write about what it actually takes to keep them running.</p>
             <p class="hero-meta">
