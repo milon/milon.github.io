@@ -667,6 +667,14 @@ pre code {
     height: auto;
 }
 
+/* Arrow labels. Mermaid forces actor, note and message text to one size from the
+   top-level fontSize, so sequence.messageFontSize cannot shrink these on its own,
+   and it writes the size inline. Hence the override. Labels are centred on the
+   arrow, so restyling after layout only leaves them a little more room. */
+.mermaid-wrap .messageText {
+    font-size: 13px !important;
+}
+
 /* ─────────────────────────────────────────────────────
    Syntax highlighting — Catppuccin Latte and Mocha.
    Token mapping follows the palette's own style guide.

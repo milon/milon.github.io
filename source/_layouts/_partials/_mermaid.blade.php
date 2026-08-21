@@ -24,7 +24,9 @@
                 startOnLoad: false,
                 theme: 'base',
                 securityLevel: 'strict',
-                fontFamily: getComputedStyle(document.body).fontFamily,
+                // Mermaid copies this over the per-element actor, message and note
+                // families, so one value covers the whole diagram.
+                fontFamily: cssVar('--mono-font'),
                 themeVariables: {
                     background: cssVar('--paper-2'),
                     primaryColor: cssVar('--paper-3'),
@@ -62,7 +64,12 @@
         }
 
         function boot() {
-            draw();
+            // 0xProto is font-display: swap, and mermaid measures label widths to
+            // size the boxes and space the participants. Measuring against the
+            // fallback would leave the layout wrong once the real font swaps in.
+            if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+            else draw();
+
             new MutationObserver(function(records) {
                 for (var i = 0; i < records.length; i++) {
                     if (records[i].attributeName === 'data-theme') {
