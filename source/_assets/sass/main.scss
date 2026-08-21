@@ -647,6 +647,26 @@ pre code {
     color: var(--ink-2);
 }
 
+.mermaid-wrap {
+    margin: 0 0 26px;
+    padding: 20px 12px;
+    overflow-x: auto;
+    max-width: none;
+    background-color: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    text-align: center;
+}
+
+.mermaid-wrap .mermaid {
+    margin: 0;
+}
+
+.mermaid-wrap svg {
+    max-width: 100%;
+    height: auto;
+}
+
 /* ─────────────────────────────────────────────────────
    Syntax highlighting — Catppuccin Latte and Mocha.
    Token mapping follows the palette's own style guide.

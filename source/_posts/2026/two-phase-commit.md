@@ -5,6 +5,7 @@ date: '2026-08-20'
 gist: What two-phase commit actually does, where it fails in production, and what to reach for instead.
 section: content
 syntaxHighlight: true
+mermaid: true
 categories: [distributed-systems, databases]
 ---
 
@@ -22,18 +23,22 @@ You need a **coordinator** and one or more **participants**. In a database, the 
 
 In the happy path it looks like this:
 
-```
-Coordinator                 Postgres                 MySQL
-     |                          |                      |
-     |----- BEGIN / work ------>|                      |
-     |----- BEGIN / work ----------------------------->|
-     |----- PREPARE ----------->|                      |
-     |<---- YES ----------------|                      |
-     |----- PREPARE ---------------------------------->|
-     |<---- YES ---------------------------------------|
-     |----- COMMIT ------------>|                      |
-     |----- COMMIT ----------------------------------->|
-     |<---- ACK ----------------|<------- ACK ---------|
+```mermaid
+sequenceDiagram
+    participant Coordinator
+    participant Postgres
+    participant MySQL
+
+    Coordinator->>Postgres: BEGIN / work
+    Coordinator->>MySQL: BEGIN / work
+    Coordinator->>Postgres: PREPARE
+    Postgres-->>Coordinator: YES
+    Coordinator->>MySQL: PREPARE
+    MySQL-->>Coordinator: YES
+    Coordinator->>Postgres: COMMIT
+    Coordinator->>MySQL: COMMIT
+    Postgres-->>Coordinator: ACK
+    MySQL-->>Coordinator: ACK
 ```
 
 That is it. Two rounds, and you need *everyone*. No majority vote. That last part is the whole story.
