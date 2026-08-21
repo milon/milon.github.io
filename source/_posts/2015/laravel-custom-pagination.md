@@ -10,7 +10,7 @@ categories: [laravel]
 
 লারাভেলের ইলোকোয়েন্ট বা কোয়েরি বিল্ডার ব্যবহার করে আপনি খুব সহজেই পেজিনেশন তৈরি করতে পারেন। নিচে উদাহরন দেখুন-
 
-```
+```php
 public function show()
 {
     $people = People::paginate(5);
@@ -20,13 +20,13 @@ public function show()
 
 আর পেজিনেশন লিঙ্কগুলো ভিউ পেজে শো করতে হয় এভাবে-
 
-```
+```blade
 {!! $people->render() !!}
 ```
 
 কিন্তু আমরা সবসময় ইলোকোয়েন্ট বা কোয়েরি বিল্ডার ব্যবহার নাও করতে পারি। সেক্ষেত্রে পেজিনেশনের দরকার হলে সেটি করতে হবে এভাবে-
 
-```
+```php
 public function index()
 {
     $people = collect([
@@ -60,7 +60,7 @@ public function index()
 
 বাকি ভিউ আপনি নিচের মত করে রেন্ডার করতে পারেন-
 
-```
+```blade
 <div class="container">
     <table class="table table-bordered">
         <tr>

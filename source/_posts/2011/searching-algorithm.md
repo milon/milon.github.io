@@ -4,7 +4,7 @@ title: সার্চিং এ্যালগরিদম (Searching algorithm
 date: '2011-06-17'
 gist: Comparison between different searching algorithm.
 section: content
-syntaxHighlight: false
+syntaxHighlight: true
 categories: [algorithms]
 ---
 
@@ -27,13 +27,71 @@ categories: [algorithms]
 
 C++ প্রোগ্রামিং ভাষায় সোর্স কোডঃ
 
-<script src="https://gist.github.com/milon/a3a2fbf2a35c868d14dcc8ba7e04d1fe.js">
-</script>
+```cpp
+//Linear search
+
+#include<iostream>
+using namespace std;
+
+int linear_search(int *a,int size, int key){
+    for(int i=0;i<size;i++)
+        if(a[i] == key)
+            return i+1;
+    return 0;
+}
+
+int main(){
+    int n, key;
+    cout<<"How many number do you want: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter "<<n<<" numbers:"<<endl;
+    for(int i=0;i<n;i++)
+        cin>>arr[i];
+    cout<<"Enter the searching number: ";
+    cin>>key;
+    int res = linear_search(arr, n, key);
+    if(res==0)
+        cout<<"Key not found."<<endl;
+    else
+        cout<<"Key found at position "<<res<<"."<<endl;
+    return 0;
+}
+```
 
 Java প্রোগ্রামিং ভাষায় সোর্স কোডঃ
 
-<script src="https://gist.github.com/milon/f818e073883ee32f00f584ded8f7b11d.js">
-</script>
+```java
+//Linear Search
+
+import java.util.Scanner;
+
+public class LinearSearch{
+    public static int linearSearch(int a[], int key) {
+        for(int i=0;i<a.length;i++)
+            if(a[i] == key)
+                return i+1;
+        return 0;
+    }
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Linear Search");
+        System.out.print("Enter the number of element in array: ");
+        int n = input.nextInt();
+        int arr[] = new int[n];
+        System.out.print("Enter " + n + " numbers: ");
+        for(int i=0;i<n;i++)
+            arr[i] = input.nextInt();
+        System.out.print("Enter the searching key: ");
+        int key = input.nextInt();
+        if(linearSearch(arr, key) != 0)
+            System.out.println("Key found at " + linearSearch(arr, key) + " position.");
+        else
+            System.out.println("Key not found.");
+    }
+}
+```
 
 **বাইনারী সার্চঃ**
 
@@ -51,10 +109,112 @@ Java প্রোগ্রামিং ভাষায় সোর্স কো
 
 C++ প্রোগ্রামিং ভাষায় সোর্স কোডঃ
 
-<script src="https://gist.github.com/milon/79aeb68d3153bc6811fe9e771138c3ed.js">
-</script>
+```cpp
+//Binary search
+
+#include<iostream>
+#include<algorithm>
+
+using namespace std;
+
+int binary_search(int a[], int size, int key) {
+    int beg = 0, end = size-1;
+    int mid = (beg+end)/2;
+    while(beg<=end){
+        if(key<a[mid])
+            end = mid-1;
+        else
+            beg = mid+1;
+        if(a[mid]==key)
+            break;
+        mid = (beg+end)/2;
+        }
+    if(a[mid]==key)
+        return mid+1;
+    return 0;
+}
+
+int main() {
+    int n, key;
+    cout<<"How many number do you want: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter "<<n<<" numbers:"<<endl;
+    for(int i=0;i<n;i++)
+        cin>>arr[i];
+    sort(arr, arr+n);
+    cout<<"Sorted elements are:"<<endl;
+    for(int i=0;i<n;i++)
+        cout<<arr[i]<<" ";
+
+    cout<<"Enter the searching number: ";
+    cin>>key;
+    int res = binary_search(arr, n, key);
+    if(res==0)
+        cout<<"Key not found."<<endl;
+    else
+        cout<<"Key found at position "<<res<<"."<<endl;
+    return 0;
+}
+```
 
 Java প্রোগ্রামিং ভাষায় সোর্স কোডঃ
 
-<script src="https://gist.github.com/milon/6e2dcc47d67a0e165e3be578c4d1284b.js">
-</script>
+```java
+//Binary Search
+
+import java.util.Scanner;
+
+public class BinarySearch{
+    public static int binarySearch(int a[], int key) {
+        int beg = 0, end = a.length-1;
+        int mid = (beg+end)/2;
+        while(beg<=end){
+            if(key<a[mid])
+                end = mid-1;
+            else
+                beg = mid+1;
+            if(a[mid]==key)
+                break;
+            mid = (beg+end)/2;
+        }
+        if(a[mid]==key)
+            return mid+1;
+        return 0;
+    }
+
+    public static void bubbleSort(int a[]) {
+        for(int i=0; i<a.length-1; i++){
+            for(int j=i+1; j<a.length; j++){
+                if(a[i]>a[j]){
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Binary Search");
+        System.out.print("Enter the number of element in array: ");
+        int n = input.nextInt();
+        int arr[] = new int[n];
+        System.out.print("Enter " + n + " numbers: ");
+        for(int i=0;i<n;i++)
+            arr[i] = input.nextInt();
+        bubbleSort(arr);
+        System.out.print("Array after sorting: ");
+        for(int i: arr)
+            System.out.print(i + " ");
+        System.out.println();
+        System.out.print("Enter the searching key: ");
+        int key = input.nextInt();
+        if(binarySearch(arr, key)!=0)
+            System.out.println("Key found at "+ binarySearch(arr, key) + " potision.");
+        else
+            System.out.println("Key not found.");
+    }
+}
+```

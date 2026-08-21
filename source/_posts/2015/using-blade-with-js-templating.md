@@ -16,7 +16,7 @@ categories: [laravel, javascript]
 
 আপনারা ইতোমধ্যে জানেন লারাভেলের টেমপ্লেটিং ইঞ্জিনের নাম ব্লেড আর এতে যে কোন ভ্যালু প্রিন্ট করার জন্য ডাবল কার্লি ব্রাকেট ব্যবহার করা হয়। যেমন-
 
-```
+```blade
 Total Student: {{ $totalStudent }}
 ```
 
@@ -26,7 +26,7 @@ Total Student: {{ $totalStudent }}
 
 আপনি আপনার রাউট ফাইলের শুরুতেই লিখতে পারেন-
 
-```
+```php
 //For changing content tag
 Blade::setContentTags('<%', '%>');
 
@@ -38,7 +38,7 @@ Blade::setEscapedContentTags('<%%', '%%>');
 
 আপনি চাইলে জাভাস্ক্রিপ্ট ইঞ্জিনের সিনট্যাক্সও পরিবর্তন করতে পারবেন। এখন একেক জাভাস্ক্রিপ্ট লাইব্রেরির সিনট্যাক্স যেহেতু একেক রকম, এক্ষেত্রে আমরা অ্যাঙ্গুলারের উদাহরন দেখি যেহেতু এটি সবচেয়ে বেশি ব্যবহৃত।
 
-```
+```javascript
 var sampleApp = angular.module('sampleApp', [], function($interpolateProvider) {
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
@@ -47,7 +47,7 @@ var sampleApp = angular.module('sampleApp', [], function($interpolateProvider) {
 
 এবার চলুন দেখি দ্বিতীয় পদ্ধতি। এটা সবচেয়ে সহজ এবং এর জন্য আপনাকে কোন কনফিগারেশনও ঠিক করতে হবে না। যে ভ্যালুগুলো আপনি চান ব্লেড এক্সেপ করে যাক, আপনি সেগুলির শুরুতে শুধুমাত্র একটি @ সিম্বল বসিয়ে দিন। যেমন-
 
-```
+```blade
 Total Student: @{{ $totalStudent }}
 ```
 
