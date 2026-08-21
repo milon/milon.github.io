@@ -5,7 +5,7 @@ date: '2019-03-11'
 gist: Importance of space time complexity analysis in software engineering field.
 section: content
 syntaxHighlight: true
-categories: []
+categories: [algorithms, software-engineering]
 ---
 
 Like tons of other software engineers, I also thought for a very long time that, knowing this Big O or Big Θ is only for a programming contest, there are very few impacts of these in day to day life in most software projects. Yah yah, I got it, if you are working on google, facebook or this type of tech giant, that may not be 100% right, but how many people you know working there as a software engineer? And what is the percentage of them in your address book? Even, not all of the engineers at those company working for developing a groundbreaking algorithm every day. Then what is the necessity of learning this?

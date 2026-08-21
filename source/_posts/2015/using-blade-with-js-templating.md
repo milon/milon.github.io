@@ -9,7 +9,7 @@ gist: >-
   টেমপ্লেটিং লাইব্রেরি একত্রে ব্যবহার করার কৌশল।
 section: content
 syntaxHighlight: true
-categories: []
+categories: [laravel, javascript]
 ---
 
 ![Laravel loves Angular](/assets/images/posts/angular-laravel.jpg)

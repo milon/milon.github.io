@@ -5,7 +5,7 @@ date: '2011-12-16'
 gist: সবাইকে বিজয় দিবসের শুভেচ্ছা।
 section: content
 syntaxHighlight: false
-categories: []
+categories: [personal]
 ---
 
 ![বিজয় দিবসের শুভেচ্ছা](/assets/images/posts/victory-day.jpg)

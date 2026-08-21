@@ -5,7 +5,7 @@ date: '2011-05-18'
 gist: null
 section: content
 syntaxHighlight: false
-categories: []
+categories: [personal]
 ---
 
 একা থাকতে আমি বড্ড ভয় পাই<br>

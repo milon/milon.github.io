@@ -5,7 +5,7 @@ date: '2020-07-13'
 gist: How to build and deploy a site built with Jigsaw static generator with Github Actions.
 section: content
 syntaxHighlight: false
-categories: []
+categories: [meta]
 ---
 
 I built this very site about 2 years ago. From that moment till today, I used to run a small shell script locally to deploy it to GitHub pages. Here's what I used to do-

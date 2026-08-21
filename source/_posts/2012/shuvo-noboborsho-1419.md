@@ -5,7 +5,7 @@ date: '2012-04-13'
 gist: বাংলা নববর্ষ ১৪১৯ এর শুভেচ্ছা।
 section: content
 syntaxHighlight: false
-categories: []
+categories: [personal]
 ---
 
 ![শুভ নববর্ষ](/assets/images/posts/shuvo-noboborsho.jpg)

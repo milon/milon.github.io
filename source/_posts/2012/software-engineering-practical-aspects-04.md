@@ -5,7 +5,7 @@ date: '2012-11-28'
 gist: My thoughts on Software Engineering's practical aspects.
 section: content
 syntaxHighlight: false
-categories: []
+categories: [software-engineering]
 ---
 
 **প্রজেক্ট ঝুঁকি**

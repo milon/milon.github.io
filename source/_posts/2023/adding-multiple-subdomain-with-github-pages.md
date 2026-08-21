@@ -5,7 +5,7 @@ date: '2023-10-10'
 gist: How to add multiple subdomain with Github Pages?
 section: content
 syntaxHighlight: false
-categories: []
+categories: [meta]
 ---
 
 I have a domain named `milon.im`, though I have some other domains, but I use it as my main domain for personal use. I have my personal website hosted in Github Pages. You can have a repository with github and name it like `<username>.github.io` and the pages enabled from this repository can be found in the same domain. I have a repository named `milon.github.io` and I have hosted my personal website here using a static site generator named [Jigsaw](https://jigsaw.tighten.com/). You can also assign a custom domain in this repository. I have assigned `milon.im` as my custom domain. So, my personal website can be found in [milon.im](https://milon.im). For doing that you can go to the repository settings and assign a custom domain. You can also add a `CNAME` file in the root of your repository and add your custom domain there. I have added a `CNAME` file in the root of my repository and added `milon.im` there. You can also do it from the repository settings. Then you have to go to the nameserver settings of your domain and add a A record with the IP address of Github Pages. You can find the IP address from [here](https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain). I have added an A record with the IP address of Github Pages in my domain's nameserver settings. Now, I can access my personal website in [milon.im](https://milon.im).
