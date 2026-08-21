@@ -9,7 +9,7 @@
   Params: k = kicker, t = title (*asterisks* become italics), s = section,
           m = right-hand meta line.
 -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap">
 <style>
 @font-face {
     font-family: '0xProto';
@@ -112,6 +112,26 @@ if (el.textContent.length > 42) el.classList.add('long');
 if (q.get('k')) document.getElementById('kicker').textContent = q.get('k');
 if (q.get('s')) document.getElementById('section').textContent = q.get('s');
 if (q.get('m')) document.getElementById('meta').textContent = q.get('m');
+
+// The generator reads data-og-status before screenshotting. document.fonts.check()
+// is useless here — it reports true for a family that was never defined, because the
+// fallback resolves. Measuring against the declared fallback is what actually catches
+// a webfont that failed to arrive.
+document.documentElement.setAttribute('data-og-status', 'pending');
+
+document.fonts.ready.then(function () {
+    var probe = document.createElement('canvas').getContext('2d');
+
+    function width(font) {
+        probe.font = font;
+        return probe.measureText('Engineering Tech Lead').width;
+    }
+
+    var display = width('400 82px Newsreader, Georgia, serif') !== width('400 82px Georgia, serif');
+    var mono = width('400 19px "0xProto", ui-monospace, monospace') !== width('400 19px ui-monospace, monospace');
+
+    document.documentElement.setAttribute('data-og-status', display && mono ? 'ready' : 'font-missing');
+});
 </script>
 </body>
 </html>
