@@ -29,7 +29,7 @@
         @endif
 
         @include('_layouts._partials._back_to_home_link', [
-            'href' => '/blogs',
+            'href' => '/posts',
             'label' => 'Back to Writing',
         ])
     </div>

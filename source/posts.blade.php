@@ -9,7 +9,7 @@ pagination:
 @section('meta')
     @include('_layouts._partials._index_meta', [
         'image' => 'writing',
-        'title' => 'milon.im | Blogs',
+        'title' => 'milon.im | Writing',
         'description' => "Personal website of Nuruzzaman Milon",
     ])
 @endsection

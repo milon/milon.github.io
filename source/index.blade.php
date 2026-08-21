@@ -39,7 +39,7 @@
                         </a>
                     @endforeach
                 </div>
-                <p class="list-utility"><a href="/blogs">All writing →</a></p>
+                <p class="list-utility"><a href="/posts">All writing →</a></p>
             </div>
         </section>
 

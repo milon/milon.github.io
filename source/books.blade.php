@@ -41,7 +41,7 @@
                 <div class="book-row">
                     <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition.jpg" alt="Laravel PHP Web Framework Cover">
                     <div>
-                        <h2 class="book-title"><a href="/books/laravel">Laravel PHP Web Framework</a></h2>
+                        <h2 class="book-title"><a href="/book/laravel">Laravel PHP Web Framework</a></h2>
                         <p class="book-sub">
                             <span>Dimik Prokashoni · Two editions</span>
                             <span class="sep">/</span>
@@ -49,7 +49,7 @@
                         </p>
                         <p class="book-desc">লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক — a Bengali language book on the Laravel PHP framework, covering the fundamentals for PHP developers looking to adopt modern framework practices.</p>
                         <p class="book-sub">ISBN 978-984-33-9190-2</p>
-                        <a class="link-arrow" href="/books/laravel">More details →</a>
+                        <a class="link-arrow" href="/book/laravel">More details →</a>
                     </div>
                 </div>
             </div>

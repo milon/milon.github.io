@@ -19,8 +19,8 @@
             </a>
             <nav class="topbar-nav">
                 <a data-num="01" class="{{ $page->selected('/') }}" href="/">Root</a>
-                <a data-num="02" class="{{ ($page->getPath() === '/blogs' || strpos($page->getPath(), '/post/') === 0) ? 'selected' : '' }}" href="/blogs">Writing</a>
-                <a data-num="03" class="{{ ($page->getPath() === '/books' || strpos($page->getPath(), '/books/') === 0) ? 'selected' : '' }}" href="/books">Books</a>
+                <a data-num="02" class="{{ ($page->getPath() === '/posts' || strpos($page->getPath(), '/post/') === 0) ? 'selected' : '' }}" href="/posts">Writing</a>
+                <a data-num="03" class="{{ ($page->getPath() === '/books' || strpos($page->getPath(), '/book/') === 0) ? 'selected' : '' }}" href="/books">Books</a>
                 <a data-num="04" class="{{ ($page->getPath() === '/talks' || strpos($page->getPath(), '/talk/') === 0) ? 'selected' : '' }}" href="/talks">Talks</a>
                 <a data-num="05" class="{{ $page->selected('/cv') }}" href="/cv">CV</a>
                 <a data-num="06" class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>

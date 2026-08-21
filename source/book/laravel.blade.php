@@ -14,6 +14,7 @@
             <p class="eyebrow">Book — Bengali</p>
             <h1>Laravel PHP Web Framework</h1>
             <p class="sub">লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক · Dimik Prokashoni · Two editions</p>
+            <p class="book-sub">ISBN 978-984-33-9190-2</p>
         </div>
 
         <section class="section">
@@ -62,7 +63,6 @@
                     <div class="book-detail-item">
                         <strong class="strong">Title</strong>
                         <p>লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক</p>
-                        <p>ISBN: 978-984-33-9190-2</p>
                     </div>
 
                     <div class="book-detail-item">
