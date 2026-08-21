@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "watch": "vite",
-    "build": "vite build",
-    "production": "vite build"
+    "dev": "NODE_OPTIONS=--disable-warning=DEP0190 vite",
+    "watch": "NODE_OPTIONS=--disable-warning=DEP0190 vite",
+    "build": "NODE_OPTIONS=--disable-warning=DEP0190 vite build",
+    "production": "NODE_OPTIONS=--disable-warning=DEP0190 vite build"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
