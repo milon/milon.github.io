@@ -29,6 +29,7 @@
                             <span>2026 · August</span>
                         </p>
                         <p class="book-desc">For mid-to-senior Laravel engineers, and for backend engineers who can read PHP and want a production playbook shown in one concrete stack — not a polyglot cookbook. The examples are Laravel; the problems are not.</p>
+                        <p class="book-sub">ISBN 979-8193747345</p>
                         <a class="link-arrow" href="https://laravel-after-deploy.milon.im/">Learn more &amp; get your copy →</a>
                     </div>
                 </div>
@@ -48,7 +49,7 @@
                             <span>2015 · May</span>
                         </p>
                         <p class="book-desc">লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক — a Bengali language book on the Laravel PHP framework, covering the fundamentals for PHP developers looking to adopt modern framework practices.</p>
-                        <p class="book-sub">ISBN 978-984-33-9190-2</p>
+                        <p class="book-sub">ISBN 978-9843391902</p>
                         <a class="link-arrow" href="/book/laravel">More details →</a>
                     </div>
                 </div>
