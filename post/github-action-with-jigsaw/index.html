@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Be3u2SXe.css">
+
+            <meta property="og:url" content="https://milon.im/post/github-action-with-jigsaw" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="milon.im | Build and deploy Jigsaw site with Github Actions" />
+    <meta property="og:description" content="How to build and deploy a site built with Jigsaw static generator with Github Actions." />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Build and deploy Jigsaw site with Github Actions" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2020-07-13T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Build and deploy Jigsaw site with Github Actions">
+    <meta name="twitter:description" content="How to build and deploy a site built with Jigsaw static generator with Github Actions.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="Build and deploy Jigsaw site with Github Actions" />
+
+    
+    <meta name="description" content="How to build and deploy a site built with Jigsaw static generator with Github Actions.">
+
+    
+    <meta itemprop="name" content="milon.im | Build and deploy Jigsaw site with Github Actions">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+    </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-github-action-with-jigsaw">Build and deploy Jigsaw site with Github Actions</h1>
+            <p class="article-meta">
+                <span>2020 · July · 13</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>I built this very site about 2 years ago. From that moment till today, I used to run a small shell script locally to deploy it to GitHub pages. Here's what I used to do-</p>
+
+<pre><code class="language-bash">#!/usr/local/bin/zsh
+
+npm run prod
+./vendor/bin/jigsaw build production
+git add build_production
+git commit -m "Build for deploy"
+git subtree push --prefix build_production origin master
+</code></pre>
+
+<p>I was building the assets first, then build the site locally for production in the <code>build_production</code> folder. I run this website in a custom domain, so I used to have a <code>CNAME</code> file in the root of <code>/source</code> directory.</p>
+
+<p>Couple of month ago, GitHub launched it's CI/CD platform named GitHub Actions. Today, I had some time to kill, so I thought why not give it a try. So, here's what I did-</p>
+
+<pre><code class="language-yaml">name: Build &amp; Publish
+
+on:
+  push:
+    branches:
+      - develop
+  schedule:
+    - cron: "0 2 * * 1-5"
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Composer Dependencies
+      run: composer install --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+    - name: Install NPM Dependencies
+      run: npm install
+    - name: Build assets
+      run: npm run production
+    - name: Build Jigsaw site
+      run: ./vendor/bin/jigsaw build production
+    - name: Create CNAME File
+      run: echo "milon.im" &gt;&gt; build_production/CNAME
+    - name: Stage Files
+      run: git add -f build_production
+    - name: Commit files
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git commit -m "Build for deploy"
+    - name: Publish
+      run: |
+        git subtree split --prefix build_production -b master
+        git push -f origin master:master
+        git branch -D master
+</code></pre>
+
+<p>I create a file named <code>build-publish.yml</code> in <code>.github/workflows</code> folder. Then still the build script from James Brooks' <a href="https://james.brooks.page/blog/jigsaw-github-actions/">site</a> and modify a little bit. After that it just works. Kudos to James. The process is basically the same, install composer dependencies, install npm dependencies, run npm build for production, run jigsaw build for production and then move the <code>build_production</code> folder to master branch.</p>
+
+<p>So, I no longer have to build it locally and I don't need to think about <code>CNAME</code>.</p>
+
+<p>Chao!</p>
+
+            <p class="category-tags">
+                    <a href="/posts/category/meta">#meta</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/github-action-with-jigsaw';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'github-action-with-jigsaw'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.2/highlight.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/miken32/highlightjs-blade@f36f88b/dist/blade.min.js"></script>
+
+<script>
+    // Only blocks that declared a language. Auto-detection guesses badly on things
+    // like psql output, and colours it as whatever language it looks closest to.
+    hljs.configure({ cssSelector: 'pre code[class*="language-"]:not(.language-mermaid)' });
+    hljs.highlightAll();
+</script>
+    
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon</span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                function getTheme() {
+                    try {
+                        var saved = localStorage.getItem(STORAGE_KEY);
+                        if (saved === 'dark' || saved === 'light') return saved;
+                    } catch (e) {}
+                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+
+                setTheme(getTheme());
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Be3u2SXe.css">
+
+            <meta property="og:url" content="https://milon.im/post/never-use-rm-instead-use-trash" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="milon.im | Never use rm, instead use trash" />
+    <meta property="og:description" content="I thoughts on why everyone should use `trash` command instead of using `rm`." />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Never use rm, instead use trash" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2016-03-19T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Never use rm, instead use trash">
+    <meta name="twitter:description" content="I thoughts on why everyone should use `trash` command instead of using `rm`.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="Never use rm, instead use trash" />
+
+    
+    <meta name="description" content="I thoughts on why everyone should use `trash` command instead of using `rm`.">
+
+    
+    <meta itemprop="name" content="milon.im | Never use rm, instead use trash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+    </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-never-use-rm-instead-use-trash">Never use rm, instead use trash</h1>
+            <p class="article-meta">
+                <span>2016 · March · 19</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>Those who use command line heavily, they use a command called <code>rm</code> almost everyday. I myself use command line everyday, and I most often use rm for deleting files and folders. Things getting more worse when you chain <code>-rf</code> command with <code>rm</code>. Last week I was working on a project and I accidently run <code>rm -rf</code> command to my project root directory. Then all my codes were gone and it's not reversible. Thanks to git, I don't loose all my codes, but the latest uncommited changes.</p>
+
+<p>After that incident, I tried to find some solution. Then I find an awesome tool called <a href="https://github.com/sindresorhus/trash">trash</a>. It's a simple node module and you can use it to your project. But I installed it globally so that I can use it anywhere on my machine. It deletes your files and folders just like <code>rm</code> but it put then to trash. So, you can undo the process.</p>
+
+<p><img src="/assets/images/posts/trash.png" alt="Trash Logo" /></p>
+
+<p>The installing process is very strait forward. I assume your machine has already node and npm installed. If not, then install them. After that run this command on your terminal-</p>
+
+<pre><code>npm install -g trash-cli
+</code></pre>
+
+<p>If it shows an error, try with <code>sudo</code>. Then you are good to go.</p>
+
+<p>Using trash is very easy. If you are familiar with <code>rm</code> then you are already known to <code>trash</code>. It uses similar commands. Here is an example-</p>
+
+<pre><code>trash file.txt
+</code></pre>
+
+<p>You can do some complicated operation also.</p>
+
+<pre><code>trash '*.png' '!welcome.png'
+</code></pre>
+
+<p>This command will delete all your png files except welcome.png.</p>
+
+<p>Hope you will like it, and never use <code>rm</code> from now on. Peace.</p>
+
+            <p class="category-tags">
+                    <a href="/posts/category/linux">#linux</a>
+                    <a href="/posts/category/tools">#tools</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/never-use-rm-instead-use-trash';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'never-use-rm-instead-use-trash'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.2/highlight.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/miken32/highlightjs-blade@f36f88b/dist/blade.min.js"></script>
+
+<script>
+    // Only blocks that declared a language. Auto-detection guesses badly on things
+    // like psql output, and colours it as whatever language it looks closest to.
+    hljs.configure({ cssSelector: 'pre code[class*="language-"]:not(.language-mermaid)' });
+    hljs.highlightAll();
+</script>
+    
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon</span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                function getTheme() {
+                    try {
+                        var saved = localStorage.getItem(STORAGE_KEY);
+                        if (saved === 'dark' || saved === 'light') return saved;
+                    } catch (e) {}
+                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+
+                setTheme(getTheme());
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+    </body>
+</html>

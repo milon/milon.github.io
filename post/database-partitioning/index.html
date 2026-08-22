@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Be3u2SXe.css">
+
+            <meta property="og:url" content="https://milon.im/post/database-partitioning" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="milon.im | Database partitioning" />
+    <meta property="og:description" content="What table partitioning actually does, how Postgres routes a row, and the SQL you need before the table is too big to rewrite." />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Database partitioning" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2026-08-21T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Database partitioning">
+    <meta name="twitter:description" content="What table partitioning actually does, how Postgres routes a row, and the SQL you need before the table is too big to rewrite.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="Database partitioning" />
+
+    
+    <meta name="description" content="What table partitioning actually does, how Postgres routes a row, and the SQL you need before the table is too big to rewrite.">
+
+    
+    <meta itemprop="name" content="milon.im | Database partitioning">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+    </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-database-partitioning">Database partitioning</h1>
+            <p class="article-meta">
+                <span>2026 · August · 21</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>I have watched a perfectly normal <code>events</code> table become the thing nobody wants to touch. Inserts still work. A dashboard that only needs last week still takes seconds. Autovacuum runs all afternoon and somehow never catches up. The index that used to sit in memory does not anymore.</p>
+
+<p>The usual reaction is to buy a bigger box, or to start talking about sharding. Most of the time you do not need another server. You need the table cut into pieces the planner can skip, and that you can throw away when a month goes cold.</p>
+
+<p>That is partitioning. Same table name. Same <code>INSERT INTO events</code>. Underneath, Postgres keeps several real tables and puts each row in one of them, based on a key you pick.</p>
+
+<p>It is not sharding. Sharding is several databases. Partitioning is still one Postgres, one WAL, one failover. You paid for smaller heaps to vacuum, index, scan, and drop.</p>
+
+<h2>One table, several heaps</h2>
+
+<p>In Postgres this is declarative partitioning. You create a parent that does not hold rows, then children that do. Every row belongs to exactly one child. The partition key is how Postgres decides which one.</p>
+
+<p>That key has to show up in the primary key, and in unique constraints. Uniqueness is enforced on each child, not across the whole family. That is the first thing that bites people, so I will say it twice later with SQL.</p>
+
+<p>There are three kinds you will see:</p>
+
+<ul>
+<li><strong>RANGE</strong> for contiguous slices: dates, timestamps, sometimes integer ids. Event logs, orders, anything you age out. This is the one I actually use.</li>
+<li><strong>LIST</strong> for a small set of labels: <code>region IN ('us', 'eu')</code>.</li>
+<li><strong>HASH</strong> when there is no natural order and you just want the piles to be about the same size.</li>
+</ul>
+
+<p>I am going to spend the rest of the post on RANGE, then dump LIST and HASH at the end so the syntax lives in one place.</p>
+
+<h2>A table you can actually run</h2>
+
+<p>Imagine application events. Almost every query is "this user, in this window." Last month still gets a look. Last year does not. That is a RANGE key on <code>created_at</code>.</p>
+
+<pre><code class="language-sql">CREATE TABLE events (
+    id          bigint GENERATED BY DEFAULT AS IDENTITY,
+    user_id     bigint NOT NULL,
+    kind        text NOT NULL,
+    payload     jsonb NOT NULL,
+    created_at  timestamptz NOT NULL,
+    PRIMARY KEY (id, created_at)
+) PARTITION BY RANGE (created_at);
+</code></pre>
+
+<p>The parent is empty on purpose. <code>PARTITION BY RANGE (created_at)</code> is the rule: each child owns a slice of that column. The primary key includes <code>created_at</code> because Postgres will not let you use <code>(id)</code> alone on a partitioned table. I will come back to why.</p>
+
+<p>Now the children. Each one is a normal table with a bound:</p>
+
+<pre><code class="language-sql">CREATE TABLE events_2026_07 PARTITION OF events
+    FOR VALUES FROM ('2026-07-01') TO ('2026-08-01');
+
+CREATE TABLE events_2026_08 PARTITION OF events
+    FOR VALUES FROM ('2026-08-01') TO ('2026-09-01');
+
+CREATE TABLE events_2026_09 PARTITION OF events
+    FOR VALUES FROM ('2026-09-01') TO ('2026-10-01');
+</code></pre>
+
+<p>That is the starting set, not a ritual you repeat by hand on the first of every month. Postgres will not invent next month's child for you. I will come back to how you automate that.</p>
+
+<p>The range is half-open: <code>[from, to)</code>. A timestamp of <code>2026-08-01 00:00:00</code> goes into <code>events_2026_08</code>, not July. Neighbors must not overlap. A gap is allowed. An insert that lands in a gap errors out, unless you created a default partition.</p>
+
+<p>Put indexes on the parent. Postgres builds the matching index on every child:</p>
+
+<pre><code class="language-sql">CREATE INDEX events_user_created_idx
+    ON events (user_id, created_at);
+</code></pre>
+
+<p>Application code talks to <code>events</code>. It should not name the children.</p>
+
+<pre><code class="language-sql">INSERT INTO events (user_id, kind, payload, created_at)
+VALUES (42, 'login', '{}', '2026-08-21 17:02:00+00');
+
+SELECT kind, created_at
+FROM events
+WHERE user_id = 42
+  AND created_at &gt;= '2026-08-01'
+  AND created_at &lt;  '2026-09-01';
+</code></pre>
+
+<p>That insert goes to <code>events_2026_08</code> because of the timestamp. The select can ignore July and September. The ignoring is the feature. Postgres calls it partition pruning.</p>
+
+<h2>How a row finds its partition</h2>
+
+<p>On insert, Postgres looks at the partition key and picks the child whose bounds contain it. You did not write a trigger for this. It is in the catalog. If nothing matches:</p>
+
+<pre><code>ERROR:  no partition of relation "events" found for row
+</code></pre>
+
+<p>You can add a default partition that catches leftovers:</p>
+
+<pre><code class="language-sql">CREATE TABLE events_default PARTITION OF events DEFAULT;
+</code></pre>
+
+<p>I have used that as a safety net. I do not use it as a plan. Rows that land there never get pruned the way you hoped, and fishing them out later is a rewrite. I would rather let the insert fail, and have a job that creates next month's child a week early.</p>
+
+<p>On select, the planner looks at your <code>WHERE</code> clause. Given <code>created_at &gt;= '2026-08-01' AND created_at &lt; '2026-09-01'</code>, it can prove July and September cannot possibly match, so it never opens those files. <code>EXPLAIN</code> makes this obvious:</p>
+
+<pre><code class="language-sql">EXPLAIN (COSTS OFF)
+SELECT kind FROM events
+WHERE created_at &gt;= '2026-08-01'
+  AND created_at &lt;  '2026-09-01';
+</code></pre>
+
+<pre><code>Append
+  -&gt;  Seq Scan on events_2026_08 events
+        Filter: ((created_at &gt;= '2026-08-01 00:00:00+00')
+             AND (created_at &lt;  '2026-09-01 00:00:00+00'))
+</code></pre>
+
+<p>One child. If you leave the key out of the <code>WHERE</code> clause, pruning does not happen, and you scan every partition. Partitioning will not make "all events for this user, ever" faster. It can make that query slower: more files, more indexes, a fatter plan.</p>
+
+<p>There is also runtime pruning. A bound that is only known when the query runs, or a join to a small table of dates, can still drop children when execution starts. The rule does not change. The key still has to be constrained.</p>
+
+<h2>Detach is the fast delete</h2>
+
+<p>The select is nice. The thing I actually wanted, most times I reached for this, was deleting history without scanning a billion-row heap.</p>
+
+<pre><code class="language-sql">ALTER TABLE events DETACH PARTITION events_2026_07;
+DROP TABLE events_2026_07;
+</code></pre>
+
+<p><code>DETACH</code> takes a short lock and unhooks the child. <code>DROP TABLE</code> then removes that month's data and indexes in one go. Compare that with <code>DELETE FROM events WHERE created_at &lt; …</code>. That version writes a tombstone for every row and leaves vacuum working through the mess for days.</p>
+
+<p>Going the other way, you can load a table on the side and attach it when it is ready, so the parent is not blocked for the whole backfill:</p>
+
+<pre><code class="language-sql">CREATE TABLE events_2026_06 (
+    LIKE events INCLUDING DEFAULTS INCLUDING CONSTRAINTS
+);
+
+-- load it however you load things, then:
+
+ALTER TABLE events_2026_06
+    ADD CONSTRAINT events_2026_06_range
+    CHECK (created_at &gt;= '2026-06-01' AND created_at &lt; '2026-07-01')
+    NOT VALID;
+
+ALTER TABLE events ATTACH PARTITION events_2026_06
+    FOR VALUES FROM ('2026-06-01') TO ('2026-07-01');
+</code></pre>
+
+<p><code>ATTACH</code> will scan the child to prove every row belongs, unless a matching <code>CHECK</code> is already there. If the table is large, add the constraint first. <code>NOT VALID</code> skips the scan when you create the constraint. <code>ATTACH</code> still checks. You just get to pick when.</p>
+
+<h2>You do not create next month by hand</h2>
+
+<p>RANGE on a clock is the one that needs a calendar. LIST and HASH you create once. Declarative partitioning only routes into children that already exist. If August is missing, an August insert fails. Postgres will not grow a new slice for you.</p>
+
+<p>You also do not need to sit down on the first and type <code>CREATE TABLE</code>. Create a couple of months up front, then let a job stay ahead of the clock.</p>
+
+<p>What I actually run is a function that is happy to be a no-op if the child is already there, plus a weekly schedule that asks for this month and next month:</p>
+
+<pre><code class="language-sql">CREATE OR REPLACE FUNCTION create_events_partition(month_start date)
+RETURNS void
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    child text := format('events_%s', to_char(month_start, 'YYYY_MM'));
+BEGIN
+    EXECUTE format(
+        'CREATE TABLE IF NOT EXISTS %I PARTITION OF events
+         FOR VALUES FROM (%L) TO (%L)',
+        child,
+        month_start,
+        (month_start + interval '1 month')::date
+    );
+END;
+$$;
+
+SELECT create_events_partition(date_trunc('month', now())::date);
+SELECT create_events_partition(
+    (date_trunc('month', now()) + interval '1 month')::date
+);
+</code></pre>
+
+<p>Two months of headroom is enough. The painful case is midnight on the first with no child, which is why you create <strong>next</strong> month while you still have this one. I have been on that page. I did not enjoy it.</p>
+
+<p>To run that inside Postgres, use <a href="https://github.com/citusdata/pg_cron"><code>pg_cron</code></a>. It needs <code>shared_preload_libraries = 'pg_cron'</code> and a restart, then:</p>
+
+<pre><code class="language-sql">CREATE EXTENSION pg_cron;
+
+SELECT cron.schedule(
+    'create-events-partitions',
+    '0 3 * * 0',
+    $$
+    SELECT create_events_partition(date_trunc('month', now())::date);
+    SELECT create_events_partition(
+        (date_trunc('month', now()) + interval '1 month')::date
+    );
+    $$
+);
+</code></pre>
+
+<p>That is 03:00 every Sunday. <code>cron.schedule</code> returns a job id. <code>SELECT * FROM cron.job;</code> is how you check it is there. <code>SELECT cron.unschedule('create-events-partitions');</code> is how you take it off. The job runs in the database where you created the extension, so create <code>pg_cron</code> in the same database as <code>events</code>.</p>
+
+<p>If you do not want to own the function, <a href="https://github.com/pgpartman/pg_partman"><code>pg_partman</code></a> is the usual extension. You still create the partitioned parent yourself. Then you hand it the key, the interval, and how many future children to keep ready. The SQL below is current pg_partman (5.x). Version 4 used <code>create_parent</code> and interval names like <code>monthly</code>. Those are gone, so an old tutorial will not run.</p>
+
+<pre><code class="language-sql">CREATE SCHEMA IF NOT EXISTS partman;
+CREATE EXTENSION pg_partman SCHEMA partman;
+
+SELECT partman.create_partition(
+    p_parent_table := 'public.events',
+    p_control      := 'created_at',
+    p_interval     := '1 month',
+    p_premake      := 2
+);
+</code></pre>
+
+<p><code>p_premake := 2</code> means keep two months ahead of now. Retention is a row in <code>partman.part_config</code>, not a second function. This keeps a year and drops the rest:</p>
+
+<pre><code class="language-sql">UPDATE partman.part_config
+SET retention = '12 months',
+    retention_keep_table = false
+WHERE parent_table = 'public.events';
+</code></pre>
+
+<p><code>retention_keep_table = false</code> means drop, not detach-and-keep. Use <code>true</code> if you still want the old child around as a plain table.</p>
+
+<p>pg_partman does not wake itself up unless you run its background worker. Pairing it with pg_cron is the setup I see most:</p>
+
+<pre><code class="language-sql">SELECT cron.schedule(
+    'partman-maintenance',
+    '0 3 * * *',
+    $$CALL partman.run_maintenance_proc()$$
+);
+</code></pre>
+
+<p>That nightly call creates the next children up to <code>premake</code>, and drops anything past retention. That is the production answer when you have more than one partitioned table and you are tired of copying the same function.</p>
+
+<p>A default partition is a safety net, not an auto-partitioner. Rows that miss a monthly child land in one pile that never prunes, and you have to split them out later. I would rather the insert fail and the job be a week early.</p>
+
+<p>A trigger that <code>CREATE TABLE</code> on the first insert of a new month can work. It also races, takes locks, and surprises the planner. I would not do that.</p>
+
+<h2>LIST and HASH, briefly</h2>
+
+<p>LIST is RANGE with named buckets instead of bounds.</p>
+
+<pre><code class="language-sql">CREATE TABLE invoices (
+    id       bigint GENERATED BY DEFAULT AS IDENTITY,
+    region   text NOT NULL,
+    total    numeric NOT NULL,
+    PRIMARY KEY (id, region)
+) PARTITION BY LIST (region);
+
+CREATE TABLE invoices_us PARTITION OF invoices FOR VALUES IN ('us');
+CREATE TABLE invoices_eu PARTITION OF invoices FOR VALUES IN ('eu');
+CREATE TABLE invoices_other PARTITION OF invoices DEFAULT;
+</code></pre>
+
+<p><code>WHERE region = 'us'</code> reads one child. Leave <code>region</code> out and you read all of them. Same pruning rule as RANGE.</p>
+
+<p>HASH is for when the key has no useful order and you want even size. Postgres hashes the key and takes modulo N.</p>
+
+<pre><code class="language-sql">CREATE TABLE sessions (
+    id         uuid NOT NULL,
+    user_id    bigint NOT NULL,
+    created_at timestamptz NOT NULL,
+    PRIMARY KEY (id)
+) PARTITION BY HASH (id);
+
+CREATE TABLE sessions_p0 PARTITION OF sessions FOR VALUES WITH (MODULUS 4, REMAINDER 0);
+CREATE TABLE sessions_p1 PARTITION OF sessions FOR VALUES WITH (MODULUS 4, REMAINDER 1);
+CREATE TABLE sessions_p2 PARTITION OF sessions FOR VALUES WITH (MODULUS 4, REMAINDER 2);
+CREATE TABLE sessions_p3 PARTITION OF sessions FOR VALUES WITH (MODULUS 4, REMAINDER 3);
+</code></pre>
+
+<p>Every child has to use the same modulus. Adding another remainder later means rewriting the set. HASH can help autovacuum and index bloat because no single heap grows without bound. It will not help a time-range query, because time is not the key. I use it less than RANGE. I do not use it as a fake shard key I have not thought through.</p>
+
+<h2>The bits that surprise people</h2>
+
+<ul>
+<li><p><strong>The partition key has to be in the primary key.</strong> This is the first error you will hit. It also changes what <code>id</code> means. If <code>id</code> is not the partition key, it is not unique by itself. Two children can both have <code>id = 1</code> unless you used one sequence and still put the key in the PK. In the <code>events</code> example, <code>IDENTITY</code> still hands out one sequence. The extra column is there for the constraint, not because we needed two ways to generate ids.</p></li>
+<li><p><strong>Unique indexes are per partition.</strong> <code>UNIQUE (user_id)</code> on the parent does not mean one user in the whole system, unless <code>user_id</code> is the partition key. "This email is unique" is not something partitioning will do for you. Keep a small unpartitioned lookup table, or enforce it in the app.</p></li>
+<li><p><strong>Other tables can foreign-key to a partitioned parent</strong> in current Postgres. The PK still has to match, which means the key is in it. Pointing a child at a parent is fine. Pointing a parent at a child of something else is the design I draw on paper twice before I ship it.</p></li>
+<li><p><strong>An update that changes the partition key moves the row.</strong> Postgres deletes from one child and inserts into another. Triggers fire. It is not free. If <code>created_at</code> never changes in your domain, keep it that way. A column people go back and correct is a bad RANGE key.</p></li>
+<li><p><strong>Too many partitions has a cost.</strong> The planner has to consider children. A few hundred is normal. Tens of thousands of daily partitions, on a table you query without a tight bound, will make planning itself slow. Monthly RANGE for a log that spans a few years is the version that stays quiet.</p></li>
+</ul>
+
+<h2>What I actually partition</h2>
+
+<p>Append-only data with a clock. Events, impressions, audit rows, webhook deliveries. The query always has a time window. Old slices get <code>DETACH</code>, then maybe object storage, or just <code>DROP</code>.</p>
+
+<p>A table that is large because it <em>is</em> the product, and every query is "this id" with no extra filter: I leave it. A better index, a partial index, <code>FILLFACTOR</code>, or a second table you archive into will do more than RANGE on a column nobody puts in the <code>WHERE</code> clause.</p>
+
+<p>I do not partition because a dashboard showed a large row count. I partition when vacuum, bloat, or deletes have a calendar, and when the key behind that calendar is in the queries I care about.</p>
+
+<h2>The part I want you to remember</h2>
+
+<p>Partitioning is a routing rule and a pruning rule. It is not a new kind of database. You pick a key. Postgres stores each slice as its own table. Inserts go to one child. Selects skip the children the <code>WHERE</code> clause cannot match. Drops become detach plus drop, instead of a million-row <code>DELETE</code>.</p>
+
+<p>The key has to be in the primary key, in the writes, and in the reads you hope to make cheap. Miss any of those three and you have more tables, the same sequential scan, and a migration to undo. Get them right and last month's events are a table you can pick up and throw away.</p>
+
+            <p class="category-tags">
+                    <a href="/posts/category/databases">#databases</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/database-partitioning';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'database-partitioning'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.2/highlight.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/miken32/highlightjs-blade@f36f88b/dist/blade.min.js"></script>
+
+<script>
+    // Only blocks that declared a language. Auto-detection guesses badly on things
+    // like psql output, and colours it as whatever language it looks closest to.
+    hljs.configure({ cssSelector: 'pre code[class*="language-"]:not(.language-mermaid)' });
+    hljs.highlightAll();
+</script>
+    
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon</span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                function getTheme() {
+                    try {
+                        var saved = localStorage.getItem(STORAGE_KEY);
+                        if (saved === 'dark' || saved === 'light') return saved;
+                    } catch (e) {}
+                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+
+                setTheme(getTheme());
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+    </body>
+</html>

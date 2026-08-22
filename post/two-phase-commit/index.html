@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Be3u2SXe.css">
+
+            <meta property="og:url" content="https://milon.im/post/two-phase-commit" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="milon.im | Two-phase commit" />
+    <meta property="og:description" content="What two-phase commit actually does, where it fails in production, and what to reach for instead." />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Two-phase commit" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2026-08-20T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | Two-phase commit">
+    <meta name="twitter:description" content="What two-phase commit actually does, where it fails in production, and what to reach for instead.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="Two-phase commit" />
+
+    
+    <meta name="description" content="What two-phase commit actually does, where it fails in production, and what to reach for instead.">
+
+    
+    <meta itemprop="name" content="milon.im | Two-phase commit">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+    </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-two-phase-commit">Two-phase commit</h1>
+            <p class="article-meta">
+                <span>2026 · August · 20</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>If you have ever booked a flight and a hotel in the same checkout, you already know the problem two-phase commit is trying to solve. Either both reservations succeed, or neither does. The airline taking the money while the hotel says no is not a product anyone wants.</p>
+
+<p>That is a distributed transaction: two systems, two writes, one outcome. Two-phase commit (2PC) is the classic protocol for getting there. It looks airtight on a whiteboard. Then it spends the next decade making on-call worse.</p>
+
+<h2>The shape of the protocol</h2>
+
+<p>You need a <strong>coordinator</strong> and one or more <strong>participants</strong>. In a database, the participants are the resource managers: Postgres, MySQL, a message broker that speaks XA. The coordinator is whoever is driving the transaction. The protocol really does have two phases.</p>
+
+<p><strong>Phase 1, prepare.</strong> The coordinator asks every participant: <em>can you commit this?</em> Each one does the local work, writes enough to durable storage that it could finish later, and answers yes or no. A yes is a promise. After that vote the participant is not allowed to abort on its own. It waits.</p>
+
+<p><strong>Phase 2, commit or abort.</strong> If every vote was yes, the coordinator writes a commit record and tells everyone to commit. If anyone said no, or timed out, it tells everyone to abort. Participants ack, the coordinator forgets the transaction, and we are done.</p>
+
+<p>In the happy path it looks like this:</p>
+
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Coordinator
+    participant Postgres
+    participant MySQL
+
+    Coordinator-&gt;&gt;Postgres: BEGIN / work
+    Coordinator-&gt;&gt;MySQL: BEGIN / work
+    Coordinator-&gt;&gt;Postgres: PREPARE
+    Postgres--&gt;&gt;Coordinator: YES
+    Coordinator-&gt;&gt;MySQL: PREPARE
+    MySQL--&gt;&gt;Coordinator: YES
+    Coordinator-&gt;&gt;Postgres: COMMIT
+    Coordinator-&gt;&gt;MySQL: COMMIT
+    Postgres--&gt;&gt;Coordinator: ACK
+    MySQL--&gt;&gt;Coordinator: ACK
+</code></pre>
+
+<p>That is it. Two rounds, and you need <em>everyone</em>. No majority vote. That last part is the whole story.</p>
+
+<h2>Why people reach for it</h2>
+
+<p>Local ACID is easy. <code>BEGIN</code>, write two rows, <code>COMMIT</code>. The database is the coordinator and the participant, and you do not think about it.</p>
+
+<p>The moment those two rows live in two systems, that comfort disappears. You can commit the order and fail to charge the card. You can publish a message and roll back the row that said you published it. 2PC is the honest answer to "I want this to be one transaction anyway." XA, Java's JTA, MS DTC, Postgres prepared transactions: they are all this protocol with a vendor hat on.</p>
+
+<p>I have seen it used for exactly that. An application had to write to two databases that were not going to be merged, and the business rule was "both or neither." 2PC will do that. It will also charge you for it.</p>
+
+<h2>Where it falls over</h2>
+
+<p><strong>It blocks.</strong> After a participant says yes, it holds locks and waits. If the coordinator dies in that window, those locks stay held until somebody comes back and finishes the protocol. Readers queue. Writers queue. Your latency graph does not care that the protocol is correct.</p>
+
+<p><strong>The coordinator is a single point of failure.</strong> You can replicate it. You can persist its log. You still have a component whose absence freezes in-flight work. Recovery is something you have to operate, not a footnote in the docs.</p>
+
+<p><strong>Two extra round trips.</strong> Prepare, then commit. On a LAN that is annoying. Across availability zones, or worse, regions, it is a tax on every write. People add 2PC to make things consistent, then spend a quarter wondering why p99 doubled.</p>
+
+<p><strong>Participants can disagree with reality.</strong> A yes vote is supposed to be durable. Disks lie, clocks lie, operators delete WAL files. A DBA aborting a prepared transaction by hand because the app is down (a heuristic decision) breaks the invariant the rest of the system is trusting.</p>
+
+<p><strong>It does not compose with the way we build services now.</strong> HTTP APIs, queues, third-party billing providers: most of them will not join your XA transaction. You cannot 2PC your way through Stripe. The boundary of the protocol is the boundary of what you actually control.</p>
+
+<h2>The timeout nobody draws on the whiteboard</h2>
+
+<p>Every real implementation has a timeout. The coordinator cannot wait forever for a vote, so it aborts. Except a participant may have already voted yes and is now sitting on prepared work. Or the abort itself is lost. You now have a transaction in limbo, and the only honest state is "we do not know."</p>
+
+<p>This is why 2PC is called a <em>blocking</em> protocol. Three-phase commit exists to shrink that window. It adds another round, more states, more ways to be wrong, and still cannot save you from a network that partitions at a bad time. FLP is not trivia from a distributed systems class. It is why your prepared transaction table is not empty on a bad afternoon.</p>
+
+<h2>What I actually use</h2>
+
+<p>For two tables in the <strong>same</strong> Postgres database: a transaction. Not 2PC. A transaction. People reach for distributed machinery because the code is in two services, not because the data needed to be in two databases. Put the data together if you can. I would rather have an awkward join than a coordinator.</p>
+
+<p>When the work really does cross a boundary, I treat it as what it is: <strong>two local transactions plus a recovery story.</strong></p>
+
+<p>The <a href="https://microservices.io/patterns/data/transactional-outbox.html">transactional outbox</a> is the version of this I keep coming back to. Write the business row and an outbox row in one local commit. A worker publishes the outbox to the queue. Consumers are idempotent. If the worker dies, it resumes. You get at-least-once delivery and you write your handlers accordingly. That is a much smaller lie than "this is atomic across services."</p>
+
+<p>Sagas are the other honest option. A sequence of local transactions, with compensating actions if a later step fails. Ugly compensations, explicit state, visible in the domain. I will take visible and ugly over a prepared transaction that has been sitting on a row lock since Friday.</p>
+
+<p>Saga choreography through events is fine until you cannot explain who is in charge of the failure. Orchestrated sagas, with one process that knows the steps, are easier to debug at 2am. That is the only metric that matters once you are past the design review.</p>
+
+<h2>A small picture in Laravel terms</h2>
+
+<p>Say you take an order and you need to reserve stock in a service you do not own. You do <em>not</em> start an XA transaction. You do this:</p>
+
+<pre><code class="language-php">DB::transaction(function () use ($order) {
+    $order-&gt;markPaid();
+    Outbox::record(new StockReserved($order-&gt;id));
+});
+</code></pre>
+
+<p>A separate process reads <code>outbox</code>, publishes, and marks the row sent. The stock service reserves, or it doesn't. If it doesn't, you have a handler that knows how to refund and how to tell the customer. That handler is the protocol. It lives in your code, not in a spec from 1978.</p>
+
+<p>Is that as clean as <code>COMMIT</code>? No. Does it survive a deploy in the middle of the work? Yes, if you wrote it that way. 2PC often does not, because the coordinator's log and your application's deploy are not the same thing, and nobody put that in the diagram.</p>
+
+<h2>When 2PC is still the right tool</h2>
+
+<p>I am not going to pretend it never is. Two databases you already run, same region, a vendor that speaks XA well, a workload that cannot tolerate divergence even briefly, and an operations team that knows how to finish in-doubt transactions. That set is smaller than the set of systems that imported an XA library because a blog post said "distributed transaction."</p>
+
+<p>If you are there, use the database's prepared transactions, monitor the in-doubt list like it is a paging condition, and keep the participants close. Do not run 2PC over the public internet. Do not run it against a system whose owner is another company. Do not run it because microservices made two writes look like they belong to two deployables.</p>
+
+<h2>The part I want you to remember</h2>
+
+<p>Two-phase commit gives you a very specific guarantee: all of a known set of participants commit, or none do, assuming the coordinator can eventually talk to them. It does not give you availability. It does not give you a good time in a partition. It does not extend to the rest of your architecture for free.</p>
+
+<p>Atomicity across processes is not a feature you turn on. It is a cost you pay, in latency and in operational burden, every time a write happens. Pay it only when the alternative is worse. For everything else, make the failure visible and recoverable. That is the work. The protocol was the easy part.</p>
+
+            <p class="category-tags">
+                    <a href="/posts/category/distributed-systems">#distributed-systems</a>
+                    <a href="/posts/category/databases">#databases</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/two-phase-commit';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'two-phase-commit'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.2/highlight.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/miken32/highlightjs-blade@f36f88b/dist/blade.min.js"></script>
+
+<script>
+    // Only blocks that declared a language. Auto-detection guesses badly on things
+    // like psql output, and colours it as whatever language it looks closest to.
+    hljs.configure({ cssSelector: 'pre code[class*="language-"]:not(.language-mermaid)' });
+    hljs.highlightAll();
+</script>
+    
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js"></script>
+
+<script>
+    (function() {
+        var hosts = [];
+
+        document.querySelectorAll('pre code.language-mermaid').forEach(function(code) {
+            var pre = code.parentNode;
+            var host = document.createElement('div');
+            host.className = 'mermaid-wrap';
+            host.setAttribute('data-source', code.textContent);
+            pre.parentNode.replaceChild(host, pre);
+            hosts.push(host);
+        });
+
+        if (!hosts.length) return;
+
+        function cssVar(name) {
+            return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        }
+
+        function draw() {
+            mermaid.initialize({
+                startOnLoad: false,
+                theme: 'base',
+                securityLevel: 'strict',
+                // Mermaid copies this over the per-element actor, message and note
+                // families, so one value covers the whole diagram.
+                fontFamily: cssVar('--mono-font'),
+                themeVariables: {
+                    background: cssVar('--paper-2'),
+                    primaryColor: cssVar('--paper-3'),
+                    primaryTextColor: cssVar('--ink'),
+                    primaryBorderColor: cssVar('--rule'),
+                    lineColor: cssVar('--ink-3'),
+                    secondaryColor: cssVar('--paper-2'),
+                    tertiaryColor: cssVar('--paper'),
+                    actorBkg: cssVar('--paper-3'),
+                    actorBorder: cssVar('--rule'),
+                    actorTextColor: cssVar('--ink'),
+                    actorLineColor: cssVar('--ink-4'),
+                    signalColor: cssVar('--ink-2'),
+                    signalTextColor: cssVar('--ink'),
+                    labelBoxBkgColor: cssVar('--paper-3'),
+                    labelBoxBorderColor: cssVar('--rule'),
+                    labelTextColor: cssVar('--ink'),
+                    noteBkgColor: cssVar('--paper-3'),
+                    noteTextColor: cssVar('--ink'),
+                    noteBorderColor: cssVar('--rule'),
+                    activationBkgColor: cssVar('--paper-3'),
+                    activationBorderColor: cssVar('--ink-4')
+                }
+            });
+
+            hosts.forEach(function(host) {
+                host.innerHTML = '';
+                var diagram = document.createElement('div');
+                diagram.className = 'mermaid';
+                diagram.textContent = host.getAttribute('data-source');
+                host.appendChild(diagram);
+            });
+
+            mermaid.run({ querySelector: '.mermaid-wrap .mermaid' });
+        }
+
+        function boot() {
+            // 0xProto is font-display: swap, and mermaid measures label widths to
+            // size the boxes and space the participants. Measuring against the
+            // fallback would leave the layout wrong once the real font swaps in.
+            if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+            else draw();
+
+            new MutationObserver(function(records) {
+                for (var i = 0; i < records.length; i++) {
+                    if (records[i].attributeName === 'data-theme') {
+                        draw();
+                        return;
+                    }
+                }
+            }).observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['data-theme']
+            });
+        }
+
+        // Theme toggle lives later in the layout. Wait until it has run so the
+        // first paint uses the stored light/dark choice, not the default.
+        if (document.readyState === 'complete') boot();
+        else window.addEventListener('load', boot);
+    })();
+</script>
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon</span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                function getTheme() {
+                    try {
+                        var saved = localStorage.getItem(STORAGE_KEY);
+                        if (saved === 'dark' || saved === 'light') return saved;
+                    } catch (e) {}
+                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+
+                setTheme(getTheme());
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+    </body>
+</html>

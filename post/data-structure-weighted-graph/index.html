@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>milon.im</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <link rel="stylesheet" href="/assets/build/assets/main-Be3u2SXe.css">
+
+            <meta property="og:url" content="https://milon.im/post/data-structure-weighted-graph" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="milon.im | ডাটা স্ট্রাকচারঃ Weighted Graph" />
+    <meta property="og:description" content="How to implement weighted graph." />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ডাটা স্ট্রাকচারঃ Weighted Graph" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2011-05-24T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="milon.im | ডাটা স্ট্রাকচারঃ Weighted Graph">
+    <meta name="twitter:description" content="How to implement weighted graph.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="ডাটা স্ট্রাকচারঃ Weighted Graph" />
+
+    
+    <meta name="description" content="How to implement weighted graph.">
+
+    
+    <meta itemprop="name" content="milon.im | ডাটা স্ট্রাকচারঃ Weighted Graph">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+    </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-data-structure-weighted-graph">ডাটা স্ট্রাকচারঃ Weighted Graph</h1>
+            <p class="article-meta">
+                <span>2011 · May · 24</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>যে গ্রাফের প্রত্যেকটা এজের(edge) একটা Weight বা মান দেয়া থাকে তাকে Weighted Graph বলে। Weighted graph তৈরীর কৌশল হল-</p>
+
+<pre><code class="language-cpp">//Weighted graph
+//Author: Milon
+
+#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cout&lt;&lt;"Enter the number of nodes: ";
+    cin&gt;&gt;n;
+    int list[n][n];
+
+    //Initialize
+    for(int i=0;i&lt;n;i++)
+        for(int j=0;j&lt;n;j++)
+            list[i][j]=false;
+    cout&lt;&lt;"Enter an edge(start_node&lt; &gt;end_node&lt; &gt;weight)"&lt;&lt;endl;
+    cout&lt;&lt;"Press (0 0 0) to end:"&lt;&lt;endl;
+
+    //Making graph
+    while(true){
+        int a,b,c;
+        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+        if(a==0 &amp;&amp; b==0 &amp;&amp; c==0)
+            break;
+        if(a&gt;n || b&gt;n || a&lt;=0 || b&lt;=0)
+            cout&lt;&lt;"Invalid input"&lt;&lt;endl;
+        else{
+            list[a-1][b-1]=c;
+            //list[b-1][a-1]=true;      //for undirected weighted graph
+        }
+    }
+    cout&lt;&lt;endl;
+
+    //Print adjacency matrix
+    cout&lt;&lt;"Adjacency matrix:"&lt;&lt;endl;
+    for(int i=0;i&lt;n;i++) {
+        for(int j=0;j&lt;n;j++)
+            printf("%4d",list[i][j]);
+        cout&lt;&lt;endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <p class="category-tags">
+                    <a href="/posts/category/data-structures">#data-structures</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script id="dsq-count-scr" src="//milon-im.disqus.com/count.js" async></script>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/data-structure-weighted-graph';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'data-structure-weighted-graph'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://milon-im.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.2/highlight.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/miken32/highlightjs-blade@f36f88b/dist/blade.min.js"></script>
+
+<script>
+    // Only blocks that declared a language. Auto-detection guesses badly on things
+    // like psql output, and colours it as whatever language it looks closest to.
+    hljs.configure({ cssSelector: 'pre code[class*="language-"]:not(.language-mermaid)' });
+    hljs.highlightAll();
+</script>
+    
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon</span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69906857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69906857-1');
+</script>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                function getTheme() {
+                    try {
+                        var saved = localStorage.getItem(STORAGE_KEY);
+                        if (saved === 'dark' || saved === 'light') return saved;
+                    } catch (e) {}
+                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+
+                setTheme(getTheme());
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+    </body>
+</html>
