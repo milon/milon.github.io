@@ -179,7 +179,7 @@ export default {
 
 Finally I added the search component in the the navbar to render the search field-
 
-```blade
+```html
 <div class="collapse navbar-collapse" id="navbarResponsive">
     <div id="vue-search">
         <search></search>
