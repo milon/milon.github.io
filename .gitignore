@@ -3,6 +3,7 @@
 /node_modules/
 /vendor/
 /cache/
+/local-docs/
 .DS_Store
 .codeidx/
 source/_categories/*.md
