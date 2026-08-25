@@ -94,7 +94,6 @@
                         </dd>
                     </div>
                 </dl>
-                <p class="section-note">বইটি সম্পর্কে আপনাদের যে কোন মতামত স্বানন্দে গ্রহন করা হবে। মতামত জানাতে পারেন contact[at]milon[dot]im এই ইমেইল ঠিকানায়।</p>
             </div>
         </section>
 
