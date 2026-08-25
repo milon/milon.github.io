@@ -1018,54 +1018,49 @@ html[data-theme="dark"] {
     color: var(--ink-3);
 }
 
-.book-detail-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
+/* Key/value metadata, sharing the hairline rhythm of .contact-row. */
+.spec-list {
     max-width: none;
-    background-color: var(--rule);
-    border: 1px solid var(--rule);
-    border-radius: 2px;
+    margin: 0;
+    border-top: 1px solid var(--rule-soft);
 }
 
-.book-detail-item {
-    background-color: var(--paper);
-    padding: 20px 22px;
+.spec-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule-soft);
 }
 
-.book-detail-item .strong {
-    display: block;
+.spec-key {
     font-family: var(--mono-font);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-4);
-    margin-bottom: 10px;
 }
 
-.book-detail-item p {
+.spec-val {
+    margin: 0;
+    font-size: 16px;
+    color: var(--ink);
+}
+
+.spec-line { display: block; }
+
+.spec-line + .spec-line { margin-top: 7px; }
+
+.spec-meta {
     font-size: 14.5px;
-    color: var(--ink-2);
-    margin: 0 0 6px;
-}
-
-.book-detail-item p:last-child { margin-bottom: 0; }
-
-.section-note {
-    margin: 22px 0 0;
-    font-size: 15px;
     color: var(--ink-3);
 }
 
-.book-detail-item p .strong {
-    display: inline;
-    font-family: var(--body-font);
-    font-size: 14.5px;
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--ink);
-    margin: 0 6px 0 0;
+.section-note {
+    margin: 26px 0 0;
+    font-size: 15px;
+    color: var(--ink-3);
 }
 
 /* ─────────────────────────────────────────────────────
@@ -1384,7 +1379,10 @@ html[data-theme="dark"] {
 
     .elsewhere { grid-template-columns: repeat(2, 1fr); }
 
-    .book-detail-grid { grid-template-columns: 1fr; }
+    .spec-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
 
     .prose { font-size: 16px; }
 

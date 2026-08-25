@@ -59,31 +59,41 @@
         <section class="section">
             <div class="section-label">04 — Details</div>
             <div class="section-body is-wide">
-                <div class="book-detail-grid">
-                    <div class="book-detail-item">
-                        <strong class="strong">Title</strong>
-                        <p>লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক</p>
+                <dl class="spec-list">
+                    <div class="spec-row">
+                        <dt class="spec-key">Title</dt>
+                        <dd class="spec-val">লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক</dd>
                     </div>
 
-                    <div class="book-detail-item">
-                        <strong class="strong">Publisher</strong>
-                        <p>দ্বিমিক প্রকাশনী</p>
-                        <p>১ম সংস্করণের প্রকাশ: মে, ২০১৫</p>
-                        <p>২য় সংস্করণের প্রকাশ: আগস্ট, ২০১৬</p>
+                    <div class="spec-row">
+                        <dt class="spec-key">Publisher</dt>
+                        <dd class="spec-val">দ্বিমিক প্রকাশনী</dd>
                     </div>
 
-                    <div class="book-detail-item">
-                        <strong class="strong">Where to buy</strong>
-                        <p><strong class="strong">হক লাইব্রেরি</strong>নীলক্ষেত, ঢাকা। (০১৮২০-১৫৭১৮১)</p>
-                        <p><strong class="strong">মানিক লাইব্রেরি</strong>নীলক্ষেত, ঢাকা। (০১৭৩৫-৭৪২৯০৮)</p>
+                    <div class="spec-row">
+                        <dt class="spec-key">Editions</dt>
+                        <dd class="spec-val">
+                            <span class="spec-line">১ম সংস্করণের প্রকাশ: <span class="spec-meta">মে, ২০১৫</span></span>
+                            <span class="spec-line">২য় সংস্করণের প্রকাশ: <span class="spec-meta">আগস্ট, ২০১৬</span></span>
+                        </dd>
                     </div>
 
-                    <div class="book-detail-item">
-                        <strong class="strong">Rokomari.com</strong>
-                        <p><a href="https://www.rokomari.com/book/100634">rokomari.com/book/100634</a></p>
-                        <p>ফোন: ১৬২৯৭</p>
+                    <div class="spec-row">
+                        <dt class="spec-key">In store</dt>
+                        <dd class="spec-val">
+                            <span class="spec-line">হক লাইব্রেরি <span class="spec-meta">নীলক্ষেত, ঢাকা। (০১৮২০-১৫৭১৮১)</span></span>
+                            <span class="spec-line">মানিক লাইব্রেরি <span class="spec-meta">নীলক্ষেত, ঢাকা। (০১৭৩৫-৭৪২৯০৮)</span></span>
+                        </dd>
                     </div>
-                </div>
+
+                    <div class="spec-row">
+                        <dt class="spec-key">Order online</dt>
+                        <dd class="spec-val">
+                            <span class="spec-line"><a href="https://www.rokomari.com/book/100634">rokomari.com/book/100634</a></span>
+                            <span class="spec-line spec-meta">ফোন: ১৬২৯৭</span>
+                        </dd>
+                    </div>
+                </dl>
                 <p class="section-note">বইটি সম্পর্কে আপনাদের যে কোন মতামত স্বানন্দে গ্রহন করা হবে। মতামত জানাতে পারেন contact[at]milon[dot]im এই ইমেইল ঠিকানায়।</p>
             </div>
         </section>
