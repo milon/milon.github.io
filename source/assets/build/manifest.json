@@ -5,6 +5,12 @@
     "src": "source/_assets/js/cv.js",
     "isEntry": true
   },
+  "source/_assets/js/search.js": {
+    "file": "assets/search-D-nbQjmd.js",
+    "name": "search",
+    "src": "source/_assets/js/search.js",
+    "isEntry": true
+  },
   "source/_assets/sass/cv.scss": {
     "file": "assets/cv-WYRHgrJs.css",
     "src": "source/_assets/sass/cv.scss",

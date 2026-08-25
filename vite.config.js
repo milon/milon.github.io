@@ -9,6 +9,7 @@ export default defineConfig({
         'source/_assets/sass/main.scss',
         'source/_assets/sass/cv.scss',
         'source/_assets/js/cv.js',
+        'source/_assets/js/search.js',
       ],
       refresh: true,
     }),

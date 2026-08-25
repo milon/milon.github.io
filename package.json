@@ -12,5 +12,8 @@
     "sass": "^1.32.8",
     "vite": "^6.0.0",
     "vite-plugin-static-copy": "^2.0.0"
+  },
+  "dependencies": {
+    "fuse.js": "^7.5.0"
   }
 }

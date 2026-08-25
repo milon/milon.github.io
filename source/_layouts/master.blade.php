@@ -9,6 +9,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         @viteRefresh()
         <link rel="stylesheet" href="{{ vite('source/_assets/sass/main.scss') }}">
+        <script type="module" src="{{ vite('source/_assets/js/search.js') }}"></script>
 
         @yield('meta')
     </head>
