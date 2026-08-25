@@ -42,7 +42,7 @@
 
         <footer id="footer">
             <div class="footer-inner">
-                <span>© {{ date('Y') }} Nuruzzaman Milon</span>
+                <span>© {{ date('Y') }} Nuruzzaman Milon · <a rel="license" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
                 <span class="footer-links">
                     <a href="/github">GitHub</a>
                     <a href="/linkedin">LinkedIn</a>

@@ -45,16 +45,27 @@
 
         <section class="section">
             <div class="section-label">03 — Books</div>
-            <div class="section-body">
-                <p>Two books on Laravel, written a decade apart, for two very different readers. <em>Laravel After Deploy</em> is a production playbook for mid-to-senior engineers. <em>Laravel PHP Web Framework</em> is a Bengali-language introduction, published by Dimik Prokashoni in two editions.</p>
+            <div class="section-body is-wide">
+                <p class="shelf-intro">Two books on Laravel, written a decade apart, for two very different readers.</p>
+                <div class="shelf">
+                    <a class="shelf-item" href="https://laravel-after-deploy.milon.im/">
+                        <img class="shelf-cover" src="/assets/images/book/laravel-after-deploy/cover.png" width="1236" height="1600" loading="lazy" alt="Laravel After Deploy cover">
+                        <span class="shelf-text">
+                            <span class="shelf-title">Laravel After Deploy</span>
+                            <span class="shelf-meta">2026 · English</span>
+                            <span class="shelf-desc">A production playbook for mid-to-senior engineers: architecture, performance, and operations at scale.</span>
+                        </span>
+                    </a>
+                    <a class="shelf-item" href="/book/laravel">
+                        <img class="shelf-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition.jpg" width="768" height="1001" loading="lazy" alt="Laravel PHP Web Framework cover">
+                        <span class="shelf-text">
+                            <span class="shelf-title">Laravel PHP Web Framework</span>
+                            <span class="shelf-meta">2015 · Bengali</span>
+                            <span class="shelf-desc">A Bengali-language introduction to Laravel for PHP developers, published by Dimik Prokashoni in two editions.</span>
+                        </span>
+                    </a>
+                </div>
                 <p class="list-utility"><a href="/books">All books →</a></p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-label">04 — Licence</div>
-            <div class="section-body">
-                <p>Everything on this site is published under the <a rel="license" href="http://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 Generic License</a>.</p>
             </div>
         </section>
     </div>
