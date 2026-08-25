@@ -64,8 +64,8 @@ class GenerateIndex
             ),
             $this->record(
                 title: 'Laravel After Deploy',
-                gist: 'For mid-to-senior Laravel engineers, and for backend engineers who can read PHP and want a production playbook shown in one concrete stack — not a polyglot cookbook. The examples are Laravel; the problems are not.',
-                categories: [],
+                gist: 'For mid-to-senior Laravel engineers, and for backend engineers who can read PHP and want a production playbook shown in one concrete stack — not a polyglot cookbook. The examples are Laravel; the problems are not framework-specific.',
+                categories: ['book'],
                 link: 'https://laravel-after-deploy.milon.im/',
                 type: 'book',
                 dateLabel: '2026 · August',
@@ -73,8 +73,8 @@ class GenerateIndex
             ),
             $this->record(
                 title: 'Laravel PHP Web Framework',
-                gist: 'লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক — a Bengali language book on the Laravel PHP framework, covering the fundamentals for PHP developers looking to adopt modern framework practices.',
-                categories: [],
+                gist: 'লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক — a Bengali language book on the Laravel PHP framework, published by Dimik Prokashoni, covering the fundamentals for PHP developers looking to adopt modern framework practices.',
+                categories: ['book'],
                 link: '/book/laravel',
                 type: 'book',
                 dateLabel: '2015 · May',
