@@ -961,19 +961,19 @@ html[data-theme="dark"] {
     grid-template-columns: 92px 1fr;
     gap: 20px;
     align-items: start;
-    padding: 10px 10px 10px 0;
+    padding: 10px;
+    margin: -10px;
     text-decoration: none;
-    transition: background-color var(--transition), padding var(--transition);
+    transition: background-color var(--transition);
 }
 
 /* Beats the underline that .section-body puts on every link. */
 .section-body .shelf-item,
 .section-body .shelf-item:hover { box-shadow: none; }
 
+/* A tint rather than a filled block — enough to read as one target, not a button. */
 .shelf-item:hover {
-    background-color: var(--paper-2);
-    padding-left: 10px;
-    padding-right: 0;
+    background-color: color-mix(in srgb, var(--paper-2) 50%, transparent);
 }
 
 .shelf-cover {
@@ -982,7 +982,10 @@ html[data-theme="dark"] {
     height: auto;
     border: 1px solid var(--rule);
     border-radius: 2px;
+    transition: border-color var(--transition);
 }
+
+.shelf-item:hover .shelf-cover { border-color: var(--ink-4); }
 
 .shelf-title {
     display: inline-block;
@@ -996,7 +999,7 @@ html[data-theme="dark"] {
     transition: box-shadow var(--transition);
 }
 
-.shelf-item:hover .shelf-title { box-shadow: inset 0 -1px 0 var(--ink); }
+.shelf-item:hover .shelf-title { box-shadow: inset 0 -1px 0 var(--ink-4); }
 
 .shelf-meta {
     display: block;
