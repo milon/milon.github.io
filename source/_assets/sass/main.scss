@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500&display=swap';
 @import "_reset.min";
 
 /* ─────────────────────────────────────────────────────
@@ -46,9 +46,9 @@
     --paper-2:   #f2f2f1;
     --paper-3:   #e9e9e7;
 
-    --display-font: 'Newsreader', Georgia, serif;
-    --body-font:    'Inter', system-ui, -apple-system, sans-serif;
-    --mono-font:    '0xProto', ui-monospace, SFMono-Regular, monospace;
+    --display-font: 'Newsreader', 'Noto Sans Bengali', Georgia, serif;
+    --body-font:    'Inter', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+    --mono-font:    '0xProto', 'Noto Sans Bengali', ui-monospace, SFMono-Regular, monospace;
 
     --measure: 68ch;
     --gutter: 40px;
