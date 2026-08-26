@@ -36,15 +36,16 @@
    ───────────────────────────────────────────────────── */
 
 :root {
-    --ink:       #111111;
-    --ink-2:     #3d3d3d;
-    --ink-3:     #6e6e6e;
-    --ink-4:     #9a9a9a;
-    --rule:      #e0e0e0;
-    --rule-soft: #efefef;
-    --paper:     #fbfbfa;
-    --paper-2:   #f2f2f1;
-    --paper-3:   #e9e9e7;
+    /* Catppuccin Latte */
+    --ink:       #4c4f69;
+    --ink-2:     #5c5f77;
+    --ink-3:     #6c6f85;
+    --ink-4:     #8c8fa1;
+    --rule:      #bcc0cc;
+    --rule-soft: #ccd0da;
+    --paper:     #eff1f5;
+    --paper-2:   #e6e9ef;
+    --paper-3:   #dce0e8;
 
     --display-font: 'Newsreader', 'Noto Sans Bengali', Georgia, serif;
     --body-font:    'Inter', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
@@ -59,15 +60,16 @@
 }
 
 html[data-theme="dark"] {
-    --ink:       #f2f2f1;
-    --ink-2:     #cfcfcd;
-    --ink-3:     #9b9b99;
-    --ink-4:     #6e6e6c;
-    --rule:      #2c2c2b;
-    --rule-soft: #222221;
-    --paper:     #121211;
-    --paper-2:   #1b1b1a;
-    --paper-3:   #232322;
+    /* Catppuccin Frappé */
+    --ink:       #c6d0f5;
+    --ink-2:     #b5bfe2;
+    --ink-3:     #a5adce;
+    --ink-4:     #838ba7;
+    --rule:      #51576d;
+    --rule-soft: #414559;
+    --paper:     #303446;
+    --paper-2:   #292c3c;
+    --paper-3:   #232634;
 }
 
 /* ─────────────────────────────────────────────────────
@@ -261,11 +263,11 @@ html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 /* Literal, not var(--ink): in dark mode ink is near-white and would wash the page
    out instead of dimming it. Older Chrome also won't inherit custom properties here. */
 .search-dialog::backdrop {
-    background-color: rgba(17, 17, 17, 0.36);
+    background-color: rgba(76, 79, 105, 0.36);
 }
 
 html[data-theme="dark"] .search-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.62);
+    background-color: rgba(35, 38, 52, 0.72);
 }
 
 /* A modal dialog blocks clicks but not the wheel, so pin the page behind it. */
@@ -843,19 +845,19 @@ pre code {
 }
 
 html[data-theme="dark"] {
-    --ctp-text:      #cdd6f4;
-    --ctp-overlay2:  #9399b2;
-    --ctp-rosewater: #f5e0dc;
-    --ctp-pink:      #f5c2e7;
-    --ctp-mauve:     #cba6f7;
-    --ctp-red:       #f38ba8;
-    --ctp-maroon:    #eba0ac;
-    --ctp-peach:     #fab387;
-    --ctp-yellow:    #f9e2af;
-    --ctp-green:     #a6e3a1;
-    --ctp-teal:      #94e2d5;
-    --ctp-sky:       #89dceb;
-    --ctp-blue:      #89b4fa;
+    --ctp-text:      #c6d0f5;
+    --ctp-overlay2:  #949cbb;
+    --ctp-rosewater: #f2d5cf;
+    --ctp-pink:      #f4b8e4;
+    --ctp-mauve:     #ca9ee6;
+    --ctp-red:       #e78284;
+    --ctp-maroon:    #ea999c;
+    --ctp-peach:     #ef9f76;
+    --ctp-yellow:    #e5c890;
+    --ctp-green:     #a6d189;
+    --ctp-teal:      #81c8be;
+    --ctp-sky:       #99d1db;
+    --ctp-blue:      #8caaee;
 }
 
 .hljs { background: none; color: var(--ctp-text); }
