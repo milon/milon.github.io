@@ -60,16 +60,16 @@
 }
 
 html[data-theme="dark"] {
-    /* Catppuccin Macchiato */
-    --ink:       #cad3f5;
-    --ink-2:     #b8c0e0;
-    --ink-3:     #a5adcb;
-    --ink-4:     #8087a2;
-    --rule:      #5b6078;
-    --rule-soft: #494d64;
-    --paper:     #24273a;
-    --paper-2:   #1e2030;
-    --paper-3:   #181926;
+    /* Catppuccin Mocha */
+    --ink:       #cdd6f4;
+    --ink-2:     #bac2de;
+    --ink-3:     #a6adc8;
+    --ink-4:     #7f849c;
+    --rule:      #585b70;
+    --rule-soft: #45475a;
+    --paper:     #1e1e2e;
+    --paper-2:   #181825;
+    --paper-3:   #11111b;
 }
 
 /* ─────────────────────────────────────────────────────
@@ -824,7 +824,7 @@ pre code {
 }
 
 /* ─────────────────────────────────────────────────────
-   Syntax highlighting — Catppuccin Latte and Macchiato.
+   Syntax highlighting — Catppuccin Latte and Mocha.
    Token mapping follows the palette's own style guide.
    ───────────────────────────────────────────────────── */
 
@@ -845,19 +845,19 @@ pre code {
 }
 
 html[data-theme="dark"] {
-    --ctp-text:      #cad3f5;
-    --ctp-overlay2:  #939ab7;
-    --ctp-rosewater: #f4dbd6;
-    --ctp-pink:      #f5bde6;
-    --ctp-mauve:     #c6a0f6;
-    --ctp-red:       #ed8796;
-    --ctp-maroon:    #ee99a0;
-    --ctp-peach:     #f5a97f;
-    --ctp-yellow:    #eed49f;
-    --ctp-green:     #a6da95;
-    --ctp-teal:      #8bd5ca;
-    --ctp-sky:       #91d7e3;
-    --ctp-blue:      #8aadf4;
+    --ctp-text:      #cdd6f4;
+    --ctp-overlay2:  #9399b2;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-pink:      #f5c2e7;
+    --ctp-mauve:     #cba6f7;
+    --ctp-red:       #f38ba8;
+    --ctp-maroon:    #eba0ac;
+    --ctp-peach:     #fab387;
+    --ctp-yellow:    #f9e2af;
+    --ctp-green:     #a6e3a1;
+    --ctp-teal:      #94e2d5;
+    --ctp-sky:       #89dceb;
+    --ctp-blue:      #89b4fa;
 }
 
 .hljs { background: none; color: var(--ctp-text); }
