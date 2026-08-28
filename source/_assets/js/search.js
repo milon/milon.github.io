@@ -3,12 +3,13 @@ import Fuse from 'fuse.js';
 const INDEX_URL = '/index.json';
 const MAX_RESULTS = 8;
 const DEBOUNCE_MS = 120;
-const HINT = 'Type to search writing, talks, and books.';
+const HINT = 'Type to search writing, talks, books, and categories.';
 
 const TYPE_LABELS = {
     post: 'Writing',
     talk: 'Talk',
     book: 'Book',
+    category: 'Category',
 };
 
 // ignoreLocation matters: Fuse otherwise penalises matches late in a string,

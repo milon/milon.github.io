@@ -5,8 +5,8 @@
                 type="search"
                 id="search-input"
                 class="search-input"
-                placeholder="Search writing, talks, and books"
-                aria-label="Search writing, talks, and books"
+                placeholder="Search writing, talks, books, and categories"
+                aria-label="Search writing, talks, books, and categories"
                 role="combobox"
                 aria-expanded="false"
                 aria-controls="search-results"
@@ -18,6 +18,6 @@
 
         <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
 
-        <p id="search-status" class="search-status">Type to search writing, talks, and books.</p>
+        <p id="search-status" class="search-status">Type to search writing, talks, books, and categories.</p>
     </div>
 </dialog>

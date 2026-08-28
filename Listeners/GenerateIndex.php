@@ -17,8 +17,13 @@ class GenerateIndex
             fn ($page) => $this->recordFromPage($page, 'talk')
         ));
 
+        $categories = collect($jigsaw->getCollection('categories')->map(
+            fn ($page) => $this->recordFromCategory($page)
+        ));
+
         $data = $posts
             ->merge($talks)
+            ->merge($categories)
             ->merge($this->staticRecords())
             ->values();
 
@@ -37,6 +42,21 @@ class GenerateIndex
             link: $this->pathFromPage($page),
             type: $type,
             dateLabel: $page->formatedDate($page->date),
+            isbn: '',
+        );
+    }
+
+    private function recordFromCategory(PageVariable $page): array
+    {
+        $slug = (string) $page->getFilename();
+
+        return $this->record(
+            title: '#' . $slug,
+            gist: 'Posts tagged ' . $slug . '.',
+            categories: [$slug],
+            link: $this->pathFromPage($page),
+            type: 'category',
+            dateLabel: '',
             isbn: '',
         );
     }
