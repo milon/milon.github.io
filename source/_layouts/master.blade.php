@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ $page->pageLanguage() }}">
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Nuruzzaman Milon">
@@ -32,6 +32,9 @@
         <link rel="stylesheet" href="{{ vite('source/_assets/sass/main.scss') }}">
 
         @yield('meta')
+        @if ($page->isIndexable())
+            <script type="application/ld+json">{!! $page->jsonLd() !!}</script>
+        @endif
     </head>
     <body>
         <header class="topbar">

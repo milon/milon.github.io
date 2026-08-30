@@ -41,6 +41,12 @@ return [
         return ! in_array($path, ['/404', '/404.html', '/laravel'], true)
             && $page->getFilename() !== '404';
     },
+    'pageLanguage' => function ($page) {
+        return App\Listeners\JsonLd::language($page);
+    },
+    'jsonLd' => function ($page) {
+        return App\Listeners\JsonLd::encode($page);
+    },
     'dusqusShortName' => 'milon-im',
     'paginatationLinkNumber' => 5,
     'urlRedirects' => require_once(__DIR__ . '/redirects.php'),

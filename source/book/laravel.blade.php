@@ -1,5 +1,6 @@
 ---
 title: Laravel PHP Web Framework
+lang: bn
 ---
 
 @extends('_layouts.master')
