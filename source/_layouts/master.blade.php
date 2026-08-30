@@ -123,12 +123,6 @@
                 }
                 loadSearch();
             });
-
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(function () { loadSearch(); }, { timeout: 2500 });
-            } else {
-                window.addEventListener('load', function () { setTimeout(loadSearch, 1); });
-            }
         </script>
     </body>
 </html>
