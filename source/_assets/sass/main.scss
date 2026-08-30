@@ -1,5 +1,38 @@
 @import "_reset.min";
 
+/* Self-hosted variable fonts remove the render-blocking Google Fonts request. */
+@font-face {
+    font-family: 'Inter';
+    src: url('/assets/fonts/Inter-Latin.woff2') format('woff2');
+    font-weight: 400 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Newsreader';
+    src: url('/assets/fonts/Newsreader-Latin.woff2') format('woff2');
+    font-weight: 300 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Newsreader';
+    src: url('/assets/fonts/Newsreader-Latin-Italic.woff2') format('woff2');
+    font-weight: 300 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Bengali';
+    src: url('/assets/fonts/NotoSansBengali.woff2') format('woff2');
+    font-weight: 400 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ─────────────────────────────────────────────────────
    0xProto — self-hosted, SIL Open Font License 1.1
    Bold and Italic are only fetched on pages that use

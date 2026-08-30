@@ -7,9 +7,10 @@
         <meta name="color-scheme" content="light dark">
         <title>{{ $page->siteTitle }}</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500&display=swap">
+        @if ($page->getPath() === '/')
+            <link rel="preload" href="/assets/fonts/Newsreader-Latin.woff2" as="font" type="font/woff2" crossorigin>
+            <link rel="preload" href="/assets/fonts/Newsreader-Latin-Italic.woff2" as="font" type="font/woff2" crossorigin>
+        @endif
         <script>
             (function() {
                 var STORAGE_KEY = 'milon.im-theme';
