@@ -1,10 +1,13 @@
+---
+title: Contact
+---
+
 @extends('_layouts.master')
 
 @section('meta')
     @include('_layouts._partials._index_meta', [
         'image' => 'contact',
-        'title' => 'milon.im | Contact',
-        'description' => "Contact with Nuruzzaman Milon",
+        'description' => "Contact Nuruzzaman Milon",
     ])
 @endsection
 

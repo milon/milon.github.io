@@ -4,11 +4,13 @@
     "dev": "NODE_OPTIONS=--disable-warning=DEP0190 vite",
     "watch": "NODE_OPTIONS=--disable-warning=DEP0190 vite",
     "build": "NODE_OPTIONS=--disable-warning=DEP0190 vite build",
-    "production": "NODE_OPTIONS=--disable-warning=DEP0190 vite build"
+    "production": "NODE_OPTIONS=--disable-warning=DEP0190 vite build",
+    "optimize-images": "bun scripts/optimize-images.js"
   },
   "devDependencies": {
     "@tighten/jigsaw-vite-plugin": "^1.0.0",
     "sass": "^1.32.8",
+    "sharp": "^0.35.4",
     "vite": "^6.0.0"
   },
   "dependencies": {

@@ -1,9 +1,12 @@
+---
+title: Books
+---
+
 @extends('_layouts.master')
 
 @section('meta')
     @include('_layouts._partials._index_meta', [
         'image' => 'books',
-        'title' => 'milon.im | Books',
         'description' => "Books by Nuruzzaman Milon",
     ])
 @endsection

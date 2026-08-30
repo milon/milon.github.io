@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
-
-        {{-- redirect to new url --}}
+        <meta name="robots" content="noindex">
         <meta http-equiv="Refresh" content="0; url={{ $url }}">
     </head>
 

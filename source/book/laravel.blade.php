@@ -1,9 +1,12 @@
+---
+title: Laravel PHP Web Framework
+---
+
 @extends('_layouts.master')
 
 @section('meta')
     @include('_layouts._partials._index_meta', [
         'image' => 'books',
-        'title' => 'Laravel PHP Web Framework',
         'description' => "Nuruzzaman Milon's first book on Laravel PHP Web Framework.",
     ])
 @endsection

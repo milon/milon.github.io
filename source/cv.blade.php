@@ -1,8 +1,11 @@
+---
+title: CV
+---
+
 @extends('_layouts.master')
 
 @section('meta')
     @include('_layouts._partials._cv_meta', [
-        'title' => 'milon.im | CV',
         'description' => "Curriculum Vitae of Nuruzzaman Milon",
     ])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js" defer></script>

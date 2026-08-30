@@ -1,5 +1,6 @@
 @php
-    $headline = $page->siteTitle . ($page->title ? ' | ' . $page->title : '');
+    $headline = $page->documentTitle();
+    $description = $page->metaDescription();
 
     // A post can point at its own card with `ogImage:` in front matter;
     // otherwise it falls back to the card for its section.
@@ -16,7 +17,7 @@
     <meta property="og:url" content="{{ $page->getUrl() }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ $headline }}" />
-    <meta property="og:description" content="{{ $page->gist }}" />
+    <meta property="og:description" content="{{ $description }}" />
     <meta property="og:image" content="{{ $shareImage }}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -31,15 +32,15 @@
     <meta name="twitter:site" content="@to_milon" />
     <meta name="twitter:creator" content="@to_milon" />
     <meta name="twitter:title" content="{{ $headline }}">
-    <meta name="twitter:description" content="{{ $page->gist }}">
+    <meta name="twitter:description" content="{{ $description }}">
     <meta name="twitter:image" content="{{ $shareImage }}" />
     <meta name="twitter:image:alt" content="{{ $page->title }}" />
 
     {{-- search engine --}}
-    <meta name="description" content="{{ $page->gist }}">
+    <meta name="description" content="{{ $description }}">
 
     {{-- google --}}
     <meta itemprop="name" content="{{ $headline }}">
-    <meta itemprop="description" content="{{ $page->description ?? $page->siteDescription }}">
+    <meta itemprop="description" content="{{ $description }}">
     <meta itemprop="image" content="{{ $shareImage }}" />
 @endif

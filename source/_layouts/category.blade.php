@@ -1,9 +1,11 @@
 @extends('_layouts.master')
 
+@section('title', $page->documentTitle('#' . $page->getFilename()))
+
 @section('meta')
     @include('_layouts._partials._index_meta', [
         'image' => 'writing',
-        'title' => 'milon.im | #' . $page->getFilename(),
+        'title' => '#' . $page->getFilename(),
         'description' => 'Posts tagged ' . $page->getFilename(),
     ])
 @endsection

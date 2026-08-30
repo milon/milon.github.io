@@ -1,4 +1,5 @@
 ---
+title: Writing
 pagination:
   collection: posts
   perPage: 7
@@ -9,8 +10,7 @@ pagination:
 @section('meta')
     @include('_layouts._partials._index_meta', [
         'image' => 'writing',
-        'title' => 'milon.im | Writing',
-        'description' => "Personal website of Nuruzzaman Milon",
+        'description' => "Writing by Nuruzzaman Milon",
     ])
 @endsection
 

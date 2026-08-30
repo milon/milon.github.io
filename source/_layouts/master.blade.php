@@ -5,7 +5,13 @@
         <meta name="author" content="Nuruzzaman Milon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="color-scheme" content="light dark">
-        <title>{{ $page->siteTitle }}</title>
+        <title>@yield('title', $page->documentTitle())</title>
+        @if ($page->production && $page->isIndexable())
+            <link rel="canonical" href="{{ $page->getUrl() }}">
+        @endif
+        @if (! $page->isIndexable())
+            <meta name="robots" content="noindex">
+        @endif
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
         @if ($page->getPath() === '/')
             <link rel="preload" href="/assets/fonts/Newsreader-Latin.woff2" as="font" type="font/woff2" crossorigin>

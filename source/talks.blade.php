@@ -1,4 +1,5 @@
 ---
+title: Talks
 pagination:
   collection: talks
   perPage: 7
@@ -9,7 +10,6 @@ pagination:
 @section('meta')
     @include('_layouts._partials._index_meta', [
         'image' => 'talks',
-        'title' => 'milon.im | Talks',
         'description' => "Conference talks of Nuruzzaman Milon",
     ])
 @endsection
