@@ -708,7 +708,8 @@ html:has(.search-dialog[open]) {
     margin: 40px 0;
 }
 
-.prose img {
+.prose img,
+.prose video {
     display: block;
     max-width: 100%;
     height: auto;

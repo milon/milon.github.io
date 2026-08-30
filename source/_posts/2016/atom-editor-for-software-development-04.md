@@ -34,7 +34,10 @@ You can install [jsonlint](https://atom.io/packages/linter-jsonlint) and [bootli
 
 There are two popular linter for javascript. One is [jshint](http://jshint.com) and other is [jslint](http://www.jslint.com). They are not better from one another, they are just different. I personally use jshint. Install it from terminal by typing `apm install linter-jshint` and then give it's path in settings just like the previous one.
 
-![Linter](/assets/images/posts/linter-js.gif)
+<video autoplay loop muted playsinline preload="metadata" width="960" height="632" poster="/assets/images/posts/linter-js-poster.webp">
+  <source src="/assets/images/posts/linter-js.webm" type="video/webm">
+  <source src="/assets/images/posts/linter-js.mp4" type="video/mp4">
+</video>
 
 I use php a lot and php has some popular linter package. But I think [PHP code sniffer](https://packagist.org/packages/squizlabs/php_codesniffer) is the most popular and one of the best package for php. You can install the package form terminal by typing `apm install linter-phpcs`. It assume youe machine already has phpcs installed. If not you could install it in a number of ways. One of the popular way is to install it through pear. Just type `pear install PHP_CodeSniffer` and you are good to go. But I prefer another way, and it's through composer. If you are a php guy, I assume you have familiarity with both pear and composer. You can install it from terminal with `composer global require "squizlabs/php_codesniffer=*"` command. Then just give the path of phpcs to the settings of the package.
 
