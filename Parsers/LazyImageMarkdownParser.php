@@ -2,18 +2,102 @@
 
 namespace App\Parsers;
 
+use DomainException;
+use Highlight\Highlighter;
 use TightenCo\Jigsaw\Parsers\JigsawMarkdownParser;
 
 class LazyImageMarkdownParser extends JigsawMarkdownParser
 {
-    public function __construct(private string $sourcePath)
-    {
+    /** @var array<string, string> */
+    private const LANGUAGE_ALIASES = [
+        'blade' => 'php',
+    ];
+
+    public function __construct(
+        private string $sourcePath,
+        private Highlighter $highlighter = new Highlighter(),
+    ) {
         parent::__construct();
     }
 
     public function parse($text)
     {
-        return $this->decorateImages(parent::parse($text));
+        return $this->decorateImages($this->highlightCode(parent::parse($text)));
+    }
+
+    private function highlightCode(string $html): string
+    {
+        $highlighted = preg_replace_callback(
+            '/<pre><code class="([^"]*)">(.*?)<\/code><\/pre>/s',
+            function (array $match): string {
+                $classes = preg_split('/\s+/', trim($match[1])) ?: [];
+
+                if (in_array('hljs', $classes, true)) {
+                    return $match[0];
+                }
+
+                $language = null;
+
+                foreach ($classes as $class) {
+                    if (str_starts_with($class, 'language-')) {
+                        $language = substr($class, 9);
+                        break;
+                    }
+                }
+
+                if ($language === null || $language === '' || $language === 'mermaid') {
+                    return $match[0];
+                }
+
+                $language = self::LANGUAGE_ALIASES[$language] ?? $language;
+                $code = $this->unescapeForHighlight(html_entity_decode($match[2], ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+
+                try {
+                    $result = $this->highlighter->highlight($language, $code);
+                } catch (DomainException) {
+                    return $match[0];
+                }
+
+                $classList = htmlspecialchars(
+                    implode(' ', array_unique([...$classes, 'hljs', $result->language])),
+                    ENT_QUOTES,
+                    'UTF-8',
+                );
+
+                return $this->escapeForBlade(
+                    '<pre><code class="'.$classList.'">'.$result->value.'</code></pre>',
+                );
+            },
+            $html,
+        );
+
+        return $highlighted ?? $html;
+    }
+
+    /**
+     * Jigsaw Blade-escapes markdown before it reaches this parser. Undo that
+     * so highlight.php sees the original source, then re-apply the same
+     * escapes to the highlighted HTML so Blade can compile the page.
+     */
+    private function unescapeForHighlight(string $code): string
+    {
+        return strtr($code, [
+            "<{{'?php'}}" => '<?php',
+            "{{'@'}}" => '@',
+            '@{{' => '{{',
+            '@{!!' => '{!!',
+        ]);
+    }
+
+    private function escapeForBlade(string $html): string
+    {
+        return strtr($html, [
+            '<?php' => "<{{'?php'}}",
+            '{@' => '{@',
+            '{{' => '@{{',
+            '{!!' => '@{!!',
+            '@' => "{{'@'}}",
+        ]);
     }
 
     private function decorateImages(string $html): string

@@ -28,10 +28,6 @@
         ])
     </div>
 
-    @if($page->syntaxHighlight)
-        @include('_layouts._partials._highlightjs')
-    @endif
-
     @if($page->mermaid)
         @include('_layouts._partials._mermaid')
     @endif
