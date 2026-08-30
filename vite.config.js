@@ -1,5 +1,4 @@
 import jigsaw from '@tighten/jigsaw-vite-plugin';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -12,14 +11,6 @@ export default defineConfig({
         'source/_assets/js/search.js',
       ],
       refresh: true,
-    }),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'node_modules/@fortawesome/fontawesome-free/webfonts/*',
-          dest: 'webfonts',
-        },
-      ],
     }),
   ],
 });

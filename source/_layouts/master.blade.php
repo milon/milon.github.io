@@ -74,9 +74,6 @@
 
         @include('_layouts._partials._search')
 
-        @if ($page->production)
-            @include('_layouts._partials._analytics')
-        @endif
         <script>
             (function() {
                 var STORAGE_KEY = 'milon.im-theme';
