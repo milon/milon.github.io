@@ -20,7 +20,7 @@
             <div class="section-label">01 — English</div>
             <div class="section-body is-wide">
                 <div class="book-row">
-                    <img class="book-cover" src="/assets/images/book/laravel-after-deploy/cover.png" alt="Laravel After Deploy Cover">
+                    <img class="book-cover" src="/assets/images/book/laravel-after-deploy/cover-400.webp" width="400" height="518" loading="lazy" decoding="async" alt="Laravel After Deploy Cover">
                     <div>
                         <h2 class="book-title"><a href="https://laravel-after-deploy.milon.im/">Laravel After Deploy</a></h2>
                         <p class="book-sub">
@@ -40,7 +40,7 @@
             <div class="section-label">02 — Bengali</div>
             <div class="section-body is-wide">
                 <div class="book-row">
-                    <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition.jpg" alt="Laravel PHP Web Framework Cover">
+                    <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition-400.webp" width="400" height="522" loading="lazy" decoding="async" alt="Laravel PHP Web Framework Cover">
                     <div>
                         <h2 class="book-title"><a href="/book/laravel">Laravel PHP Web Framework</a></h2>
                         <p class="book-sub">

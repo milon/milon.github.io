@@ -29,7 +29,7 @@
             <div class="section-label">02 — Preface</div>
             <div class="section-body is-wide">
                 <div class="book-row">
-                    <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_1st_edition.png" alt="1st Edition Cover">
+                    <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_1st_edition-400.webp" width="400" height="517" loading="lazy" decoding="async" alt="1st Edition Cover">
                     <div>
                         <h2 class="book-title">About the Book</h2>
                         <p class="book-sub">First edition · 2015 · May</p>
@@ -45,7 +45,7 @@
             <div class="section-label">03 — Second Edition</div>
             <div class="section-body is-wide">
                 <div class="book-row">
-                    <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition.jpg" alt="2nd Edition Cover">
+                    <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition-400.webp" width="400" height="522" loading="lazy" decoding="async" alt="2nd Edition Cover">
                     <div>
                         <h2 class="book-title">Second Edition</h2>
                         <p class="book-sub">2016 · August</p>

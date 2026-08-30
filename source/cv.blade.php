@@ -5,7 +5,7 @@
         'title' => 'milon.im | CV',
         'description' => "Curriculum Vitae of Nuruzzaman Milon",
     ])
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js" defer></script>
     <link rel="stylesheet" href="{{ vite('source/_assets/sass/cv.scss') }}">
     <script type="module" src="{{ vite('source/_assets/js/cv.js') }}"></script>
 @endsection

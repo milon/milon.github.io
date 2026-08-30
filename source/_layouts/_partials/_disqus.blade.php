@@ -1,21 +1,41 @@
 <div id="disqus_thread"></div>
 
-<script id="dsq-count-scr" src="//{{ $page->dusqusShortName }}.disqus.com/count.js" async></script>
 <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
     var disqus_config = function () {
-        this.page.url = '{{ $page->getUrl() }}';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = '{{ $page->getFilename() }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = '{{ $page->getUrl() }}';
+        this.page.identifier = '{{ $page->getFilename() }}';
     };
 
-    (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://{{ $page->dusqusShortName }}.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
+    (function() {
+        var loaded = false;
+
+        function loadDisqus() {
+            if (loaded) return;
+            loaded = true;
+
+            var d = document, s = d.createElement('script');
+            s.src = 'https://{{ $page->dusqusShortName }}.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+
+            var count = d.createElement('script');
+            count.id = 'dsq-count-scr';
+            count.src = '//{{ $page->dusqusShortName }}.disqus.com/count.js';
+            count.async = true;
+            (d.head || d.body).appendChild(count);
+        }
+
+        var thread = document.getElementById('disqus_thread');
+        if (thread && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                if (!entries[0] || !entries[0].isIntersecting) return;
+                observer.disconnect();
+                loadDisqus();
+            }, { rootMargin: '400px 0px' });
+            observer.observe(thread);
+        } else {
+            loadDisqus();
+        }
     })();
 </script>
 

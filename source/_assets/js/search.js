@@ -27,7 +27,9 @@ const FUSE_OPTIONS = {
     ],
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+function boot() {
+    if (window.__searchReady) return;
+
     const dialog = document.getElementById('search-dialog');
     const trigger = document.getElementById('search-trigger');
     const form = document.querySelector('.search-form');
@@ -226,4 +228,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     setStatus(HINT);
-});
+
+    window.__searchReady = true;
+    if (window.__openSearch) {
+        window.__openSearch = false;
+        open();
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+} else {
+    boot();
+}

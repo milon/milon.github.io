@@ -1,4 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" defer></script>
 
 <script>
     (function() {
@@ -83,9 +83,10 @@
             });
         }
 
-        // Theme toggle lives later in the layout. Wait until it has run so the
-        // first paint uses the stored light/dark choice, not the default.
-        if (document.readyState === 'complete') boot();
-        else window.addEventListener('load', boot);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', boot);
+        } else {
+            boot();
+        }
     })();
 </script>

@@ -49,7 +49,7 @@
                 <p class="shelf-intro">Two books on Laravel, written a decade apart, for two very different readers.</p>
                 <div class="shelf">
                     <a class="shelf-item" href="https://laravel-after-deploy.milon.im/">
-                        <img class="shelf-cover" src="/assets/images/book/laravel-after-deploy/cover.png" width="1236" height="1600" loading="lazy" alt="Laravel After Deploy cover">
+                        <img class="shelf-cover" src="/assets/images/book/laravel-after-deploy/cover-400.webp" width="400" height="518" loading="lazy" decoding="async" alt="Laravel After Deploy cover">
                         <span class="shelf-text">
                             <span class="shelf-title">Laravel After Deploy</span>
                             <span class="shelf-meta">2026 · English</span>
@@ -57,7 +57,7 @@
                         </span>
                     </a>
                     <a class="shelf-item" href="/book/laravel">
-                        <img class="shelf-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition.jpg" width="768" height="1001" loading="lazy" alt="Laravel PHP Web Framework cover">
+                        <img class="shelf-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition-400.webp" width="400" height="522" loading="lazy" decoding="async" alt="Laravel PHP Web Framework cover">
                         <span class="shelf-text">
                             <span class="shelf-title">Laravel PHP Web Framework</span>
                             <span class="shelf-meta">2015 · Bengali</span>

@@ -3,13 +3,26 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Nuruzzaman Milon">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
         <title>{{ $page->siteTitle }}</title>
         <link rel="shortcut icon" href="/assets/images/favicon.png"/>
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500&display=swap">
+        <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var theme;
+                try { theme = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (theme !== 'dark' && theme !== 'light') {
+                    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
         @viteRefresh()
         <link rel="stylesheet" href="{{ vite('source/_assets/sass/main.scss') }}">
-        <script type="module" src="{{ vite('source/_assets/js/search.js') }}"></script>
 
         @yield('meta')
     </head>
@@ -75,20 +88,50 @@
                     try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
                 }
 
-                function getTheme() {
-                    try {
-                        var saved = localStorage.getItem(STORAGE_KEY);
-                        if (saved === 'dark' || saved === 'light') return saved;
-                    } catch (e) {}
-                    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                }
-
-                setTheme(getTheme());
-
                 if (btn) btn.addEventListener('click', function() {
                     setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
                 });
             })();
+        </script>
+        <script type="module">
+            const src = "{{ vite('source/_assets/js/search.js') }}";
+            let loading;
+
+            function loadSearch() {
+                if (!loading) loading = import(src);
+                return loading;
+            }
+
+            const trigger = document.getElementById('search-trigger');
+
+            if (trigger) {
+                trigger.addEventListener('pointerenter', loadSearch, { once: true });
+                trigger.addEventListener('pointerdown', loadSearch, { once: true });
+                trigger.addEventListener('click', function (event) {
+                    if (window.__searchReady) return;
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    window.__openSearch = true;
+                    loadSearch();
+                }, true);
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+                const target = event.target;
+                if (target instanceof Element && target.closest('input, textarea, select, [contenteditable]')) return;
+                if (!window.__searchReady) {
+                    event.preventDefault();
+                    window.__openSearch = true;
+                }
+                loadSearch();
+            });
+
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(function () { loadSearch(); }, { timeout: 2500 });
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadSearch, 1); });
+            }
         </script>
     </body>
 </html>
