@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="bn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
+        <title>Laravel PHP Web Framework | milon.im</title>
+                    <link rel="canonical" href="https://milon.im/book/laravel">
+                        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var theme;
+                try { theme = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (theme !== 'dark' && theme !== 'light') {
+                    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
+                <link rel="stylesheet" href="/assets/build/assets/main-DSJxBy7R.css">
+
+            <meta property="og:url" content="https://milon.im/book/laravel" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Laravel PHP Web Framework | milon.im" />
+    <meta property="og:description" content="Nuruzzaman Milon&#039;s first book on Laravel PHP Web Framework." />
+    <meta property="og:image" content="https://milon.im/assets/images/og/books.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Laravel PHP Web Framework | milon.im" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="Laravel PHP Web Framework | milon.im" />
+    <meta name="twitter:description" content="Nuruzzaman Milon&#039;s first book on Laravel PHP Web Framework." />
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/books.png" />
+    <meta name="twitter:image:alt" content="Laravel PHP Web Framework | milon.im" />
+
+    
+    <meta name="description" content="Nuruzzaman Milon&#039;s first book on Laravel PHP Web Framework." />
+
+    
+    <meta itemprop="name" content="Laravel PHP Web Framework | milon.im" />
+    <meta itemprop="description" content="Nuruzzaman Milon&#039;s first book on Laravel PHP Web Framework." />
+    <meta itemprop="image" content="https://milon.im/assets/images/og/books.png" />
+                    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://milon.im/#website","url":"https://milon.im/","name":"milon.im","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","inLanguage":["en","bn"],"publisher":{"@id":"https://milon.im/#person"}},{"@type":"Person","@id":"https://milon.im/#person","name":"Nuruzzaman Milon","url":"https://milon.im/","jobTitle":"Engineering Tech Lead","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","sameAs":["https://www.facebook.com/milon.nuruzzaman","https://twitter.com/to_milon","https://github.com/milon","https://www.linkedin.com/in/tomilon","https://speakerdeck.com/milon","http://www.slideshare.net/milon521","https://www.instagram.com/to_milon","https://stackoverflow.com/users/3905595/nuruzzaman-milon"]},{"@type":"Book","@id":"https://milon.im/book/laravel#book","name":"Laravel PHP Web Framework","alternateName":"লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক","description":"Laravel PHP Web Framework","url":"https://milon.im/book/laravel","isbn":"978-984-33-9190-2","inLanguage":"bn","datePublished":"2015-05","author":{"@id":"https://milon.im/#person"},"publisher":{"@type":"Organization","name":"Dimik Prokashoni"},"image":"https://milon.im/assets/images/book/laravel-php-web-framework/cover_2nd_edition-400.webp","bookFormat":"https://schema.org/Paperback"}]}</script>
+            </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="" href="/posts">Writing</a>
+                <a data-num="03" class="selected" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="search-trigger" id="search-trigger" title="Search" aria-label="Search">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="M20 20l-3.6-3.6"/>
+                    </svg>
+                </button>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell">
+        <div class="page-head">
+            <p class="eyebrow">Book — Bengali</p>
+            <h1>Laravel PHP Web Framework</h1>
+            <p class="sub">লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক · Dimik Prokashoni · Two editions</p>
+            <p class="book-sub">ISBN 978-984-33-9190-2</p>
+        </div>
+
+        <section class="section">
+            <div class="section-label">01 — Why</div>
+            <div class="section-body">
+                <p>I heard a question very often, "Brother, I have learned PHP, but writing PHP inside HTML is not the pleasant thing to me." Or, "Which PHP framework should I learn?" In these type of scenario, my general answer is Laravel. Now, the question is why Laravel? You can answer it in many ways, even I have a <a href="/post/why-you-should-consider-laravel-as-your-go-to-framework-of-choice">blogpost</a> on that. But the short answer is Laravel uses the cutting age techniques and best practices of PHP. Though this bit of information is true for some other PHP frameworks as well, my personal preference is Laravel, especially for its beautiful syntax.</p>
+                <p>Now the question is why I decided to write a book? I heard a complain so many times, that I am really sick of it. And it is, we don't have a good resource on Bengali for Laravel. All the resources are in English. I have taken a lot of help from the Bangladeshi community but didn't return them anything significant. This actually encourages me to write a book on Laravel.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-label">02 — Preface</div>
+            <div class="section-body is-wide">
+                <div class="book-row">
+                    <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_1st_edition-400.webp" width="400" height="517" loading="lazy" decoding="async" alt="1st Edition Cover">
+                    <div>
+                        <h2 class="book-title">About the Book</h2>
+                        <p class="book-sub">First edition · 2015 · May</p>
+                        <p class="book-desc">প্রায়শই আমাকে একটা কথা শুনতে হয়, ভাই পিএইচপি তো শিখেছি, কিন্তু এইচটিএমএল ট্যাগের ভেতর পিএইচপি কোড লিখতে ভালো লাগে না। অথবা, ভাইয়া পিএইচপির কোন ফ্রেমওয়ার্ক শিখলে ভাল হবে? এ ধরনের উত্তরে আমি এখন লারাভেল ফ্রেমওয়ার্ক শেখার পরামর্শ দেই। প্রশ্ন হচ্ছে কেন লারাভেল? এর উত্তরে অনেক কথাই বলা যায়, তবে এককথায় বলতে গেলে লারাভেল পিএইচপির কাটিং এজ টেকনিকগুলি ব্যবহার করে। এছাড়াও অনেক আরো অনেক উল্লেখযোগ্য ফিচার রয়েছে যা অন্য পিএইচপি ফ্রেমওয়ার্কগুলিতে নেই। যদিও এই কথা সিম্ফোনীর ক্ষেত্রেও প্রযোজ্য, কিন্তু আমি নিজে ব্যক্তিগতভাবে লারাভেল খুব পছন্দ করি।</p>
+                        <p class="book-desc">এবার কথা হচ্ছে কেন লারাভেলের উপর বই লেখার সিদ্ধান্ত নিলাম। প্রায়ই শুনতে হয় নেটে লারাভেলের ভালো কোন বাংলা টিউটোরিয়াল বা রিসোর্স নাই। যা আছে সবই ইংরেজিতে। এছাড়া কমিউনিটি থেকে সারাজীবন বিভিন্ন সাহায্য সহযোগীতা নিয়েই গেলাম, কিন্তু উল্লেখ করার মত কিছুই দিতে পারি নি। তাই এ দায়বন্ধতা থেকেই লারাভেলের উপর বই লিখতে উৎসাহিত হয়েছি।</p>
+                        <p class="book-desc">আমি লারাভেল ফ্রেমওয়ার্কে কাজ করি খুব বেশি দিন হয় নি। লারাভেলের বয়সও খুব বেশি না, মাত্র বছর চারেক। আমার সাথে লারাভেলের পরিচয় বছর দুয়েক হলো, আর বছর খানেক ধরে প্রফেশনাল কাজে লারাভেল ব্যবহার করছি। আমি লারাভেল শেখা শুরু করেছি লারাভেল ৪.০ থেকে। এরপর ৪.১, ৪.২ দেখলাম। যদিও প্রফেশনালি লারাভেল ৪.২ দিয়েই শুরু করেছি। এরপরই এলো লারাভেল ৫.০, এই ভার্সনে কিছু উল্লেখযোগ্য পরিবর্তন এসেছে যেমন নতুন সিম্ফোনীর মত ডিরেক্টরি স্ট্রাকচার, নতুন ফরম ভ্যালিডেশন, ফিল্টারিংয়ের পরিবর্তে মিডলওয়্যার ইত্যাদি। এছাড়াও আমি যদি ভুল করে না থাকি তাহলে লারাভেল ৫.০ ই হল প্রথম পিএইচপি ফ্রেমওয়ার্ক যেটা ১০০ ভাগ psr-4 কম্পিটেবল। তাই শুরু যখন করবো নতুনটা দিয়ে করাই ভালো মনে হলো আমার কাছে।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-label">03 — Second Edition</div>
+            <div class="section-body is-wide">
+                <div class="book-row">
+                    <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition-400.webp" width="400" height="522" loading="lazy" decoding="async" alt="2nd Edition Cover">
+                    <div>
+                        <h2 class="book-title">Second Edition</h2>
+                        <p class="book-sub">2016 · August</p>
+                        <p class="book-desc">বইটার দ্বিতীয় সংস্করণ বের হয়েছে। এটা আমার প্রথম বই ছিল। তাই প্রথম সংস্করনে অনেকগুলো ভুল-ত্রুটি ছিল। কিছু ফরম্যাটিং ভুল ছিল, সবচেয়ে মারাত্মক যে ভুল ছিল সেটা হলো, কোডের একটা অংশ মিসিং ছিল। অনেক ভালোবাসা পেয়েছি বইটার জন্য আপনাদের কাছ থেকে। সবাই খুব উৎসাহ দিয়েছে, ভালো ভালো মন্তব্য পেয়েছি। দুই-একটা যে বাজে মন্তব্য পাই নি, তা না, তবে সেগুলিকে আমি এই সংস্করনে ঠিক করার চেষ্টা করেছি।</p>
+                        <p class="book-desc">সবচেয়ে বড় যে অভিযোগ ছিল বইটা নিয়ে, সেটাই এবার দূর করা হয়েছে। কোডের ব্যাখ্যা সহ একটি পূর্ণাঙ্গ প্রজেক্ট যুক্ত করা হয়েছে। এছাড়া লারাভেলের নতুন নতুন অনেক ফিচারের বর্ণনা এবং ব্যবহারবিধিও যোগ করা হয়েছে। আগামী সপ্তাহে লারাভেল ৫.৩ রিলিজ পাবে। এই বইয়ে যে অংশগুলো কভার করা হয়েছে, সেগুলি পুরোপুরি লারাভেল ৫.৩ এর সাথে সামঞ্জস্যপূর্ণ। তবে প্রজেক্টে আমি লারাভেল ৫.১ ব্যবহার করেছি। এর কারন, লারাভেল ৫.১ লং টার্ম সাপোর্ট ভার্সন। এ কারনে এটি রিয়েল লাইফ প্রজেক্ট করার ক্ষেত্রে সবচেয়ে উপযুক্ত।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-label">04 — Details</div>
+            <div class="section-body is-wide">
+                <dl class="spec-list">
+                    <div class="spec-row">
+                        <dt class="spec-key">Title</dt>
+                        <dd class="spec-val">লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক</dd>
+                    </div>
+
+                    <div class="spec-row">
+                        <dt class="spec-key">Publisher</dt>
+                        <dd class="spec-val">দ্বিমিক প্রকাশনী</dd>
+                    </div>
+
+                    <div class="spec-row">
+                        <dt class="spec-key">Editions</dt>
+                        <dd class="spec-val">
+                            <span class="spec-line">১ম সংস্করণের প্রকাশ: <span class="spec-meta">মে, ২০১৫</span></span>
+                            <span class="spec-line">২য় সংস্করণের প্রকাশ: <span class="spec-meta">আগস্ট, ২০১৬</span></span>
+                        </dd>
+                    </div>
+
+                    <div class="spec-row">
+                        <dt class="spec-key">In store</dt>
+                        <dd class="spec-val">
+                            <span class="spec-line">হক লাইব্রেরি <span class="spec-meta">নীলক্ষেত, ঢাকা। (০১৮২০-১৫৭১৮১)</span></span>
+                            <span class="spec-line">মানিক লাইব্রেরি <span class="spec-meta">নীলক্ষেত, ঢাকা। (০১৭৩৫-৭৪২৯০৮)</span></span>
+                        </dd>
+                    </div>
+
+                    <div class="spec-row">
+                        <dt class="spec-key">Order online</dt>
+                        <dd class="spec-val">
+                            <span class="spec-line"><a href="https://www.rokomari.com/book/100634">rokomari.com/book/100634</a></span>
+                            <span class="spec-line spec-meta">ফোন: ১৬২৯৭</span>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <p class="back-link">
+    <a href="/books">← Back to Books</a>
+</p>
+    </div>
+        </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon · <a rel="license" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+        <dialog id="search-dialog" class="search-dialog" aria-label="Search">
+    <div class="search-panel">
+        <form class="search-form" role="search">
+            <input
+                type="search"
+                id="search-input"
+                class="search-input"
+                placeholder="Search writing, talks, books, and categories"
+                aria-label="Search writing, talks, books, and categories"
+                role="combobox"
+                aria-expanded="false"
+                aria-controls="search-results"
+                aria-autocomplete="list"
+                autocomplete="off"
+                spellcheck="false"
+            >
+        </form>
+
+        <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+
+        <p id="search-status" class="search-status">Type to search writing, talks, books, and categories.</p>
+    </div>
+</dialog>
+
+        <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+        <script type="module">
+            const src = "/assets/build/assets/search-Bzqmh_no.js";
+            let loading;
+
+            function loadSearch() {
+                if (!loading) loading = import(src);
+                return loading;
+            }
+
+            const trigger = document.getElementById('search-trigger');
+
+            if (trigger) {
+                trigger.addEventListener('pointerenter', loadSearch, { once: true });
+                trigger.addEventListener('pointerdown', loadSearch, { once: true });
+                trigger.addEventListener('click', function (event) {
+                    if (window.__searchReady) return;
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    window.__openSearch = true;
+                    loadSearch();
+                }, true);
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+                const target = event.target;
+                if (target instanceof Element && target.closest('input, textarea, select, [contenteditable]')) return;
+                if (!window.__searchReady) {
+                    event.preventDefault();
+                    window.__openSearch = true;
+                }
+                loadSearch();
+            });
+        </script>
+    </body>
+</html>

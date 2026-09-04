@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="bn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
+        <title>সহজে পাইথন শেখা-০৩ | milon.im</title>
+                    <link rel="canonical" href="https://milon.im/post/learn-python-easily-03">
+                        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var theme;
+                try { theme = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (theme !== 'dark' && theme !== 'light') {
+                    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
+                <link rel="stylesheet" href="/assets/build/assets/main-DSJxBy7R.css">
+
+            <meta property="og:url" content="https://milon.im/post/learn-python-easily-03" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="সহজে পাইথন শেখা-০৩ | milon.im" />
+    <meta property="og:description" content="সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)" />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="সহজে পাইথন শেখা-০৩" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2012-06-29T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="সহজে পাইথন শেখা-০৩ | milon.im">
+    <meta name="twitter:description" content="সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="সহজে পাইথন শেখা-০৩" />
+
+    
+    <meta name="description" content="সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)">
+
+    
+    <meta itemprop="name" content="সহজে পাইথন শেখা-০৩ | milon.im">
+    <meta itemprop="description" content="সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+                    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://milon.im/#website","url":"https://milon.im/","name":"milon.im","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","inLanguage":["en","bn"],"publisher":{"@id":"https://milon.im/#person"}},{"@type":"Person","@id":"https://milon.im/#person","name":"Nuruzzaman Milon","url":"https://milon.im/","jobTitle":"Engineering Tech Lead","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","sameAs":["https://www.facebook.com/milon.nuruzzaman","https://twitter.com/to_milon","https://github.com/milon","https://www.linkedin.com/in/tomilon","https://speakerdeck.com/milon","http://www.slideshare.net/milon521","https://www.instagram.com/to_milon","https://stackoverflow.com/users/3905595/nuruzzaman-milon"]},{"@type":"BlogPosting","@id":"https://milon.im/post/learn-python-easily-03#article","headline":"সহজে পাইথন শেখা-০৩","description":"সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)","datePublished":"2012-06-29T00:00:00+00:00","dateModified":"2012-06-29T00:00:00+00:00","url":"https://milon.im/post/learn-python-easily-03","mainEntityOfPage":"https://milon.im/post/learn-python-easily-03","isPartOf":{"@id":"https://milon.im/#website"},"author":{"@id":"https://milon.im/#person"},"publisher":{"@id":"https://milon.im/#person"},"image":"https://milon.im/assets/images/og/writing.png","inLanguage":"bn","keywords":"python"}]}</script>
+            </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="search-trigger" id="search-trigger" title="Search" aria-label="Search">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="M20 20l-3.6-3.6"/>
+                    </svg>
+                </button>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-learn-python-easily-03">সহজে পাইথন শেখা-০৩</h1>
+            <p class="article-meta">
+                <span>2012 · June · 29</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>আমি এখন পর্যন্ত যতগুলো প্রোগ্রামিং ল্যাংগুয়েজ শিখেছি সবগুলোতেই প্রথম প্রোগ্রাম লিখেছিলাম Hello World এই শব্দদুটি প্রিন্ট করার মাধ্যমে। এটা আসলে একটা ট্রেডিশন হয়ে গেছে। পাইথনেও প্রথম প্রোগ্রাম করবো এই শব্দদুটিই প্রিন্ট করে। আমি আগেও বলেছি প্রোগ্রামিং শুরু করার জন্য পাইথন খুবই উপযোগী একটা প্রোগ্রামিং ল্যাংগুয়েজ। অন্য ল্যাংগুয়েজে এই শব্দদুটি লেখার জন্য যেখানে অনেক কিছু লিখতে হয় পাইথনে মাত্র কয়েকটা শব্দ লিখলেই সে কাজ করা যায়। একটা উদাহরন দেই- Hello World শব্দদুইটা C, C++, Java এবং Python এই চারটা প্রোগ্রামিং ল্যাংগুয়েজে লিখে তুলনা করি-</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+int main(){
+    printf(“Hello World”);
+    return 0;
+}
+</code></pre>
+
+<p>Hello World in C++:</p>
+
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    cout&lt;&lt;”Hello World”;
+    return 0;
+}
+</code></pre>
+
+<p>Hello World in Java:</p>
+
+<pre><code>public static void main(String args[]){
+    System.out.println(“Hello World”);
+}
+</code></pre>
+
+<p>Hello World in Python:</p>
+
+<pre><code>print “Hello World”
+</code></pre>
+
+<p>বোঝাই যাচ্ছে অন্য যে কোন ল্যাংগুয়েজের তুলনায় পাইথনে কোড করা কত সহজ।</p>
+
+<p>আমরা কিন্তু ইতোমধ্যে পাইথনে আমাদের প্রথম কোড করে ফেলেছি। শুধু Hello World না, এই print স্ট্যাটমেন্ট দিয়ে আমরা পাইথন শেলে যে কোন কিছুই প্রিন্ট করতে পারি। যেমন আমি যদি আমার নাম ধাম প্রিন্ট করতে চাই, তাহলে প্রোগ্রামটি হবে-</p>
+
+<pre><code>print “Nuruzzaman Milon”
+print “Student of Information and Communication Technology”
+print “Mawlana Bhashani Science and Technology University”
+</code></pre>
+
+<p>এ তো গেল আমি পাইথন শেলে কিভাবে কোড লিখবো সেটা। পাইথন শেল বন্ধ করে দিলেই তো আমার লেখা সব কোড মুছে যাবে। বার বার এই কোড কি আমি লিখবো? না, বার বার একই কোড লেখার কোন দরকার নেই। আমি আমার কোড খুব সহজেই একটা টেক্সট ফাইলে সংরক্ষন করে রাখতে পারি। তবে এক্ষেত্রে ফাইলের এক্সটেনশন হতে হবে <code>.py</code></p>
+
+<p>যেমন আমি যদি উপরের প্রোগ্রামটি সংরক্ষন করে রাখতে চাই তাহলে আমি সেটিকে, ধরা যাক name নামে সংরক্ষন করবো, সেক্ষেত্রে ফাইলের নাম হবে <code>name.py</code></p>
+
+<p>এবার আমি যদি ফাইলটি আবার চালাতে চাই তাহলে আমাকে পাইথন শেলে লিখতে হবে-</p>
+
+<pre><code>python name.py
+</code></pre>
+
+<p>তাহলেই আমি পাইথন শেলে আমার কাঙ্খিত ফলাফল দেখতে পারবো।</p>
+
+            <p class="category-tags">
+                    <a href="/posts/category/python">#python</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/learn-python-easily-03';
+        this.page.identifier = 'learn-python-easily-03';
+    };
+
+    (function() {
+        var loaded = false;
+
+        function loadDisqus() {
+            if (loaded) return;
+            loaded = true;
+
+            var d = document, s = d.createElement('script');
+            s.src = 'https://milon-im.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+
+            var count = d.createElement('script');
+            count.id = 'dsq-count-scr';
+            count.src = '//milon-im.disqus.com/count.js';
+            count.async = true;
+            (d.head || d.body).appendChild(count);
+        }
+
+        var thread = document.getElementById('disqus_thread');
+        if (thread && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                if (!entries[0] || !entries[0].isIntersecting) return;
+                observer.disconnect();
+                loadDisqus();
+            }, { rootMargin: '400px 0px' });
+            observer.observe(thread);
+        } else {
+            loadDisqus();
+        }
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon · <a rel="license" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+        <dialog id="search-dialog" class="search-dialog" aria-label="Search">
+    <div class="search-panel">
+        <form class="search-form" role="search">
+            <input
+                type="search"
+                id="search-input"
+                class="search-input"
+                placeholder="Search writing, talks, books, and categories"
+                aria-label="Search writing, talks, books, and categories"
+                role="combobox"
+                aria-expanded="false"
+                aria-controls="search-results"
+                aria-autocomplete="list"
+                autocomplete="off"
+                spellcheck="false"
+            >
+        </form>
+
+        <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+
+        <p id="search-status" class="search-status">Type to search writing, talks, books, and categories.</p>
+    </div>
+</dialog>
+
+        <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+        <script type="module">
+            const src = "/assets/build/assets/search-Bzqmh_no.js";
+            let loading;
+
+            function loadSearch() {
+                if (!loading) loading = import(src);
+                return loading;
+            }
+
+            const trigger = document.getElementById('search-trigger');
+
+            if (trigger) {
+                trigger.addEventListener('pointerenter', loadSearch, { once: true });
+                trigger.addEventListener('pointerdown', loadSearch, { once: true });
+                trigger.addEventListener('click', function (event) {
+                    if (window.__searchReady) return;
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    window.__openSearch = true;
+                    loadSearch();
+                }, true);
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+                const target = event.target;
+                if (target instanceof Element && target.closest('input, textarea, select, [contenteditable]')) return;
+                if (!window.__searchReady) {
+                    event.preventDefault();
+                    window.__openSearch = true;
+                }
+                loadSearch();
+            });
+        </script>
+    </body>
+</html>

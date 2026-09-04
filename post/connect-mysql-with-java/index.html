@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="bn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
+        <title>জাভার সাথে MySQL এর কানেকশন | milon.im</title>
+                    <link rel="canonical" href="https://milon.im/post/connect-mysql-with-java">
+                        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var theme;
+                try { theme = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (theme !== 'dark' && theme !== 'light') {
+                    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
+                <link rel="stylesheet" href="/assets/build/assets/main-DSJxBy7R.css">
+
+            <meta property="og:url" content="https://milon.im/post/connect-mysql-with-java" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="জাভার সাথে MySQL এর কানেকশন | milon.im" />
+    <meta property="og:description" content="How to connect MySQL with Java." />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="জাভার সাথে MySQL এর কানেকশন" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2011-05-21T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="জাভার সাথে MySQL এর কানেকশন | milon.im">
+    <meta name="twitter:description" content="How to connect MySQL with Java.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="জাভার সাথে MySQL এর কানেকশন" />
+
+    
+    <meta name="description" content="How to connect MySQL with Java.">
+
+    
+    <meta itemprop="name" content="জাভার সাথে MySQL এর কানেকশন | milon.im">
+    <meta itemprop="description" content="How to connect MySQL with Java.">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+                    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://milon.im/#website","url":"https://milon.im/","name":"milon.im","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","inLanguage":["en","bn"],"publisher":{"@id":"https://milon.im/#person"}},{"@type":"Person","@id":"https://milon.im/#person","name":"Nuruzzaman Milon","url":"https://milon.im/","jobTitle":"Engineering Tech Lead","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","sameAs":["https://www.facebook.com/milon.nuruzzaman","https://twitter.com/to_milon","https://github.com/milon","https://www.linkedin.com/in/tomilon","https://speakerdeck.com/milon","http://www.slideshare.net/milon521","https://www.instagram.com/to_milon","https://stackoverflow.com/users/3905595/nuruzzaman-milon"]},{"@type":"BlogPosting","@id":"https://milon.im/post/connect-mysql-with-java#article","headline":"জাভার সাথে MySQL এর কানেকশন","description":"How to connect MySQL with Java.","datePublished":"2011-05-21T00:00:00+00:00","dateModified":"2011-05-21T00:00:00+00:00","url":"https://milon.im/post/connect-mysql-with-java","mainEntityOfPage":"https://milon.im/post/connect-mysql-with-java","isPartOf":{"@id":"https://milon.im/#website"},"author":{"@id":"https://milon.im/#person"},"publisher":{"@id":"https://milon.im/#person"},"image":"https://milon.im/assets/images/og/writing.png","inLanguage":"bn","keywords":"java, databases"}]}</script>
+            </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="search-trigger" id="search-trigger" title="Search" aria-label="Search">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="M20 20l-3.6-3.6"/>
+                    </svg>
+                </button>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-connect-mysql-with-java">জাভার সাথে MySQL এর কানেকশন</h1>
+            <p class="article-meta">
+                <span>2011 · May · 21</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>জাভা বর্তমান পৃথিবীর অত্যন্ত জনপ্রিয় একটা প্রোগ্রামিং ভাষা। যে কোন ধরনের অ্যাপ্লিকেশন ডেভেলপ করতে জাভার কোন জুড়ি নেই। আর বর্তমানের অধিকাংশ সফটয়্যারেই ডাটাবেজ ব্যবহার করা হয়। জাভার সাথে ডাটাবেজের কিভাবে সংযোগ দিতে হয় তা এই পোষ্টের মাধ্যমে দেখান হল।</p>
+
+<p>ডাটাবেজে বিভিন্ন ধরনের অপারেশন চালানোর জন্য জাভার Statement class(কমেন্টের মধ্যে) এবং অত্যাধুনিক PreparedStatement class ব্যবহার করা হয়েছে।</p>
+
+<p>জাভাতে ডাটাবেজের কোন পরিবর্তন আনার জন্য executeUpdate() এবং কোন তথ্য অনুসন্ধানের জন্য executeQuery() মেথড ব্যবহার করা হয়।</p>
+
+<pre><code class="language-java hljs java"><span class="hljs-comment">//Mysql connection</span>
+<span class="hljs-comment">//Author: Milon</span>
+
+<span class="hljs-comment">//import java.sql.*;</span>
+<span class="hljs-keyword">import</span> java.sql.Connection;
+<span class="hljs-keyword">import</span> java.sql.Statement;
+<span class="hljs-keyword">import</span> java.sql.PreparedStatement;
+<span class="hljs-keyword">import</span> java.sql.DriverManager;
+<span class="hljs-keyword">import</span> java.sql.ResultSet;
+<span class="hljs-keyword">import</span> java.sql.SQLException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MysqlConnection</span></span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String driver = <span class="hljs-string">"com.mysql.jdbc.Driver"</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String connection = <span class="hljs-string">"jdbc:mysql://localhost:3306/milon"</span>; <span class="hljs-comment">//'milon' is your database name</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String user = <span class="hljs-string">"root"</span>;                  <span class="hljs-comment">//'root' is username</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String password = <span class="hljs-string">"pass"</span>;        <span class="hljs-comment">//'pass' is password</span>
+
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Connection con = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Statement state = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> ResultSet result;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> PreparedStatement pstate;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span><span class="hljs-comment">/* throws Exception*/</span></span>{
+        mysqlConnect();
+        insertData(<span class="hljs-string">"s6s"</span>,<span class="hljs-string">"milon"</span>,<span class="hljs-string">"dgh"</span>,<span class="hljs-string">"ghjgh"</span>);
+        deleteData(<span class="hljs-string">"sd"</span>);
+        countRow(<span class="hljs-string">"dictionary"</span>);
+        updateData(<span class="hljs-string">"ss"</span>, <span class="hljs-string">"suru"</span>);
+        showData(<span class="hljs-string">"surayea"</span>);
+        closeConnection();
+        }
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mysqlConnect</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">try</span>{
+            Class.forName(driver);
+            con = DriverManager.getConnection(connection, user, password);
+            System.out.println(<span class="hljs-string">"Successfully connected to database."</span>);
+            }
+        <span class="hljs-keyword">catch</span>(ClassNotFoundException e){
+            System.err.println(<span class="hljs-string">"Couldn't load driver."</span>);
+            }
+        <span class="hljs-keyword">catch</span>(SQLException e){
+            System.err.println(<span class="hljs-string">"Couldn't connect to database."</span>);
+            }
+        }
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">closeConnection</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">try</span>{
+            <span class="hljs-keyword">if</span>(!con.isClosed()){
+                con.close();
+                System.out.println(<span class="hljs-string">"Database closed successfully."</span>);
+                }
+            }
+        <span class="hljs-keyword">catch</span>(NullPointerException e){
+            System.err.println(<span class="hljs-string">"Couldn't load driver."</span>);
+            }
+        <span class="hljs-keyword">catch</span>(SQLException e){
+            System.err.println(<span class="hljs-string">"Couldn't close database."</span>);
+            }
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertData</span><span class="hljs-params">(String word, String meaning, String synonyms, String antonyms)</span></span>{
+        <span class="hljs-keyword">try</span>{
+            <span class="hljs-comment">//using PreparedStatement</span>
+            pstate = con.prepareStatement(<span class="hljs-string">"insert into dictionary(word, meaning, synonyms, antonyms)"</span>+
+                                            <span class="hljs-string">"values(?,?,?,?)"</span>);
+            pstate.setString(<span class="hljs-number">1</span>, word);
+            pstate.setString(<span class="hljs-number">2</span>, meaning);
+            pstate.setString(<span class="hljs-number">3</span>, synonyms);
+            pstate.setString(<span class="hljs-number">4</span>, antonyms);
+            <span class="hljs-keyword">int</span> value = pstate.executeUpdate();
+
+            <span class="hljs-comment">//using Statement</span>
+            <span class="hljs-comment">//state = con.createStatement();</span>
+            <span class="hljs-comment">//int value = state.executeUpdate("insert into dictionary(word, meaning, synonyms, antonyms)"+</span>
+            <span class="hljs-comment">//                      "values('"+word+"', '"+meaning+"', '"+synonyms+"', '"+antonyms+"')");</span>
+
+            System.out.println(<span class="hljs-string">"Query OK, 1 row insertedted."</span>);
+            }
+        <span class="hljs-keyword">catch</span>(SQLException e){
+            System.err.println(<span class="hljs-string">"Query error."</span>);
+            }
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteData</span><span class="hljs-params">(String word)</span></span>{
+        <span class="hljs-keyword">try</span>{
+            <span class="hljs-comment">//using PreparedStatement</span>
+            pstate = con.prepareStatement(<span class="hljs-string">"delete from dictionary where word = ?"</span>);
+            pstate.setString(<span class="hljs-number">1</span>,<span class="hljs-string">"word"</span>);
+            <span class="hljs-keyword">int</span> value = pstate.executeUpdate();
+
+            <span class="hljs-comment">//using Statement</span>
+            <span class="hljs-comment">//state = con.createStatement();</span>
+            <span class="hljs-comment">//int value = state.executeUpdate("delete from dictionary where word='"+word+"'");</span>
+
+            System.out.println(<span class="hljs-string">"Query OK, 1 row deleted."</span>);
+            }
+        <span class="hljs-keyword">catch</span>(SQLException e){
+            System.err.println(<span class="hljs-string">"Query error."</span>);
+            }
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">countRow</span><span class="hljs-params">(String table)</span></span>{
+        <span class="hljs-keyword">try</span>{
+            result = state.executeQuery(<span class="hljs-string">"SELECT COUNT(*) FROM "</span>+table);
+            result.next();
+            <span class="hljs-keyword">int</span> rowcount = result.getInt(<span class="hljs-number">1</span>);
+            System.out.println(<span class="hljs-string">"Number of rows: "</span>+rowcount);
+            }
+        <span class="hljs-keyword">catch</span>(SQLException e){
+            System.err.println(<span class="hljs-string">"Query error."</span>);
+            }
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showData</span><span class="hljs-params">(String word)</span></span>{
+        <span class="hljs-keyword">try</span>{
+            state = con.createStatement();
+            result = state.executeQuery(<span class="hljs-string">"select * from dictionary where word='"</span>+word+<span class="hljs-string">"'"</span>);
+            <span class="hljs-keyword">while</span>(result.next()){
+                String word1 = result.getString(<span class="hljs-string">"word"</span>);
+                String mean = result.getString(<span class="hljs-string">"meaning"</span>);
+                String syno = result.getString(<span class="hljs-string">"synonyms"</span>);
+                String anto = result.getString(<span class="hljs-string">"antonyms"</span>);
+                System.out.println(<span class="hljs-string">"Word: "</span>+word1+<span class="hljs-string">" Meaning: "</span>+mean+<span class="hljs-string">" Synonyms: "</span>+syno+<span class="hljs-string">" Antonyms: "</span>+anto);
+                }
+            }
+        <span class="hljs-keyword">catch</span>(SQLException e){
+            System.err.println(<span class="hljs-string">"Query error."</span>);
+            }
+        <span class="hljs-keyword">catch</span>(NullPointerException e){
+            System.err.println(<span class="hljs-string">"Element not found."</span>);
+            }
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">updateData</span><span class="hljs-params">(String word, String meaning)</span></span>{
+        <span class="hljs-keyword">try</span>{
+            <span class="hljs-comment">//using Statement</span>
+            <span class="hljs-comment">//state = con.createStatement();</span>
+            <span class="hljs-comment">//int value = state.executeUpdate("update dictionary set meaning='"+meaning+"' where word='"+word+"'");</span>
+
+            <span class="hljs-comment">//using PreparedStatement</span>
+            pstate = con.prepareStatement(<span class="hljs-string">"update dictionary set meaning= ? whrere word = ?"</span>);
+            pstate.setString(<span class="hljs-number">1</span>, meaning);
+            pstate.setString(<span class="hljs-number">2</span>, word);
+            pstate.executeUpdate();
+
+            System.out.println(<span class="hljs-string">"Query OK, 1 row updated."</span>);
+            }
+        <span class="hljs-keyword">catch</span>(SQLException e){
+            System.err.println(<span class="hljs-string">"Query error."</span>+e.getMessage());
+            }
+        }
+
+    }
+</code></pre>
+
+            <p class="category-tags">
+                    <a href="/posts/category/java">#java</a>
+                    <a href="/posts/category/databases">#databases</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/connect-mysql-with-java';
+        this.page.identifier = 'connect-mysql-with-java';
+    };
+
+    (function() {
+        var loaded = false;
+
+        function loadDisqus() {
+            if (loaded) return;
+            loaded = true;
+
+            var d = document, s = d.createElement('script');
+            s.src = 'https://milon-im.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+
+            var count = d.createElement('script');
+            count.id = 'dsq-count-scr';
+            count.src = '//milon-im.disqus.com/count.js';
+            count.async = true;
+            (d.head || d.body).appendChild(count);
+        }
+
+        var thread = document.getElementById('disqus_thread');
+        if (thread && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                if (!entries[0] || !entries[0].isIntersecting) return;
+                observer.disconnect();
+                loadDisqus();
+            }, { rootMargin: '400px 0px' });
+            observer.observe(thread);
+        } else {
+            loadDisqus();
+        }
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon · <a rel="license" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+        <dialog id="search-dialog" class="search-dialog" aria-label="Search">
+    <div class="search-panel">
+        <form class="search-form" role="search">
+            <input
+                type="search"
+                id="search-input"
+                class="search-input"
+                placeholder="Search writing, talks, books, and categories"
+                aria-label="Search writing, talks, books, and categories"
+                role="combobox"
+                aria-expanded="false"
+                aria-controls="search-results"
+                aria-autocomplete="list"
+                autocomplete="off"
+                spellcheck="false"
+            >
+        </form>
+
+        <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+
+        <p id="search-status" class="search-status">Type to search writing, talks, books, and categories.</p>
+    </div>
+</dialog>
+
+        <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+        <script type="module">
+            const src = "/assets/build/assets/search-Bzqmh_no.js";
+            let loading;
+
+            function loadSearch() {
+                if (!loading) loading = import(src);
+                return loading;
+            }
+
+            const trigger = document.getElementById('search-trigger');
+
+            if (trigger) {
+                trigger.addEventListener('pointerenter', loadSearch, { once: true });
+                trigger.addEventListener('pointerdown', loadSearch, { once: true });
+                trigger.addEventListener('click', function (event) {
+                    if (window.__searchReady) return;
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    window.__openSearch = true;
+                    loadSearch();
+                }, true);
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+                const target = event.target;
+                if (target instanceof Element && target.closest('input, textarea, select, [contenteditable]')) return;
+                if (!window.__searchReady) {
+                    event.preventDefault();
+                    window.__openSearch = true;
+                }
+                loadSearch();
+            });
+        </script>
+    </body>
+</html>

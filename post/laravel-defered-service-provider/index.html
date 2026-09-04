@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="bn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
+        <title>লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার | milon.im</title>
+                    <link rel="canonical" href="https://milon.im/post/laravel-defered-service-provider">
+                        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var theme;
+                try { theme = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (theme !== 'dark' && theme !== 'light') {
+                    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
+                <link rel="stylesheet" href="/assets/build/assets/main-DSJxBy7R.css">
+
+            <meta property="og:url" content="https://milon.im/post/laravel-defered-service-provider" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার | milon.im" />
+    <meta property="og:description" content="লারাভেলের ডিফার্ড সার্ভিস প্রোভাইডার কি, কেন এবং কিভাবে?" />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2015-06-08T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার | milon.im">
+    <meta name="twitter:description" content="লারাভেলের ডিফার্ড সার্ভিস প্রোভাইডার কি, কেন এবং কিভাবে?">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার" />
+
+    
+    <meta name="description" content="লারাভেলের ডিফার্ড সার্ভিস প্রোভাইডার কি, কেন এবং কিভাবে?">
+
+    
+    <meta itemprop="name" content="লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার | milon.im">
+    <meta itemprop="description" content="লারাভেলের ডিফার্ড সার্ভিস প্রোভাইডার কি, কেন এবং কিভাবে?">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+                    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://milon.im/#website","url":"https://milon.im/","name":"milon.im","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","inLanguage":["en","bn"],"publisher":{"@id":"https://milon.im/#person"}},{"@type":"Person","@id":"https://milon.im/#person","name":"Nuruzzaman Milon","url":"https://milon.im/","jobTitle":"Engineering Tech Lead","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","sameAs":["https://www.facebook.com/milon.nuruzzaman","https://twitter.com/to_milon","https://github.com/milon","https://www.linkedin.com/in/tomilon","https://speakerdeck.com/milon","http://www.slideshare.net/milon521","https://www.instagram.com/to_milon","https://stackoverflow.com/users/3905595/nuruzzaman-milon"]},{"@type":"BlogPosting","@id":"https://milon.im/post/laravel-defered-service-provider#article","headline":"লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার","description":"লারাভেলের ডিফার্ড সার্ভিস প্রোভাইডার কি, কেন এবং কিভাবে?","datePublished":"2015-06-08T00:00:00+00:00","dateModified":"2015-06-08T00:00:00+00:00","url":"https://milon.im/post/laravel-defered-service-provider","mainEntityOfPage":"https://milon.im/post/laravel-defered-service-provider","isPartOf":{"@id":"https://milon.im/#website"},"author":{"@id":"https://milon.im/#person"},"publisher":{"@id":"https://milon.im/#person"},"image":"https://milon.im/assets/images/og/writing.png","inLanguage":"bn","keywords":"laravel"}]}</script>
+            </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="search-trigger" id="search-trigger" title="Search" aria-label="Search">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="M20 20l-3.6-3.6"/>
+                    </svg>
+                </button>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-laravel-defered-service-provider">লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার</h1>
+            <p class="article-meta">
+                <span>2015 · June · 08</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>আমরা অনেক সময়ই লারাভেল অ্যাপ্লিকেশন তৈরির সময় সার্ভিস প্রোভাইডার তৈরি করে থাকি। এই সার্ভিস প্রোভাইডারগুলি লারাভেল সার্ভিস কনটেইনারে রেজিস্টার করা থাকে। লারাভেল যখন কোন রিকোয়েস্ট গ্রহণ করে তখন এই সার্ভিস কনটেইনার ইনিশিয়ালাইজ হয়, এবং রিকোয়েস্টকে প্রসেস করতে যদি সার্ভিসের প্রয়োজন পড়ে সেটা কাজ করে রিকোয়েস্টকে প্রসেস করে রেসপন্স তৈরি করতে সাহায্য করে।</p>
+
+<p>সহজ একটা উদাহরন দেখুন। ধরুন আপনি একটি টু-ডু অ্যাপের একজন রেজিস্টার ইউজার, এবং আপনি আপনার টু-ডু লিস্ট দেখতে চাইছেন। এক্ষেত্রে লারাভেলের কাছে রিকোয়েস্ট করার পর লারাভেল সার্ভিস কনটেইনারের কাছে রিকোয়েস্টটা পাঠায় এবং সেটি তখন দেখে যে আপনার রিকোয়েস্টটিকে প্রসেস করতে ইলোকোয়েন্ট সার্ভিসটির প্রয়োজন। তখন ইলোকোয়েন্ট আপনার রিকোয়েস্টটি প্রসেস করবে। এরপর ধরুন আপনাকে একটি নোটিফিকেশন দেয়া প্রয়োজন। সেক্ষেত্রে সার্ভিস কনটেইনার সেসন সার্ভিস প্রোভাইডারের সাহায্য নেবে।</p>
+
+<p>এক্ষেত্রে দেখা যাচ্ছে একটা রিকোয়েস্ট প্রসেস করতে সবগুলো সার্ভিস প্রোভাইডারের দরকার নেই। হয়ত ২-৩টা প্রোভাইডারের প্রয়োজন। সেক্ষেত্রে আপনি চাইলে ডিফার্ড সার্ভিস প্রোভাইডার ব্যবহার করতে পারবেন। নাম দেখেই নিশ্চয়ই বুঝতে পারছেন, এই ডিফার্ড সার্ভিস প্রোভাইডার শুধুমাত্র যখন প্রয়োজন তখনই লোড হবে। অন্যান্য রিকোয়েস্টে এটি লোড হবে না। এটি আপনার অ্যাপ্লিকেশন পারফরমেন্স বহুগুনে বাড়িয়ে দিতে পারে।</p>
+
+<p>এখন কথা হচ্ছে কিভাবে এই ডিফার্ড সার্ভিস প্রোভাইডার তৈরি করবেন? সেটিও খুব সহজ। সাধারন সার্ভিস প্রোভাইডারের মতই একটি আর্টিসান কমান্ডের মাধ্যমে আপনি এটি তৈরি করতে পারবেন। এর জন্য টার্মিনালে নিচের কমান্ডটি লিখুন-</p>
+
+<pre><code>php artisan make:provider TestServiceProvider
+</code></pre>
+
+<p>এর ফলে আপনার অ্যাপ্লিকেশনের <code>app/Providers</code> ফোল্ডারের মধ্যে একটি নতুন ফাইল তৈরি হবে <code>TestServiceProvider.php</code> নামে। এটি দেখতে হবে এরকম-</p>
+
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class TestServiceProvider extends ServiceProvider {
+
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+}
+</code></pre>
+
+<p>এই ক্লাসে আপনি যদি একটি প্রটেক্টেড প্রপার্টি তৈরি করেন $defer নামে এবং সেটির ভ্যালু ট্রুু করে দেন, তাহলে সেটিই ডিফার্ড সার্ভিস প্রোভাইডার হিসেবে কাজ করবে।</p>
+
+<pre><code>protected $defer = true;
+</code></pre>
+
+<p>এছাড়া এই সার্ভিস প্রভাইডের বাকি কোড সাধারন সার্ভিস প্রোভাইডারের মত করেই লিখতে হবে।</p>
+
+            <p class="category-tags">
+                    <a href="/posts/category/laravel">#laravel</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/laravel-defered-service-provider';
+        this.page.identifier = 'laravel-defered-service-provider';
+    };
+
+    (function() {
+        var loaded = false;
+
+        function loadDisqus() {
+            if (loaded) return;
+            loaded = true;
+
+            var d = document, s = d.createElement('script');
+            s.src = 'https://milon-im.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+
+            var count = d.createElement('script');
+            count.id = 'dsq-count-scr';
+            count.src = '//milon-im.disqus.com/count.js';
+            count.async = true;
+            (d.head || d.body).appendChild(count);
+        }
+
+        var thread = document.getElementById('disqus_thread');
+        if (thread && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                if (!entries[0] || !entries[0].isIntersecting) return;
+                observer.disconnect();
+                loadDisqus();
+            }, { rootMargin: '400px 0px' });
+            observer.observe(thread);
+        } else {
+            loadDisqus();
+        }
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon · <a rel="license" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+        <dialog id="search-dialog" class="search-dialog" aria-label="Search">
+    <div class="search-panel">
+        <form class="search-form" role="search">
+            <input
+                type="search"
+                id="search-input"
+                class="search-input"
+                placeholder="Search writing, talks, books, and categories"
+                aria-label="Search writing, talks, books, and categories"
+                role="combobox"
+                aria-expanded="false"
+                aria-controls="search-results"
+                aria-autocomplete="list"
+                autocomplete="off"
+                spellcheck="false"
+            >
+        </form>
+
+        <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+
+        <p id="search-status" class="search-status">Type to search writing, talks, books, and categories.</p>
+    </div>
+</dialog>
+
+        <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+        <script type="module">
+            const src = "/assets/build/assets/search-Bzqmh_no.js";
+            let loading;
+
+            function loadSearch() {
+                if (!loading) loading = import(src);
+                return loading;
+            }
+
+            const trigger = document.getElementById('search-trigger');
+
+            if (trigger) {
+                trigger.addEventListener('pointerenter', loadSearch, { once: true });
+                trigger.addEventListener('pointerdown', loadSearch, { once: true });
+                trigger.addEventListener('click', function (event) {
+                    if (window.__searchReady) return;
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    window.__openSearch = true;
+                    loadSearch();
+                }, true);
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+                const target = event.target;
+                if (target instanceof Element && target.closest('input, textarea, select, [contenteditable]')) return;
+                if (!window.__searchReady) {
+                    event.preventDefault();
+                    window.__openSearch = true;
+                }
+                loadSearch();
+            });
+        </script>
+    </body>
+</html>

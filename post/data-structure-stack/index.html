@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="bn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Nuruzzaman Milon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
+        <title>ডাটা স্ট্রাকচারঃ Stack | milon.im</title>
+                    <link rel="canonical" href="https://milon.im/post/data-structure-stack">
+                        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+                <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var theme;
+                try { theme = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (theme !== 'dark' && theme !== 'light') {
+                    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
+                <link rel="stylesheet" href="/assets/build/assets/main-DSJxBy7R.css">
+
+            <meta property="og:url" content="https://milon.im/post/data-structure-stack" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ডাটা স্ট্রাকচারঃ Stack | milon.im" />
+    <meta property="og:description" content="How to implement stack." />
+    <meta property="og:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ডাটা স্ট্রাকচারঃ Stack" />
+    <meta property="og:site_name" content="milon.im" />
+    <meta property="article:published_time" content="2011-05-22T00:00:00+00:00" />
+    <meta property="article:author" content="Nuruzzaman Milon" />
+    <meta property="fb:app_id" content="264496574269710" />
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@to_milon" />
+    <meta name="twitter:creator" content="@to_milon" />
+    <meta name="twitter:title" content="ডাটা স্ট্রাকচারঃ Stack | milon.im">
+    <meta name="twitter:description" content="How to implement stack.">
+    <meta name="twitter:image" content="https://milon.im/assets/images/og/writing.png" />
+    <meta name="twitter:image:alt" content="ডাটা স্ট্রাকচারঃ Stack" />
+
+    
+    <meta name="description" content="How to implement stack.">
+
+    
+    <meta itemprop="name" content="ডাটা স্ট্রাকচারঃ Stack | milon.im">
+    <meta itemprop="description" content="How to implement stack.">
+    <meta itemprop="image" content="https://milon.im/assets/images/og/writing.png" />
+                    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://milon.im/#website","url":"https://milon.im/","name":"milon.im","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","inLanguage":["en","bn"],"publisher":{"@id":"https://milon.im/#person"}},{"@type":"Person","@id":"https://milon.im/#person","name":"Nuruzzaman Milon","url":"https://milon.im/","jobTitle":"Engineering Tech Lead","description":"Programmer, author, and speaker. I lead the engineering behind production systems that serve millions.","sameAs":["https://www.facebook.com/milon.nuruzzaman","https://twitter.com/to_milon","https://github.com/milon","https://www.linkedin.com/in/tomilon","https://speakerdeck.com/milon","http://www.slideshare.net/milon521","https://www.instagram.com/to_milon","https://stackoverflow.com/users/3905595/nuruzzaman-milon"]},{"@type":"BlogPosting","@id":"https://milon.im/post/data-structure-stack#article","headline":"ডাটা স্ট্রাকচারঃ Stack","description":"How to implement stack.","datePublished":"2011-05-22T00:00:00+00:00","dateModified":"2011-05-22T00:00:00+00:00","url":"https://milon.im/post/data-structure-stack","mainEntityOfPage":"https://milon.im/post/data-structure-stack","isPartOf":{"@id":"https://milon.im/#website"},"author":{"@id":"https://milon.im/#person"},"publisher":{"@id":"https://milon.im/#person"},"image":"https://milon.im/assets/images/og/writing.png","inLanguage":"bn","keywords":"data-structures"}]}</script>
+            </head>
+    <body>
+        <header class="topbar">
+            <a class="wordmark" href="https://milon.im/">
+                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+            </a>
+            <nav class="topbar-nav">
+                <a data-num="01" class="" href="/">Root</a>
+                <a data-num="02" class="selected" href="/posts">Writing</a>
+                <a data-num="03" class="" href="/books">Books</a>
+                <a data-num="04" class="" href="/talks">Talks</a>
+                <a data-num="05" class="" href="/cv">CV</a>
+                <a data-num="06" class="" href="/contact">Contact</a>
+                <button type="button" class="search-trigger" id="search-trigger" title="Search" aria-label="Search">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="M20 20l-3.6-3.6"/>
+                    </svg>
+                </button>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <main id="body">
+                <div class="shell-narrow">
+        <div class="page-head">
+            <p class="eyebrow">Writing</p>
+            <h1 style="view-transition-name: post-data-structure-stack">ডাটা স্ট্রাকচারঃ Stack</h1>
+            <p class="article-meta">
+                <span>2011 · May · 22</span>
+            </p>
+        </div>
+
+        <article class="prose">
+            <p>স্ট্যাক হচ্ছে Last In First Out(LIFO) ডাটা স্ট্রাকচার। অর্থাৎ যে আইটেমটা সবার শেষে ইনসার্ট করা হয় সেটাই সবার প্রথমে ডিলিট করা হয়। অ্যারে বা লিঙ্ক লিস্ট ব্যবহার করে স্ট্যাক তৈরী করা যায়।</p>
+
+<p>C++কোড:</p>
+
+<pre><code class="language-cpp hljs cpp"><span class="hljs-comment">//Stack using array</span>
+<span class="hljs-comment">//Author: Milon</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-comment">//#include&lt;conio.h&gt;</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> max 50</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span></span>;
+
+<span class="hljs-keyword">int</span> top=<span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> <span class="hljs-built_in">stack</span>[max];
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">int</span> c=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">char</span> ch;
+    <span class="hljs-keyword">do</span>{
+        <span class="hljs-comment">//clrscr();</span>
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"This program is for Push &amp; Pop operation.\n"</span>);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Enter your choice:\n"</span>);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"# (P)ush operatino.\n"</span>);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"# Pop (O)peration.\n"</span>);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"# (D)isplay stack.\n"</span>);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"# (E)xit.\n\n"</span>);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Enter your choice: "</span>);
+        ch=getchar();
+        <span class="hljs-keyword">switch</span>(ch){
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'P'</span>:
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'p'</span>:
+                push();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'O'</span>:
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'o'</span>:
+                pop();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'D'</span>:
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'d'</span>:
+                display();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'E'</span>:
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'e'</span>:
+                c=<span class="hljs-number">1</span>;
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nInvalid input."</span>);
+                <span class="hljs-comment">//getch();</span>
+                <span class="hljs-keyword">break</span>;
+            }
+        }<span class="hljs-keyword">while</span>(c!=<span class="hljs-number">1</span>);
+    }
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">if</span>(top==max){
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nStack is overflow."</span>);
+        <span class="hljs-comment">//getch();</span>
+        <span class="hljs-keyword">return</span>;
+        }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nEnter data for Push: "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;data);
+    top=top+<span class="hljs-number">1</span>;
+    <span class="hljs-built_in">stack</span>[top]=data;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nPush operation complete successfully."</span>);
+    <span class="hljs-comment">//getch();</span>
+    }
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">if</span>(top==<span class="hljs-number">0</span>){
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nStack is underflow."</span>);
+        <span class="hljs-comment">//getch();</span>
+        <span class="hljs-keyword">return</span>;
+        }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nData %d is deleted."</span>,<span class="hljs-built_in">stack</span>[top]);
+    top=top<span class="hljs-number">-1</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nPop operation complete successfully."</span>);
+    <span class="hljs-comment">//getch();</span>
+    }
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">if</span>(top==<span class="hljs-number">0</span>){
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nStack is empty."</span>);
+        <span class="hljs-comment">//getch();</span>
+        <span class="hljs-keyword">return</span>;
+        }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nStack: "</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=top;i++)
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d --&gt;"</span>,<span class="hljs-built_in">stack</span>[i]);
+    <span class="hljs-comment">//getch();</span>
+    }
+</code></pre>
+
+<p>Java কোড:</p>
+
+<p><code>Stack.java</code></p>
+
+<pre><code class="language-java hljs java"><span class="hljs-comment">//Stack</span>
+<span class="hljs-comment">//Author: Milon</span>
+
+<span class="hljs-keyword">import</span> java.util.NoSuchElementException;
+
+<span class="hljs-comment">//Node class</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span></span>{
+    <span class="hljs-comment">//Instance variable</span>
+    <span class="hljs-keyword">protected</span> Object data;
+    <span class="hljs-keyword">private</span> Node nextNode;
+
+    <span class="hljs-comment">//Constructor</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">()</span></span>{
+        data = <span class="hljs-keyword">null</span>;
+        nextNode = <span class="hljs-keyword">null</span>;
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(Object item, Node next)</span></span>{
+        data = item;
+        nextNode = next;
+        }
+
+    <span class="hljs-comment">//Set methods</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setData</span><span class="hljs-params">(<span class="hljs-keyword">int</span> item)</span></span>{
+        data = item;
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setNextNode</span><span class="hljs-params">(Node next)</span></span>{
+        nextNode = next;
+        }
+
+    <span class="hljs-comment">//Get methods</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">getData</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> data;
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">getNextNode</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> nextNode;
+        }
+
+    <span class="hljs-comment">//Overloaded toString method</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">""</span> + data;
+        }
+    }
+
+<span class="hljs-comment">//Stack class</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Stack</span></span>{
+    <span class="hljs-comment">//Instance variable</span>
+    <span class="hljs-keyword">private</span> Node top;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> size;
+
+    <span class="hljs-comment">//Constructor</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Stack</span><span class="hljs-params">()</span></span>{
+        top = <span class="hljs-keyword">null</span>;
+        size = <span class="hljs-number">0</span>;
+        }
+
+    <span class="hljs-comment">//Returns is the stack empty</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> top == <span class="hljs-keyword">null</span>;
+        }
+
+    <span class="hljs-comment">//Returns size of the stack</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> size;
+        }
+
+    <span class="hljs-comment">//Push method</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(Object item)</span></span>{
+        top = <span class="hljs-keyword">new</span> Node(item, top);
+        ++size;
+        }
+
+    <span class="hljs-comment">//Pop method</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">if</span>(!isEmpty()){
+            Node current = top;
+            top = top.getNextNode();
+            --size;
+            <span class="hljs-keyword">return</span> current.getData();
+            }
+        <span class="hljs-keyword">else</span>{
+            System.out.println(<span class="hljs-string">"Stack underflow."</span>);
+            <span class="hljs-comment">//throw new NoSuchElementException();</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+            }
+        }
+
+    <span class="hljs-comment">//Peek method</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">peek</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">if</span>(!isEmpty())
+            <span class="hljs-keyword">return</span> top.getData();
+        <span class="hljs-keyword">else</span>{
+            System.out.println(<span class="hljs-string">"Stack underflow."</span>);
+            <span class="hljs-comment">//throw new NoSuchElementException();</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+            }
+        }
+
+    <span class="hljs-comment">//Overloaded toString method to show the entire list</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>{
+        String str = <span class="hljs-string">"[ "</span>;
+        <span class="hljs-keyword">if</span>(top != <span class="hljs-keyword">null</span>){
+            str += top.getData();
+            Node current = top.getNextNode();
+            <span class="hljs-keyword">while</span>(current.getNextNode() != <span class="hljs-keyword">null</span>){
+                str += <span class="hljs-string">", "</span> + current.getData();
+                current = current.getNextNode();
+                }
+            str += <span class="hljs-string">", "</span> + current.getData();
+            }
+        str += <span class="hljs-string">" ]"</span>;
+        <span class="hljs-keyword">return</span> str;
+        }
+
+    }
+</code></pre>
+
+<p><code>StackImplement.java</code></p>
+
+<pre><code class="language-java hljs java"><span class="hljs-comment">//Stack Implementation class</span>
+<span class="hljs-comment">//Author: Milon</span>
+
+<span class="hljs-keyword">import</span> java.util.Scanner;
+<span class="hljs-keyword">import</span> java.util.Random;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StackImplement</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+        Scanner input = <span class="hljs-keyword">new</span> Scanner(System.in);
+        Random rand = <span class="hljs-keyword">new</span> Random();
+        Stack stack = <span class="hljs-keyword">new</span> Stack();
+
+        System.out.print(<span class="hljs-string">"How many number of element do you want: "</span>);
+        <span class="hljs-keyword">int</span> n = input.nextInt();
+
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)
+            stack.push(<span class="hljs-keyword">new</span> Integer(rand.nextInt(<span class="hljs-number">100</span>)));
+
+        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
+            System.out.println(<span class="hljs-string">"\n\n"</span>);
+            System.out.println(<span class="hljs-string">"* * * * * Stack Implementation * * * * *"</span>);
+            System.out.println(<span class="hljs-string">"1\. Show the whole stack."</span>);
+            System.out.println(<span class="hljs-string">"2\. Show does the stack empty."</span>);
+            System.out.println(<span class="hljs-string">"3\. Show the top element."</span>);
+            System.out.println(<span class="hljs-string">"4\. Insert an element."</span>);
+            System.out.println(<span class="hljs-string">"5\. Delete an element."</span>);
+            System.out.println(<span class="hljs-string">"6\. Show the stack size."</span>);
+            System.out.println(<span class="hljs-string">"7\. Exit."</span>);
+            System.out.println(<span class="hljs-string">"\n\n"</span>);
+
+            System.out.print(<span class="hljs-string">"Enter your choice: "</span>);
+            <span class="hljs-keyword">int</span> choice = input.nextInt();
+
+            <span class="hljs-keyword">switch</span>(choice){
+                <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+                        System.out.println(<span class="hljs-string">"The stack is: "</span>+stack.toString());
+                        <span class="hljs-keyword">break</span>;
+
+                <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+                        <span class="hljs-keyword">if</span>(stack.isEmpty())
+                            System.out.println(<span class="hljs-string">"The stack is empty."</span>);
+                        <span class="hljs-keyword">else</span>
+                            System.out.println(<span class="hljs-string">"The stack is not empty."</span>);
+                        <span class="hljs-keyword">break</span>;
+
+                <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+                        System.out.println(<span class="hljs-string">"The top element is "</span>+stack.peek());
+                        <span class="hljs-keyword">break</span>;
+
+                <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+                        System.out.print(<span class="hljs-string">"Inter the element: "</span>);
+                        <span class="hljs-keyword">int</span> item = input.nextInt();
+                        stack.push(<span class="hljs-keyword">new</span> Integer(item));
+                        System.out.println(<span class="hljs-string">"Item inserted successfully."</span>);
+                        <span class="hljs-keyword">break</span>;
+
+                <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+                        System.out.println(<span class="hljs-string">"Item "</span>+stack.pop()+<span class="hljs-string">" deleted successfully."</span>);
+                        <span class="hljs-keyword">break</span>;
+
+                <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+                        <span class="hljs-keyword">if</span>(stack.isEmpty())
+                            System.out.println(<span class="hljs-string">"The stack is empty."</span>);
+                        <span class="hljs-keyword">else</span>
+                            System.out.println(<span class="hljs-string">"Size of the stack is "</span>+stack.size());
+                        <span class="hljs-keyword">break</span>;
+
+                <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+                        System.exit(<span class="hljs-number">1</span>);
+                        <span class="hljs-keyword">break</span>;
+
+                <span class="hljs-keyword">default</span>:
+                        <span class="hljs-keyword">break</span>;
+                }
+            }
+
+        }
+    }
+</code></pre>
+
+            <p class="category-tags">
+                    <a href="/posts/category/data-structures">#data-structures</a>
+            </p>
+        </article>
+
+                    <div id="disqus_thread"></div>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://milon.im/post/data-structure-stack';
+        this.page.identifier = 'data-structure-stack';
+    };
+
+    (function() {
+        var loaded = false;
+
+        function loadDisqus() {
+            if (loaded) return;
+            loaded = true;
+
+            var d = document, s = d.createElement('script');
+            s.src = 'https://milon-im.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+
+            var count = d.createElement('script');
+            count.id = 'dsq-count-scr';
+            count.src = '//milon-im.disqus.com/count.js';
+            count.async = true;
+            (d.head || d.body).appendChild(count);
+        }
+
+        var thread = document.getElementById('disqus_thread');
+        if (thread && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                if (!entries[0] || !entries[0].isIntersecting) return;
+                observer.disconnect();
+                loadDisqus();
+            }, { rootMargin: '400px 0px' });
+            observer.observe(thread);
+        } else {
+            loadDisqus();
+        }
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        <p class="back-link">
+    <a href="/posts">← Back to Writing</a>
+</p>
+    </div>
+
+            </main>
+
+        <footer id="footer">
+            <div class="footer-inner">
+                <span>© 2026 Nuruzzaman Milon · <a rel="license" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
+                <span class="footer-links">
+                    <a href="/github">GitHub</a>
+                    <a href="/linkedin">LinkedIn</a>
+                    <a href="/rss">RSS</a>
+                    <a href="/contact">Newsletter</a>
+                </span>
+            </div>
+        </footer>
+
+        <dialog id="search-dialog" class="search-dialog" aria-label="Search">
+    <div class="search-panel">
+        <form class="search-form" role="search">
+            <input
+                type="search"
+                id="search-input"
+                class="search-input"
+                placeholder="Search writing, talks, books, and categories"
+                aria-label="Search writing, talks, books, and categories"
+                role="combobox"
+                aria-expanded="false"
+                aria-controls="search-results"
+                aria-autocomplete="list"
+                autocomplete="off"
+                spellcheck="false"
+            >
+        </form>
+
+        <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+
+        <p id="search-status" class="search-status">Type to search writing, talks, books, and categories.</p>
+    </div>
+</dialog>
+
+        <script>
+            (function() {
+                var STORAGE_KEY = 'milon.im-theme';
+                var html = document.documentElement;
+                var btn = document.getElementById('theme-toggle');
+
+                function setTheme(theme) {
+                    html.setAttribute('data-theme', theme);
+                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                }
+
+                if (btn) btn.addEventListener('click', function() {
+                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                });
+            })();
+        </script>
+        <script type="module">
+            const src = "/assets/build/assets/search-Bzqmh_no.js";
+            let loading;
+
+            function loadSearch() {
+                if (!loading) loading = import(src);
+                return loading;
+            }
+
+            const trigger = document.getElementById('search-trigger');
+
+            if (trigger) {
+                trigger.addEventListener('pointerenter', loadSearch, { once: true });
+                trigger.addEventListener('pointerdown', loadSearch, { once: true });
+                trigger.addEventListener('click', function (event) {
+                    if (window.__searchReady) return;
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    window.__openSearch = true;
+                    loadSearch();
+                }, true);
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+                const target = event.target;
+                if (target instanceof Element && target.closest('input, textarea, select, [contenteditable]')) return;
+                if (!window.__searchReady) {
+                    event.preventDefault();
+                    window.__openSearch = true;
+                }
+                loadSearch();
+            });
+        </script>
+    </body>
+</html>
