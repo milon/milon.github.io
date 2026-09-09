@@ -539,16 +539,28 @@ html:has(.search-dialog[open]) {
     grid-template-columns: 46px 1fr 158px;
     gap: 20px;
     align-items: baseline;
-    padding: 20px 8px 20px 0;
+    padding: 20px 8px;
     border-bottom: 1px solid var(--rule-soft);
     text-decoration: none;
-    transition: background-color var(--transition), padding var(--transition);
+    transition: background-color var(--transition);
 }
 
 .index-item:hover {
     background-color: var(--paper-2);
-    padding-left: 10px;
-    padding-right: 0;
+}
+
+@media not (prefers-reduced-motion: reduce) {
+    .index-item:hover {
+        animation: index-shake 0.42s ease;
+    }
+}
+
+@keyframes index-shake {
+    0%, 100% { transform: translateX(0); }
+    20%      { transform: translateX(-3px); }
+    40%      { transform: translateX(3px); }
+    60%      { transform: translateX(-2px); }
+    80%      { transform: translateX(1px); }
 }
 
 .index-num {
@@ -570,7 +582,7 @@ html:has(.search-dialog[open]) {
 
 .index-item.is-compact {
     grid-template-columns: 1fr auto;
-    padding: 14px 8px 14px 0;
+    padding: 14px 8px;
 }
 
 .index-item.is-compact .index-title {
