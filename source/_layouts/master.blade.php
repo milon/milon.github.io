@@ -12,7 +12,7 @@
         @if (! $page->isIndexable())
             <meta name="robots" content="noindex">
         @endif
-        <link rel="icon" href="/assets/images/logo-mark-light.svg" type="image/svg+xml">
+        <link rel="icon" href="/assets/images/logo-mark.svg" type="image/svg+xml">
         <link rel="icon" href="/assets/images/favicon.png" sizes="32x32" type="image/png">
         <link rel="icon" href="/assets/images/favicon-dark.png" sizes="32x32" type="image/png" media="(prefers-color-scheme: dark)">
         <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">

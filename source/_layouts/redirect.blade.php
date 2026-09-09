@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="icon" href="/assets/images/logo-mark-light.svg" type="image/svg+xml">
+        <link rel="icon" href="/assets/images/logo-mark.svg" type="image/svg+xml">
         <link rel="shortcut icon" href="/assets/images/favicon.png">
 
         {{-- tell search engine not to index --}}
