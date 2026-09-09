@@ -202,11 +202,11 @@ img { max-width: 100%; }
 }
 
 .wordmark .mark {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background-color: var(--ink);
+    width: 14px;
+    height: 14px;
     flex-shrink: 0;
+    display: block;
+    color: var(--ink);
 }
 
 .topbar-nav {

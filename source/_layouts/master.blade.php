@@ -12,7 +12,11 @@
         @if (! $page->isIndexable())
             <meta name="robots" content="noindex">
         @endif
-        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <link rel="icon" href="/assets/images/logo-mark-light.svg" type="image/svg+xml">
+        <link rel="icon" href="/assets/images/favicon.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="/assets/images/favicon-dark.png" sizes="32x32" type="image/png" media="(prefers-color-scheme: dark)">
+        <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+        <link rel="shortcut icon" href="/assets/images/favicon.png">
         @if ($page->getPath() === '/')
             <link rel="preload" href="/assets/fonts/Newsreader-Latin.woff2" as="font" type="font/woff2" crossorigin>
             <link rel="preload" href="/assets/fonts/Newsreader-Latin-Italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -39,7 +43,12 @@
     <body>
         <header class="topbar">
             <a class="wordmark" href="{{ $page->baseUrl }}">
-                <span class="mark" aria-hidden="true"></span> Nuruzzaman Milon
+                <svg class="mark" viewBox="0 0 100 100" width="14" height="14" aria-hidden="true" focusable="false">
+                    <g transform="translate(8,92) scale(0.01634,-0.01634)" fill="currentColor">
+                        <path d="M550 2571 l0 -2163 93 89 c52 48 374 356 716 683 342 327 625 596 629 597 4 1 132 -218 285 -487 154 -269 285 -497 291 -506 11 -15 52 52 302 489 159 279 292 506 295 504 4 -1 326 -307 715 -680 l709 -678 3 1076 c1 591 1 1559 0 2150 l-3 1075 -1004 -960 c-552 -528 -1005 -960 -1007 -960 -4 0 -1790 1706 -1941 1854 l-83 81 0 -2164z m3720 -116 c0 -696 -4 -1265 -8 -1265 -15 0 -933 883 -930 895 4 15 929 1635 934 1635 2 0 4 -569 4 -1265z m-2904 425 l458 -804 -86 -81 c-48 -44 -256 -242 -463 -440 -206 -198 -380 -361 -385 -363 -7 -2 -10 453 -10 1259 0 1070 2 1261 14 1249 7 -8 220 -377 472 -820z m557 86 c224 -215 407 -393 407 -397 0 -8 -246 -242 -259 -247 -4 -1 -142 233 -306 520 -164 288 -307 539 -318 558 l-21 35 45 -40 c25 -22 229 -215 452 -429z m1750 386 c-163 -293 -589 -1032 -595 -1032 -9 0 -258 241 -258 250 0 9 877 850 886 850 3 0 -12 -31 -33 -68z m-884 -1215 c123 -119 124 -120 109 -146 -9 -14 -82 -143 -163 -286 -82 -143 -151 -264 -155 -268 -8 -9 -343 569 -338 583 2 5 77 79 166 165 l164 156 46 -42 c26 -24 103 -96 171 -162z"/>
+                    </g>
+                </svg>
+                Nuruzzaman Milon
             </a>
             <nav class="topbar-nav">
                 <a data-num="01" class="{{ $page->selected('/') }}" href="/">Root</a>

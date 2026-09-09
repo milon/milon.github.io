@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+        <link rel="icon" href="/assets/images/logo-mark-light.svg" type="image/svg+xml">
+        <link rel="shortcut icon" href="/assets/images/favicon.png">
         <meta name="robots" content="noindex">
         <meta http-equiv="Refresh" content="0; url={{ $url }}">
     </head>
