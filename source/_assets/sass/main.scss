@@ -542,25 +542,16 @@ html:has(.search-dialog[open]) {
     padding: 20px 8px;
     border-bottom: 1px solid var(--rule-soft);
     text-decoration: none;
-    transition: background-color var(--transition);
+    transition: background-color var(--transition), opacity var(--transition);
 }
 
-.index-item:hover {
+.index-list:hover .index-item {
+    opacity: 0.45;
+}
+
+.index-list:hover .index-item:hover {
+    opacity: 1;
     background-color: var(--paper-2);
-}
-
-@media not (prefers-reduced-motion: reduce) {
-    .index-item:hover {
-        animation: index-shake 0.42s ease;
-    }
-}
-
-@keyframes index-shake {
-    0%, 100% { transform: translateX(0); }
-    20%      { transform: translateX(-3px); }
-    40%      { transform: translateX(3px); }
-    60%      { transform: translateX(-2px); }
-    80%      { transform: translateX(1px); }
 }
 
 .index-num {
@@ -1165,15 +1156,19 @@ html[data-theme="dark"] {
     padding: 10px;
     margin: -10px;
     text-decoration: none;
-    transition: background-color var(--transition);
+    transition: background-color var(--transition), opacity var(--transition);
 }
 
 /* Beats the underline that .section-body puts on every link. */
 .section-body .shelf-item,
 .section-body .shelf-item:hover { box-shadow: none; }
 
-/* A tint rather than a filled block — enough to read as one target, not a button. */
-.shelf-item:hover {
+.shelf:hover .shelf-item {
+    opacity: 0.45;
+}
+
+.shelf:hover .shelf-item:hover {
+    opacity: 1;
     background-color: color-mix(in srgb, var(--paper-2) 50%, transparent);
 }
 
@@ -1186,7 +1181,7 @@ html[data-theme="dark"] {
     transition: border-color var(--transition);
 }
 
-.shelf-item:hover .shelf-cover { border-color: var(--ink-4); }
+.shelf:hover .shelf-item:hover .shelf-cover { border-color: var(--ink-4); }
 
 .shelf-title {
     display: inline-block;
@@ -1197,10 +1192,7 @@ html[data-theme="dark"] {
     letter-spacing: -0.01em;
     color: var(--ink);
     margin: 0 0 7px;
-    transition: box-shadow var(--transition);
 }
-
-.shelf-item:hover .shelf-title { box-shadow: inset 0 -1px 0 var(--ink-4); }
 
 .shelf-meta {
     display: block;
