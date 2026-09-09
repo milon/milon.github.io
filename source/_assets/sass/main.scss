@@ -318,7 +318,46 @@ html:has(.search-dialog[open]) {
     background-color: var(--paper);
     border: 1px solid var(--rule);
     border-radius: 2px;
+    outline: 1px solid var(--rule-soft);
+    outline-offset: 3px;
     overflow: hidden;
+}
+
+.search-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 18px;
+    background-color: var(--paper-2);
+    border-bottom: 1px solid var(--rule);
+}
+
+.search-eyebrow {
+    font-family: var(--mono-font);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.search-hint {
+    font-family: var(--mono-font);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-4);
+}
+
+.search-hint kbd {
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 1px 5px;
+    background: var(--paper);
 }
 
 .search-form { margin: 0; }
@@ -326,20 +365,29 @@ html:has(.search-dialog[open]) {
 .search-input {
     display: block;
     width: 100%;
-    font-family: var(--body-font);
-    font-size: 15px;
+    font-family: var(--display-font);
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
     color: var(--ink);
     background-color: var(--paper);
     border: 0;
     border-bottom: 1px solid var(--rule);
     border-radius: 0;
-    padding: 15px 18px;
+    padding: 18px 18px 16px;
     outline: none;
     appearance: none;
     transition: border-color var(--transition);
 }
 
-.search-input::placeholder { color: var(--ink-4); }
+.search-input::placeholder {
+    font-family: var(--body-font);
+    font-size: 15px;
+    letter-spacing: 0;
+    color: var(--ink-4);
+}
+
 .search-input:focus { border-bottom-color: var(--ink-4); }
 
 /* Safari's own clear button doesn't match anything else here. */
@@ -361,15 +409,14 @@ html:has(.search-dialog[open]) {
     padding: 13px 18px;
     border-bottom: 1px solid var(--rule-soft);
     text-decoration: none;
+    transition: background-color var(--transition), box-shadow var(--transition);
 }
 
-.search-item:last-child { border-bottom: 0; }
-
-.search-item:hover {
-    background-color: color-mix(in srgb, var(--paper-2) 50%, transparent);
+.search-item:hover,
+.search-item[aria-selected="true"] {
+    background-color: var(--paper-2);
+    box-shadow: inset 0 -2px 0 var(--ink);
 }
-
-.search-item[aria-selected="true"] { background-color: var(--paper-2); }
 
 .search-item-title {
     grid-area: 1 / 1 / 2 / 2;
@@ -403,11 +450,13 @@ html:has(.search-dialog[open]) {
 
 .search-status {
     font-family: var(--mono-font);
-    font-size: 11.5px;
-    letter-spacing: 0.04em;
+    font-size: 11px;
+    letter-spacing: 0.06em;
     color: var(--ink-4);
     margin: 0;
-    padding: 14px 18px;
+    padding: 12px 18px;
+    background-color: var(--paper-2);
+    border-top: 1px solid var(--rule);
 }
 
 .search-status[hidden] { display: none; }

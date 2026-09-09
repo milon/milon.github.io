@@ -1,11 +1,16 @@
 <dialog id="search-dialog" class="search-dialog" aria-label="Search">
     <div class="search-panel">
+        <div class="search-head">
+            <span class="search-eyebrow">Search</span>
+            <span class="search-hint"><kbd>Esc</kbd> to close</span>
+        </div>
+
         <form class="search-form" role="search">
             <input
                 type="search"
                 id="search-input"
                 class="search-input"
-                placeholder="Search writing, talks, books, and categories"
+                placeholder="Writing, talks, books, categories…"
                 aria-label="Search writing, talks, books, and categories"
                 role="combobox"
                 aria-expanded="false"
