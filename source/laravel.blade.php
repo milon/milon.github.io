@@ -1,1 +1,1 @@
-@include('_layouts.redirect_stub', ['url' => '/books/laravel'])
+@include('_layouts.redirect_stub', ['url' => '/book/laravel'])
