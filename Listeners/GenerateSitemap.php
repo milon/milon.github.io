@@ -20,6 +20,11 @@ class GenerateSitemap
         '/index.json',
         '/robots.txt',
         '/sitemap.xml',
+        '/llms.txt',
+        '/index.md',
+        '/feed.xml',
+        '/atom.xml',
+        '/rss.xml',
         '/laravel',
     ];
 
@@ -59,9 +64,9 @@ class GenerateSitemap
         }
 
         return (bool) preg_match(
-            '/\.(css|js|json|xml|txt|png|jpe?g|webp|gif|svg|ico|woff2?|ttf|eot|mp4|webm|pdf|map)$/i',
+            '/\.(css|js|json|xml|txt|md|png|jpe?g|webp|gif|svg|ico|woff2?|ttf|eot|mp4|webm|pdf|map)$/i',
             $normalized
-        );
+        ) || str_starts_with($normalized, '/.well-known/');
     }
 
     private function lastmodsByPath(Jigsaw $jigsaw): array

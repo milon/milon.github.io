@@ -17,6 +17,25 @@
         <link rel="icon" href="/assets/images/favicon-dark.png" sizes="32x32" type="image/png" media="(prefers-color-scheme: dark)">
         <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
         <link rel="shortcut icon" href="/assets/images/favicon.png">
+        <link rel="describedby" href="/llms.txt" type="text/markdown" title="Site index for LLMs">
+        <link rel="api-catalog" href="/.well-known/api-catalog" type="application/linkset+json">
+        <link rel="alternate" type="application/atom+xml" title="milon.im Atom feed" href="/feed.xml">
+        @php
+            $path = rtrim((string) $page->getPath(), '/') ?: '/';
+            $markdownAlternate = null;
+
+            if ($path === '/') {
+                $markdownAlternate = '/index.md';
+            } elseif (
+                preg_match('#^/(post|talk)/[^/]+$#', $path)
+                || in_array($path, ['/posts', '/talks', '/books', '/cv', '/contact', '/book/laravel'], true)
+            ) {
+                $markdownAlternate = $path . '.md';
+            }
+        @endphp
+        @if ($markdownAlternate)
+            <link rel="alternate" type="text/markdown" title="Markdown version" href="{{ $markdownAlternate }}">
+        @endif
         @if ($page->getPath() === '/')
             <link rel="preload" href="/assets/fonts/Newsreader-Latin.woff2" as="font" type="font/woff2" crossorigin>
             <link rel="preload" href="/assets/fonts/Newsreader-Latin-Italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -85,7 +104,7 @@
                 <span class="footer-links">
                     <a href="/github">GitHub</a>
                     <a href="/linkedin">LinkedIn</a>
-                    <a href="/rss">RSS</a>
+                    <a href="/feed.xml">RSS</a>
                     <a href="/contact">Newsletter</a>
                 </span>
             </div>

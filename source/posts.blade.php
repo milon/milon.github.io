@@ -19,13 +19,13 @@ pagination:
         <div class="page-head">
             <p class="eyebrow">Writing</p>
             <h1>Notes on code, systems, and everything around them</h1>
-            <p class="sub">{{ $pagination->totalItems ?? count($posts) }} posts, oldest at the bottom. Also available as an <a href="/rss">RSS feed</a>.</p>
+            <p class="sub">{{ $pagination->totalItems ?? count($posts) }} posts, oldest at the bottom. Also available as an <a href="/feed.xml">RSS feed</a>.</p>
         </div>
 
         <section class="section">
             <div class="section-label">Index</div>
             <div class="section-body is-wide">
-                <p class="list-utility"><a href="/rss" title="Subscribe to RSS feed">RSS feed →</a></p>
+                <p class="list-utility"><a href="/feed.xml" title="Subscribe to RSS feed">RSS feed →</a></p>
 
                 <div class="index-list">
                     @foreach ($pagination->items as $post)

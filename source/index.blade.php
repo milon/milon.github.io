@@ -23,7 +23,7 @@ title: Nuruzzaman Milon
         </section>
 
         <section class="section">
-            <div class="section-label">01 — About</div>
+            <h2 class="section-label">01 — About</h2>
             <div class="section-body">
                 <p>I grew up in Dhaka, Bangladesh, and now live in a suburb of Vancouver, British Columbia, where I work as an Engineering Tech Lead. Most of my days are spent on systems that have to stay up for millions of people: architecture, performance, and the unglamorous work that happens after deploy.</p>
                 <p>I write and speak about that work: what it actually takes to keep Laravel systems running once they leave a laptop.</p>
@@ -32,7 +32,7 @@ title: Nuruzzaman Milon
         </section>
 
         <section class="section">
-            <div class="section-label">02 — Writing</div>
+            <h2 class="section-label">02 — Writing</h2>
             <div class="section-body is-wide">
                 <div class="index-list">
                     @foreach ($posts->take(5) as $post)
@@ -47,14 +47,14 @@ title: Nuruzzaman Milon
         </section>
 
         <section class="section">
-            <div class="section-label">03 — Books</div>
+            <h2 class="section-label">03 — Books</h2>
             <div class="section-body is-wide">
                 <p class="shelf-intro">Two books on Laravel, written a decade apart, for two very different readers.</p>
                 <div class="shelf">
                     <a class="shelf-item" href="https://laravel-after-deploy.milon.im/">
                         <img class="shelf-cover" src="/assets/images/book/laravel-after-deploy/cover-400.webp" width="400" height="518" loading="lazy" decoding="async" alt="Laravel After Deploy cover">
                         <span class="shelf-text">
-                            <span class="shelf-title">Laravel After Deploy</span>
+                            <h3 class="shelf-title">Laravel After Deploy</h3>
                             <span class="shelf-meta">2026 · English</span>
                             <span class="shelf-desc">A production playbook for mid-to-senior engineers: architecture, performance, and operations at scale.</span>
                         </span>
@@ -62,7 +62,7 @@ title: Nuruzzaman Milon
                     <a class="shelf-item" href="/book/laravel">
                         <img class="shelf-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition-400.webp" width="400" height="522" loading="lazy" decoding="async" alt="Laravel PHP Web Framework cover">
                         <span class="shelf-text">
-                            <span class="shelf-title">Laravel PHP Web Framework</span>
+                            <h3 class="shelf-title">Laravel PHP Web Framework</h3>
                             <span class="shelf-meta">2015 · Bengali</span>
                             <span class="shelf-desc">A Bengali-language introduction to Laravel for PHP developers, published by Dimik Prokashoni in two editions.</span>
                         </span>

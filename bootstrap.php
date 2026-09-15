@@ -7,6 +7,7 @@ $events->beforeBuild(App\Listeners\GenerateCategoryCollection::class);
 $events->afterBuild(App\Listeners\OptimizeImages::class);
 $events->afterBuild(App\Listeners\GenerateSitemap::class);
 $events->afterBuild(App\Listeners\GenerateIndex::class);
+$events->afterBuild(App\Listeners\GenerateAgentFiles::class);
 $events->afterBuild(Milon\JigsawUrlShortener\GenerateUrlRedirect::class);
 
 $container->bind(
