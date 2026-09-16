@@ -43,12 +43,16 @@
         <script>
             (function() {
                 var STORAGE_KEY = 'milon.im-theme';
-                var theme;
-                try { theme = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-                if (theme !== 'dark' && theme !== 'light') {
-                    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                var preference;
+                try { preference = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+                if (preference !== 'dark' && preference !== 'light' && preference !== 'system') {
+                    preference = 'system';
                 }
-                document.documentElement.setAttribute('data-theme', theme);
+                var resolved = preference === 'system'
+                    ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                    : preference;
+                document.documentElement.setAttribute('data-theme-preference', preference);
+                document.documentElement.setAttribute('data-theme', resolved);
             })();
         </script>
         @viteRefresh()
@@ -82,13 +86,17 @@
                         <path d="M20 20l-3.6-3.6"/>
                     </svg>
                 </button>
-                <button type="button" class="theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle light/dark theme">
-                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-                    </svg>
+                <button type="button" class="theme-toggle" id="theme-toggle" title="Theme: system" aria-label="Theme: system. Click to change.">
                     <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="4"/>
                         <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                    </svg>
+                    <svg class="icon-system" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="12" rx="1.5"/>
+                        <path d="M8 20h8M12 16v4"/>
                     </svg>
                 </button>
             </nav>
@@ -115,17 +123,54 @@
         <script>
             (function() {
                 var STORAGE_KEY = 'milon.im-theme';
+                var ORDER = ['system', 'light', 'dark'];
+                var LABELS = {
+                    system: 'Theme: system',
+                    light: 'Theme: light',
+                    dark: 'Theme: dark'
+                };
                 var html = document.documentElement;
                 var btn = document.getElementById('theme-toggle');
+                var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
-                function setTheme(theme) {
-                    html.setAttribute('data-theme', theme);
-                    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+                function resolve(preference) {
+                    if (preference === 'system') {
+                        return media && media.matches ? 'dark' : 'light';
+                    }
+                    return preference;
                 }
 
-                if (btn) btn.addEventListener('click', function() {
-                    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-                });
+                function apply(preference) {
+                    html.setAttribute('data-theme-preference', preference);
+                    html.setAttribute('data-theme', resolve(preference));
+                    try { localStorage.setItem(STORAGE_KEY, preference); } catch (e) {}
+                    if (btn) {
+                        var label = LABELS[preference] || LABELS.system;
+                        btn.title = label;
+                        btn.setAttribute('aria-label', label + '. Click to change.');
+                    }
+                }
+
+                function currentPreference() {
+                    var preference = html.getAttribute('data-theme-preference');
+                    return ORDER.indexOf(preference) >= 0 ? preference : 'system';
+                }
+
+                if (btn) {
+                    apply(currentPreference());
+                    btn.addEventListener('click', function() {
+                        var next = ORDER[(ORDER.indexOf(currentPreference()) + 1) % ORDER.length];
+                        apply(next);
+                    });
+                }
+
+                if (media) {
+                    var onChange = function() {
+                        if (currentPreference() === 'system') apply('system');
+                    };
+                    if (media.addEventListener) media.addEventListener('change', onChange);
+                    else if (media.addListener) media.addListener(onChange);
+                }
             })();
         </script>
         <script type="module">

@@ -259,11 +259,14 @@ img { max-width: 100%; }
 
 .theme-toggle:hover { color: var(--ink); }
 
-/* Light theme offers the moon (switch to dark); dark theme offers the sun. */
-.theme-toggle .icon-sun { display: none; }
+/* Icon shows the current preference: sun / moon / system. */
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon,
+.theme-toggle .icon-system { display: none; }
 
-html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+html[data-theme-preference="light"] .theme-toggle .icon-sun { display: block; }
+html[data-theme-preference="dark"] .theme-toggle .icon-moon { display: block; }
+html[data-theme-preference="system"] .theme-toggle .icon-system { display: block; }
 
 /* ─────────────────────────────────────────────────────
    Search
