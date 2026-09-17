@@ -18,10 +18,6 @@
             @yield('content')
         </article>
 
-        @if($page->production)
-            @include('_layouts._partials._disqus')
-        @endif
-
         @include('_layouts._partials._back_to_home_link', [
             'href' => '/talks',
             'label' => 'Back to Talks',

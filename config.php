@@ -47,7 +47,6 @@ return [
     'jsonLd' => function ($page) {
         return App\Listeners\JsonLd::encode($page);
     },
-    'disqusShortName' => 'milon-im',
     'paginationLinkNumber' => 5,
     'urlRedirects' => require_once(__DIR__ . '/redirects.php'),
     'formattedDate' => function ($page, $date, $withDay = true) {
