@@ -7,7 +7,11 @@ return [
     ],
     [
         'filename' => 'twitter',
-        'url' => 'https://twitter.com/to_milon',
+        'url' => 'https://x.com/to_milon',
+    ],
+    [
+        'filename' => 'x',
+        'url' => 'https://x.com/to_milon',
     ],
     [
         'filename' => 'github',
@@ -23,7 +27,7 @@ return [
     ],
     [
         'filename' => 'slideshare',
-        'url' => 'http://www.slideshare.net/milon521',
+        'url' => 'https://www.slideshare.net/milon521',
     ],
     [
         'filename' => 'instagram',

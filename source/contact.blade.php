@@ -32,9 +32,9 @@ title: Contact
                         <p class="contact-val"><a href="https://milon.im">milon.im</a></p>
                     </div>
                     <div class="contact-row">
-                        <span class="contact-key">Twitter</span>
+                        <span class="contact-key">X</span>
                         <p class="contact-val">
-                            <a href="/twitter">@to_milon</a>
+                            <a href="/x">@to_milon</a>
                             <span class="note">Want a quick response? This is the place.</span>
                         </p>
                     </div>

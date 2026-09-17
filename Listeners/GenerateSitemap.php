@@ -25,6 +25,7 @@ class GenerateSitemap
         '/feed.xml',
         '/atom.xml',
         '/rss.xml',
+        '/rss',
         '/laravel',
     ];
 
@@ -105,7 +106,6 @@ class GenerateSitemap
             '/cv' => $source . '/cv.blade.php',
             '/contact' => $source . '/contact.blade.php',
             '/book/laravel' => $source . '/book/laravel.blade.php',
-            '/rss' => $source . '/rss.blade.php',
         ] as $path => $file) {
             if (is_file($file)) {
                 $lastmods[$path] = filemtime($file);

@@ -19,6 +19,8 @@ class GenerateAgentFiles
         $talks = collect($jigsaw->getCollection('talks'));
 
         $this->writeHomepageMarkdown($jigsaw, $posts);
+        $this->writePostsIndex($jigsaw, $posts);
+        $this->writeTalksIndex($jigsaw, $talks);
         $this->writeCollectionMarkdown($jigsaw, $posts);
         $this->writeCollectionMarkdown($jigsaw, $talks);
         $this->writeLlmsTxt($jigsaw, $baseUrl, $posts, $talks);
@@ -33,8 +35,10 @@ class GenerateAgentFiles
     {
         $recent = $posts->take(5)->map(function (PageVariable $post) {
             $path = $this->normalizePath($post->getPath());
+            $gist = trim((string) ($post->gist ?? ''));
+            $suffix = $gist !== '' ? ': ' . $gist : '';
 
-            return '- [' . $post->title . '](' . $path . '.md): ' . trim((string) ($post->gist ?? ''));
+            return '- [' . $post->title . '](' . $path . '.md)' . $suffix;
         })->implode("\n");
 
         $markdown = <<<MD
@@ -64,12 +68,10 @@ I write and speak about that work — what it actually takes to keep Laravel sys
 - [Talks](/talks.md)
 - [CV](/cv.md)
 - [Contact](/contact.md)
-- [RSS / Atom feed](/feed.xml)
+- [Atom feed](/feed.xml)
 MD;
 
         $jigsaw->writeOutputFile('index.md', $markdown . "\n");
-        $this->writeStaticPageMarkdown($jigsaw, 'posts.md', 'Writing', 'Essays on Laravel, architecture, performance, and building software that has to stay up.');
-        $this->writeStaticPageMarkdown($jigsaw, 'talks.md', 'Talks', 'Slides and notes from sessions on Laravel, PHP, and building for production.');
         $this->writeStaticPageMarkdown($jigsaw, 'books.md', 'Books', 'Two books on Laravel, written a decade apart, for two very different readers.');
         $this->writeStaticPageMarkdown($jigsaw, 'cv.md', 'CV', 'Curriculum vitae for Nuruzzaman Milon.');
         $this->writeStaticPageMarkdown($jigsaw, 'contact.md', 'Contact', 'How to reach Nuruzzaman Milon, including the newsletter.');
@@ -79,6 +81,55 @@ MD;
             'Laravel PHP Web Framework',
             'Bengali-language introduction to Laravel for PHP developers, published by Dimik Prokashoni in two editions.'
         );
+    }
+
+    private function writePostsIndex(Jigsaw $jigsaw, $posts): void
+    {
+        $items = $this->formatIndexItems($posts);
+        $count = $posts->count();
+
+        $markdown = <<<MD
+# Writing
+
+> Essays on Laravel, architecture, performance, and building software that has to stay up.
+
+{$count} posts, newest first. Prefer the Markdown links. HTML: [/posts](/posts). Atom feed: [/feed.xml](/feed.xml).
+
+{$items}
+MD;
+
+        $jigsaw->writeOutputFile('posts.md', $markdown . "\n");
+    }
+
+    private function writeTalksIndex(Jigsaw $jigsaw, $talks): void
+    {
+        $items = $this->formatIndexItems($talks);
+        $count = $talks->count();
+
+        $markdown = <<<MD
+# Talks
+
+> Slides and notes from sessions on Laravel, PHP, and building for production.
+
+{$count} talks, newest first. Prefer the Markdown links. HTML: [/talks](/talks).
+
+{$items}
+MD;
+
+        $jigsaw->writeOutputFile('talks.md', $markdown . "\n");
+    }
+
+    private function formatIndexItems($items): string
+    {
+        return $items->map(function (PageVariable $page) {
+            $path = $this->normalizePath($page->getPath());
+            $gist = trim((string) ($page->gist ?? ''));
+            $date = $this->formatDate($page->date);
+            $meta = array_filter([$date, $gist !== '' ? $gist : null]);
+            $suffix = $meta !== [] ? ' — ' . implode(' — ', $meta) : '';
+
+            return '- [' . $page->title . '](' . $path . '.md)' . $suffix;
+        })->implode("\n");
     }
 
     private function writeStaticPageMarkdown(Jigsaw $jigsaw, string $path, string $title, string $summary): void
@@ -212,9 +263,13 @@ XML;
 </feed>
 XML;
 
-        $jigsaw->writeOutputFile('feed.xml', $feed . "\n");
-        $jigsaw->writeOutputFile('atom.xml', $feed . "\n");
-        $jigsaw->writeOutputFile('rss.xml', $feed . "\n");
+        // Canonical feed is /feed.xml. Aliases keep old subscriber URLs working
+        // without a second Blade-generated feed.
+        $payload = $feed . "\n";
+        $jigsaw->writeOutputFile('feed.xml', $payload);
+        $jigsaw->writeOutputFile('atom.xml', $payload);
+        $jigsaw->writeOutputFile('rss.xml', $payload);
+        $jigsaw->writeOutputFile('rss/index.html', $payload);
     }
 
     private function writeApiCatalog(Jigsaw $jigsaw, string $baseUrl): void
