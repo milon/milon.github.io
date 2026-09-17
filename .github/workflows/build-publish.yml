@@ -30,8 +30,10 @@ jobs:
       run: bun run build
     - name: Build Jigsaw site
       run: ./vendor/bin/jigsaw build production
-    - name: Create CNAME File
-      run: echo "milon.im" >> build_production/CNAME
+    - name: Create CNAME and disable Jekyll
+      run: |
+        echo "milon.im" > build_production/CNAME
+        touch build_production/.nojekyll
     - name: Stage Files
       run: git add -f build_production
     - name: Commit files

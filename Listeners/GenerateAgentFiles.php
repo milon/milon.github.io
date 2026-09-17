@@ -24,6 +24,9 @@ class GenerateAgentFiles
         $this->writeLlmsTxt($jigsaw, $baseUrl, $posts, $talks);
         $this->writeAtomFeed($jigsaw, $baseUrl, $posts);
         $this->writeApiCatalog($jigsaw, $baseUrl);
+
+        // Disable Jekyll on GitHub Pages so published .md files are served as static assets.
+        $jigsaw->writeOutputFile('.nojekyll', '');
     }
 
     private function writeHomepageMarkdown(Jigsaw $jigsaw, $posts): void
