@@ -57,6 +57,7 @@
         </script>
         @viteRefresh()
         <link rel="stylesheet" href="{{ vite('source/_assets/sass/main.scss') }}">
+        <link rel="stylesheet" href="{{ vite('source/_assets/css/site.css') }}">
 
         @yield('meta')
         @if ($page->isIndexable())
