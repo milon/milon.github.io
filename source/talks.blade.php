@@ -33,7 +33,7 @@ pagination:
                                 <span class="index-title" style="view-transition-name: talk-{{ $talk->getFilename() }}">{{ $talk->title }}</span>
                                 <span class="index-gist">{{ $talk->gist }}</span>
                             </span>
-                            <span class="index-date">{{ $talk->formatedDate($talk->date) }}</span>
+                            <span class="index-date">{{ $talk->formattedDate($talk->date) }}</span>
                         </a>
                     @endforeach
                 </div>

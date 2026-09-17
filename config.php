@@ -47,10 +47,10 @@ return [
     'jsonLd' => function ($page) {
         return App\Listeners\JsonLd::encode($page);
     },
-    'dusqusShortName' => 'milon-im',
-    'paginatationLinkNumber' => 5,
+    'disqusShortName' => 'milon-im',
+    'paginationLinkNumber' => 5,
     'urlRedirects' => require_once(__DIR__ . '/redirects.php'),
-    'formatedDate' => function ($page, $date, $withDay = true) {
+    'formattedDate' => function ($page, $date, $withDay = true) {
         if ($date instanceof DateTimeInterface) {
             $timestamp = $date->getTimestamp();
         } elseif (is_numeric($date)) {

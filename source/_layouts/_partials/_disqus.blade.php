@@ -14,13 +14,13 @@
             loaded = true;
 
             var d = document, s = d.createElement('script');
-            s.src = 'https://{{ $page->dusqusShortName }}.disqus.com/embed.js';
+            s.src = 'https://{{ $page->disqusShortName }}.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
 
             var count = d.createElement('script');
             count.id = 'dsq-count-scr';
-            count.src = '//{{ $page->dusqusShortName }}.disqus.com/count.js';
+            count.src = '//{{ $page->disqusShortName }}.disqus.com/count.js';
             count.async = true;
             (d.head || d.body).appendChild(count);
         }

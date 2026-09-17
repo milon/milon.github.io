@@ -10,7 +10,7 @@
             <p class="eyebrow">Writing</p>
             <h1 style="view-transition-name: post-{{ $page->getFilename() }}">{{ $page->title }}</h1>
             <p class="article-meta">
-                <span>{{ $page->formatedDate($page->date) }}</span>
+                <span>{{ $page->formattedDate($page->date) }}</span>
             </p>
         </div>
 

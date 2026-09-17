@@ -41,7 +41,7 @@ class GenerateIndex
             categories: $page->getCategories(),
             link: $this->pathFromPage($page),
             type: $type,
-            dateLabel: $page->formatedDate($page->date),
+            dateLabel: $page->formattedDate($page->date),
             isbn: '',
         );
     }

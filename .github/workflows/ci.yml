@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP 8.4
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.4
+          tools: composer:v2
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install Composer Dependencies
+        run: composer install --no-ansi --no-interaction --no-progress
+
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build assets
+        run: bun run build
+
+      - name: Build Jigsaw site
+        run: ./vendor/bin/jigsaw build production
+
+      - name: Verify agent artifacts
+        run: |
+          test -f build_production/.nojekyll
+          test -f build_production/llms.txt
+          test -f build_production/feed.xml
+          test -f build_production/posts.md
+          test -f build_production/talks.md
+          test -f build_production/books.md
+          test -f build_production/cv.md
+          test -f build_production/contact.md
+          test -f build_production/book/laravel.md
+          test -f build_production/.well-known/api-catalog
+          # Indexes must list content, not HTML stubs
+          ! grep -q 'See the HTML version' build_production/posts.md
+          ! grep -q 'See the HTML version' build_production/talks.md
+          ! grep -q 'See the HTML version' build_production/books.md
+          ! grep -q 'See the HTML version' build_production/cv.md
+          ! grep -q 'See the HTML version' build_production/contact.md
+          ! grep -q 'See the HTML version' build_production/book/laravel.md
+          head -c 5 build_production/feed.xml | grep -q '<?xml'

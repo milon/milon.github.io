@@ -35,7 +35,7 @@ pagination:
                                 <span class="index-title" style="view-transition-name: post-{{ $post->getFilename() }}">{{ $post->title }}</span>
                                 <span class="index-gist">{{ $post->gist }}</span>
                             </span>
-                            <span class="index-date">{{ $post->formatedDate($post->date) }}</span>
+                            <span class="index-date">{{ $post->formattedDate($post->date) }}</span>
                         </a>
                     @endforeach
                 </div>

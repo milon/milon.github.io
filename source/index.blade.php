@@ -38,7 +38,7 @@ title: Nuruzzaman Milon
                     @foreach ($posts->take(5) as $post)
                         <a class="index-item is-compact" href="{{ $post->getUrl() }}">
                             <span class="index-title">{{ $post->title }}</span>
-                            <span class="index-date">{{ $post->formatedDate($post->date) }}</span>
+                            <span class="index-date">{{ $post->formattedDate($post->date) }}</span>
                         </a>
                     @endforeach
                 </div>

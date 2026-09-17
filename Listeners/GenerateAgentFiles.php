@@ -72,15 +72,145 @@ I write and speak about that work — what it actually takes to keep Laravel sys
 MD;
 
         $jigsaw->writeOutputFile('index.md', $markdown . "\n");
-        $this->writeStaticPageMarkdown($jigsaw, 'books.md', 'Books', 'Two books on Laravel, written a decade apart, for two very different readers.');
-        $this->writeStaticPageMarkdown($jigsaw, 'cv.md', 'CV', 'Curriculum vitae for Nuruzzaman Milon.');
-        $this->writeStaticPageMarkdown($jigsaw, 'contact.md', 'Contact', 'How to reach Nuruzzaman Milon, including the newsletter.');
-        $this->writeStaticPageMarkdown(
-            $jigsaw,
-            'book/laravel.md',
-            'Laravel PHP Web Framework',
-            'Bengali-language introduction to Laravel for PHP developers, published by Dimik Prokashoni in two editions.'
-        );
+        $this->writeBooksMarkdown($jigsaw);
+        $this->writeCvMarkdown($jigsaw);
+        $this->writeContactMarkdown($jigsaw);
+        $this->writeLaravelBookMarkdown($jigsaw);
+    }
+
+    private function writeBooksMarkdown(Jigsaw $jigsaw): void
+    {
+        $markdown = <<<'MD'
+# Books
+
+> Two books on Laravel, written a decade apart, for two very different readers.
+
+HTML: [/books](/books).
+
+## Laravel After Deploy
+
+- **Subtitle:** Architecture, Performance & Operations at Scale
+- **Language:** English
+- **Published:** 2026 · August
+- **ISBN:** 979-8193747345
+- **Site:** [laravel-after-deploy.milon.im](https://laravel-after-deploy.milon.im/)
+
+For mid-to-senior Laravel engineers, and for backend engineers who can read PHP and want a production playbook shown in one concrete stack — not a polyglot cookbook. The examples are Laravel; the problems are not.
+
+## Laravel PHP Web Framework
+
+- **Title (Bengali):** লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক
+- **Publisher:** Dimik Prokashoni · two editions
+- **Language:** Bengali
+- **First edition:** 2015 · May
+- **ISBN:** 978-9843391902
+- **Details:** [/book/laravel.md](/book/laravel.md)
+
+A Bengali-language introduction to Laravel for PHP developers looking to adopt modern framework practices.
+MD;
+
+        $jigsaw->writeOutputFile('books.md', $markdown . "\n");
+    }
+
+    private function writeCvMarkdown(Jigsaw $jigsaw): void
+    {
+        $markdown = <<<'MD'
+# Curriculum Vitae
+
+> Engineering Tech Lead · Vancouver, British Columbia.
+
+HTML (PDF viewer): [/cv](/cv). Downloadable PDF: [/assets/pdf/Nuruzzaman_Milon_cv.pdf](/assets/pdf/Nuruzzaman_Milon_cv.pdf).
+
+## Summary
+
+Nuruzzaman Milon is an Engineering Tech Lead based near Vancouver, British Columbia. He grew up in Dhaka, Bangladesh. Most of his work is on production systems that serve millions of people: architecture, performance, and the operational work that happens after deploy.
+
+He writes and speaks about keeping Laravel systems reliable once they leave a laptop. He is the author of *Laravel After Deploy* (2026, English) and *Laravel PHP Web Framework* (2015, Bengali).
+
+## Focus
+
+- Production Laravel / PHP systems at scale
+- Architecture, performance, and post-deploy operations
+- Writing and speaking for engineers who ship
+
+## Elsewhere
+
+- Site: [milon.im](https://milon.im/)
+- Writing: [/posts.md](/posts.md)
+- Talks: [/talks.md](/talks.md)
+- Books: [/books.md](/books.md)
+- Contact: [/contact.md](/contact.md)
+MD;
+
+        $jigsaw->writeOutputFile('cv.md', $markdown . "\n");
+    }
+
+    private function writeContactMarkdown(Jigsaw $jigsaw): void
+    {
+        $markdown = <<<'MD'
+# Contact
+
+> The fastest way to reach me is email. I read everything, and I reply to most of it.
+
+HTML: [/contact](/contact).
+
+## Direct
+
+- **Email:** contact[at]milon[dot]im
+- **Website:** [milon.im](https://milon.im/)
+- **X:** [@to_milon](/x) — best for a quick response
+- **LinkedIn:** [in/tomilon](/linkedin)
+
+## Elsewhere
+
+- [GitHub](/github)
+- [Facebook](/facebook)
+- [SlideShare](/slideshare)
+- [Speaker Deck](/speakerdeck)
+- [Instagram](/instagram)
+- [Stack Overflow](/stackoverflow)
+
+## Newsletter
+
+Subscribe from the HTML contact page ([/contact](/contact)) — the form posts to Kit (ConvertKit).
+MD;
+
+        $jigsaw->writeOutputFile('contact.md', $markdown . "\n");
+    }
+
+    private function writeLaravelBookMarkdown(Jigsaw $jigsaw): void
+    {
+        $markdown = <<<'MD'
+# Laravel PHP Web Framework
+
+> লারাভেল পিএইচপি ওয়েব ফ্রেমওয়ার্ক · Dimik Prokashoni · Two editions
+
+HTML: [/book/laravel](/book/laravel). Books index: [/books.md](/books.md).
+
+- **ISBN:** 978-984-33-9190-2
+- **Publisher:** দ্বিমিক প্রকাশনী (Dimik Prokashoni)
+- **1st edition:** May 2015
+- **2nd edition:** August 2016
+
+## Why
+
+I heard a question very often: "Brother, I have learned PHP, but writing PHP inside HTML is not pleasant." Or, "Which PHP framework should I learn?" In these scenarios my general answer is Laravel — it uses cutting-edge PHP techniques and best practices, with syntax I personally prefer.
+
+I decided to write the book because Bengali learners kept saying there was no solid local Laravel resource; almost everything was English. The Bangladeshi community had helped me for years, and this was a way to give something back.
+
+Related essay: [/post/why-you-should-consider-laravel-as-your-go-to-framework-of-choice.md](/post/why-you-should-consider-laravel-as-your-go-to-framework-of-choice.md).
+
+## Second edition
+
+The second edition fixed first-edition errors (including missing code), added a full explained project, and covered features compatible with Laravel 5.3 while using Laravel 5.1 LTS for the sample project.
+
+## Order
+
+- Online: [rokomari.com/book/100634](https://www.rokomari.com/book/100634)
+- Stores (Dhaka): Haque Library and Manik Library, Nilkhet
+MD;
+
+        $jigsaw->writeOutputFile('book/laravel.md', $markdown . "\n");
     }
 
     private function writePostsIndex(Jigsaw $jigsaw, $posts): void
@@ -130,12 +260,6 @@ MD;
 
             return '- [' . $page->title . '](' . $path . '.md)' . $suffix;
         })->implode("\n");
-    }
-
-    private function writeStaticPageMarkdown(Jigsaw $jigsaw, string $path, string $title, string $summary): void
-    {
-        $markdown = "# {$title}\n\n> {$summary}\n\nSee the HTML version at [/" . ltrim(preg_replace('/\.md$/', '', $path), '/') . "](/" . ltrim(preg_replace('/\.md$/', '', $path), '/') . ").\n";
-        $jigsaw->writeOutputFile($path, $markdown);
     }
 
     private function writeCollectionMarkdown(Jigsaw $jigsaw, $items): void
