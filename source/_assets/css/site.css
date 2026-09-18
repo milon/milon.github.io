@@ -43,44 +43,88 @@
     }
 
     .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 14px var(--gutter);
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 0;
+        padding: 10px var(--gutter);
+    }
+
+    .wordmark {
+        flex: 1 1 auto;
+        min-width: 0;
+        font-size: 11.5px;
+        letter-spacing: 0.1em;
+    }
+
+    .topbar-tools {
+        margin-left: 0;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
+    }
+
+    .search-trigger,
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+        margin-left: 0;
     }
 
     .topbar-nav {
-        flex-wrap: wrap;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        flex-direction: column;
+        align-items: stretch;
         gap: 0;
-        margin-left: -7px;
+        margin: 0;
+        padding: 0 var(--gutter);
+        background-color: var(--paper);
+        border-bottom: 1px solid var(--rule);
+        box-shadow: 0 12px 28px color-mix(in srgb, var(--ink) 8%, transparent);
+    }
+
+    .topbar.is-open .topbar-nav {
+        display: flex;
     }
 
     .topbar-nav a {
-        font-size: 10.5px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        font-size: 12px;
         letter-spacing: 0.1em;
-        padding: 9px 7px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--rule-soft);
+        background-color: var(--paper);
+    }
+
+    .topbar-nav a:last-child {
+        border-bottom: 0;
     }
 
     .topbar-nav a::before {
-        display: none;
+        display: inline;
+        color: var(--rule);
+        min-width: 1.6em;
     }
 
-    .theme-toggle {
-        position: absolute;
-        top: 3px;
-        right: calc(var(--gutter) - 5px);
-        width: 44px;
-        height: 44px;
-        margin-left: 0;
+    .topbar-nav a.selected {
+        background-color: var(--paper-2);
+        color: var(--ink);
+        margin: 0 calc(-1 * var(--gutter));
+        padding-left: var(--gutter);
+        padding-right: var(--gutter);
     }
 
-    .search-trigger {
-        position: absolute;
-        top: 3px;
-        right: calc(var(--gutter) + 39px);
-        width: 44px;
-        height: 44px;
-        margin-left: 0;
+    .topbar-nav a.selected::before {
+        color: var(--ink-3);
     }
 
     .search-dialog {

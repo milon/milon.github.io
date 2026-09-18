@@ -65,7 +65,7 @@
         @endif
     </head>
     <body>
-        <header class="topbar">
+        <header class="topbar" id="topbar">
             <a class="wordmark" href="{{ $page->baseUrl }}">
                 <svg class="mark" viewBox="0 0 100 100" width="14" height="14" aria-hidden="true" focusable="false">
                     <g transform="translate(8,92) scale(0.01634,-0.01634)" fill="currentColor">
@@ -74,7 +74,7 @@
                 </svg>
                 Nuruzzaman Milon
             </a>
-            <nav class="topbar-nav">
+            <nav class="topbar-nav" id="topbar-nav">
                 <a data-num="01" class="{{ $page->selected('/') }}" href="/">Root</a>
                 <a data-num="02" class="{{ (strpos($page->getPath(), '/posts') === 0 || strpos($page->getPath(), '/post/') === 0) ? 'selected' : '' }}" href="/posts">Writing</a>
                 <a data-num="03" class="{{ ($page->getPath() === '/books' || strpos($page->getPath(), '/book/') === 0) ? 'selected' : '' }}" href="/books">Books</a>
@@ -82,6 +82,8 @@
                 <a data-num="05" class="{{ $page->selected('/open-source') }}" href="/open-source">Open Source</a>
                 <a data-num="06" class="{{ $page->selected('/cv') }}" href="/cv">CV</a>
                 <a data-num="07" class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
+            </nav>
+            <div class="topbar-tools">
                 <button type="button" class="search-trigger" id="search-trigger" title="Search" aria-label="Search">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="11" cy="11" r="7"/>
@@ -101,7 +103,15 @@
                         <path d="M8 20h8M12 16v4"/>
                     </svg>
                 </button>
-            </nav>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="topbar-nav" title="Menu" aria-label="Open menu">
+                    <svg class="icon-menu" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16"/>
+                    </svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6L6 18"/>
+                    </svg>
+                </button>
+            </div>
         </header>
 
         <main id="body">
@@ -172,6 +182,47 @@
                     };
                     if (media.addEventListener) media.addEventListener('change', onChange);
                     else if (media.addListener) media.addListener(onChange);
+                }
+            })();
+        </script>
+        <script>
+            (function() {
+                var topbar = document.getElementById('topbar');
+                var toggle = document.getElementById('nav-toggle');
+                var nav = document.getElementById('topbar-nav');
+                if (!topbar || !toggle || !nav) return;
+
+                function setOpen(open) {
+                    topbar.classList.toggle('is-open', open);
+                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+                    toggle.title = open ? 'Close menu' : 'Menu';
+                }
+
+                toggle.addEventListener('click', function() {
+                    setOpen(!topbar.classList.contains('is-open'));
+                });
+
+                nav.addEventListener('click', function(event) {
+                    if (event.target.closest('a')) setOpen(false);
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!topbar.classList.contains('is-open')) return;
+                    if (!topbar.contains(event.target)) setOpen(false);
+                });
+
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') setOpen(false);
+                });
+
+                if (window.matchMedia) {
+                    var desktop = window.matchMedia('(min-width: 768px)');
+                    var onBreakpoint = function(event) {
+                        if (event.matches) setOpen(false);
+                    };
+                    if (desktop.addEventListener) desktop.addEventListener('change', onBreakpoint);
+                    else if (desktop.addListener) desktop.addListener(onBreakpoint);
                 }
             })();
         </script>
