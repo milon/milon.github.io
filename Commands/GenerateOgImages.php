@@ -26,6 +26,10 @@ class GenerateOgImages
             's' => 'Talks',
             't' => 'Slides and notes from *conferences and meetups.*',
         ],
+        'open-source' => [
+            's' => 'Open Source',
+            't' => 'PHP packages with *over 15 million downloads.*',
+        ],
         'cv' => [
             's' => 'CV',
             't' => 'Engineering Tech Lead, *building for scale.*',

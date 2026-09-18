@@ -76,6 +76,8 @@ class JsonLd
             $graph[] = static::bengaliBook($page, $url, $personId);
         } elseif ($path === '/books') {
             $graph[] = static::bookList($page, $url, $websiteId, $personId);
+        } elseif ($path === '/open-source') {
+            $graph[] = static::openSourceList($page, $url, $websiteId, $personId);
         } else {
             $graph[] = static::webPage($page, $url, $websiteId, $personId, $path);
         }
@@ -244,6 +246,66 @@ class JsonLd
                         ],
                     ],
                 ],
+            ],
+        ];
+    }
+
+    private static function openSourceList($page, string $url, string $websiteId, string $personId): array
+    {
+        $projects = [
+            ['milon/barcode', 'https://github.com/milon/barcode', 'PHP'],
+            ['papyrus', 'https://github.com/milon/papyrus', 'PHP'],
+            ['setu', 'https://github.com/milon/setu', 'JavaScript'],
+            ['prepare-citizenship', 'https://github.com/milon/prepare-citizenship', 'JavaScript'],
+            ['jigsaw-url-shortener', 'https://github.com/milon/jigsaw-url-shortener', 'PHP'],
+            ['macos-unijoy', 'https://github.com/milon/macos-unijoy', 'Shell'],
+            ['dotfiles', 'https://github.com/milon/dotfiles', 'Shell'],
+            ['system-design', 'https://github.com/milon/system-design', null],
+            ['one-problem-a-day', 'https://github.com/milon/one-problem-a-day', null],
+            ['recipes', 'https://github.com/milon/recipes', 'HTML'],
+            ['catppuccin-fresh', 'https://github.com/milon/catppuccin-fresh', null],
+            ['arrow-zsh-theme', 'https://github.com/milon/arrow-zsh-theme', 'Shell'],
+            ['takakori', 'https://github.com/milon/takakori', 'PHP'],
+            ['url-shortener', 'https://github.com/milon/url-shortener', 'PHP'],
+        ];
+
+        $itemListElement = [];
+
+        foreach ($projects as $index => [$name, $repo, $language]) {
+            $item = [
+                '@type' => 'SoftwareSourceCode',
+                'name' => $name,
+                'codeRepository' => $repo,
+                'author' => ['@id' => $personId],
+            ];
+
+            if ($language !== null) {
+                $item['programmingLanguage'] = $language;
+            }
+
+            if ($name === 'milon/barcode') {
+                $item['url'] = 'https://packagist.org/packages/milon/barcode';
+            }
+
+            $itemListElement[] = [
+                '@type' => 'ListItem',
+                'position' => $index + 1,
+                'item' => $item,
+            ];
+        }
+
+        return [
+            '@type' => 'CollectionPage',
+            '@id' => $url . '#webpage',
+            'url' => $url,
+            'name' => $page->documentTitle(),
+            'description' => $page->metaDescription(),
+            'isPartOf' => ['@id' => $websiteId],
+            'inLanguage' => 'en',
+            'mainEntity' => [
+                '@type' => 'ItemList',
+                'numberOfItems' => count($itemListElement),
+                'itemListElement' => $itemListElement,
             ],
         ];
     }

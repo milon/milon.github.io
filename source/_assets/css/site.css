@@ -147,6 +147,11 @@
         gap: 22px;
     }
 
+    .shelf.is-text {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
+
     .book-sub {
         flex-direction: column;
         align-items: flex-start;
@@ -163,7 +168,17 @@
     }
 
     .elsewhere {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .oss-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .oss-link-gap {
+        margin-left: 0;
+        margin-top: 12px;
+        display: inline-block;
     }
 
     .spec-row {

@@ -66,6 +66,7 @@ I write and speak about that work — what it actually takes to keep Laravel sys
 ## More
 
 - [Talks](/talks.md)
+- [Open Source](/open-source.md)
 - [CV](/cv.md)
 - [Contact](/contact.md)
 - [Atom feed](/feed.xml)
@@ -73,6 +74,7 @@ MD;
 
         $jigsaw->writeOutputFile('index.md', $markdown . "\n");
         $this->writeBooksMarkdown($jigsaw);
+        $this->writeOpenSourceMarkdown($jigsaw);
         $this->writeCvMarkdown($jigsaw);
         $this->writeContactMarkdown($jigsaw);
         $this->writeLaravelBookMarkdown($jigsaw);
@@ -110,6 +112,65 @@ A Bengali-language introduction to Laravel for PHP developers looking to adopt m
 MD;
 
         $jigsaw->writeOutputFile('books.md', $markdown . "\n");
+    }
+
+    private function writeOpenSourceMarkdown(Jigsaw $jigsaw): void
+    {
+        $stats = $jigsaw->getConfig('barcodeStats') ?? [];
+        $stars = $stats['starsLabel'] ?? '~1.5k';
+        $forks = $stats['forksLabel'] ?? '300+';
+        $total = $stats['downloadsTotalLabel'] ?? '15M+';
+        $monthly = $stats['downloadsMonthlyLabel'] ?? '~500k';
+
+        $markdown = <<<MD
+# Open Source
+
+> PHP packages on Packagist, led by a barcode library with {$total} downloads.
+
+HTML: [/open-source](/open-source).
+
+## Featured
+
+### milon/barcode
+
+- **Downloads:** {$total}
+- **Downloads / month:** {$monthly}
+- **GitHub stars:** {$stars}
+- **Forks:** {$forks}
+- **Stack:** PHP · Laravel
+- **Packagist:** [packagist.org/packages/milon/barcode](https://packagist.org/packages/milon/barcode)
+- **GitHub:** [github.com/milon/barcode](https://github.com/milon/barcode)
+
+Barcode generation for Laravel and plain PHP. Wraps the TCPDF barcode engines (1D, QR, Data Matrix, PDF417) behind a small API that returns SVG, HTML, PNG, and JPEG — still maintained across current Laravel releases.
+
+## Projects
+
+- [papyrus](https://github.com/milon/papyrus) — PHP CLI for Markdown book projects (PDF, EPUB, HTML, multi-page site, Amazon KDP)
+- [setu](https://github.com/milon/setu) — static URL shortener generator for GitHub Pages (npm: @to_milon/setu)
+- [prepare-citizenship](https://github.com/milon/prepare-citizenship) — Canadian citizenship test study app
+- [jigsaw-url-shortener](https://github.com/milon/jigsaw-url-shortener) — URL shortener for Jigsaw sites
+- [macos-unijoy](https://github.com/milon/macos-unijoy) — Unijoy Bengali keyboard layout for macOS
+- [dotfiles](https://github.com/milon/dotfiles) — Personal macOS dotfiles
+- [system-design](https://github.com/milon/system-design) — System design interview prep
+- [one-problem-a-day](https://github.com/milon/one-problem-a-day) — One DSA problem a day
+- [recipes](https://github.com/milon/recipes) — Recipe sharing site ([recipes.milon.im](https://recipes.milon.im))
+- [catppuccin-fresh](https://github.com/milon/catppuccin-fresh) — Catppuccin themes for Fresh Editor
+- [arrow-zsh-theme](https://github.com/milon/arrow-zsh-theme) — Minimal zsh theme
+- [takakori](https://github.com/milon/takakori) — Self-hosted personal finance app
+- [url-shortener](https://github.com/milon/url-shortener) — Laravel URL shortener
+
+This is a selection. The full list of repositories and contributions is on [GitHub](/github).
+
+## Elsewhere
+
+- [GitHub profile](/github)
+- [Packagist vendor](https://packagist.org/packages/milon/)
+- [npm profile](https://www.npmjs.com/~to_milon)
+
+Also helps run phpXperts and Talk.js, the largest PHP and JavaScript communities in Bangladesh.
+MD;
+
+        $jigsaw->writeOutputFile('open-source.md', $markdown . "\n");
     }
 
     private function writeCvMarkdown(Jigsaw $jigsaw): void
@@ -251,7 +312,7 @@ B.Sc. Engineering in Information and Communication Technology (ICT)
 ## More
 
 - Languages spoken: English (C1), Bengali (native), German (A2)
-- Open-source packages with over 12 million downloads
+- [Open-source packages](/open-source.md) with over 15 million downloads
 - Manages phpXperts and Talk.js in Bangladesh
 - Conference speaker
 MD;
@@ -437,6 +498,7 @@ Prefer the Markdown versions linked below. HTML pages are for humans; Markdown i
 - [Writing index]({$baseUrl}/posts.md): All essays
 - [Talks]({$baseUrl}/talks.md): Conference and meetup talks
 - [Books]({$baseUrl}/books.md): Laravel After Deploy and the Bengali Laravel book
+- [Open Source]({$baseUrl}/open-source.md): Packagist packages including milon/barcode
 - [CV]({$baseUrl}/cv.md): Curriculum vitae
 - [Contact]({$baseUrl}/contact.md): Email and newsletter
 - [Atom feed]({$baseUrl}/feed.xml): Recent posts as Atom XML

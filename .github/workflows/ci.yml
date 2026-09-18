@@ -32,6 +32,8 @@ jobs:
         run: bun run build
 
       - name: Build Jigsaw site
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./vendor/bin/jigsaw build production
 
       - name: Verify agent artifacts
@@ -42,10 +44,13 @@ jobs:
           test -f build_production/posts.md
           test -f build_production/talks.md
           test -f build_production/books.md
+          test -f build_production/open-source.md
           test -f build_production/cv.md
           test -f build_production/contact.md
           test -f build_production/book/laravel.md
           test -f build_production/.well-known/api-catalog
+          test -f build_production/open-source/index.html
+          grep -q 'oss-stat-value' build_production/open-source/index.html
           # Indexes must list content, not HTML stubs
           ! grep -q 'See the HTML version' build_production/posts.md
           ! grep -q 'See the HTML version' build_production/talks.md

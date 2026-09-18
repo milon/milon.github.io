@@ -348,7 +348,7 @@ title: CV
                         <div class="spec-row">
                             <dt class="spec-key">Community</dt>
                             <dd class="spec-val">
-                                <span class="spec-line">Open-source packages with over 12 million downloads</span>
+                                <span class="spec-line"><a href="/open-source">Open-source packages</a> with over 15 million downloads</span>
                                 <span class="spec-line">Manages phpXperts (largest PHP community in Bangladesh) and Talk.js (largest JS community in Bangladesh)</span>
                                 <span class="spec-line">Conference speaker</span>
                             </dd>

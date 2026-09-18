@@ -5,7 +5,9 @@ on:
     branches:
       - develop
   schedule:
-    - cron: "0 2 * * 1-5"
+    # Midnight UTC every day — refreshes open-source stats baked in at build time.
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   build-site:
@@ -29,6 +31,8 @@ jobs:
     - name: Build assets
       run: bun run build
     - name: Build Jigsaw site
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: ./vendor/bin/jigsaw build production
     - name: Create CNAME and disable Jekyll
       run: |
@@ -37,11 +41,19 @@ jobs:
     - name: Stage Files
       run: git add -f build_production
     - name: Commit files
+      id: commit
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git commit -m "Build for deploy"
+        if git diff --staged --quiet; then
+          echo "changed=false" >> "$GITHUB_OUTPUT"
+          echo "No build changes to commit."
+        else
+          git commit -m "Build for deploy"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+        fi
     - name: Publish
+      if: steps.commit.outputs.changed == 'true'
       run: |
         git subtree split --prefix build_production -b master
         git push -f origin master:master

@@ -1130,6 +1130,52 @@ html[data-theme="dark"] {
 
 .book-row:first-child { border-top: 1px solid var(--rule-soft); }
 
+/* ─────────────────────────────────────────────────────
+   Open source
+   ───────────────────────────────────────────────────── */
+
+.oss-feature {
+    padding: 30px 0;
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+}
+
+.oss-feature .book-desc {
+    max-width: none;
+}
+
+.oss-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px 24px;
+    margin: 0 0 22px;
+    max-width: 52rem;
+}
+
+.oss-stat-value {
+    display: block;
+    font-family: var(--display-font);
+    font-size: clamp(26px, 3.2vw, 34px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+}
+
+.oss-stat-label {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--mono-font);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+}
+
+.oss-link-gap {
+    margin-left: 18px;
+}
+
 .book-cover {
     width: 150px;
     height: auto;
@@ -1269,6 +1315,36 @@ html[data-theme="dark"] {
     color: var(--ink-3);
 }
 
+/* Text-only shelf — open-source projects (no covers). */
+.shelf.is-text {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+    row-gap: 0;
+    padding-top: 0;
+    border-top: none;
+    align-items: stretch;
+}
+
+.shelf.is-text .shelf-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    align-content: start;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 22px 0;
+    margin: 0;
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: none;
+}
+
+.shelf.is-text .shelf-title {
+    margin: 0 0 6px;
+}
+
+.shelf.is-text .shelf-meta {
+    margin: 0 0 8px;
+}
+
 /* Key/value metadata, sharing the hairline rhythm of .contact-row. */
 .spec-list {
     max-width: none;
@@ -1312,6 +1388,16 @@ html[data-theme="dark"] {
     margin: 26px 0 0;
     font-size: 15px;
     color: var(--ink-3);
+}
+
+/* Beat .section-body p { margin: 0 0 18px } so notes keep top spacing. */
+.section-body p.section-note {
+    margin: 28px 0 0;
+}
+
+.shelf.is-text + .section-note,
+.section-body .shelf.is-text + p.section-note {
+    margin-top: 28px;
 }
 
 /* ─────────────────────────────────────────────────────

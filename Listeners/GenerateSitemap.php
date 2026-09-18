@@ -103,6 +103,7 @@ class GenerateSitemap
             '/posts' => $source . '/posts.blade.php',
             '/talks' => $source . '/talks.blade.php',
             '/books' => $source . '/books.blade.php',
+            '/open-source' => $source . '/open-source.blade.php',
             '/cv' => $source . '/cv.blade.php',
             '/contact' => $source . '/contact.blade.php',
             '/book/laravel' => $source . '/book/laravel.blade.php',

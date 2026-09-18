@@ -28,7 +28,7 @@
                 $markdownAlternate = '/index.md';
             } elseif (
                 preg_match('#^/(post|talk)/[^/]+$#', $path)
-                || in_array($path, ['/posts', '/talks', '/books', '/cv', '/contact', '/book/laravel'], true)
+                || in_array($path, ['/posts', '/talks', '/books', '/open-source', '/cv', '/contact', '/book/laravel'], true)
             ) {
                 $markdownAlternate = $path . '.md';
             }
@@ -79,8 +79,9 @@
                 <a data-num="02" class="{{ (strpos($page->getPath(), '/posts') === 0 || strpos($page->getPath(), '/post/') === 0) ? 'selected' : '' }}" href="/posts">Writing</a>
                 <a data-num="03" class="{{ ($page->getPath() === '/books' || strpos($page->getPath(), '/book/') === 0) ? 'selected' : '' }}" href="/books">Books</a>
                 <a data-num="04" class="{{ ($page->getPath() === '/talks' || strpos($page->getPath(), '/talk/') === 0) ? 'selected' : '' }}" href="/talks">Talks</a>
-                <a data-num="05" class="{{ $page->selected('/cv') }}" href="/cv">CV</a>
-                <a data-num="06" class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
+                <a data-num="05" class="{{ $page->selected('/open-source') }}" href="/open-source">Open Source</a>
+                <a data-num="06" class="{{ $page->selected('/cv') }}" href="/cv">CV</a>
+                <a data-num="07" class="{{ $page->selected('/contact') }}" href="/contact">Contact</a>
                 <button type="button" class="search-trigger" id="search-trigger" title="Search" aria-label="Search">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="11" cy="11" r="7"/>

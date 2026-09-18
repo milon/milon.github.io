@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 const INDEX_URL = '/index.json';
 const MAX_RESULTS = 8;
 const DEBOUNCE_MS = 120;
-const HINT = 'Type to search writing, talks, books, and categories.';
+const HINT = 'Type to search writing, talks, books, packages, and categories.';
 
 const TYPE_LABELS = {
     post: 'Writing',

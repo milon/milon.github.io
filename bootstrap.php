@@ -4,6 +4,7 @@
 /** @var $jigsaw \TightenCo\Jigsaw\Jigsaw */
 
 $events->beforeBuild(App\Listeners\GenerateCategoryCollection::class);
+$events->beforeBuild(App\Listeners\FetchOpenSourceStats::class);
 $events->afterBuild(App\Listeners\OptimizeImages::class);
 $events->afterBuild(App\Listeners\GenerateSitemap::class);
 $events->afterBuild(App\Listeners\GenerateIndex::class);
