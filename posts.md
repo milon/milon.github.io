@@ -1,0 +1,86 @@
+# Writing
+
+> Essays on Laravel, architecture, performance, and building software that has to stay up.
+
+80 posts, newest first. Prefer the Markdown links. HTML: [/posts](/posts). Atom feed: [/feed.xml](/feed.xml).
+
+- [Database partitioning](/post/database-partitioning.md) — 2026-08-21 — What table partitioning actually does, how Postgres routes a row, and the SQL you need before the table is too big to rewrite.
+- [Two-phase commit](/post/two-phase-commit.md) — 2026-08-20 — What two-phase commit actually does, where it fails in production, and what to reach for instead.
+- [Adding multiple subdomain with Github Pages](/post/adding-multiple-subdomain-with-github-pages.md) — 2023-10-10 — How to add multiple subdomain with Github Pages?
+- [Build and deploy Jigsaw site with Github Actions](/post/github-action-with-jigsaw.md) — 2020-07-13 — How to build and deploy a site built with Jigsaw static generator with Github Actions.
+- [Added search functionality with fuse.js in Jigsaw powered site](/post/added-search-functionality-with-fusejs-in-jigsaw-powered-site.md) — 2020-04-21 — Added fuzzy search with fuse.js in static site generated with Jigsaw.
+- [Why you should know analyzing space-time complexity as a software engineer?](/post/why-you-should-know-analyzing-space-time-complexity-as-a-software-engineer.md) — 2019-03-11 — Importance of space time complexity analysis in software engineering field.
+- [Naming a variable](/post/naming-a-variable.md) — 2018-02-04 — My two cents on naming a variable while programming.
+- [Story behind my new blog](/post/story-behind-my-new-blog.md) — 2018-01-23 — The behind story of my statically generated github pages powered blog.
+- [How to become a Certified Laravel Developer](/post/how-to-become-a-certified-laravel-developer.md) — 2018-01-09 — The steps of becoming a Certified Laravel Developer.
+- [Machine Learning Introduction – 1: Set up your workstation](/post/machine-learning-introduction-1-set-up-your-workstation.md) — 2017-02-23 — Setting up your workstation for practicing Machine Learning.
+- [Why you should consider laravel as your go to framework of choice](/post/why-you-should-consider-laravel-as-your-go-to-framework-of-choice.md) — 2017-02-04 — My thoughts on Laravel framework, and it's usability.
+- [লারাভেল ভ্যালে ইনস্টলেশন](/post/laravel-valet-installation.md) — 2016-05-09 — কিভাবে লারাভেল ভ্যালে ইনস্টল এবং কনফিগার করবেন আপনার ওয়ার্কস্টেশনে।
+- [Adminer, a great tool for accessing databases](/post/adminer-a-great-tool-for-accessing-databases.md) — 2016-04-19 — My thoughts on single file RDBMS management tool Adminer.
+- [Never use rm, instead use trash](/post/never-use-rm-instead-use-trash.md) — 2016-03-19 — I thoughts on why everyone should use `trash` command instead of using `rm`.
+- [Setting Up Atom Editor for Software Development – 04](/post/atom-editor-for-software-development-04.md) — 2016-03-07 — This is the forth part of my setting up development environment in Atom editor by Github.
+- [Setting Up Atom Editor for Software Development – 03](/post/atom-editor-for-software-development-03.md) — 2016-03-06 — This is the third part of my setting up development environment in Atom editor by Github.
+- [Setting Up Atom Editor for Software Development – 02](/post/atom-editor-for-software-development-02.md) — 2016-03-03 — This is the second part of my setting up development environment in Atom editor by Github.
+- [Setting Up Atom Editor for Software Development – 01](/post/atom-editor-for-software-development-01.md) — 2016-03-02 — This is the first part of my setting up development environment in Atom editor by Github.
+- [লারাভেলে একাধিক রাউটিং ফাইলের ব্যবহার](/post/laravel-multiple-route-files.md) — 2016-02-16 — লারাভেলে একাধিক রাউটিং ফাইল ব্যবহার বিধি। (আপডেট: লারাভেল ৫.৫ এ এই ফিচারটি যুক্ত করা হয়েছে।)
+- [লারাভেল হোমস্টিড ইনস্টলেশন](/post/laravel-homestead-installation.md) — 2016-02-10 — লারাভেল হোমস্টিডের মাধ্যমে ডেভেলপমেন্ট এনভায়রনমেন্ট তৈরি করা।
+- [উবুন্টুতে রেডিস ইনস্টল](/post/install-redis-in-ubuntu.md) — 2015-07-06 — উবুন্টু অপারেটিং সিস্টেমে রেডিস ইনস্টলেশন গাইডলাইন।
+- [লারাভেল ৫.১-এ কাস্টম পেজিনেশন](/post/laravel-custom-pagination.md) — 2015-07-05 — লারাভেল ৫.১ ব্যবহার করে কাস্টম পেজিনেটেড কোয়েরি লেখার গাইডলাইন।
+- [লারাভেল ব্লেডের সাথে অ্যাঙ্গুলার বা অন্যান্য জাভাস্ক্রিপ্ট টেমপ্লেটিংয়ের ব্যবহার](/post/using-blade-with-js-templating.md) — 2015-06-19 — লারাভেল ব্লেড টেমপ্লেটের সাথে অ্যাঙ্গুলার বা মাসট্যাশের মত জাভাস্ক্রিপ্ট টেমপ্লেটিং লাইব্রেরি একত্রে ব্যবহার করার কৌশল।
+- [উবুন্টু ১৪.০৪ ভার্সনে পিএইচপি ৫.৬ ইনস্টল করা](/post/install-php-5-6-in-ubuntu.md) — 2015-06-14 — উবুন্টু ১৪.০৪ এ পিএইচপি ভার্সন ৫.৬ ইনস্টল এবং কনফিগার করার পদ্ধতি
+- [Upgrading a project from Laravel 5.0 to 5.1](/post/upgrading-a-project-from-laravel-5-0-to-5-1.md) — 2015-06-11 — Complete guideline to upgrade a Laravel 5.0 project to Laravel 5.1
+- [লারাভেল ডিফার্ড সার্ভিস প্রোভাইডার](/post/laravel-defered-service-provider.md) — 2015-06-08 — লারাভেলের ডিফার্ড সার্ভিস প্রোভাইডার কি, কেন এবং কিভাবে?
+- [লারাভেল সিম্পল টু-ডু লিস্ট](/post/laravel-todo-app.md) — 2015-06-07 — লারাভেলের ৫.১ এবং মাইসিক্যুয়েল ব্যবহার করে তৈরি করা টু-ডু লিস্ট এ্যাপ্লিকেশন
+- [Story behind my book](/post/story-behind-my-book.md) — 2015-06-04 — The underlying story behind my first ever published book.
+- [My book took the first place of bestseller list of rokomari.com](/post/my-book-took-the-first-place-of-bestseller-list-of-rokomari-com.md) — 2015-06-02
+- [লারাভেল বইয়ের প্রিন্টিং মিসটেক প্রসঙ্গে](/post/about-printing-mistake-of-laravel-book.md) — 2015-05-29 — আমার প্রকাশিত বইয়ের প্রিন্টিং মিসটেক সম্পর্কে আমার বক্তব্য।
+- [Laravel 5.1 Database Factory](/post/laravel-5-1-database-factory.md) — 2015-05-29 — What is database factory, how to use it?
+- [bower এর ব্যবহার](/post/uses-of-bower.md) — 2015-05-11 — কেন এবং কিভাবে bower ব্যবহার করবেন?
+- [লারাভেল ৫: ইলোকোয়েন্ট এট্রিবিউট কাস্টিং](/post/laravel-5-eloquent-attribute-casting.md) — 2015-03-24 — লারাভেল ৫ এর ইলোকোয়েন্ট এট্রিবিউট কাস্টিং এর অদ্যোপান্ত।
+- [লারাভেল ৫ এ প্যাকেজ ডেভেলপমেন্ট](/post/package-development-in-laravel-5.md) — 2015-03-23 — কিভাবে লারাভেল ৫ ফ্রেমওয়ার্কের জন্য প্যাকেজ তৈরি করবেন তার বিস্তারিত।
+- [লারাভেল অ্যাপ্লিকেশন থেকে আর্টিসান কমান্ড কল করা](/post/calling-artisan-command-from-your-application.md) — 2014-12-28 — লারাভেল অ্যাপ্লিকেশনের ভেতর থেকে আর্টিসান কমান্ড কল করার পদ্ধতি।
+- [লারাভেল ৫ এ flip/whoops প্যাকেজের ব্যবহার](/post/uses-of-flips-whoops-in-laravel-5.md) — 2014-11-03 — কিভাবে flip/whoops প্যাকেজের ব্যবহার করবেন লারাভেল ৫-এ।
+- [লারাভেল ইনস্টলেশন](/post/laravel-installation.md) — 2014-08-08 — কিভাবে লারাভেল ফ্রেমওয়ার্ক ইনস্টল করবেন?
+- [গুগলের নতুন ফন্ট](/post/googles-new-font.md) — 2014-07-17 — My thoughts about google's new font.
+- [চিকিৎসাসেবায় নতুন দিগন্ত](/post/new-era-in-health-service.md) — 2014-06-12
+- [সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৭](/post/software-engineering-practical-aspects-07.md) — 2012-12-12 — My thoughts on Software Engineering's practical aspects.
+- [আবোল-তাবোল ২](/post/abol-tabol-2.md) — 2012-12-08 — আবোল-তাবোল চিন্তা।
+- [সাবাশ বাংলাদেশ!!!](/post/congratulation-bangladesh.md) — 2012-12-08 — বাংলাদেশ ক্রিকেট দলকে অভিনন্দন।
+- [সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৬](/post/software-engineering-practical-aspects-06.md) — 2012-12-04 — My thoughts on Software Engineering's practical aspects.
+- [সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৫](/post/software-engineering-practical-aspects-05.md) — 2012-11-29 — My thoughts on Software Engineering's practical aspects.
+- [সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৪](/post/software-engineering-practical-aspects-04.md) — 2012-11-28 — My thoughts on Software Engineering's practical aspects.
+- [সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-৩](/post/software-engineering-practical-aspects-03.md) — 2012-11-27 — My thoughts on Software Engineering's practical aspects.
+- [সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-২](/post/software-engineering-practical-aspects-02.md) — 2012-11-26 — My thoughts on Software Engineering's practical aspects.
+- [সফটয়্যার ইঞ্জিনিয়ারিং: ব্যবহারিক আঙ্গিক-১](/post/software-engineering-practical-aspects-01.md) — 2012-11-25 — My thoughts on Software Engineering's practical aspects.
+- [আবোল-তাবোল](/post/abol-tabol.md) — 2012-11-24 — আবোল-তাবোল চিন্তা।
+- [ঈদের চাঁদ দেখা নিয়ে কিছু কথা](/post/some-info-about-eid-moon.md) — 2012-08-18 — ঈদের চাঁদ নিয়ে কিছু ভ্রান্ত ধারনা এবং তার যুক্তিখন্ডন নিয়ে আমার ভাবনা।
+- [সহজে পাইথন শেখা-০৭](/post/learn-python-easily-07.md) — 2012-07-06 — সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (সপ্তম পর্ব)
+- [সহজে পাইথন শেখা-০৬](/post/learn-python-easily-06.md) — 2012-07-05 — সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (ষষ্ঠ পর্ব)
+- [সহজে পাইথন শেখা-০৫](/post/learn-python-easily-05.md) — 2012-07-04 — সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (পঞ্চম পর্ব)
+- [সহজে পাইথন শেখা-০৪](/post/learn-python-easily-04.md) — 2012-07-03 — সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (চতুর্থ পর্ব)
+- [সহজে পাইথন শেখা-০৩](/post/learn-python-easily-03.md) — 2012-06-29 — সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (তৃতীয় পর্ব)
+- [সহজে পাইথন শেখা-০২](/post/learn-python-easily-02.md) — 2012-06-05 — সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (দ্বিতীয় পর্ব)
+- [সহজে পাইথন শেখা-০১](/post/learn-python-easily-01.md) — 2012-06-04 — সহজ ভাষায় পাইথন শেখার টিউটোরিয়াল। (প্রথম পর্ব)
+- [লিনাক্সে ব্যবহার করুন গুগোল ড্রাইভ](/post/use-google-drive-in-linux.md) — 2012-04-25 — লিনাক্স বেজড অপারেটিং সিস্টেমে গুগল ড্রাইভ ব্যবহার করার পদ্ধতি।
+- [শুভ নববর্ষ...](/post/shuvo-noboborsho-1419.md) — 2012-04-13 — বাংলা নববর্ষ ১৪১৯ এর শুভেচ্ছা।
+- [শুভ নববর্ষ, ২০১২](/post/happy-new-year-2012.md) — 2012-01-01 — New years greetings of 2012.
+- [বিজয় দিবসের শুভেচ্ছা](/post/victory-day-greetings.md) — 2011-12-16 — সবাইকে বিজয় দিবসের শুভেচ্ছা।
+- [উবুন্টু বা মিন্টে পুরাতন সফটয়্যার ইনস্টলেশন](/post/install-older-software-in-ubuntu-and-linux-mint.md) — 2011-09-07 — উবুন্টু এবং লিনাক্স মিন্ট অপারেটিং সিস্টেমে পুরাতন সফটয়্যার ব্যবহার করার পদ্ধতি।
+- [উবুন্টু বা মিন্টে ইনস্টল করুন .sh ফাইল](/post/install-sh-file-in-ubuntu-and-linux-mint.md) — 2011-08-29 — উবুন্টু এবং লিনাক্স মিন্ট অপারেটিং সিস্টেমে .sh ফাইল ইনস্টল করার পদ্ধতি।
+- [সার্চিং এ্যালগরিদম (Searching algorithm)](/post/searching-algorithm.md) — 2011-06-17 — Comparison between different searching algorithm.
+- [মাভাবিপ্রবি নিয়ে জাফর ইকবাল স্যারের লেখা, শিক্ষকদের প্রতিবাদ ও ছাত্রদের অভিব্যক্তি](/post/opnion-of-professor-zafor-ikbal-about-mbstu-incident.md) — 2011-05-30
+- [মৌলিক সংখ্যা (Prime number)](/post/prime-number.md) — 2011-05-25 — Implement and optimize prime number generation algorithm.
+- [ডাটা স্ট্রাকচারঃ Adjacency List](/post/data-structure-adjacency-list.md) — 2011-05-24 — How to implement adjacency list.
+- [ডাটা স্ট্রাকচারঃ Directed Graph](/post/data-structure-directed-graph.md) — 2011-05-24 — How to implement directed graph.
+- [ডাটা স্ট্রাকচারঃ Two Way Linked List](/post/data-structure-two-way-linked-list.md) — 2011-05-24 — How to implement two way linked list.
+- [ডাটা স্ট্রাকচারঃ Weighted Graph](/post/data-structure-weighted-graph.md) — 2011-05-24 — How to implement weighted graph.
+- [ডাটা স্ট্রাকচারঃ Undirected Graph](/post/data-structure-undirected-graph.md) — 2011-05-23 — How to implement undirected graph.
+- [ডাটা স্ট্রাকচারঃ Linked List](/post/data-structure-linked-list.md) — 2011-05-22 — How to implement list.
+- [ডাটা স্ট্রাকচারঃ Queue](/post/data-structure-queue.md) — 2011-05-22 — How to implement queue.
+- [ডাটা স্ট্রাকচারঃ Stack](/post/data-structure-stack.md) — 2011-05-22 — How to implement stack.
+- [জাভার সাথে MySQL এর কানেকশন](/post/connect-mysql-with-java.md) — 2011-05-21 — How to connect MySQL with Java.
+- [ভালবাসার জন্য](/post/valobashar-jonno.md) — 2011-05-19
+- [স্মৃতি-বিস্মৃতি](/post/smriti-bismriti.md) — 2011-05-18
+- [তোমার কল্পনা এবং আমি](/post/tomar-kolpona-abong-ami.md) — 2011-05-17
+- [একটি মানচিত্রের গল্প ও অফটপিকের কিছু কথা](/post/akti-manchitrer-golpo-abong-0fftopic-er-kichu-kotha.md) — 2011-05-16
+- [আগন্তুকের ভুবনে স্বাগতম](/post/aguntuk-er-vubone-swagotom.md) — 2010-12-09 — Welcome to my blog.
