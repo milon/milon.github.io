@@ -78,6 +78,13 @@ gist: PHP packages on Packagist, led by a barcode library with over 15 million d
                             <span class="shelf-desc">Study for the Canadian citizenship test with chapter lessons, flashcards, and mock exams.</span>
                         </span>
                     </a>
+                    <a class="shelf-item" href="https://github.com/milon/bohurupee">
+                        <span class="shelf-text">
+                            <h3 class="shelf-title">bohurupee</h3>
+                            <span class="shelf-meta">Go</span>
+                            <span class="shelf-desc">Local fake identity provider for OAuth and OpenID Connect — point any client at localhost and sign in as a persona.</span>
+                        </span>
+                    </a>
                     <a class="shelf-item" href="https://github.com/milon/jigsaw-url-shortener">
                         <span class="shelf-text">
                             <h3 class="shelf-title">jigsaw-url-shortener</h3>
