@@ -68,11 +68,11 @@
    ───────────────────────────────────────────────────── */
 
 :root {
-    /* Catppuccin Latte */
+    /* Catppuccin Latte — ink-3/4 darkened so muted UI text clears WCAG AA on --paper. */
     --ink:       #4c4f69;
     --ink-2:     #5c5f77;
-    --ink-3:     #6c6f85;
-    --ink-4:     #8c8fa1;
+    --ink-3:     #62657d;
+    --ink-4:     #686b81;
     --rule:      #bcc0cc;
     --rule-soft: #ccd0da;
     --paper:     #eff1f5;
@@ -94,11 +94,11 @@
 }
 
 html[data-theme="dark"] {
-    /* Catppuccin Mocha */
+    /* Catppuccin Mocha — ink-4 bumped to Overlay2 for AA on --paper. */
     --ink:       #cdd6f4;
     --ink-2:     #bac2de;
     --ink-3:     #a6adc8;
-    --ink-4:     #7f849c;
+    --ink-4:     #9399b2;
     --rule:      #585b70;
     --rule-soft: #45475a;
     --paper:     #1e1e2e;
