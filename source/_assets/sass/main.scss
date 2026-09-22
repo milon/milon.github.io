@@ -1172,10 +1172,6 @@ html[data-theme="dark"] {
     border-bottom: 1px solid var(--rule-soft);
 }
 
-.oss-feature .book-desc {
-    max-width: none;
-}
-
 .oss-stats {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1251,7 +1247,7 @@ html[data-theme="dark"] {
     font-size: 15.5px;
     color: var(--ink-2);
     margin: 0 0 14px;
-    max-width: 60ch;
+    max-width: var(--measure);
 }
 
 .link-arrow {
@@ -1345,6 +1341,7 @@ html[data-theme="dark"] {
     font-size: 14.5px;
     line-height: 1.55;
     color: var(--ink-3);
+    max-width: var(--measure);
 }
 
 /* Text-only shelf — open-source projects (no covers). */
@@ -1420,6 +1417,7 @@ html[data-theme="dark"] {
     margin: 26px 0 0;
     font-size: 15px;
     color: var(--ink-3);
+    max-width: var(--measure);
 }
 
 /* Beat .section-body p { margin: 0 0 18px } so notes keep top spacing. */

@@ -154,7 +154,7 @@
 .cv-bullets {
     margin: 0;
     padding: 0 0 0 1.15em;
-    max-width: none;
+    max-width: var(--measure);
 }
 
 .cv-bullets li {
