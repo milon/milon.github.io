@@ -274,7 +274,7 @@ title: CV
                 <div class="section-body is-wide">
                     <div class="cv-role">
                         <div class="cv-role-head">
-                            <h4 class="cv-role-title"><a href="https://laravel-after-deploy.milon.im/">Laravel After Deploy</a></h4>
+                            <h3 class="cv-role-title"><a href="https://laravel-after-deploy.milon.im/">Laravel After Deploy</a></h3>
                             <span class="cv-role-dates">August 2026</span>
                         </div>
                         <p class="cv-meta">Architecture, Performance, and Operations at Scale · ISBN 979-8193747345</p>
@@ -284,7 +284,7 @@ title: CV
                     </div>
                     <div class="cv-role">
                         <div class="cv-role-head">
-                            <h4 class="cv-role-title"><a href="/book/laravel">Laravel PHP Web Framework</a></h4>
+                            <h3 class="cv-role-title"><a href="/book/laravel">Laravel PHP Web Framework</a></h3>
                             <span class="cv-role-dates">May 2015</span>
                         </div>
                         <p class="cv-meta">Dimik Prokashoni · ISBN 978-9843391902 · two editions</p>
