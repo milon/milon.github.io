@@ -381,7 +381,7 @@ html:has(.search-dialog[open]) {
 .search-hint {
     font-family: var(--mono-font);
     font-size: 12px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
     color: var(--ink-4);
 }
 
@@ -488,7 +488,7 @@ html:has(.search-dialog[open]) {
 .search-status {
     font-family: var(--mono-font);
     font-size: 12px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
     color: var(--ink-4);
     margin: 0;
     padding: 12px 18px;
@@ -655,7 +655,7 @@ html:has(.search-dialog[open]) {
     font-family: var(--display-font);
     font-size: 21px;
     font-weight: 400;
-    line-height: 1.28;
+    line-height: 1.35;
     letter-spacing: -0.01em;
     color: var(--ink);
     margin: 0 0 5px;
@@ -817,8 +817,9 @@ html:has(.search-dialog[open]) {
 
 .prose blockquote {
     margin: 30px 0;
-    padding: 4px 0 4px 24px;
-    border-left: 2px solid var(--ink-4);
+    padding: 18px 22px;
+    background-color: var(--paper-2);
+    border-radius: 2px;
     font-family: var(--display-font);
     font-size: 20px;
     font-style: italic;
@@ -1477,7 +1478,7 @@ html[data-theme="dark"] {
     gap: 1px;
     max-width: none;
     margin: 0;
-    padding: 0;
+    padding: 12px;
     list-style: none;
     background-color: var(--rule);
     border: 1px solid var(--rule);
@@ -1586,7 +1587,7 @@ html[data-theme="dark"] {
     line-height: 1.55;
     color: var(--ink-2);
     background-color: var(--paper-2);
-    border-left: 2px solid var(--ink-4);
+    border: 1px solid var(--rule-soft);
     border-radius: 2px;
     margin: 14px 0 0;
     padding: 11px 14px;
@@ -1594,7 +1595,7 @@ html[data-theme="dark"] {
 
 .newsletter-msg[hidden] { display: none; }
 
-.newsletter-msg[data-state="ok"] { border-left-color: var(--ink); }
+.newsletter-msg[data-state="ok"] { border-color: var(--ink-4); }
 
 /* ─────────────────────────────────────────────────────
    Footer
@@ -1616,7 +1617,7 @@ html[data-theme="dark"] {
     gap: 20px;
     font-family: var(--mono-font);
     font-size: 12px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
     color: var(--ink-4);
 }
 
