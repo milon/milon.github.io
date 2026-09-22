@@ -220,7 +220,7 @@ img { max-width: 100%; }
 
 .topbar-nav a {
     font-family: var(--mono-font);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -372,7 +372,7 @@ html:has(.search-dialog[open]) {
 
 .search-eyebrow {
     font-family: var(--mono-font);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink);
@@ -380,7 +380,7 @@ html:has(.search-dialog[open]) {
 
 .search-hint {
     font-family: var(--mono-font);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     color: var(--ink-4);
 }
@@ -467,7 +467,7 @@ html:has(.search-dialog[open]) {
 .search-item-meta {
     grid-area: 1 / 2 / 2 / 3;
     font-family: var(--mono-font);
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -487,7 +487,7 @@ html:has(.search-dialog[open]) {
 
 .search-status {
     font-family: var(--mono-font);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     color: var(--ink-4);
     margin: 0;
@@ -520,7 +520,7 @@ html:has(.search-dialog[open]) {
 
 .eyebrow {
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -593,7 +593,7 @@ html:has(.search-dialog[open]) {
 .section-label {
     margin: 0;
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -646,7 +646,7 @@ html:has(.search-dialog[open]) {
 
 .index-num {
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     color: var(--ink-4);
 }
 
@@ -681,7 +681,7 @@ html:has(.search-dialog[open]) {
 
 .index-date {
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     color: var(--ink-4);
     text-align: right;
     white-space: nowrap;
@@ -695,7 +695,7 @@ html:has(.search-dialog[open]) {
 
 .list-utility a {
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -743,7 +743,7 @@ html:has(.search-dialog[open]) {
     gap: 8px 20px;
     margin: 0;
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -861,7 +861,7 @@ html:has(.search-dialog[open]) {
 
 .prose figcaption {
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.04em;
     color: var(--ink-4);
     margin-top: 10px;
@@ -884,7 +884,7 @@ html:has(.search-dialog[open]) {
 
 .prose th {
     font-family: var(--mono-font);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -1068,7 +1068,7 @@ html[data-theme="dark"] {
 
 .category-tags a {
     font-family: var(--mono-font);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--ink-3);
@@ -1096,7 +1096,7 @@ html[data-theme="dark"] {
 
 .back-link a {
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink-3);
@@ -1198,7 +1198,7 @@ html[data-theme="dark"] {
     display: block;
     margin-top: 6px;
     font-family: var(--mono-font);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -1238,7 +1238,7 @@ html[data-theme="dark"] {
     align-items: center;
     gap: 4px 14px;
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -1333,7 +1333,7 @@ html[data-theme="dark"] {
 .shelf-meta {
     display: block;
     font-family: var(--mono-font);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -1395,7 +1395,7 @@ html[data-theme="dark"] {
 
 .spec-key {
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -1452,7 +1452,7 @@ html[data-theme="dark"] {
 
 .contact-key {
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-4);
@@ -1617,7 +1617,7 @@ html[data-theme="dark"] {
     flex-wrap: wrap;
     gap: 20px;
     font-family: var(--mono-font);
-    font-size: 11.5px;
+    font-size: 12px;
     letter-spacing: 0.06em;
     color: var(--ink-4);
 }
