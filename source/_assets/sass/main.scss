@@ -1,26 +1,26 @@
 @import "_reset.min";
 
-/* Self-hosted variable fonts remove the render-blocking Google Fonts request. */
+/* Self-hosted fonts — Signal identity (Syne + Work Sans + 0xProto). */
 @font-face {
-    font-family: 'Inter';
-    src: url('/assets/fonts/Inter-Latin.woff2') format('woff2');
+    font-family: 'Syne';
+    src: url('/assets/fonts/Syne-Latin.woff2') format('woff2');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/assets/fonts/WorkSans-Latin.woff2') format('woff2');
     font-weight: 400 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Newsreader';
-    src: url('/assets/fonts/Newsreader-Latin.woff2') format('woff2');
-    font-weight: 300 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Newsreader';
-    src: url('/assets/fonts/Newsreader-Latin-Italic.woff2') format('woff2');
-    font-weight: 300 400;
+    font-family: 'Work Sans';
+    src: url('/assets/fonts/WorkSans-Latin-Italic.woff2') format('woff2');
+    font-weight: 400;
     font-style: italic;
     font-display: swap;
 }
@@ -64,23 +64,22 @@
 }
 
 /* ─────────────────────────────────────────────────────
-   Tokens
+   Tokens — Signal grayscale
    ───────────────────────────────────────────────────── */
 
 :root {
-    /* Catppuccin Latte — ink-3/4 darkened so muted UI text clears WCAG AA on --paper. */
-    --ink:       #4c4f69;
-    --ink-2:     #5c5f77;
-    --ink-3:     #62657d;
-    --ink-4:     #686b81;
-    --rule:      #bcc0cc;
-    --rule-soft: #ccd0da;
-    --paper:     #eff1f5;
-    --paper-2:   #e6e9ef;
-    --paper-3:   #dce0e8;
+    --ink:       #111111;
+    --ink-2:     #3a3a3a;
+    --ink-3:     #5c5c5c;
+    --ink-4:     #7a7a7a;
+    --rule:      #c8c8c8;
+    --rule-soft: #d8d8d8;
+    --paper:     #f0f0f0;
+    --paper-2:   #e4e4e4;
+    --paper-3:   #d8d8d8;
 
-    --display-font: 'Newsreader', 'Noto Sans Bengali', Georgia, serif;
-    --body-font:    'Inter', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+    --display-font: 'Syne', 'Noto Sans Bengali', system-ui, sans-serif;
+    --body-font:    'Work Sans', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
     --mono-font:    '0xProto', 'Noto Sans Bengali', ui-monospace, SFMono-Regular, monospace;
 
     --measure: 68ch;
@@ -94,16 +93,15 @@
 }
 
 html[data-theme="dark"] {
-    /* Catppuccin Mocha — ink-4 bumped to Overlay2 for AA on --paper. */
-    --ink:       #cdd6f4;
-    --ink-2:     #bac2de;
-    --ink-3:     #a6adc8;
-    --ink-4:     #9399b2;
-    --rule:      #585b70;
-    --rule-soft: #45475a;
-    --paper:     #1e1e2e;
-    --paper-2:   #181825;
-    --paper-3:   #11111b;
+    --ink:       #f0f0f0;
+    --ink-2:     #c8c8c8;
+    --ink-3:     #a0a0a0;
+    --ink-4:     #7a7a7a;
+    --rule:      #3a3a3a;
+    --rule-soft: #2a2a2a;
+    --paper:     #111111;
+    --paper-2:   #1a1a1a;
+    --paper-3:   #222222;
 }
 
 /* ─────────────────────────────────────────────────────
@@ -404,8 +402,8 @@ html:has(.search-dialog[open]) {
     width: 100%;
     font-family: var(--display-font);
     font-size: 22px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-weight: 500;
+    letter-spacing: -0.03em;
     line-height: 1.3;
     color: var(--ink);
     background-color: var(--paper);
@@ -538,17 +536,18 @@ html:has(.search-dialog[open]) {
 
 .hero h1 {
     font-family: var(--display-font);
-    font-weight: 300;
+    font-weight: 600;
     font-size: clamp(38px, 6vw, 68px);
     line-height: 1.06;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin: 0 0 26px;
     max-width: 18ch;
 }
 
 .hero h1 em {
-    font-style: italic;
+    font-style: normal;
+    font-weight: 500;
     color: var(--ink-3);
 }
 
@@ -654,9 +653,9 @@ html:has(.search-dialog[open]) {
     display: block;
     font-family: var(--display-font);
     font-size: 21px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.35;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin: 0 0 5px;
 }
@@ -715,10 +714,10 @@ html:has(.search-dialog[open]) {
 
 .page-head h1 {
     font-family: var(--display-font);
-    font-weight: 300;
+    font-weight: 600;
     font-size: clamp(30px, 4.4vw, 46px);
     line-height: 1.14;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin: 0 0 16px;
     max-width: 24ch;
@@ -768,10 +767,10 @@ html:has(.search-dialog[open]) {
 .prose h1,
 .prose h2 {
     font-family: var(--display-font);
-    font-weight: 400;
+    font-weight: 600;
     font-size: 27px;
     line-height: 1.25;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin: 46px 0 16px;
 }
@@ -1185,8 +1184,8 @@ html[data-theme="dark"] {
     display: block;
     font-family: var(--display-font);
     font-size: clamp(26px, 3.2vw, 34px);
-    font-weight: 300;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    letter-spacing: -0.03em;
     line-height: 1.1;
     color: var(--ink);
 }
@@ -1215,8 +1214,8 @@ html[data-theme="dark"] {
 .book-title {
     font-family: var(--display-font);
     font-size: 25px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin: 0 0 5px;
 }
@@ -1320,9 +1319,9 @@ html[data-theme="dark"] {
     display: inline-block;
     font-family: var(--display-font);
     font-size: 19px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.25;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin: 0 0 7px;
 }
@@ -1524,7 +1523,7 @@ html[data-theme="dark"] {
 
 .newsletter h2 {
     font-family: var(--display-font);
-    font-weight: 400;
+    font-weight: 600;
     font-size: 22px;
     color: var(--ink);
     margin: 0 0 8px;

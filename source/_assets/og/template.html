@@ -6,10 +6,10 @@
 <!--
   Source template for the share cards in source/assets/images/og/.
   Render with `composer og` (or `composer og -- writing` for one card).
-  Params: k = kicker, t = title (*asterisks* become italics), s = section,
+  Params: k = kicker, t = title (*asterisks* become muted emphasis), s = section,
           m = right-hand meta line.
 -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600&display=swap">
 <style>
 @font-face {
     font-family: '0xProto';
@@ -20,12 +20,12 @@
 
 :root {
     --ink: #111111;
-    --ink-3: #6e6e6e;
-    --ink-4: #9a9a9a;
-    --rule: #e0e0e0;
-    --paper: #fbfbfa;
+    --ink-3: #5c5c5c;
+    --ink-4: #7a7a7a;
+    --rule: #c8c8c8;
+    --paper: #f0f0f0;
     --mono: '0xProto', ui-monospace, monospace;
-    --display: 'Newsreader', Georgia, serif;
+    --display: 'Syne', system-ui, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -72,14 +72,14 @@ body {
 
 h1 {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 600;
     font-size: 82px;
     line-height: 1.14;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     max-width: 15ch;
 }
 
-h1 em { font-style: italic; color: var(--ink-3); }
+h1 em { font-style: normal; font-weight: 500; color: var(--ink-3); }
 
 h1.long { font-size: 66px; max-width: 18ch; }
 </style>
@@ -102,7 +102,7 @@ var q = new URLSearchParams(location.search);
 var title = q.get('t') || 'Building software that scales *to millions of users.*';
 var el = document.getElementById('title');
 
-// *phrase* marks the italic emphasis used across the site's headings.
+// *phrase* marks muted emphasis used across the site's headings.
 el.innerHTML = title
     .replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; })
     .replace(/\*([^*]+)\*/g, '<em>$1</em>');
@@ -113,10 +113,6 @@ if (q.get('k')) document.getElementById('kicker').textContent = q.get('k');
 if (q.get('s')) document.getElementById('section').textContent = q.get('s');
 if (q.get('m')) document.getElementById('meta').textContent = q.get('m');
 
-// The generator reads data-og-status before screenshotting. document.fonts.check()
-// is useless here — it reports true for a family that was never defined, because the
-// fallback resolves. Measuring against the declared fallback is what actually catches
-// a webfont that failed to arrive.
 document.documentElement.setAttribute('data-og-status', 'pending');
 
 document.fonts.ready.then(function () {
@@ -127,7 +123,7 @@ document.fonts.ready.then(function () {
         return probe.measureText('Engineering Tech Lead').width;
     }
 
-    var display = width('400 82px Newsreader, Georgia, serif') !== width('400 82px Georgia, serif');
+    var display = width('600 82px Syne, system-ui, sans-serif') !== width('600 82px system-ui, sans-serif');
     var mono = width('400 19px "0xProto", ui-monospace, monospace') !== width('400 19px ui-monospace, monospace');
 
     document.documentElement.setAttribute('data-og-status', display && mono ? 'ready' : 'font-missing');

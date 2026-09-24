@@ -7,8 +7,8 @@ class GenerateOgImages
     private const WIDTH = 1200;
     private const HEIGHT = 630;
 
-    /** The template's --paper background, used to tell a real card from an error page. */
-    private const PAPER = [0xFB, 0xFB, 0xFA];
+    /** The template's --paper background (#f0f0f0), used to tell a real card from an error page. */
+    private const PAPER = [0xF0, 0xF0, 0xF0];
 
     private const CARDS = [
         'default' => [

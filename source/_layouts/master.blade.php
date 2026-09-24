@@ -37,8 +37,8 @@
             <link rel="alternate" type="text/markdown" title="Markdown version" href="{{ $markdownAlternate }}">
         @endif
         @if ($page->getPath() === '/')
-            <link rel="preload" href="/assets/fonts/Newsreader-Latin.woff2" as="font" type="font/woff2" crossorigin>
-            <link rel="preload" href="/assets/fonts/Newsreader-Latin-Italic.woff2" as="font" type="font/woff2" crossorigin>
+            <link rel="preload" href="/assets/fonts/Syne-Latin.woff2" as="font" type="font/woff2" crossorigin>
+            <link rel="preload" href="/assets/fonts/WorkSans-Latin.woff2" as="font" type="font/woff2" crossorigin>
         @endif
         <script>
             (function() {
