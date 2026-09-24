@@ -46,11 +46,19 @@ class GenerateAgentFiles
 
 > Programmer, author, and speaker. Engineering Tech Lead building production systems that serve millions.
 
+## Recently
+
+At Punt I took the backend API suite to 16k concurrent users and cut redemption fraud by 38%. Before that I shipped gift-card systems at Amazon and network inventory for FlixBus across 38 countries. I also wrote [Laravel After Deploy](https://laravel-after-deploy.milon.im/), a production playbook for Laravel at scale.
+
+See the [full CV](/cv.md).
+
 ## About
 
 I grew up in Dhaka, Bangladesh, and now live near Vancouver, British Columbia. Most of my days are spent on systems that have to stay up for millions of people: architecture, performance, and the unglamorous work that happens after deploy.
 
 I write and speak about that work — what it actually takes to keep Laravel systems running once they leave a laptop.
+
+Outside of work I cook and publish recipes, and I have developed a late interest in cars. I am the parent of a son and two daughters.
 
 ## Writing
 

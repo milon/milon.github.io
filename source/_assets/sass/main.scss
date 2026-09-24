@@ -575,6 +575,29 @@ html:has(.search-dialog[open]) {
     color: var(--ink-3);
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    margin: 28px 0 0;
+}
+
+.hero-actions a {
+    font-family: var(--mono-font);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink-4);
+    padding-bottom: 2px;
+    transition: border-color var(--transition), color var(--transition);
+}
+
+.hero-actions a:hover {
+    border-bottom-color: var(--ink);
+}
+
 /* ─────────────────────────────────────────────────────
    Sections
    ───────────────────────────────────────────────────── */
@@ -689,7 +712,7 @@ html:has(.search-dialog[open]) {
 .list-utility {
     display: flex;
     justify-content: flex-end;
-    margin: 0 0 12px;
+    margin: 18px 0 0;
 }
 
 .list-utility a {

@@ -20,19 +20,31 @@ title: Nuruzzaman Milon
                 <span><b>Author</b> — Laravel After Deploy</span>
                 <span><b>Speaker</b> — Laravel, architecture, scale</span>
             </p>
+            <p class="hero-actions">
+                <a href="/assets/pdf/Nuruzzaman_Milon_cv.pdf" download>Download CV</a>
+                <a href="mailto:contact@milon.im">Email</a>
+            </p>
         </section>
 
         <section class="section">
-            <h2 class="section-label">01 — About</h2>
+            <h2 class="section-label">01 — Recently</h2>
             <div class="section-body">
-                <p>I grew up in Dhaka, Bangladesh, and now live in a suburb of Vancouver, British Columbia, where I work as an Engineering Tech Lead. Most of my days are spent on systems that have to stay up for millions of people: architecture, performance, and the unglamorous work that happens after deploy.</p>
-                <p>I write and speak about that work: what it actually takes to keep Laravel systems running once they leave a laptop.</p>
-                <p>Outside of work I cook and publish the recipes <a href="https://recipes.milon.im">here</a>, and I have developed a late interest in cars. I am the parent of a son and two daughters. I wear my Bangladeshi identity with pride.</p>
+                <p>At Punt I took the backend API suite to 16k concurrent users and cut redemption fraud by 38%. Before that I shipped gift-card systems at Amazon and network inventory for FlixBus across 38 countries. I also wrote <a href="https://laravel-after-deploy.milon.im/">Laravel After Deploy</a>, a production playbook for Laravel at scale.</p>
+                <p class="list-utility"><a href="/cv">Full CV →</a></p>
             </div>
         </section>
 
         <section class="section">
-            <h2 class="section-label">02 — Writing</h2>
+            <h2 class="section-label">02 — About</h2>
+            <div class="section-body">
+                <p>I grew up in Dhaka, Bangladesh, and now live in a suburb of Vancouver, British Columbia, where I work as an Engineering Tech Lead. Most of my days are spent on systems that have to stay up for millions of people: architecture, performance, and the unglamorous work that happens after deploy.</p>
+                <p>I write and speak about that work: what it actually takes to keep Laravel systems running once they leave a laptop.</p>
+                <p class="section-note">Outside of work I cook and publish the recipes <a href="https://recipes.milon.im">here</a>, and I have developed a late interest in cars. I am the parent of a son and two daughters. I wear my Bangladeshi identity with pride.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-label">03 — Writing</h2>
             <div class="section-body is-wide">
                 <div class="index-list">
                     @foreach ($posts->take(5) as $post)
@@ -47,7 +59,7 @@ title: Nuruzzaman Milon
         </section>
 
         <section class="section">
-            <h2 class="section-label">03 — Books</h2>
+            <h2 class="section-label">04 — Books</h2>
             <div class="section-body is-wide">
                 <p class="shelf-intro">Two books on Laravel, written a decade apart, for two very different readers.</p>
                 <div class="shelf">
