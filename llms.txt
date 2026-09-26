@@ -1,0 +1,47 @@
+# Nuruzzaman Milon
+
+> Personal site of Nuruzzaman Milon — Engineering Tech Lead, author of Laravel After Deploy, and speaker on Laravel, architecture, and scale.
+
+Prefer the Markdown versions linked below. HTML pages are for humans; Markdown is the clean representation for agents. The Atom feed at https://milon.im/feed.xml is the dated changelog of new writing.
+
+## Start here
+
+- [Home](https://milon.im/index.md): About, recent writing, and books
+- [Writing index](https://milon.im/posts.md): All essays
+- [Talks](https://milon.im/talks.md): Conference and meetup talks
+- [Books](https://milon.im/books.md): Laravel After Deploy and the Bengali Laravel book
+- [Open Source](https://milon.im/open-source.md): Packagist packages including milon/barcode
+- [CV](https://milon.im/cv.md): Curriculum vitae
+- [Contact](https://milon.im/contact.md): Email and newsletter
+- [Atom feed](https://milon.im/feed.xml): Recent posts as Atom XML
+
+## Recent writing
+
+- [Database partitioning](https://milon.im/post/database-partitioning.md): What table partitioning actually does, how Postgres routes a row, and the SQL you need before the table is too big to rewrite.
+- [Two-phase commit](https://milon.im/post/two-phase-commit.md): What two-phase commit actually does, where it fails in production, and what to reach for instead.
+- [Adding multiple subdomain with Github Pages](https://milon.im/post/adding-multiple-subdomain-with-github-pages.md): How to add multiple subdomain with Github Pages?
+- [Build and deploy Jigsaw site with Github Actions](https://milon.im/post/github-action-with-jigsaw.md): How to build and deploy a site built with Jigsaw static generator with Github Actions.
+- [Added search functionality with fuse.js in Jigsaw powered site](https://milon.im/post/added-search-functionality-with-fusejs-in-jigsaw-powered-site.md): Added fuzzy search with fuse.js in static site generated with Jigsaw.
+- [Why you should know analyzing space-time complexity as a software engineer?](https://milon.im/post/why-you-should-know-analyzing-space-time-complexity-as-a-software-engineer.md): Importance of space time complexity analysis in software engineering field.
+- [Naming a variable](https://milon.im/post/naming-a-variable.md): My two cents on naming a variable while programming.
+- [Story behind my new blog](https://milon.im/post/story-behind-my-new-blog.md): The behind story of my statically generated github pages powered blog.
+- [How to become a Certified Laravel Developer](https://milon.im/post/how-to-become-a-certified-laravel-developer.md): The steps of becoming a Certified Laravel Developer.
+- [Machine Learning Introduction – 1: Set up your workstation](https://milon.im/post/machine-learning-introduction-1-set-up-your-workstation.md): Setting up your workstation for practicing Machine Learning.
+- [Why you should consider laravel as your go to framework of choice](https://milon.im/post/why-you-should-consider-laravel-as-your-go-to-framework-of-choice.md): My thoughts on Laravel framework, and it's usability.
+- [লারাভেল ভ্যালে ইনস্টলেশন](https://milon.im/post/laravel-valet-installation.md): কিভাবে লারাভেল ভ্যালে ইনস্টল এবং কনফিগার করবেন আপনার ওয়ার্কস্টেশনে।
+
+## Recent talks
+
+- [Why you should consider statically generated site for your next website?](https://milon.im/talk/why-you-should-consider-statically-generated-site-for-your-next-website.md): I presented this on an audiance for an online PHP meetup in Berlin.
+- [Klassroom presents the Techtalk: Scaling API with Laravel](https://milon.im/talk/klassroom-presents-techtalk-scaling-api-with-laravel.md): I was interviewed by Sumon Molla Selim on his web podcast about APIs and how to create them with Laravel.
+- [Telenor Health - Tonic Application Architecture](https://milon.im/talk/th-tonic-application-architecture.md): I presented this on an internal session to all the team members of Telenor Health including developers, dev ops, QA and all.
+- [Laravel Bangladesh Meetup 1.0 Presentation](https://milon.im/talk/laravel-bangladesh-meetup-presentation.md): My presentation slides on 1st ever Laravel meetup of Bangladesh.
+- [Talk.js meet up presentation](https://milon.im/talk/talk-js-meet-up-presentation.md): My presentation slides of Talk.js meetup.
+- [phpXperts Meetup-01 Presentation](https://milon.im/talk/phpxperts-meetup-01-presentation.md): My presentation slides of phpXperts meetup held at HubDhaka.
+
+## Optional
+
+- [Sitemap](https://milon.im/sitemap.xml)
+- [robots.txt](https://milon.im/robots.txt)
+- [Laravel After Deploy (external)](https://laravel-after-deploy.milon.im/)
+- [Recipes (external)](https://recipes.milon.im/)
