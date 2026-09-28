@@ -9,7 +9,7 @@
   Params: k = kicker, t = title (*asterisks* become muted emphasis), s = section,
           m = right-hand meta line.
 -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600&family=Unbounded:wght@600&display=swap">
 <style>
 @font-face {
     font-family: '0xProto';
@@ -22,10 +22,12 @@
     --ink: #111111;
     --ink-3: #5c5c5c;
     --ink-4: #7a7a7a;
+    --logo-sep: #bcbcbc;
     --rule: #c8c8c8;
     --paper: #f0f0f0;
     --mono: '0xProto', ui-monospace, monospace;
     --display: 'Syne', system-ui, sans-serif;
+    --logo: 'Unbounded', system-ui, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -60,12 +62,17 @@ body {
     color: var(--ink);
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--ink);
+.logo {
+    font-family: var(--logo);
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--ink);
+    line-height: 1;
 }
+
+.logo .sep { color: var(--logo-sep); }
 
 .top { padding-bottom: 26px; border-bottom: 1px solid var(--rule); }
 .bottom { padding-top: 26px; border-top: 1px solid var(--rule); }
@@ -86,14 +93,14 @@ h1.long { font-size: 66px; max-width: 18ch; }
 </head>
 <body>
 <div class="row top">
-    <span class="brand"><span class="dot"></span> <span id="kicker">Nuruzzaman Milon</span></span>
+    <span class="brand"><span class="logo">n<span class="sep">://</span>m</span></span>
     <span id="section"></span>
 </div>
 
 <h1 id="title"></h1>
 
 <div class="row bottom">
-    <span>milon.im</span>
+    <span id="kicker">Nuruzzaman Milon</span>
     <span id="meta">Engineering Tech Lead · Author</span>
 </div>
 
@@ -124,9 +131,10 @@ document.fonts.ready.then(function () {
     }
 
     var display = width('600 82px Syne, system-ui, sans-serif') !== width('600 82px system-ui, sans-serif');
+    var logo = width('600 28px Unbounded, system-ui, sans-serif') !== width('600 28px system-ui, sans-serif');
     var mono = width('400 19px "0xProto", ui-monospace, monospace') !== width('400 19px ui-monospace, monospace');
 
-    document.documentElement.setAttribute('data-og-status', display && mono ? 'ready' : 'font-missing');
+    document.documentElement.setAttribute('data-og-status', display && logo && mono ? 'ready' : 'font-missing');
 });
 </script>
 </body>

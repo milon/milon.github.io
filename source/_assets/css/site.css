@@ -52,8 +52,16 @@
     .wordmark {
         flex: 1 1 auto;
         min-width: 0;
-        font-size: 12px;
-        letter-spacing: 0.1em;
+        gap: 0;
+    }
+
+    .wordmark .wm-logo {
+        font-size: 14px;
+    }
+
+    /* Name sits beside the logo on desktop only. */
+    .wordmark .wm-title {
+        display: none;
     }
 
     .topbar-tools {

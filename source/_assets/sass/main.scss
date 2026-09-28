@@ -1,10 +1,18 @@
 @import "_reset.min";
 
-/* Self-hosted fonts — Signal identity (Syne + Work Sans + 0xProto). */
+/* Self-hosted fonts — Signal identity (Syne + Work Sans + Unbounded + 0xProto). */
 @font-face {
     font-family: 'Syne';
     src: url('/assets/fonts/Syne-Latin.woff2') format('woff2');
     font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('/assets/fonts/Unbounded-Latin.woff2') format('woff2');
+    font-weight: 500 700;
     font-style: normal;
     font-display: swap;
 }
@@ -81,6 +89,9 @@
     --display-font: 'Syne', 'Noto Sans Bengali', system-ui, sans-serif;
     --body-font:    'Work Sans', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
     --mono-font:    '0xProto', 'Noto Sans Bengali', ui-monospace, SFMono-Regular, monospace;
+    --logo-font:    'Unbounded', system-ui, sans-serif;
+    /* B20 + C4 — muted protocol in the wordmark. */
+    --logo-sep:     #bcbcbc;
 
     --measure: 68ch;
     --gutter: 40px;
@@ -102,6 +113,8 @@ html[data-theme="dark"] {
     --paper:     #111111;
     --paper-2:   #1a1a1a;
     --paper-3:   #222222;
+    /* Pairs with C4 contrast on dark paper (D4). */
+    --logo-sep:  #555555;
 }
 
 /* ─────────────────────────────────────────────────────
@@ -190,23 +203,34 @@ img { max-width: 100%; }
 .wordmark {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-family: var(--mono-font);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    gap: 14px;
     color: var(--ink);
     text-decoration: none;
     white-space: nowrap;
 }
 
-.wordmark .mark {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
-    display: block;
-    color: var(--ink);
+.wordmark .wm-logo {
+    font-family: var(--logo-font);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-transform: none;
+}
+
+.wordmark .wm-sep {
+    color: var(--logo-sep);
+    font-weight: 600;
+}
+
+.wordmark .wm-title {
+    font-family: var(--mono-font);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    line-height: 1;
 }
 
 .topbar-nav {

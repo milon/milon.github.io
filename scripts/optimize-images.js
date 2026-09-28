@@ -6,7 +6,11 @@ import sharp from 'sharp';
 const MAX_WIDTH = 1600;
 const QUALITY = 80;
 const RASTER = new Set(['.png', '.jpg', '.jpeg']);
-const SKIP_NAMES = new Set(['favicon.png']);
+const SKIP_NAMES = new Set([
+    'favicon.png',
+    'favicon-dark.png',
+    'apple-touch-icon.png',
+]);
 
 async function walk(dir) {
     const entries = await readdir(dir, { withFileTypes: true });

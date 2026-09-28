@@ -23,6 +23,7 @@ class GenerateAgentFiles
         $this->writeTalksIndex($jigsaw, $talks);
         $this->writeCollectionMarkdown($jigsaw, $posts);
         $this->writeCollectionMarkdown($jigsaw, $talks);
+        $this->writeLogoMarkdown($jigsaw);
         $this->writeLlmsTxt($jigsaw, $baseUrl, $posts, $talks);
         $this->writeAtomFeed($jigsaw, $baseUrl, $posts);
         $this->writeApiCatalog($jigsaw, $baseUrl);
@@ -77,6 +78,7 @@ Outside of work I cook and publish recipes, and I have developed a late interest
 - [Open Source](/open-source.md)
 - [CV](/cv.md)
 - [Contact](/contact.md)
+- [Logo](/logo.md)
 - [Atom feed](/feed.xml)
 MD;
 
@@ -86,6 +88,17 @@ MD;
         $this->writeCvMarkdown($jigsaw);
         $this->writeContactMarkdown($jigsaw);
         $this->writeLaravelBookMarkdown($jigsaw);
+    }
+
+    private function writeLogoMarkdown(Jigsaw $jigsaw): void
+    {
+        $src = $jigsaw->getSourcePath() . '/logo.md';
+
+        if (! is_file($src)) {
+            return;
+        }
+
+        $jigsaw->writeOutputFile('logo.md', file_get_contents($src));
     }
 
     private function writeBooksMarkdown(Jigsaw $jigsaw): void
@@ -509,6 +522,7 @@ Prefer the Markdown versions linked below. HTML pages are for humans; Markdown i
 - [Open Source]({$baseUrl}/open-source.md): Packagist packages including milon/barcode
 - [CV]({$baseUrl}/cv.md): Curriculum vitae
 - [Contact]({$baseUrl}/contact.md): Email and newsletter
+- [Logo]({$baseUrl}/logo.md): Wordmark and favicon specs
 - [Atom feed]({$baseUrl}/feed.xml): Recent posts as Atom XML
 
 ## Recent writing
