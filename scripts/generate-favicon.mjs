@@ -85,7 +85,7 @@ const ch = maxY - minY;
 const scale = Math.min((view - pad * 2) / cw, (view - pad * 2) / ch);
 const tx = (view - cw * scale) / 2 - minX * scale;
 const ty = (view - ch * scale) / 2 - minY * scale;
-const stroke = (2.1 / scale).toFixed(3);
+const stroke = (0.65 / scale).toFixed(3);
 
 function glyphs(haloAttrs, fillAttrs) {
   const slash1 = `transform="translate(${colonAdv.toFixed(3)} 0)"`;
@@ -108,10 +108,10 @@ const adaptive = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${view} $
   <!-- Unbounded :// — wordmark without n/m; transparent; identical slash paths -->
   <style>
     .fill { fill: #111111; }
-    .halo { fill: none; stroke: #ffffff; stroke-width: ${stroke}; stroke-linejoin: round; stroke-linecap: round; }
+    .halo { fill: none; stroke: #111111; stroke-width: ${stroke}; stroke-linejoin: round; stroke-linecap: round; }
     @media (prefers-color-scheme: dark) {
       .fill { fill: #f0f0f0; }
-      .halo { stroke: #111111; }
+      .halo { stroke: #ffffff; }
     }
   </style>
   ${glyphs('class="halo"', 'class="fill"')}
@@ -120,7 +120,7 @@ const adaptive = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${view} $
 
 const light = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${view} ${view}" role="img" aria-label="://">
   ${glyphs(
-    `fill="none" stroke="#ffffff" stroke-width="${stroke}" stroke-linejoin="round" stroke-linecap="round"`,
+    `fill="none" stroke="#111111" stroke-width="${stroke}" stroke-linejoin="round" stroke-linecap="round"`,
     `fill="#111111"`,
   )}
 </svg>
@@ -128,7 +128,7 @@ const light = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${view} ${vi
 
 const dark = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${view} ${view}" role="img" aria-label="://">
   ${glyphs(
-    `fill="none" stroke="#111111" stroke-width="${stroke}" stroke-linejoin="round" stroke-linecap="round"`,
+    `fill="none" stroke="#ffffff" stroke-width="${stroke}" stroke-linejoin="round" stroke-linecap="round"`,
     `fill="#f0f0f0"`,
   )}
 </svg>

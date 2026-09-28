@@ -2,10 +2,10 @@
   <!-- Unbounded :// — wordmark without n/m; transparent; identical slash paths -->
   <style>
     .fill { fill: #111111; }
-    .halo { fill: none; stroke: #ffffff; stroke-width: 1.907; stroke-linejoin: round; stroke-linecap: round; }
+    .halo { fill: none; stroke: #111111; stroke-width: 0.590; stroke-linejoin: round; stroke-linecap: round; }
     @media (prefers-color-scheme: dark) {
       .fill { fill: #f0f0f0; }
-      .halo { stroke: #111111; }
+      .halo { stroke: #ffffff; }
     }
   </style>
   <g transform="translate(3.783 23.021) scale(1.10138)">

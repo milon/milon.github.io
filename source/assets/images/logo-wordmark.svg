@@ -5,11 +5,22 @@
       src: url("/assets/fonts/Unbounded-Latin.woff2") format("woff2");
       font-weight: 600;
     }
-    .wm { font-family: "Unbounded", system-ui, sans-serif; font-weight: 600; font-size: 28px; letter-spacing: 0.02em; }
+    .wm {
+      font-family: "Unbounded", system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 0.02em;
+    }
     .ink { fill: #111111; }
-    .sep { fill: #bcbcbc; }
+    .sep {
+      fill: #bcbcbc;
+      stroke: #111111;
+      stroke-width: 0.9;
+      paint-order: stroke fill;
+      stroke-linejoin: round;
+    }
   </style>
-  <text class="wm" x="0" y="34">
+  <text class="wm" x="4" y="34">
     <tspan class="ink">n</tspan><tspan class="sep">://</tspan><tspan class="ink">m</tspan>
   </text>
 </svg>

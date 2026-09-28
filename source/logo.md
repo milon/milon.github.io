@@ -19,6 +19,7 @@ Brand mark and wordmark for [milon.im](https://milon.im) under the **Signal** id
 | CSS variables | `--logo-font`, `--logo-sep` in `source/_assets/sass/main.scss` |
 | Site usage | Topbar home link (`.wordmark` in `source/_layouts/master.blade.php`) |
 | Desktop companion | Mono uppercase **Nuruzzaman Milon** (`.wm-title`) beside the logo; hidden below `md` |
+| Outline | Laser-thin halo on `://` only (`.wm-sep`): `0.6px` dark `#111111` in light / white in dark; `n` / `m` stay flat |
 
 ### Structure
 
@@ -60,8 +61,8 @@ At 16–32px a full `n://m` is illegible, so the mark is the protocol alone. Gly
 | Concept | Protocol mark from `n://m` |
 | Font | **Unbounded** (outlined paths) |
 | Background | Transparent (SVG + PNG favicons) |
-| Light | Fill `#111111`, white outline (`stroke` `#ffffff`, `paint-order: stroke fill`) |
-| Dark | Fill `#f0f0f0`, ink outline (`#111111`) |
+| Light | Fill `#111111`, ink outline (`stroke` `#111111`, `paint-order: stroke fill`) |
+| Dark | Fill `#f0f0f0`, white outline (`#ffffff`) |
 | Adaptive SVG | `/assets/images/logo-mark.svg` (`prefers-color-scheme`) |
 | Fixed light SVG | `/assets/images/logo-mark-light.svg` |
 | Fixed dark SVG | `/assets/images/logo-mark-dark.svg` |

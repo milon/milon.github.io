@@ -72,7 +72,12 @@ body {
     line-height: 1;
 }
 
-.logo .sep { color: var(--logo-sep); }
+.logo .sep {
+    color: var(--logo-sep);
+    -webkit-text-fill-color: var(--logo-sep);
+    -webkit-text-stroke: 1px #111111;
+    paint-order: stroke fill;
+}
 
 .top { padding-bottom: 26px; border-bottom: 1px solid var(--rule); }
 .bottom { padding-top: 26px; border-top: 1px solid var(--rule); }

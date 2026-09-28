@@ -221,6 +221,14 @@ img { max-width: 100%; }
 .wordmark .wm-sep {
     color: var(--logo-sep);
     font-weight: 600;
+    /* Laser-thin halo on :// only — dark on light, light on dark. */
+    -webkit-text-fill-color: var(--logo-sep);
+    -webkit-text-stroke: 0.6px #111111;
+    paint-order: stroke fill;
+}
+
+html[data-theme="dark"] .wordmark .wm-sep {
+    -webkit-text-stroke: 0.6px #ffffff;
 }
 
 .wordmark .wm-title {
