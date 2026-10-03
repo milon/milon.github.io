@@ -64,6 +64,13 @@ gist: PHP packages on Packagist, led by a barcode library with over 15 million d
                             <span class="shelf-desc">PHP CLI for Markdown book projects — PDF, EPUB, HTML, multi-page site, and Amazon KDP exports.</span>
                         </span>
                     </a>
+                    <a class="shelf-item" href="https://github.com/milon/fuse">
+                        <span class="shelf-text">
+                            <h3 class="shelf-title">fuse</h3>
+                            <span class="shelf-meta">Packagist</span>
+                            <span class="shelf-desc">HTTP-client-agnostic circuit breaker for PHP 8.2+ — optional Laravel and Saloon adapters.</span>
+                        </span>
+                    </a>
                     <a class="shelf-item" href="https://github.com/milon/setu">
                         <span class="shelf-text">
                             <h3 class="shelf-title">setu</h3>
