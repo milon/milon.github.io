@@ -218,6 +218,14 @@ img { max-width: 100%; }
     text-transform: none;
 }
 
+.wordmark .wm-n,
+.wordmark .wm-m,
+.wordmark .wm-sep,
+.wordmark .wm-colon,
+.wordmark .wm-slashes {
+    display: inline-block;
+}
+
 .wordmark .wm-sep {
     color: var(--logo-sep);
     font-weight: 600;
@@ -229,6 +237,62 @@ img { max-width: 100%; }
 
 html[data-theme="dark"] .wordmark .wm-sep {
     -webkit-text-stroke: 0.6px #ffffff;
+}
+
+/* Signal idle (colon blink) · Handshake on hover / keyboard focus */
+@media not (prefers-reduced-motion: reduce) {
+    .wordmark .wm-colon {
+        animation: wm-blink 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .wordmark:hover .wm-n,
+    .wordmark:focus-visible .wm-n {
+        animation: wm-slide-n 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .wordmark:hover .wm-m,
+    .wordmark:focus-visible .wm-m {
+        animation: wm-slide-m 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .wordmark:hover .wm-sep,
+    .wordmark:focus-visible .wm-sep {
+        animation: wm-sep-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .wordmark:hover .wm-colon,
+    .wordmark:focus-visible .wm-colon {
+        animation: none;
+    }
+}
+
+@keyframes wm-blink {
+    0%, 46%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+    54% { opacity: 1; }
+}
+
+@keyframes wm-slide-n {
+    from { opacity: 0; transform: translateX(-0.4em); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wm-slide-m {
+    from { opacity: 0; transform: translateX(0.4em); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wm-sep-in {
+    from {
+        opacity: 0;
+        transform: scaleX(0.55);
+        letter-spacing: -0.08em;
+    }
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+        letter-spacing: 0.02em;
+    }
 }
 
 .wordmark .wm-title {

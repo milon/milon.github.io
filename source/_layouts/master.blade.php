@@ -68,7 +68,7 @@
     <body>
         <header class="topbar" id="topbar">
             <a class="wordmark" href="{{ $page->baseUrl }}" aria-label="Nuruzzaman Milon — home">
-                <span class="wm-logo">n<span class="wm-sep" aria-hidden="true">://</span>m</span>
+                <span class="wm-logo"><span class="wm-n">n</span><span class="wm-sep" aria-hidden="true"><span class="wm-colon">:</span><span class="wm-slashes">//</span></span><span class="wm-m">m</span></span>
                 <span class="wm-title">Nuruzzaman Milon</span>
             </a>
             <nav class="topbar-nav" id="topbar-nav">
