@@ -1,0 +1,29 @@
+{
+    "linkset": [
+        {
+            "anchor": "https://milon.im/",
+            "describedby": [
+                {
+                    "href": "https://milon.im/llms.txt",
+                    "type": "text/markdown"
+                }
+            ],
+            "alternate": [
+                {
+                    "href": "https://milon.im/index.md",
+                    "type": "text/markdown"
+                },
+                {
+                    "href": "https://milon.im/feed.xml",
+                    "type": "application/atom+xml"
+                }
+            ],
+            "sitemap": [
+                {
+                    "href": "https://milon.im/sitemap.xml",
+                    "type": "application/xml"
+                }
+            ]
+        }
+    ]
+}
