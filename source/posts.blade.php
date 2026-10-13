@@ -23,10 +23,8 @@ pagination:
         </div>
 
         <section class="section">
-            <div class="section-label">Index</div>
+            <h2 class="section-label">Index</h2>
             <div class="section-body is-wide">
-                <p class="list-utility"><a href="/feed.xml" title="Subscribe to RSS feed">RSS feed →</a></p>
-
                 <div class="index-list">
                     @foreach ($pagination->items as $post)
                         <a class="index-item" href="{{ $post->getUrl() }}">

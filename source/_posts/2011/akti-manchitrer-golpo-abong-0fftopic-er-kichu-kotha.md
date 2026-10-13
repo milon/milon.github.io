@@ -2,7 +2,7 @@
 extends: _layouts.post
 title: একটি মানচিত্রের গল্প ও অফটপিকের কিছু কথা
 date: '2011-05-16'
-gist: null
+gist: একটি মানচিত্রের গল্প দিয়ে নৈতিকতা, বিশ্ববিদ্যালয় ও দেশ গড়ার দায় নিয়ে লেখা।
 section: content
 syntaxHighlight: false
 categories: [personal]

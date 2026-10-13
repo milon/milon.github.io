@@ -3,6 +3,7 @@ extends: _layouts.post
 title: Database partitioning
 date: '2026-08-21'
 gist: What table partitioning actually does, how Postgres routes a row, and the SQL you need before the table is too big to rewrite.
+ogImage: /assets/images/og/database-partitioning.png
 section: content
 syntaxHighlight: true
 categories: [databases]

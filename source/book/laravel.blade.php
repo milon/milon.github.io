@@ -22,7 +22,7 @@ lang: bn
         </div>
 
         <section class="section">
-            <div class="section-label">01 — Why</div>
+            <h2 class="section-label">01 — Why</h2>
             <div class="section-body">
                 <p>I heard a question very often, "Brother, I have learned PHP, but writing PHP inside HTML is not the pleasant thing to me." Or, "Which PHP framework should I learn?" In these type of scenario, my general answer is Laravel. Now, the question is why Laravel? You can answer it in many ways, even I have a <a href="/post/why-you-should-consider-laravel-as-your-go-to-framework-of-choice">blogpost</a> on that. But the short answer is Laravel uses the cutting age techniques and best practices of PHP. Though this bit of information is true for some other PHP frameworks as well, my personal preference is Laravel, especially for its beautiful syntax.</p>
                 <p>Now the question is why I decided to write a book? I heard a complain so many times, that I am really sick of it. And it is, we don't have a good resource on Bengali for Laravel. All the resources are in English. I have taken a lot of help from the Bangladeshi community but didn't return them anything significant. This actually encourages me to write a book on Laravel.</p>
@@ -30,7 +30,7 @@ lang: bn
         </section>
 
         <section class="section">
-            <div class="section-label">02 — Preface</div>
+            <h2 class="section-label">02 — Preface</h2>
             <div class="section-body is-wide">
                 <div class="book-row">
                     <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_1st_edition-400.webp" width="400" height="517" loading="lazy" decoding="async" alt="1st Edition Cover">
@@ -46,7 +46,7 @@ lang: bn
         </section>
 
         <section class="section">
-            <div class="section-label">03 — Second Edition</div>
+            <h2 class="section-label">03 — Second Edition</h2>
             <div class="section-body is-wide">
                 <div class="book-row">
                     <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition-400.webp" width="400" height="522" loading="lazy" decoding="async" alt="2nd Edition Cover">
@@ -61,7 +61,7 @@ lang: bn
         </section>
 
         <section class="section">
-            <div class="section-label">04 — Details</div>
+            <h2 class="section-label">04 — Details</h2>
             <div class="section-body is-wide">
                 <dl class="spec-list">
                     <div class="spec-row">

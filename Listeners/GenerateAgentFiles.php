@@ -18,13 +18,17 @@ class GenerateAgentFiles
         $posts = collect($jigsaw->getCollection('posts'));
         $talks = collect($jigsaw->getCollection('talks'));
 
-        $this->writeHomepageMarkdown($jigsaw, $posts);
+        $categories = collect($jigsaw->getCollection('categories'));
+
+        $this->writeHomepageMarkdown($jigsaw, $posts, $talks);
         $this->writePostsIndex($jigsaw, $posts);
         $this->writeTalksIndex($jigsaw, $talks);
         $this->writeCollectionMarkdown($jigsaw, $posts);
         $this->writeCollectionMarkdown($jigsaw, $talks);
+        $this->writeCategoryMarkdown($jigsaw, $categories, $posts);
         $this->writeLogoMarkdown($jigsaw);
         $this->writeLlmsTxt($jigsaw, $baseUrl, $posts, $talks);
+        $this->writeLlmsFull($jigsaw, $baseUrl, $posts, $talks);
         $this->writeAtomFeed($jigsaw, $baseUrl, $posts);
         $this->writeApiCatalog($jigsaw, $baseUrl);
 
@@ -32,7 +36,7 @@ class GenerateAgentFiles
         $jigsaw->writeOutputFile('.nojekyll', '');
     }
 
-    private function writeHomepageMarkdown(Jigsaw $jigsaw, $posts): void
+    private function writeHomepageMarkdown(Jigsaw $jigsaw, $posts, $talks): void
     {
         $recent = $posts->take(5)->map(function (PageVariable $post) {
             $path = $this->normalizePath($post->getPath());
@@ -41,6 +45,17 @@ class GenerateAgentFiles
 
             return '- [' . $post->title . '](' . $path . '.md)' . $suffix;
         })->implode("\n");
+
+        $recentTalks = $talks->take(3)->map(function (PageVariable $talk) {
+            $path = $this->normalizePath($talk->getPath());
+            $gist = trim((string) ($talk->gist ?? ''));
+            $suffix = $gist !== '' ? ': ' . $gist : '';
+
+            return '- [' . $talk->title . '](' . $path . '.md)' . $suffix;
+        })->implode("\n");
+
+        $stats = $jigsaw->getConfig('barcodeStats') ?? [];
+        $total = $stats['downloadsTotalLabel'] ?? '15M+';
 
         $markdown = <<<MD
 # Nuruzzaman Milon
@@ -72,14 +87,24 @@ Outside of work I cook and publish recipes, and I have developed a late interest
 - [Laravel After Deploy](https://laravel-after-deploy.milon.im/): Production playbook for mid-to-senior engineers (2026, English)
 - [Laravel PHP Web Framework](/book/laravel.md): Bengali-language introduction to Laravel (2015)
 
+## Talks
+
+{$recentTalks}
+
+- [All talks](/talks.md)
+
+## Open source
+
+- [milon/barcode](https://github.com/milon/barcode): barcode generation for Laravel and plain PHP ({$total} Packagist downloads)
+- [All open source](/open-source.md)
+
 ## More
 
-- [Talks](/talks.md)
-- [Open Source](/open-source.md)
 - [CV](/cv.md)
 - [Contact](/contact.md)
 - [Logo](/logo.md)
 - [Atom feed](/feed.xml)
+- [Full site for LLMs](/llms-full.txt)
 MD;
 
         $jigsaw->writeOutputFile('index.md', $markdown . "\n");
@@ -143,6 +168,12 @@ MD;
         $total = $stats['downloadsTotalLabel'] ?? '15M+';
         $monthly = $stats['downloadsMonthlyLabel'] ?? '~500k';
 
+        $openSource = require dirname(__DIR__) . '/data/open-source.php';
+        $featured = $openSource['featured'];
+        $projectLines = collect($openSource['projects'])->map(function (array $project) {
+            return '- [' . $project['name'] . '](' . $project['url'] . ') — ' . $project['description'];
+        })->implode("\n");
+
         $markdown = <<<MD
 # Open Source
 
@@ -152,33 +183,21 @@ HTML: [/open-source](/open-source).
 
 ## Featured
 
-### milon/barcode
+### {$featured['name']}
 
 - **Downloads:** {$total}
 - **Downloads / month:** {$monthly}
 - **GitHub stars:** {$stars}
 - **Forks:** {$forks}
-- **Stack:** PHP · Laravel
-- **Packagist:** [packagist.org/packages/milon/barcode](https://packagist.org/packages/milon/barcode)
-- **GitHub:** [github.com/milon/barcode](https://github.com/milon/barcode)
+- **Stack:** {$featured['stack']}
+- **Packagist:** [{$featured['packagist']}]({$featured['packagist']})
+- **GitHub:** [{$featured['url']}]({$featured['url']})
 
-Barcode generation for Laravel and plain PHP. Wraps the TCPDF barcode engines (1D, QR, Data Matrix, PDF417) behind a small API that returns SVG, HTML, PNG, and JPEG — still maintained across current Laravel releases.
+{$featured['description']}
 
 ## Projects
 
-- [papyrus](https://github.com/milon/papyrus) — PHP CLI for Markdown book projects (PDF, EPUB, HTML, multi-page site, Amazon KDP)
-- [setu](https://github.com/milon/setu) — static URL shortener generator for GitHub Pages (npm: @to_milon/setu)
-- [prepare-citizenship](https://github.com/milon/prepare-citizenship) — Canadian citizenship test study app
-- [jigsaw-url-shortener](https://github.com/milon/jigsaw-url-shortener) — URL shortener for Jigsaw sites
-- [macos-unijoy](https://github.com/milon/macos-unijoy) — Unijoy Bengali keyboard layout for macOS
-- [dotfiles](https://github.com/milon/dotfiles) — Personal macOS dotfiles
-- [system-design](https://github.com/milon/system-design) — System design interview prep
-- [one-problem-a-day](https://github.com/milon/one-problem-a-day) — One DSA problem a day
-- [recipes](https://github.com/milon/recipes) — Recipe sharing site ([recipes.milon.im](https://recipes.milon.im))
-- [catppuccin-fresh](https://github.com/milon/catppuccin-fresh) — Catppuccin themes for Fresh Editor
-- [arrow-zsh-theme](https://github.com/milon/arrow-zsh-theme) — Minimal zsh theme
-- [takakori](https://github.com/milon/takakori) — Self-hosted personal finance app
-- [url-shortener](https://github.com/milon/url-shortener) — Laravel URL shortener
+{$projectLines}
 
 This is a selection. The full list of repositories and contributions is on [GitHub](/github).
 
@@ -196,7 +215,16 @@ MD;
 
     private function writeCvMarkdown(Jigsaw $jigsaw): void
     {
-        $markdown = <<<'MD'
+        $contact = require dirname(__DIR__) . '/data/contact.php';
+        $contactEmail = $contact['email'];
+        $contactMailto = $contact['emailMailto'];
+        $contactPhone = $contact['phone'];
+        $contactWebsite = $contact['website'];
+        $contactWebsiteUrl = $contact['websiteUrl'];
+        $contactLinkedinPath = $contact['linkedinPath'];
+        $contactXPath = $contact['xPath'];
+
+        $markdown = <<<MD
 # Curriculum Vitae
 
 > Engineering Tech Lead · Vancouver, British Columbia.
@@ -205,12 +233,12 @@ HTML: [/cv](/cv). PDF: [/assets/pdf/Nuruzzaman_Milon_cv.pdf](/assets/pdf/Nuruzza
 
 ## Contact
 
-- Email: contact@milon.im
-- Phone: +1 (604) 735-7681
-- Site: [milon.im](https://milon.im/)
-- LinkedIn: [/linkedin](/linkedin)
+- Email: [{$contactEmail}]({$contactMailto})
+- Phone: {$contactPhone}
+- Site: [{$contactWebsite}]({$contactWebsiteUrl}/)
+- LinkedIn: [{$contactLinkedinPath}]({$contactLinkedinPath})
 - GitHub: [/github](/github)
-- X: [/x](/x)
+- X: [{$contactXPath}]({$contactXPath})
 
 ## Summary
 
@@ -343,7 +371,12 @@ MD;
 
     private function writeContactMarkdown(Jigsaw $jigsaw): void
     {
-        $markdown = <<<'MD'
+        $contact = require dirname(__DIR__) . '/data/contact.php';
+        $elsewhere = collect($contact['elsewhere'])->map(function (array $link) {
+            return '- [' . $link['label'] . '](' . $link['href'] . ')';
+        })->implode("\n");
+
+        $markdown = <<<MD
 # Contact
 
 > The fastest way to reach me is email. I read everything, and I reply to most of it.
@@ -352,19 +385,14 @@ HTML: [/contact](/contact).
 
 ## Direct
 
-- **Email:** contact[at]milon[dot]im
-- **Website:** [milon.im](https://milon.im/)
-- **X:** [@to_milon](/x) — best for a quick response
-- **LinkedIn:** [in/tomilon](/linkedin)
+- **Email:** [{$contact['email']}]({$contact['emailMailto']})
+- **Website:** [{$contact['website']}]({$contact['websiteUrl']})
+- **X:** [{$contact['xHandle']}]({$contact['xPath']}) — best for a quick response
+- **LinkedIn:** [{$contact['linkedinHandle']}]({$contact['linkedinPath']})
 
 ## Elsewhere
 
-- [GitHub](/github)
-- [Facebook](/facebook)
-- [SlideShare](/slideshare)
-- [Speaker Deck](/speakerdeck)
-- [Instagram](/instagram)
-- [Stack Overflow](/stackoverflow)
+{$elsewhere}
 
 ## Newsletter
 
@@ -524,6 +552,7 @@ Prefer the Markdown versions linked below. HTML pages are for humans; Markdown i
 - [Contact]({$baseUrl}/contact.md): Email and newsletter
 - [Logo]({$baseUrl}/logo.md): Wordmark and favicon specs
 - [Atom feed]({$baseUrl}/feed.xml): Recent posts as Atom XML
+- [Full site dump]({$baseUrl}/llms-full.txt): Concatenated Markdown of key pages, posts, and talks
 
 ## Recent writing
 
@@ -542,6 +571,88 @@ Prefer the Markdown versions linked below. HTML pages are for humans; Markdown i
 TXT;
 
         $jigsaw->writeOutputFile('llms.txt', $content . "\n");
+    }
+
+    private function writeCategoryMarkdown(Jigsaw $jigsaw, $categories, $posts): void
+    {
+        foreach ($categories as $category) {
+            $slug = (string) $category->getFilename();
+            $path = 'posts/category/' . $slug . '.md';
+            $matching = $posts->filter(function (PageVariable $post) use ($slug) {
+                return in_array($slug, $post->getCategories(), true);
+            })->map(function (PageVariable $post) {
+                $postPath = $this->normalizePath($post->getPath());
+                $gist = trim((string) ($post->gist ?? ''));
+                $suffix = $gist !== '' ? ': ' . $gist : '';
+
+                return '- [' . $post->title . '](' . $postPath . '.md)' . $suffix;
+            })->implode("\n");
+
+            if ($matching === '') {
+                $matching = '_No posts in this category._';
+            }
+
+            $markdown = <<<MD
+# #{$slug}
+
+> Posts tagged `{$slug}`.
+
+HTML: [/posts/category/{$slug}](/posts/category/{$slug}).
+
+{$matching}
+MD;
+
+            $jigsaw->writeOutputFile($path, $markdown . "\n");
+        }
+    }
+
+    private function writeLlmsFull(Jigsaw $jigsaw, string $baseUrl, $posts, $talks): void
+    {
+        $parts = [
+            '# milon.im — full Markdown dump for agents',
+            '',
+            'Generated for LLM ingestion. Prefer individual `.md` URLs when possible; this file is the offline-friendly concatenation.',
+            '',
+            'Source: ' . $baseUrl . '/',
+            '',
+        ];
+
+        $sourceRoot = $jigsaw->getSourcePath();
+        $destination = $jigsaw->getDestinationPath();
+
+        foreach (['index.md', 'cv.md', 'contact.md', 'open-source.md', 'books.md', 'posts.md', 'talks.md'] as $file) {
+            $absolute = $destination . '/' . $file;
+            if (is_file($absolute)) {
+                $parts[] = "\n\n---\n\n";
+                $parts[] = file_get_contents($absolute);
+            }
+        }
+
+        foreach ($posts->merge($talks) as $page) {
+            $sourceFile = $this->findSourceFile($sourceRoot, (string) $page->getFilename());
+            if ($sourceFile === null) {
+                continue;
+            }
+
+            $path = $this->normalizePath($page->getPath());
+            $title = (string) $page->title;
+            $gist = trim((string) ($page->gist ?? ''));
+            $date = $this->formatDate($page->date);
+            $body = trim($this->stripFrontMatter(file_get_contents($sourceFile)));
+
+            $parts[] = "\n\n---\n\n";
+            $parts[] = "# {$title}\n\n";
+            if ($gist !== '') {
+                $parts[] = "> {$gist}\n\n";
+            }
+            if ($date !== '') {
+                $parts[] = "Published: {$date}\n\n";
+            }
+            $parts[] = "URL: {$baseUrl}{$path}.md\n\n";
+            $parts[] = $body . "\n";
+        }
+
+        $jigsaw->writeOutputFile('llms-full.txt', implode('', $parts));
     }
 
     private function writeAtomFeed(Jigsaw $jigsaw, string $baseUrl, $posts): void
@@ -604,6 +715,10 @@ XML;
                         [
                             'href' => $baseUrl . '/llms.txt',
                             'type' => 'text/markdown',
+                        ],
+                        [
+                            'href' => $baseUrl . '/llms-full.txt',
+                            'type' => 'text/plain',
                         ],
                     ],
                     'alternate' => [

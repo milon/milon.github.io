@@ -49,6 +49,8 @@ return [
     },
     'paginationLinkNumber' => 5,
     'urlRedirects' => require_once(__DIR__ . '/redirects.php'),
+    'openSource' => require __DIR__ . '/data/open-source.php',
+    'contact' => require __DIR__ . '/data/contact.php',
     'formattedDate' => function ($page, $date, $withDay = true) {
         if ($date instanceof DateTimeInterface) {
             $timestamp = $date->getTimestamp();

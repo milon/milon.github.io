@@ -2,7 +2,7 @@
 extends: _layouts.post
 title: চিকিৎসাসেবায় নতুন দিগন্ত
 date: '2014-06-12'
-gist: null
+gist: mDoctor অ্যাপের মাধ্যমে ঘরে বসে বিশেষজ্ঞ চিকিৎসা সেবা — একটি নতুন দিগন্ত।
 section: content
 syntaxHighlight: false
 categories: [personal]

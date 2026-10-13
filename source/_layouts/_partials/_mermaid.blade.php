@@ -1,4 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" defer></script>
+<script src="/assets/js/mermaid.min.js" defer></script>
 
 <script>
     (function() {

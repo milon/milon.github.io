@@ -600,6 +600,30 @@ html:has(.search-dialog[open]) {
     display: block;
 }
 
+.skip-link {
+    position: absolute;
+    left: var(--gutter);
+    top: 0;
+    z-index: 100;
+    padding: 10px 14px;
+    font-family: var(--mono-font);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--paper);
+    background: var(--ink);
+    border-radius: 0 0 2px 2px;
+    transform: translateY(-120%);
+    transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
 .shell {
     max-width: var(--shell);
     margin: 0 auto;

@@ -28,6 +28,7 @@
                 $markdownAlternate = '/index.md';
             } elseif (
                 preg_match('#^/(post|talk)/[^/]+$#', $path)
+                || preg_match('#^/posts/category/[^/]+$#', $path)
                 || in_array($path, ['/posts', '/talks', '/books', '/open-source', '/cv', '/contact', '/book/laravel'], true)
             ) {
                 $markdownAlternate = $path . '.md';
@@ -36,6 +37,7 @@
         @if ($markdownAlternate)
             <link rel="alternate" type="text/markdown" title="Markdown version" href="{{ $markdownAlternate }}">
         @endif
+        <link rel="alternate" type="text/markdown" title="Full site dump for LLMs" href="/llms-full.txt">
         <link rel="preload" href="/assets/fonts/Unbounded-Latin.woff2" as="font" type="font/woff2" crossorigin>
         @if ($page->getPath() === '/')
             <link rel="preload" href="/assets/fonts/Syne-Latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -66,6 +68,7 @@
         @endif
     </head>
     <body>
+        <a class="skip-link" href="#body">Skip to content</a>
         <header class="topbar" id="topbar">
             <a class="wordmark" href="{{ $page->baseUrl }}" aria-label="Nuruzzaman Milon — home">
                 <span class="wm-logo"><span class="wm-n">n</span><span class="wm-sep" aria-hidden="true"><span class="wm-colon">:</span><span class="wm-slashes">//</span></span><span class="wm-m">m</span></span>

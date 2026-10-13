@@ -13,10 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup PHP 8.4
+      - name: Setup PHP 8.5
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.4
+          php-version: 8.5
           tools: composer:v2
 
       - name: Setup Bun
@@ -40,7 +40,11 @@ jobs:
         run: |
           test -f build_production/.nojekyll
           test -f build_production/llms.txt
+          test -f build_production/llms-full.txt
           test -f build_production/feed.xml
+          grep -q 'fuse' build_production/open-source.md
+          grep -q 'bohurupee' build_production/open-source.md
+          grep -q 'mailto:contact@milon.im' build_production/contact.md
           test -f build_production/posts.md
           test -f build_production/talks.md
           test -f build_production/books.md

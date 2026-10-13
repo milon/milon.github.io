@@ -2,7 +2,7 @@
 extends: _layouts.post
 title: My book took the first place of bestseller list of rokomari.com
 date: '2015-06-02'
-gist: null
+gist: "Laravel PHP Web Framework hit #1 on the Rokomari bestseller list shortly after release."
 section: content
 syntaxHighlight: false
 categories: [books]

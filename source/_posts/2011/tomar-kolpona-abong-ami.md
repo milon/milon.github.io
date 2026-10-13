@@ -2,7 +2,7 @@
 extends: _layouts.post
 title: তোমার কল্পনা এবং আমি
 date: '2011-05-17'
-gist: null
+gist: কল্পনার রাজপুত্র নয়, সাধারণ মানুষ হিসেবে ভালবাসার দাবি — একটি কবিতা।
 section: content
 syntaxHighlight: false
 categories: [personal,  poem]

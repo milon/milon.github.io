@@ -25,7 +25,7 @@
         </div>
 
         <section class="section">
-            <div class="section-label">Index</div>
+            <h2 class="section-label">Index</h2>
             <div class="section-body is-wide">
                 <p class="list-utility"><a href="/posts">All writing →</a></p>
 

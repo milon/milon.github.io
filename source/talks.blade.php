@@ -23,7 +23,7 @@ pagination:
         </div>
 
         <section class="section">
-            <div class="section-label">Index</div>
+            <h2 class="section-label">Index</h2>
             <div class="section-body is-wide">
                 <div class="index-list">
                     @foreach ($pagination->items as $talk)

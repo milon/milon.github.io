@@ -20,7 +20,7 @@ title: Books
         </div>
 
         <section class="section">
-            <div class="section-label">01 — English</div>
+            <h2 class="section-label">01 — English</h2>
             <div class="section-body is-wide">
                 <div class="book-row">
                     <img class="book-cover" src="/assets/images/book/laravel-after-deploy/cover-400.webp" width="400" height="518" loading="lazy" decoding="async" alt="Laravel After Deploy Cover">
@@ -40,7 +40,7 @@ title: Books
         </section>
 
         <section class="section">
-            <div class="section-label">02 — Bengali</div>
+            <h2 class="section-label">02 — Bengali</h2>
             <div class="section-body is-wide">
                 <div class="book-row">
                     <img class="book-cover" src="/assets/images/book/laravel-php-web-framework/cover_2nd_edition-400.webp" width="400" height="522" loading="lazy" decoding="async" alt="Laravel PHP Web Framework Cover">

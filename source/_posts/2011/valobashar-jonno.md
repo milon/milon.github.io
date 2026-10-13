@@ -2,7 +2,7 @@
 extends: _layouts.post
 title: ভালবাসার জন্য
 date: '2011-05-19'
-gist: null
+gist: ভালবাসার জন্য কী করা যায়, আর কী করা যায় না — একটি কবিতা।
 section: content
 syntaxHighlight: false
 categories: [personal, poem]

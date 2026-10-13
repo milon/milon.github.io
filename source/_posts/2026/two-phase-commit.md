@@ -3,6 +3,7 @@ extends: _layouts.post
 title: Two-phase commit
 date: '2026-08-20'
 gist: What two-phase commit actually does, where it fails in production, and what to reach for instead.
+ogImage: /assets/images/og/two-phase-commit.png
 section: content
 syntaxHighlight: true
 mermaid: true

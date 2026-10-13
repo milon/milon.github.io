@@ -38,6 +38,14 @@ class GenerateOgImages
             's' => 'Contact',
             't' => 'Say hello, or *subscribe to the newsletter.*',
         ],
+        'database-partitioning' => [
+            's' => 'Writing',
+            't' => 'Database partitioning *before the table is too big.*',
+        ],
+        'two-phase-commit' => [
+            's' => 'Writing',
+            't' => 'Two-phase commit *and what to reach for instead.*',
+        ],
     ];
 
     public function run(array $argv): int

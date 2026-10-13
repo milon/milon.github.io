@@ -12,6 +12,7 @@ title: Contact
 @endsection
 
 @section('body')
+    @php $contact = $page->contact; @endphp
     <div class="shell">
         <div class="page-head">
             <p class="eyebrow">Say hello</p>
@@ -20,48 +21,45 @@ title: Contact
         </div>
 
         <section class="section">
-            <div class="section-label">01 — Direct</div>
+            <h2 class="section-label">01 — Direct</h2>
             <div class="section-body is-wide">
                 <div class="contact-list">
                     <div class="contact-row">
                         <span class="contact-key">Email</span>
-                        <p class="contact-val">contact[at]milon[dot]im</p>
+                        <p class="contact-val"><a href="{{ $contact['emailMailto'] }}">{{ $contact['email'] }}</a></p>
                     </div>
                     <div class="contact-row">
                         <span class="contact-key">Website</span>
-                        <p class="contact-val"><a href="https://milon.im">milon.im</a></p>
+                        <p class="contact-val"><a href="{{ $contact['websiteUrl'] }}">{{ $contact['website'] }}</a></p>
                     </div>
                     <div class="contact-row">
                         <span class="contact-key">X</span>
                         <p class="contact-val">
-                            <a href="/x">@to_milon</a>
+                            <a href="{{ $contact['xPath'] }}">{{ $contact['xHandle'] }}</a>
                             <span class="note">Want a quick response? This is the place.</span>
                         </p>
                     </div>
                     <div class="contact-row">
                         <span class="contact-key">LinkedIn</span>
-                        <p class="contact-val"><a href="/linkedin">in/tomilon</a></p>
+                        <p class="contact-val"><a href="{{ $contact['linkedinPath'] }}">{{ $contact['linkedinHandle'] }}</a></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <div class="section-label">02 — Elsewhere</div>
+            <h2 class="section-label">02 — Elsewhere</h2>
             <div class="section-body is-wide">
                 <ul class="elsewhere">
-                    <li><a href="/github">GitHub <span class="ar" aria-hidden="true">↗</span></a></li>
-                    <li><a href="/facebook">Facebook <span class="ar" aria-hidden="true">↗</span></a></li>
-                    <li><a href="/slideshare">SlideShare <span class="ar" aria-hidden="true">↗</span></a></li>
-                    <li><a href="/speakerdeck">Speaker Deck <span class="ar" aria-hidden="true">↗</span></a></li>
-                    <li><a href="/instagram">Instagram <span class="ar" aria-hidden="true">↗</span></a></li>
-                    <li><a href="/stackoverflow">Stack Overflow <span class="ar" aria-hidden="true">↗</span></a></li>
+                    @foreach ($contact['elsewhere'] as $link)
+                        <li><a href="{{ $link['href'] }}">{{ $link['label'] }} <span class="ar" aria-hidden="true">↗</span></a></li>
+                    @endforeach
                 </ul>
             </div>
         </section>
 
         <section class="section">
-            <div class="section-label">03 — Newsletter</div>
+            <h2 class="section-label">03 — Newsletter</h2>
             <div class="section-body is-wide">
                 @include('_layouts._partials._newsletter')
             </div>

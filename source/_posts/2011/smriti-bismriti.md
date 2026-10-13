@@ -2,7 +2,7 @@
 extends: _layouts.post
 title: স্মৃতি-বিস্মৃতি
 date: '2011-05-18'
-gist: null
+gist: স্মৃতির ভয়ে ফেরারী হওয়ার কথা — একটি কবিতা।
 section: content
 syntaxHighlight: false
 categories: [personal, poem]

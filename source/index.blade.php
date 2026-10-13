@@ -83,5 +83,28 @@ title: Nuruzzaman Milon
                 <p class="list-utility"><a href="/books">All books →</a></p>
             </div>
         </section>
+
+        <section class="section">
+            <h2 class="section-label">05 — Talks</h2>
+            <div class="section-body is-wide">
+                <div class="index-list">
+                    @foreach ($talks->take(3) as $talk)
+                        <a class="index-item is-compact" href="{{ $talk->getUrl() }}">
+                            <span class="index-title">{{ $talk->title }}</span>
+                            <span class="index-date">{{ $talk->formattedDate($talk->date) }}</span>
+                        </a>
+                    @endforeach
+                </div>
+                <p class="list-utility"><a href="/talks">All talks →</a></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-label">06 — Open source</h2>
+            <div class="section-body">
+                <p><a href="https://github.com/milon/barcode">milon/barcode</a> — barcode generation for Laravel and plain PHP, with {{ $page->barcodeStats['downloadsTotalLabel'] ?? '15M+' }} Packagist downloads. Plus circuit breakers, static URL shorteners, and other tools on <a href="/open-source">the open-source page</a>.</p>
+                <p class="list-utility"><a href="/open-source">Open source →</a></p>
+            </div>
+        </section>
     </div>
 @endsection

@@ -65,6 +65,33 @@ class GenerateIndex
     {
         return [
             $this->record(
+                title: 'Nuruzzaman Milon',
+                gist: 'Programmer, author, and speaker. Engineering Tech Lead building production systems that serve millions.',
+                categories: [],
+                link: '/',
+                type: 'page',
+                dateLabel: '',
+                isbn: '',
+            ),
+            $this->record(
+                title: 'CV',
+                gist: 'Curriculum vitae — Engineering Tech Lead in Vancouver, BC. Experience at Punt, Amazon, and Flix.',
+                categories: [],
+                link: '/cv',
+                type: 'page',
+                dateLabel: '',
+                isbn: '',
+            ),
+            $this->record(
+                title: 'Contact',
+                gist: 'Email, social links, and newsletter signup for Nuruzzaman Milon.',
+                categories: ['newsletter'],
+                link: '/contact',
+                type: 'page',
+                dateLabel: '',
+                isbn: '',
+            ),
+            $this->record(
                 title: 'Talks',
                 gist: 'Slides and notes from sessions on Laravel, PHP, and building for production.',
                 categories: [],

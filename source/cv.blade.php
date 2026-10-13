@@ -13,6 +13,7 @@ title: CV
 @endsection
 
 @section('body')
+    @php $contact = $page->contact; @endphp
     <div class="shell">
         <div class="page-head">
             <p class="eyebrow">Document</p>
@@ -29,11 +30,11 @@ title: CV
                 <h2 class="cv-name">Nuruzzaman Milon</h2>
                 <p class="cv-location">Vancouver, BC, Canada</p>
                 <ul class="cv-links">
-                    <li><a href="mailto:contact@milon.im">contact@milon.im</a></li>
-                    <li><a href="https://milon.im">milon.im</a></li>
-                    <li><a href="/linkedin">LinkedIn</a></li>
+                    <li><a href="{{ $contact['emailMailto'] }}">{{ $contact['email'] }}</a></li>
+                    <li><a href="{{ $contact['websiteUrl'] }}">{{ $contact['website'] }}</a></li>
+                    <li><a href="{{ $contact['linkedinPath'] }}">LinkedIn</a></li>
                     <li><a href="/github">GitHub</a></li>
-                    <li><a href="/x">X</a></li>
+                    <li><a href="{{ $contact['xPath'] }}">X</a></li>
                 </ul>
             </header>
 

@@ -252,22 +252,15 @@ class JsonLd
 
     private static function openSourceList($page, string $url, string $websiteId, string $personId): array
     {
-        $projects = [
-            ['milon/barcode', 'https://github.com/milon/barcode', 'PHP'],
-            ['papyrus', 'https://github.com/milon/papyrus', 'PHP'],
-            ['setu', 'https://github.com/milon/setu', 'JavaScript'],
-            ['prepare-citizenship', 'https://github.com/milon/prepare-citizenship', 'JavaScript'],
-            ['jigsaw-url-shortener', 'https://github.com/milon/jigsaw-url-shortener', 'PHP'],
-            ['macos-unijoy', 'https://github.com/milon/macos-unijoy', 'Shell'],
-            ['dotfiles', 'https://github.com/milon/dotfiles', 'Shell'],
-            ['system-design', 'https://github.com/milon/system-design', null],
-            ['one-problem-a-day', 'https://github.com/milon/one-problem-a-day', null],
-            ['recipes', 'https://github.com/milon/recipes', 'HTML'],
-            ['catppuccin-fresh', 'https://github.com/milon/catppuccin-fresh', null],
-            ['arrow-zsh-theme', 'https://github.com/milon/arrow-zsh-theme', 'Shell'],
-            ['takakori', 'https://github.com/milon/takakori', 'PHP'],
-            ['url-shortener', 'https://github.com/milon/url-shortener', 'PHP'],
-        ];
+        $openSource = require dirname(__DIR__) . '/data/open-source.php';
+        $featured = $openSource['featured'];
+        $projects = array_merge(
+            [[$featured['name'], $featured['url'], 'PHP']],
+            array_map(
+                fn (array $project) => [$project['name'], $project['url'], $project['language']],
+                $openSource['projects'],
+            ),
+        );
 
         $itemListElement = [];
 
