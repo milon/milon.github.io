@@ -36,6 +36,32 @@
     }
 }
 
+/*
+ * Below xl (~1280px): logo only in the header — frees room for nav labels
+ * on iPad Mini portrait, Duo landscape, etc. Full name returns on wide desktops.
+ */
+@media (width < theme(--breakpoint-xl)) {
+    .wordmark .wm-title {
+        display: none;
+    }
+}
+
+/*
+ * Inline nav, mid widths (e.g. iPhone Duo landscape ~890×626): keep the
+ * labels, drop the 01–07 prefixes — they eat space the links need.
+ * Below md the hamburger drawer still shows numbers (see rule there).
+ */
+@media (width >= theme(--breakpoint-md)) and (width < theme(--breakpoint-xl)) {
+    .topbar-nav a::before {
+        display: none;
+    }
+
+    .topbar-nav a {
+        padding-inline: 9px;
+        letter-spacing: 0.1em;
+    }
+}
+
 /* < md — production @media (max-width: 720px) */
 @media (width < theme(--breakpoint-md)) {
     :root {
@@ -57,11 +83,6 @@
 
     .wordmark .wm-logo {
         font-size: 14px;
-    }
-
-    /* Name sits beside the logo on desktop only. */
-    .wordmark .wm-title {
-        display: none;
     }
 
     .topbar-tools {
